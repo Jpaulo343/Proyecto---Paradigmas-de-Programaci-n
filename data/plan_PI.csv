@@ -1,0 +1,34 @@
+﻿codigo;nombre;creditos;horas;semestre;requisitos;correquisitos;tipo
+CI0200;Examen diagnóstico;0;0;0;;;EXAMEN
+CI0202;Inglés básico;2;3;0;;;CURSO
+CI1106;Comunicación escrita;2;6;1;;;CURSO
+CI1230;Inglés I;2;6;1;CI0200,CI0202;;CURSO
+CS1502;Introducción a la técnica ciencia y tecnología;1;2;1;;;CURSO
+MA0101;Matemática general;2;5;1;;;CURSO
+MI2101;Dibujo técnico;3;9;1;;;CURSO
+QU1102;Laboratorio de química básica I;1;2;1;;QU1106;CURSO
+QU1106;Química básica I;3;4;1;;QU1102;CURSO
+SE1100;Actividad cultural I;0;2;1;;;COMODIN
+SE1200;Actividad deportiva I;0;2;1;;;COMODIN
+CI1107;Comunicación oral;1;3;2;;;CURSO
+CI1231;Inglés II;2;3;2;CI1230;;CURSO
+FH1000;Centros de formación humanística;0;2;2;;;COMODIN
+FI1101;Física general I;3;4;2;;MA1102;CURSO
+FI1201;Laboratorio física general I;1;2;2;;FI1101;CURSO
+MA1102;Cálculo diferencial e integral;4;5;2;MA0101;;CURSO
+PI3501;Costos industriales I;3;3;2;CS1502,MA0101;;CURSO
+QU1104;Laboratorio de química básica II;1;2;2;;QU1107;CURSO
+QU1107;Química básica II;3;4;2;QU1102,QU1106;QU1104;CURSO
+CA2125;Elementos de computación;3;4;3;;;CURSO
+CS2101;Ambiente humano;2;6;3;CI1107;;CURSO
+FI1102;Física general II;3;4;3;FI1101,FI1201,MA1102;FI1202;CURSO
+FI1202;Laboratorio física general II;1;2;3;FI1201;FI1102;CURSO
+MA1103;Cálculo y álgebra lineal;4;4;3;MA1102;;CURSO
+PI3502;Costos industriales II;3;3;3;PI3501;;CURSO
+SE1400;Actividad cultural-deportiva;0;2;3;;;COMODIN
+CS2303;Relaciones laborales;2;6;4;CS2101;;CURSO
+FI2103;Física general III;3;4;4;FI1101,MA1102;;CURSO
+MA2104;Cálculo superior;4;4;4;MA1103;;CURSO
+MI2109;Estática;3;9;4;FI1101,FI1201;;CURSO
+PI2304;Estudio del trabajo I;3;4;4;MI2101,PI3501;PI2610;CURSO
+PI2610;Probabilidad y estadística I;3;4;4;CA2125,MA1102;;CURSO
