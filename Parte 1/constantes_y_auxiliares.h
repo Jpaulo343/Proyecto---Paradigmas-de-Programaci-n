@@ -14,9 +14,16 @@
 #define TAM_CORREQUISITOS 30
 #define TAM_TIPO 10
 #define TAM_LINEA 256
+
 #define SEPARADOR ';'
+
 #define RUTA_PLAN_CE "data/plan_CE.csv"
 #define RUTA_PLAN_PI "data/plan_PI.csv"
+#define RUTA_HISTORIAL_CE "data/historial_CE.csv"
+#define RUTA_HISTORIAL_PI "data/historial_PI.csv"
+
+#define APROBADO_SI "SI"
+#define APROBADO_NO "NO"
 
 /**
  * @struct struct Curso
@@ -34,6 +41,18 @@ typedef struct Curso {
     char correquisitos[TAM_CORREQUISITOS];
     char tipo[TAM_TIPO];
 } Curso;
+
+/**
+ * @struct struct Historial
+ * @brief Representa una fila del historial del estudiante.
+ * Indica si el curso del plan ya fue aprobado y cual de las actividades
+ * culturales/deportivas fue elegida como opción.
+ */
+typedef struct Historial {
+    char codigo[TAM_CODIGO];
+    int aprobado; // 1 = SI, 0 = NO
+    char opcion[TAM_CODIGO]; // codigo de la actividad cultural/deportiva elegida
+} Historial;
 
 
 /**
@@ -89,5 +108,29 @@ char *separarCampo(char **cursor);
  * @param ruta Ruta del archivo CSV del plan.
  */
 void cargar_plan_estudios(struct Nodo **inicio, const char *ruta);
+
+/**
+ * @brief Lee el archivo CSV del historial del estudiante y lo carga en la lista enlazada.
+ * @param inicio Puntero al puntero de inicio de la lista donde se guardara el historial.
+ * @param ruta Ruta del archivo CSV del historial
+ */
+void cargar_historial(struct Nodo **inicio, const char *ruta);
+
+/**
+ * @brief Busca un curso en la lista del plan de estudios por su codigo.
+ * @param plan Lista con los cursos del plan.
+ * @param codigo Codigo del curso que se busca
+ * @return Puntero al curso encontrado, o NULL si no existe.
+ */
+struct Curso *buscarCurso(struct Nodo *plan, const char *codigo);
+
+/**
+ * @brief Revisa que el historial tenga exactamente los mismos cursos que el plan.
+ * @param plan Lista con los cursos del plan.
+ * @param historial Lista con el historial del estudiante.
+ * @return Cantidad de errores encontrados (0 si todo esta bien).
+ */
+int validar_historial(struct Nodo *plan, struct Nodo *historial);
+
 
 #endif //PARTE_1_CONSTANTES_Y_AUXILIARES_H
