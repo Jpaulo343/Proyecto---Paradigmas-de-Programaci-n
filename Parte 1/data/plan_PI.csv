@@ -1,8 +1,7 @@
 ﻿codigo;nombre;creditos;horas;semestre;requisitos;correquisitos;tipo
-CI0200;Examen diagnóstico;0;0;0;;;EXAMEN
 CI0202;Inglés básico;2;3;0;;;CURSO
 CI1106;Comunicación escrita;2;6;1;;;CURSO
-CI1230;Inglés I;2;6;1;CI0200,CI0202;;CURSO
+CI1230;Inglés I;2;6;1;CI0202;;CURSO
 CS1502;Introducción a la técnica ciencia y tecnología;1;2;1;;;CURSO
 MA0101;Matemática general;2;5;1;;;CURSO
 MI2101;Dibujo técnico;3;9;1;;;CURSO
@@ -12,7 +11,7 @@ SE1100;Actividad cultural I;0;2;1;;;COMODIN
 SE1200;Actividad deportiva I;0;2;1;;;COMODIN
 CI1107;Comunicación oral;1;3;2;;;CURSO
 CI1231;Inglés II;2;3;2;CI1230;;CURSO
-FH1000;Centros de formación humanística;0;2;2;;;COMODIN
+FH1000;Centros de formación humanística;0;2;2;;;CURSO
 FI1101;Física general I;3;4;2;;MA1102;CURSO
 FI1201;Laboratorio física general I;1;2;2;;FI1101;CURSO
 MA1102;Cálculo diferencial e integral;4;5;2;MA0101;;CURSO

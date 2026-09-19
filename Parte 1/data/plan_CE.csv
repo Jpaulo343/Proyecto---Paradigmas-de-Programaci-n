@@ -1,5 +1,4 @@
 ﻿codigo;nombre;creditos;horas;semestre;requisitos;correquisitos;tipo
-CI0205;Prueba avanzada inglés;0;0;0;;;EXAMEN
 MA0101;Matemática general;2;5;0;;;CURSO
 CE1101;Introducción a la programación;3;9;1;;;CURSO
 CE1104;Fundamentos de sistemas computacionales;3;9;1;;CE1101;CURSO
@@ -20,7 +19,7 @@ SE1400;Actividad cultural-deportiva;0;2;2;;;COMODIN
 CE2103;Algoritmos y estructuras de datos II;4;12;3;CE1103,CE1105;;CURSO
 CS2101;Ambiente humano;2;6;3;;;CURSO
 EL2113;Circuitos eléctricos en corriente continua;4;4;3;FI1101,MA1102;;CURSO
-FH1000;Centros de formación humanística;0;2;3;;;COMODIN
+FH1000;Centros de formación humanística;0;2;3;;;CURSO
 FI1102;Física general II;3;4;3;FI1101;MA1102;CURSO
 FI1202;Laboratorio física general II;1;2;3;FI1201;FI1102;CURSO
 MA2104;Cálculo superior;4;4;3;MA1103;;CURSO
