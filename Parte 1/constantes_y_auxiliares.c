@@ -301,3 +301,61 @@ int validar_historial(struct Nodo *plan, struct Nodo *historial) {
     }
     return errores;
 }
+
+
+
+
+/*
+  Busca en la lista del historial el codigo de un curso dado.
+  Retorna 1 si el curso fue aprobado (SI) o 0 en caso contrario.
+*/
+int esCursoAprobado(struct Nodo *historial, const char *codigo) {
+    struct Nodo *actual = historial;
+    while (actual != NULL) {
+        struct Historial *h = (struct Historial *) actual->dato;
+
+        if (h != NULL && strcmp(h->codigo, codigo) == 0) {
+            return h->aprobado; // Retorna 1 si es SI, 0 si es NO
+        }
+
+        actual = actual->siguiente;
+    }
+    return 0; // Si no esta en el historial o no se encontro
+}
+
+/*
+  Recorre todos los cursos del plan de estudios. Para cada curso que el estudiante
+  haya aprobado en su historial, separa sus requisitos obligatorios por comas
+  y verifica que cada uno de ellos tambien tenga estado aprobado == 1.
+  Retorna la cantidad total de inconsistencias de prerrequisitos encontradas.
+*/
+int validar_prerrequisitos(struct Nodo *plan, struct Nodo *historial) {
+    int errores = 0;
+    struct Nodo *actual = plan;
+
+    while (actual != NULL) {
+        struct Curso *c = (struct Curso *) actual->dato;
+
+        // Si el estudiante ya aprobo este curso en su historial
+        if (c != NULL && esCursoAprobado(historial, c->codigo) == 1) {
+
+            // Si el curso tiene requisitos obligatorios
+            if (strlen(c->requisitos) > 0) {
+                char copiaReq[TAM_REQUISITOS];
+                strcpy(copiaReq, c->requisitos);
+
+                char *req = strtok(copiaReq, ",");
+                while (req != NULL) {
+                    // Verificar si el requisito individual esta aprobado en el historial
+                    if (esCursoAprobado(historial, req) == 0) {
+                        printf("Error : El estudiante aprobo %s pero no ha aprobado su requisito %s.\n", c->codigo, req);
+                        errores++;
+                    }
+                    req = strtok(NULL, ","); // Avanzar al siguiente requisito
+                }
+            }
+        }
+        actual = actual->siguiente;
+    }
+    return errores;
+}

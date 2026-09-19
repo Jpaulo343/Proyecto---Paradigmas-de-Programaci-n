@@ -132,5 +132,21 @@ struct Curso *buscarCurso(struct Nodo *plan, const char *codigo);
  */
 int validar_historial(struct Nodo *plan, struct Nodo *historial);
 
+/**
+ * @brief Consulta si un código de curso específico tiene estado de aprobado (1 = SI) en el historial.
+ * @param historial Lista enlazada con el historial del estudiante.
+ * @param codigo Código del curso a consultar (ej: "CE1101").
+ * @return 1 si el curso está aprobado, 0 si no está aprobado o no existe en el historial.
+ */
+int esCursoAprobado(struct Nodo *historial, const char *codigo);
+
+/**
+ * @brief Valida que para cada curso aprobado por el estudiante en su historial,
+ *        se hayan aprobado previamente todos los prerrequisitos exigidos por el plan de estudios.
+ * @param plan Lista enlazada con los cursos del plan de estudios.
+ * @param historial Lista enlazada con el historial del estudiante.
+ * @return Cantidad de errores de prerrequisitos no cumplidos detectados (0 si todo es correcto).
+ */
+int validar_prerrequisitos(struct Nodo *plan, struct Nodo *historial);
 
 #endif //PARTE_1_CONSTANTES_Y_AUXILIARES_H

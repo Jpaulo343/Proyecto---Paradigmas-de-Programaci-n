@@ -60,7 +60,7 @@ int main(void) {
 
     printf("\n=== Historial del estudiante de Computadores ===\n");
     cargar_historial(&historialCE, RUTA_HISTORIAL_CE);
-    if (validar_historial(planCE, historialCE) == 0) {
+    if (validar_historial(planCE, historialCE) == 0 && validar_prerrequisitos(planCE, historialCE) == 0) {
         mostrar_historial(historialCE, planCE);
     }
 
@@ -70,7 +70,7 @@ int main(void) {
 
     printf("\n=== Historial del estudiante de Produccion Industrial ===\n");
     cargar_historial(&historialPI, RUTA_HISTORIAL_PI);
-    if (validar_historial(planPI, historialPI) == 0) {
+    if (validar_historial(planPI, historialPI) == 0  && validar_prerrequisitos(planPI, historialPI) == 0) {
         mostrar_historial(historialPI, planPI);
     }
 
