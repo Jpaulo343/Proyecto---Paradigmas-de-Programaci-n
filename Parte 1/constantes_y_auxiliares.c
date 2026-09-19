@@ -193,3 +193,111 @@ void cargar_plan_estudios(struct Nodo **inicio, const char *ruta) {
     fclose(plan_estudios); //se libera la memoria
 }
 
+/*
+  Abre y procesa el archivo CSV con el historial del estudiante,
+  cada linea tiene el codigo;aprobado;opcion. La columna aprobado se convierte a 1 (SI) o 0 (NO)
+*/
+void cargar_historial(struct Nodo **inicio, const char *ruta) {
+    FILE *archivo = fopen(ruta,"r");
+    if (!archivo) {
+        printf("No se puede abrir el historial %s\n", ruta);
+        return;
+    }
+    char buffer[TAM_LINEA]; 
+    int numeroLinea = 0;
+
+    fgets(buffer, TAM_LINEA, archivo); // se lee y se ignora la primera linea por ser el encabezado
+
+    while (fgets(buffer,TAM_LINEA,archivo)) {
+        numeroLinea++;
+        quitarSaltoLinea(buffer);
+        if (buffer[0] == '\0') {
+            continue; // se ignoran las lineas vacias
+        }
+
+        struct Historial h = {0}; // evitar basura en memoria
+
+        char *cursor = buffer;
+        char *columna = separarCampo(&cursor);
+        if (columna) {
+            strncpy(h.codigo, columna, TAM_CODIGO - 1);
+        }
+
+        columna = separarCampo(&cursor);
+        if (columna && strcmp(columna, APROBADO_SI) == 0) {
+            h.aprobado = 1;
+        } else if (columna && strcmp(columna, APROBADO_NO) == 0) {
+            h.aprobado = 0;
+        } else {
+            printf("Error en %s linea %d (%s): la columna aprobado debe ser SI o NO\n", ruta, numeroLinea, h.codigo);
+            continue; // se ignora la linea con error
+        }
+        
+        columna = separarCampo(&cursor);
+        if (columna) {
+            strncpy(h.opcion, columna, TAM_CODIGO - 1);
+        }
+        
+        insertarFinal(inicio, &h, sizeof(struct Historial));
+    }
+    fclose(archivo);
+}
+
+/*
+  Recorre la lista de cursos y compara cada codigo con strcmp
+  Retorna el puntero al curso encontrado o NULL si no esta
+*/
+struct Curso *buscarCurso(struct Nodo *plan, const char *codigo) {
+    struct Nodo *actual = plan;
+    while (actual != NULL) {
+        struct Curso *c = (struct Curso *) actual->dato;
+        if (strcmp(c->codigo, codigo) == 0) {
+            return c;
+        }
+        actual = actual->siguiente;
+    }
+    return NULL;
+}
+
+/*
+    Revisa que el historial sea consistente, es decir, cada codigo del hisotorial debe existir en el plan
+    y cada curso del plan debe aparecer en el historial
+    Retorna la cantidad de errores encontrados
+*/
+int validar_historial(struct Nodo *plan, struct Nodo *historial) {
+    int errores = 0;
+    
+    // cada curso del historial debe existir en el plan
+    struct Nodo *actual = historial;
+    while (actual != NULL) {
+        struct Historial *h = (struct Historial *) actual->dato;
+        if (buscarCurso(plan, h->codigo) == NULL) {
+            printf("Error: el curso %s del historial no esta en el plan de estudios\n", h->codigo);
+            errores++;
+        }
+        actual = actual->siguiente;
+    }
+
+    // cada curso del plan debe aparecer en el historial
+    actual = plan;
+    while (actual != NULL) {
+        struct Curso *c = (struct Curso *) actual->dato;
+        int encontrado = 0;
+
+        struct Nodo *otro = historial;
+        while (otro != NULL && !encontrado) {
+            struct Historial *h = (struct Historial *) otro->dato;
+            if (strcmp(h->codigo, c->codigo) == 0) {
+                encontrado = 1;
+            }
+            otro = otro->siguiente;
+        }
+
+        if (!encontrado) {
+            printf("Error: el curso %s del plan no aparece en el historial\n", c->codigo);
+            errores++;
+        }
+        actual = actual->siguiente;
+    }
+    return errores;
+}
