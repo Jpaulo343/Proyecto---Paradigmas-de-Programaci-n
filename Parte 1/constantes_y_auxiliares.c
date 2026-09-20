@@ -427,31 +427,33 @@ void actualizar_matriculables(struct Nodo *plan, struct Nodo *historial) {
     while (actual != NULL) {
         struct Curso *c = (struct Curso *) actual->dato;
 
-        //Si el curso no ha sido aprobado se verifica que cumple los requisitos
-        if (esCursoAprobado(historial, c->codigo) == 0) {
-            int requisitosCumplidos = 1;
+        if (c != NULL) {
+            // Si el curso ya fue aprobado, no es matriculable
+            if (esCursoAprobado(historial, c->codigo) == 1) {
+                c->matriculable = 0;
+            } else {
+                int requisitosCumplidos = 1;
 
-            if (strlen(c->requisitos) > 0) {
-                char copiaReq[TAM_REQUISITOS];
-                strcpy(copiaReq, c->requisitos);
+                if (strlen(c->requisitos) > 0 && strcmp(c->requisitos, "NaN") != 0) {
+                    char copiaReq[TAM_REQUISITOS];
+                    strncpy(copiaReq, c->requisitos, TAM_REQUISITOS - 1);
+                    copiaReq[TAM_REQUISITOS - 1] = '\0';
 
-                char *req = strtok(copiaReq, ",");
-                while (req != NULL) {
-                    // Si  un requisito np esta aprobado
-                    if (esCursoAprobado(historial, req) == 0) {
-                        requisitosCumplidos = 0; // Le falta un requisito
-                        break;
+                    char *req = strtok(copiaReq, ",");
+                    while (req != NULL) {
+                        if (esCursoAprobado(historial, req) == 0) {
+                            requisitosCumplidos = 0; // Le falta un requisito
+                            break;
+                        }
+                        req = strtok(NULL, ",");
                     }
-                    req = strtok(NULL, ",");
                 }
+
+                c->matriculable = requisitosCumplidos; // 1 si cumple todos, 0 si no
             }
-
-            c->matriculable = requisitosCumplidos; // 1 si cumple todos, 0 si no
         }
-	}
-}
 
-        actual = actual->siguiente;
+        actual = actual->siguiente; // Se avanza al siguiente nodo dentro del while
     }
 }
 
