@@ -450,7 +450,6 @@ int es_Correquisito_Posible(struct Nodo *plan, struct Nodo *historial, const cha
     return 1; // Cumple sus requisitos, se puede llevar simultaneamente
 }
 
-
 /*
   Recorre los cursos del plan de estudios. Para cada curso no aprobado,
   verifica si todos sus requisitos obligatorios estan aprobados en el historial.
@@ -462,47 +461,52 @@ void actualizar_matriculables(struct Nodo *plan, struct Nodo *historial) {
     while (actual != NULL) {
         struct Curso *c = (struct Curso *) actual->dato;
 
-        //Si el curso no ha sido aprobado se verifica que cumple los requisitos
-        if (esCursoAprobado(historial, c->codigo) == 0) {
-            int requisitosCumplidos = 1;
+        if (c != NULL) {
+            // Si el curso ya fue aprobado, no es matriculable
+            if (esCursoAprobado(historial, c->codigo) == 1) {
+                c->matriculable = 0;
+            } else {
+                int requisitosCumplidos = 1;
 
-			//si hay requisitos se comprueba que esten aprobados
-            if (strlen(c->requisitos) > 0) {
-                char copiaReq[TAM_REQUISITOS];
-                strcpy(copiaReq, c->requisitos);
+                if (strlen(c->requisitos) > 0 && strcmp(c->requisitos, "NaN") != 0) {
+                    char copiaReq[TAM_REQUISITOS];
+                    strncpy(copiaReq, c->requisitos, TAM_REQUISITOS - 1);
+                    copiaReq[TAM_REQUISITOS - 1] = '\0';
 
-                char *req = strtok(copiaReq, ",");
-                while (req != NULL) {
-                    // Si  un requisito np esta aprobado
-                    if (esCursoAprobado(historial, req) == 0) {
-                        requisitosCumplidos = 0; // Le falta un requisito
-                        break;
+                    char *req = strtok(copiaReq, ",");
+                    while (req != NULL) {
+                        if (esCursoAprobado(historial, req) == 0) {
+                            requisitosCumplidos = 0; // Le falta un requisito
+                            break;
+                        }
+                        req = strtok(NULL, ",");
                     }
-                    req = strtok(NULL, ",");
                 }
-            }
-			//  Validar correquisitos solo
-            if (requisitosCumplidos && strlen(c->correquisitos) > 0) {
-                char copiaCorreq[TAM_CORREQUISITOS];
-                strcpy(copiaCorreq, c->correquisitos);
 
-                char *correq = strtok(copiaCorreq, ",");
-                while (correq != NULL) {
-                    // Si el correquisito no esta aprobado Y no se puede matricular simultaneamente
-                    if (!es_Correquisito_Posible(plan, historial, correq)) {
-                        requisitosCumplidos = 0;
-                        break;
+                // Validar correquisitos solo
+                if (requisitosCumplidos && strlen(c->correquisitos) > 0 && strcmp(c->correquisitos, "NaN") != 0) {
+                    char copiaCorreq[TAM_CORREQUISITOS];
+                    strncpy(copiaCorreq, c->correquisitos, TAM_CORREQUISITOS - 1);
+                    copiaCorreq[TAM_CORREQUISITOS - 1] = '\0';
+
+                    char *correq = strtok(copiaCorreq, ",");
+                    while (correq != NULL) {
+                        // Si el correquisito no esta aprobado Y no se puede matricular simultaneamente
+                        if (!es_Correquisito_Posible(plan, historial, correq)) {
+                            requisitosCumplidos = 0;
+                            break;
+                        }
+                        correq = strtok(NULL, ",");
                     }
-                    correq = strtok(NULL, ",");
                 }
-            }
 
-            c->matriculable = requisitosCumplidos; // 1 si cumple todos, 0 si no
+                c->matriculable = requisitosCumplidos; // 1 si cumple todos, 0 si no
+            }
         }
-        actual = actual->siguiente;
+
+        actual = actual->siguiente; // Se avanza al siguiente nodo dentro del while
     }
 }
-
 /*
   Dos bloques chocan si son el mismo dia y sus horas se traslapan.
   Si uno termina justo cuando empieza el otro NO se considera choque.
