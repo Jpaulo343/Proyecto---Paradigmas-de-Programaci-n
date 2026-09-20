@@ -417,6 +417,41 @@ int validar_prerrequisitos(struct Nodo *plan, struct Nodo *historial) {
 }
 
 /*
+  Verifica si un correquisito esta aprobado O si el estudiante cumple
+  los requisitos para matricularlo simultaneamente este semestre.
+*/
+int es_Correquisito_Posible(struct Nodo *plan, struct Nodo *historial, const char *codigo_Correq) {
+    // Si ya esta aprobado, es 100% valido
+    if (esCursoAprobado(historial, codigo_Correq) == 1) {
+        return 1;
+    }
+
+    // Si no esta aprobado, se busca el curso en el plan para ver si se cumplen sus prerrequisitos
+    struct Curso *cCorreq = buscarCurso(plan, codigo_Correq);
+    if (cCorreq == NULL) {
+		printf("error: no se pudo cargar el curso en 'es_Correquisito_Posible'");
+		return 0;
+	}
+
+    // Verificar si el correquisito cumple sus propios prerrequisitos
+    if (strlen(cCorreq->requisitos) > 0) {
+        char copiaReq[TAM_REQUISITOS];
+        strcpy(copiaReq, cCorreq->requisitos);
+
+        char *req = strtok(copiaReq, ",");
+        while (req != NULL) {
+            if (esCursoAprobado(historial, req) == 0) {
+                return 0; // Le falta un requisito al correquisito, por lo que no se puede llevar
+            }
+            req = strtok(NULL, ",");
+        }
+    }
+
+    return 1; // Cumple sus requisitos, se puede llevar simultaneamente
+}
+
+
+/*
   Recorre los cursos del plan de estudios. Para cada curso no aprobado,
   verifica si todos sus requisitos obligatorios estan aprobados en el historial.
   Asigna c->matriculable = 1 si se puede matricular o lo deja en su estado orignal (0).
@@ -431,6 +466,7 @@ void actualizar_matriculables(struct Nodo *plan, struct Nodo *historial) {
         if (esCursoAprobado(historial, c->codigo) == 0) {
             int requisitosCumplidos = 1;
 
+			//si hay requisitos se comprueba que esten aprobados
             if (strlen(c->requisitos) > 0) {
                 char copiaReq[TAM_REQUISITOS];
                 strcpy(copiaReq, c->requisitos);
@@ -445,12 +481,24 @@ void actualizar_matriculables(struct Nodo *plan, struct Nodo *historial) {
                     req = strtok(NULL, ",");
                 }
             }
+			//  Validar correquisitos solo
+            if (requisitosCumplidos && strlen(c->correquisitos) > 0) {
+                char copiaCorreq[TAM_CORREQUISITOS];
+                strcpy(copiaCorreq, c->correquisitos);
+
+                char *correq = strtok(copiaCorreq, ",");
+                while (correq != NULL) {
+                    // Si el correquisito no esta aprobado Y no se puede matricular simultaneamente
+                    if (!es_Correquisito_Posible(plan, historial, correq)) {
+                        requisitosCumplidos = 0;
+                        break;
+                    }
+                    correq = strtok(NULL, ",");
+                }
+            }
 
             c->matriculable = requisitosCumplidos; // 1 si cumple todos, 0 si no
         }
-	}
-}
-
         actual = actual->siguiente;
     }
 }

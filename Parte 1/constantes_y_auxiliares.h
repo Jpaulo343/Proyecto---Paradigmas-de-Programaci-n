@@ -207,8 +207,20 @@ void calcular_choques_catalogo(struct Nodo *plan);
 
 
 /**
+ * @brief Evalúa si un correquisito específico está aprobado o si el estudiante cumple
+ *        con los requisitos para matricularlo simultáneamente con un curso.
+ * @param plan Lista enlazada con los cursos del plan de estudios.
+ * @param historial Lista enlazada con el historial del estudiante.
+ * @param codigo_Correq Código del correquisito que se desea evaluar.
+ * @return 1 si el correquisito está aprobado o se puede matricular simultáneamente, 0 en caso contrario.
+ */
+int es_Correquisito_Posible(struct Nodo *plan, struct Nodo *historial, const char *codigo_Correq);
+
+
+/**
  * @brief Evalúa cada curso del plan de estudios y actualiza su campo 'matriculable' a 1
- *        si el estudiante no lo ha aprobado aún y cumple con todos sus prerrequisitos.
+ *        si el estudiante no lo ha aprobado aún, si cumple con todos sus prerrequisitos
+ *     	  y si es posible cumplir los correquisitos.
  * @param plan Lista enlazada con los cursos del plan de estudios.
  * @param historial Lista enlazada con el historial del estudiante.
  */
