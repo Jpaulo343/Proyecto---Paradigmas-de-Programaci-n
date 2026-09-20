@@ -58,6 +58,7 @@ int main(void) {
     if (validar_historial(planCE, historialCE) == 0 && validar_prerrequisitos(planCE, historialCE) == 0) {
         actualizar_matriculables(planCE, historialCE);
         mostrar_historial(historialCE, planCE);
+        exportar_json(planCE, historialCE, RUTA_SALIDA_CE, CARRERA_CE);
     }
 
     printf("\n=== Plan de Ingenieria en Produccion Industrial ===\n");
@@ -71,6 +72,7 @@ int main(void) {
     if (validar_historial(planPI, historialPI) == 0  && validar_prerrequisitos(planPI, historialPI) == 0) {
         actualizar_matriculables(planPI, historialPI);
         mostrar_historial(historialPI, planPI);
+        exportar_json(planPI, historialPI, RUTA_SALIDA_PI, CARRERA_PI);
     }
 
     // Liberar memoria
