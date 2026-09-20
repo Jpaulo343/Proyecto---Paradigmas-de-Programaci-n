@@ -28,8 +28,8 @@
 /**
  * @struct struct Curso
  * @brief Representa un curso individual del plan de estudios.
- * Almacena información académica como código, nombre, créditos, semestre
- * y sus dependencias (requisitos y correquisitos).
+ * Almacena información académica como código, nombre, créditos, semestre,
+ * sus dependencias (requisitos y correquisitos) y si es matriculable o no por el estudiante.
  */
 typedef struct Curso {
     char codigo[TAM_CODIGO];
@@ -40,6 +40,7 @@ typedef struct Curso {
     char requisitos[TAM_REQUISITOS];
     char correquisitos[TAM_CORREQUISITOS];
     char tipo[TAM_TIPO];
+	int matriculable; // 1 = SI, 0 = NO
 } Curso;
 
 /**
@@ -149,4 +150,12 @@ int esCursoAprobado(struct Nodo *historial, const char *codigo);
  */
 int validar_prerrequisitos(struct Nodo *plan, struct Nodo *historial);
 
+
+/**
+ * @brief Evalúa cada curso del plan de estudios y actualiza su campo 'matriculable' a 1
+ *        si el estudiante no lo ha aprobado aún y cumple con todos sus prerrequisitos.
+ * @param plan Lista enlazada con los cursos del plan de estudios.
+ * @param historial Lista enlazada con el historial del estudiante.
+ */
+void actualizar_matriculables(struct Nodo *plan, struct Nodo *historial);
 #endif //PARTE_1_CONSTANTES_Y_AUXILIARES_H

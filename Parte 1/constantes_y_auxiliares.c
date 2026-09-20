@@ -188,6 +188,8 @@ void cargar_plan_estudios(struct Nodo **inicio, const char *ruta) {
             quitarSaltoLinea(c.tipo);
         }
 
+		c.matriculable=0; // Se define como no matriculable por defecto
+
         insertarFinal(inicio, &c, sizeof(struct Curso)); //guardar en estructura de datos utilizando la referencia del objeto
     }
     fclose(plan_estudios); //se libera la memoria
@@ -358,4 +360,41 @@ int validar_prerrequisitos(struct Nodo *plan, struct Nodo *historial) {
         actual = actual->siguiente;
     }
     return errores;
+}
+
+/*
+  Recorre los cursos del plan de estudios. Para cada curso no aprobado,
+  verifica si todos sus requisitos obligatorios estan aprobados en el historial.
+  Asigna c->matriculable = 1 si se puede matricular o lo deja en su estado orignal (0).
+*/
+void actualizar_matriculables(struct Nodo *plan, struct Nodo *historial) {
+    struct Nodo *actual = plan;
+
+    while (actual != NULL) {
+        struct Curso *c = (struct Curso *) actual->dato;
+
+        //Si el curso no ha sido aprobado se verifica que cumple los requisitos
+        if (esCursoAprobado(historial, c->codigo) == 0) {
+            int requisitosCumplidos = 1;
+
+            if (strlen(c->requisitos) > 0) {
+                char copiaReq[TAM_REQUISITOS];
+                strcpy(copiaReq, c->requisitos);
+
+                char *req = strtok(copiaReq, ",");
+                while (req != NULL) {
+                    // Si  un requisito np esta aprobado
+                    if (esCursoAprobado(historial, req) == 0) {
+                        requisitosCumplidos = 0; // Le falta un requisito
+                        break;
+                    }
+                    req = strtok(NULL, ",");
+                }
+            }
+
+            c->matriculable = requisitosCumplidos; // 1 si cumple todos, 0 si no
+        }
+
+        actual = actual->siguiente;
+    }
 }
