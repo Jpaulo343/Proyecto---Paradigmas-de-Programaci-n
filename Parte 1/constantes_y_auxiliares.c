@@ -379,6 +379,8 @@ void actualizar_matriculables(struct Nodo *plan, struct Nodo *historial) {
 
             c->matriculable = requisitosCumplidos; // 1 si cumple todos, 0 si no
         }
+	}
+}
 
         actual = actual->siguiente;
 static int hayChoqueBloques(BloqueHorario b1, BloqueHorario b2) {
