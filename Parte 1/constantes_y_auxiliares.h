@@ -17,7 +17,7 @@
 #define TAM_DIA 5
 #define TAM_HORA 10
 #define MAX_BLOQUES 5
-#define MAX_GRUPOS 10
+#define MAX_GRUPOS 40 // hay cursos con muchos grupos, por ejemplo CI1107 tiene 33 en PI
 
 #define SEPARADOR ';'
 
@@ -93,24 +93,116 @@ typedef struct Nodo {
     struct Nodo *siguiente;
 } Nodo;
 
-// Funciones de Listas y Auxiliares
+// ---------- Funciones de listas y auxiliares ----------
+
+/**
+ * @brief Libera la memoria dinamica de todos los nodos y sus datos en la lista.
+ * @param inicio Puntero al puntero de inicio de la lista enlazada.
+ */
 void liberarLista(struct Nodo **inicio);
+
+/**
+ * @brief Inserta un nuevo nodo con una copia del dato al inicio de la lista enlazada.
+ * @param inicio Puntero al puntero de inicio de la lista enlazada.
+ * @param dato Puntero al dato que se desea almacenar.
+ * @param tamanoDato Tamaño en bytes del tipo de dato a copiar (sizeof).
+ */
 void insertarInicio(struct Nodo **inicio, void *dato, size_t tamanoDato);
+
+/**
+ * @brief Inserta un nuevo nodo con una copia del dato al final de la lista enlazada.
+ * Se usa al cargar los archivos para que la lista quede en el mismo orden del archivo.
+ * @param inicio Puntero al puntero de inicio de la lista enlazada.
+ * @param dato Puntero al dato que se desea almacenar.
+ * @param tamanoDato Tamaño en bytes del tipo de dato a copiar (sizeof).
+ */
 void insertarFinal(struct Nodo **inicio, void *dato, size_t tamanoDato);
+
+/**
+ * @brief Elimina el salto de linea del final de un texto si existe.
+ * @param texto Texto que se desea limpiar.
+ */
 void quitarSaltoLinea(char *texto);
+
+/**
+ * @brief Devuelve el siguiente campo de la linea (hasta el ';') y mueve el cursor al siguiente campo.
+ * A diferencia de strtok, no se salta los campos vacios (";;").
+ * @param cursor Puntero a la posicion actual en la linea. Queda en NULL al llegar al final.
+ * @return El texto del campo, o NULL si ya no hay mas campos.
+ */
 char *separarCampo(char **cursor);
+
+/**
+ * @brief Convierte una hora del archivo ("07:30") a minutos desde las 00:00 (450).
+ * @param horaStr Hora en formato HH:MM.
+ * @return La cantidad de minutos, o 0 si el texto no tiene ese formato.
+ */
 int horaAMinutos(const char *horaStr);
 
-// Carga de datos
+// ---------- Carga de datos ----------
+
+/**
+ * @brief Lee el archivo CSV del plan de estudios y carga los cursos en la lista enlazada.
+ * @param inicio Puntero al puntero de inicio de la lista donde se guardaran los cursos.
+ * @param ruta Ruta del archivo CSV del plan (RUTA_PLAN_CE o RUTA_PLAN_PI).
+ */
 void cargar_plan_estudios(struct Nodo **inicio, const char *ruta);
+
+/**
+ * @brief Lee el archivo CSV del historial del estudiante y lo carga en la lista enlazada.
+ * @param inicio Puntero al puntero de inicio de la lista donde se guardara el historial.
+ * @param ruta Ruta del archivo CSV del historial (RUTA_HISTORIAL_CE o RUTA_HISTORIAL_PI).
+ */
 void cargar_historial(struct Nodo **inicio, const char *ruta);
+
+/**
+ * @brief Lee el archivo CSV de la oferta y le agrega a cada curso del plan sus grupos y horarios.
+ * Cada linea del archivo es una sesion, por lo que un grupo con clases el martes
+ * y el jueves ocupa dos lineas con el mismo codigo y numero de grupo.
+ * @param plan Lista con los cursos del plan, ya cargada.
+ * @param ruta Ruta del archivo CSV de la oferta (RUTA_OFERTA_CE o RUTA_OFERTA_PI).
+ */
 void cargar_oferta(struct Nodo *plan, const char *ruta);
 
-// Busqueda y Validaciones
+// ---------- Busqueda y validaciones ----------
+
+/**
+ * @brief Busca un curso en la lista del plan de estudios por su codigo.
+ * @param plan Lista con los cursos del plan.
+ * @param codigo Codigo del curso que se busca (ej. CE1101).
+ * @return Puntero al curso encontrado, o NULL si no existe.
+ */
 struct Curso *buscarCurso(struct Nodo *plan, const char *codigo);
+
+/**
+ * @brief Revisa que el historial tenga exactamente los mismos cursos que el plan.
+ * @param plan Lista con los cursos del plan.
+ * @param historial Lista con el historial del estudiante.
+ * @return Cantidad de errores encontrados (0 si todo esta bien).
+ */
 int validar_historial(struct Nodo *plan, struct Nodo *historial);
+
+/**
+ * @brief Busca en la lista del historial el codigo de un curso dado.
+ * @param historial Lista con el historial del estudiante.
+ * @param codigo Codigo del curso que se busca.
+ * @return 1 si el curso fue aprobado (SI), 0 en caso contrario.
+ */
 int esCursoAprobado(struct Nodo *historial, const char *codigo);
+
+/**
+ * @brief Revisa que cada curso aprobado tenga tambien aprobados sus requisitos.
+ * @param plan Lista con los cursos del plan.
+ * @param historial Lista con el historial del estudiante.
+ * @return Cantidad de inconsistencias encontradas (0 si todo esta bien).
+ */
 int validar_prerrequisitos(struct Nodo *plan, struct Nodo *historial);
+
+/**
+ * @brief Compara los grupos de todos los cursos del catalogo y marca con
+ * tieneChoque = 1 los cursos que chocan de horario con al menos otro curso.
+ * @param plan Lista con los cursos del plan, con la oferta ya cargada.
+ */
 void calcular_choques_catalogo(struct Nodo *plan);
 
 
