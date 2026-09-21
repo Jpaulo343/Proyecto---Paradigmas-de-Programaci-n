@@ -1,6 +1,10 @@
 #include <stdio.h>
 #include "constantes_y_auxiliares.h"
 
+/*
+  Muestra en pantalla todos los cursos del plan de estudios, con sus datos y
+  la cantidad de grupos y si tiene choques de horario con otros cursos.
+*/
 void mostrar_plan(struct Nodo *inicio) {
     struct Nodo *actual = inicio;
     int cantidad = 0;
@@ -18,6 +22,9 @@ void mostrar_plan(struct Nodo *inicio) {
     printf("Total de cursos: %d\n", cantidad);
 }
 
+/*
+  Muestra en pantalla el historial de un estudiante, con los datos de cada curso y si fue aprobado o no.
+*/
 void mostrar_historial(struct Nodo *historial, struct Nodo *plan) {
     struct Nodo *actual = historial;
     int aprobados = 0;
@@ -41,14 +48,24 @@ void mostrar_historial(struct Nodo *historial, struct Nodo *plan) {
     printf("Cursos aprobados: %d\n", aprobados);
 }
 
+/*
+  Programa principal que carga los planes de estudios y los historiales de los estudiantes,
+  valida los datos y exporta el catalogo en formato JSON.
+*/
 int main(void) {
     struct Nodo *planCE = NULL;
     struct Nodo *planPI = NULL;
     struct Nodo *historialCE = NULL;
     struct Nodo *historialPI = NULL;
 
+    int errores = 0; // se cuenta lo que no se pudo procesar correctamente, para retornar un codigo de salida distinto de cero
+
     printf("\n=== Plan de Ingenieria en Computadores ===\n");
     cargar_plan_estudios(&planCE, RUTA_PLAN_CE);
+    if (planCE == NULL) {
+        printf("Error: no se cargo ningun curso del plan de Computadores\n");
+        errores++;
+    }
     cargar_oferta(planCE, RUTA_OFERTA_CE);
     calcular_choques_catalogo(planCE);
     mostrar_plan(planCE);
@@ -58,11 +75,21 @@ int main(void) {
     if (validar_historial(planCE, historialCE) == 0 && validar_prerrequisitos(planCE, historialCE) == 0) {
         actualizar_matriculables(planCE, historialCE);
         mostrar_historial(historialCE, planCE);
-        exportar_json(planCE, historialCE, RUTA_SALIDA_CE, CARRERA_CE);
+        if (exportar_json(planCE, historialCE, RUTA_SALIDA_CE, CARRERA_CE) != EXITO) {
+            errores++;
+        }
+    } else {
+        // si el historial no es consistente no se exporta, porque el resultado seria incorrecto
+        printf("Error: el historial de Computadores tiene errores, no se exporta el catalogo\n");
+        errores++;
     }
 
     printf("\n=== Plan de Ingenieria en Produccion Industrial ===\n");
     cargar_plan_estudios(&planPI, RUTA_PLAN_PI);
+    if (planPI == NULL) {
+        printf("Error: no se cargo ningun curso del plan de Produccion Industrial\n");
+        errores++;
+    }
     cargar_oferta(planPI, RUTA_OFERTA_PI);
     calcular_choques_catalogo(planPI);
     mostrar_plan(planPI);
@@ -72,7 +99,12 @@ int main(void) {
     if (validar_historial(planPI, historialPI) == 0  && validar_prerrequisitos(planPI, historialPI) == 0) {
         actualizar_matriculables(planPI, historialPI);
         mostrar_historial(historialPI, planPI);
-        exportar_json(planPI, historialPI, RUTA_SALIDA_PI, CARRERA_PI);
+        if (exportar_json(planPI, historialPI, RUTA_SALIDA_PI, CARRERA_PI) != EXITO) {
+            errores++;
+        }
+    } else {
+        printf("Error: el historial de Produccion Industrial tiene errores, no se exporta el catalogo\n");
+        errores++;
     }
 
     // Liberar memoria
@@ -80,6 +112,13 @@ int main(void) {
     liberarLista(&planPI);
     liberarLista(&historialCE);
     liberarLista(&historialPI);
-    
-    return 0;
+
+    // el codigo de salida permite saber desde la terminal si el programa termino bien
+    if (errores > 0) {
+        printf("\nEl programa termino con %d error(es). Codigo de salida: %d\n", errores, ERROR_DATOS);
+        return ERROR_DATOS;
+    }
+
+    printf("\nTodo se proceso correctamente. Codigo de salida: %d\n", EXITO);
+    return EXITO;
 }
