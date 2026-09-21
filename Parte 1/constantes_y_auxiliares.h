@@ -1,7 +1,3 @@
-//
-// Created by jpaul on 9/17/2026.
-//
-
 #ifndef PARTE_1_CONSTANTES_Y_AUXILIARES_H
 #define PARTE_1_CONSTANTES_Y_AUXILIARES_H
 
@@ -17,28 +13,28 @@
 #define TAM_DIA 5
 #define TAM_HORA 10
 #define MAX_BLOQUES 5
-#define MAX_GRUPOS 40 // hay cursos con muchos grupos, por ejemplo CI1107 tiene 33 en PI
+#define MAX_GRUPOS 40
 
-#define SEPARADOR ';'
+#define SEPARADOR ';' // separador de columnas en los archivos CSV
 
-#define RUTA_PLAN_CE "data/plan_CE.csv"
+#define RUTA_PLAN_CE "data/plan_CE.csv" // archivo con el plan de estudios de Computadores
 #define RUTA_PLAN_PI "data/plan_PI.csv"
-#define RUTA_HISTORIAL_CE "data/historial_CE.csv"
+#define RUTA_HISTORIAL_CE "data/historial_CE.csv" // archivo con el historial del estudiante de Computadores
 #define RUTA_HISTORIAL_PI "data/historial_PI.csv"
-#define RUTA_OFERTA_CE "data/oferta_CE.csv"
+#define RUTA_OFERTA_CE "data/oferta_CE.csv" // archivo con la oferta de cursos y horarios del plan de Computadores
 #define RUTA_OFERTA_PI "data/oferta_PI.csv"
 
-#define APROBADO_SI "SI"
-#define APROBADO_NO "NO"
-
-#define RUTA_SALIDA_CE "catalogo_CE.json"
+#define APROBADO_SI "SI" // Valor que indica que el curso fue aprobado en el historial
+#define APROBADO_NO "NO" // Valor que indica que el curso aún no ha sido aprobado en el historial
+#define RUTA_SALIDA_CE "catalogo_CE.json" // archivo de salida con el catalogo completo en formato JSON
 #define RUTA_SALIDA_PI "catalogo_PI.json"
-#define CARRERA_CE "CE"
-#define CARRERA_PI "PI"
-#define PERIODO "2026-2"
+#define CARRERA_CE "CE" // codigo de la carrera que se exporta en el JSON
+#define CARRERA_PI "PI" 
+#define PERIODO "2026-2" // periodo academico que se exporta en el JSON
 
-#define EXITO 0
-#define ERROR_ARCHIVO 1
+#define EXITO 0 // todo bien
+#define ERROR_ARCHIVO 1 // no se pudo abrir o crear un archivo
+#define ERROR_DATOS 2 // los archivos se leyeron pero los datos no son consistentes
 
 /**
  * @struct BloqueHorario
