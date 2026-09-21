@@ -3,71 +3,61 @@
 #include <string.h>
 #include "constantes_y_auxiliares.h"
 
+static Opcion listaOpciones[MAX_OPCIONES];
+static int cantidadOpciones = 0;
 /*
   Recorre la lista enlazada y libera la memoria reservada para el dato y
   la memoria de la estructura del nodo.
 */
 void liberarLista(struct Nodo **inicio) {
     struct Nodo *actual = *inicio;
-
     while (actual != NULL) {
         struct Nodo *temp = actual;
         actual = actual->siguiente;
-
         free(temp->dato); // se libera la memoria del dato
-        free(temp); // se libera la memoria del nodo
+        free(temp);  // se libera la memoria del nodo
     }
-
     *inicio = NULL;
 }
-
 /*
   Reserva memoria en el Heap para un nuevo nodo y para su dato generico,
   realiza una copia exacta de los bytes del puntero dado usando memcpy
   y lo enlaza al inicio de la lista.
 */
 void insertarInicio(struct Nodo **inicio, void *dato, size_t tamanoDato) {
-    struct Nodo *nuevo = malloc(sizeof(Nodo));
-
+    struct Nodo *nuevo = malloc(sizeof(struct Nodo));
     if (nuevo == NULL) {
         printf("Error: no se pudo reservar memoria.\n");
         return;
     }
-
-    nuevo->dato = malloc(tamanoDato); //se reserva por aparte el espacio del dato
+    nuevo->dato = malloc(tamanoDato);
     if (!nuevo->dato) {
         free(nuevo);
         printf("Error: no se pudo reservar memoria para el dato.\n");
         return;
     }
-
-    memcpy(nuevo->dato, dato, tamanoDato); //copia los datos del puntero en el nodo
-
+    memcpy(nuevo->dato, dato, tamanoDato);
     nuevo->siguiente = *inicio;
     *inicio = nuevo;
 }
-
 /*
   Igual que insertarInicio pero recorre la lista hasta el ultimo nodo y
   enlaza el nuevo al final, asi los datos quedan en el orden del archivo.
 */
 void insertarFinal(struct Nodo **inicio, void *dato, size_t tamanoDato) {
-    struct Nodo *nuevo = malloc(sizeof(Nodo));
-
+    struct Nodo *nuevo = malloc(sizeof(struct Nodo));
     if (nuevo == NULL) {
         printf("Error: no se pudo reservar memoria.\n");
         return;
     }
-
-    nuevo->dato = malloc(tamanoDato); //se reserva por aparte el espacio del dato
+    nuevo->dato = malloc(tamanoDato);
     if (!nuevo->dato) {
         free(nuevo);
         printf("Error: no se pudo reservar memoria para el dato.\n");
         return;
     }
-
-    memcpy(nuevo->dato, dato, tamanoDato); //copia los datos del puntero en el nodo
-    nuevo->siguiente = NULL; // al ser el ultimo, no apunta a ningun nodo
+    memcpy(nuevo->dato, dato, tamanoDato);
+    nuevo->siguiente = NULL;
 
     if (*inicio == NULL) {
         *inicio = nuevo;
@@ -75,7 +65,7 @@ void insertarFinal(struct Nodo **inicio, void *dato, size_t tamanoDato) {
     }
 
     struct Nodo *actual = *inicio;
-    while (actual->siguiente != NULL) { // se avanza hasta el ultimo nodo
+    while (actual->siguiente != NULL) {
         actual = actual->siguiente;
     }
     actual->siguiente = nuevo;
@@ -96,7 +86,6 @@ void quitarSaltoLinea(char *texto) {
         i++;
     }
 }
-
 /*
   Funciona parecido a strtok, pero no se salta los campos vacios, es decir,
   busca el siguiente ';', lo cambia por un fin de cadena y deja el cursor
@@ -104,20 +93,17 @@ void quitarSaltoLinea(char *texto) {
 */
 char *separarCampo(char **cursor) {
     char *campo = *cursor;
-    if (campo == NULL) {
-        return NULL;
-    }
+    if (campo == NULL) return NULL;
 
     char *separador = strchr(campo, SEPARADOR);
     if (separador != NULL) {
         *separador = '\0';
         *cursor = separador + 1;
     } else {
-        *cursor = NULL; // era el ultimo campo de la linea
+        *cursor = NULL;
     }
     return campo;
 }
-
 /*
   Convierte una hora del archivo ("07:30") a minutos desde las 00:00 (450),
   asi comparar dos horarios es solo comparar numeros enteros.
@@ -130,28 +116,92 @@ int horaAMinutos(const char *horaStr) {
     return 0;
 }
 
-/*
-  Abre y procesa el archivo CSV con los datos del plan de estudios,
-  separa cada columna mediante separarCampo con delimitador ';', llena los campos
-  del struct Curso e inserta cada curso en la lista enlazada dada.
-*/
+void minutosAHora(int minutos, char *destino) {
+    sprintf(destino, "%02d:%02d", minutos / 60, minutos % 60);
+}
+
+void cargar_opciones(const char *ruta) {
+    FILE *archivo = fopen(ruta, "r");
+    if (!archivo) {
+        printf("No se pudo abrir el archivo de opciones: %s\n", ruta);
+        return;
+    }
+    char buffer[TAM_LINEA];
+    fgets(buffer, TAM_LINEA, archivo); // Omitir encabezado
+    cantidadOpciones = 0;
+    while (fgets(buffer, TAM_LINEA, archivo) && cantidadOpciones < MAX_OPCIONES) {
+        quitarSaltoLinea(buffer);
+        if (buffer[0] == '\0') continue;
+        
+        char *cursor = buffer;
+        char *col_plan = separarCampo(&cursor);
+        char *col_opcion = separarCampo(&cursor);
+        char *col_nombre = separarCampo(&cursor);
+        char *col_categoria = separarCampo(&cursor);
+        
+        if (col_plan && col_opcion) {
+            strncpy(listaOpciones[cantidadOpciones].codigoPlan, col_plan, TAM_CODIGO - 1);
+            strncpy(listaOpciones[cantidadOpciones].codigoOpcion, col_opcion, TAM_CODIGO - 1);
+            if (col_nombre) {
+                strncpy(listaOpciones[cantidadOpciones].nombreOpcion, col_nombre, TAM_NOMBRE - 1);
+            }
+            if (col_categoria) {
+                strncpy(listaOpciones[cantidadOpciones].categoria, col_categoria, TAM_CATEGORIA - 1);
+            }
+            cantidadOpciones++;
+        }
+    }
+    fclose(archivo);
+}
+
+Opcion *buscarOpcion(const char *codigoOferta) {
+    for (int i = 0; i < cantidadOpciones; i++) {
+        if (strcmp(listaOpciones[i].codigoOpcion, codigoOferta) == 0) {
+            return &listaOpciones[i];
+        }
+    }
+    return NULL;
+}
+
+struct Curso *buscarCurso(struct Nodo *plan, const char *codigo) {
+    struct Nodo *actual = plan;
+    while (actual != NULL) {
+        struct Curso *c = (struct Curso *) actual->dato;
+        if (strcmp(c->codigo, codigo) == 0) {
+            return c;
+        }
+        actual = actual->siguiente;
+    }
+    return NULL;
+}
+
+struct Curso *buscarCursoConOpciones(struct Nodo *plan, const char *codigoOferta) {
+    struct Curso *c = buscarCurso(plan, codigoOferta);
+    if (c != NULL) return c;
+
+    Opcion *opc = buscarOpcion(codigoOferta);
+    if (opc != NULL) {
+        c = buscarCurso(plan, opc->codigoPlan);
+        if (c != NULL) return c;
+        c = buscarCurso(plan, "SE1400");
+        if (c != NULL) return c;
+    }
+    return NULL;
+}
+
 void cargar_plan_estudios(struct Nodo **inicio, const char *ruta) {
-    FILE *plan_estudios = fopen(ruta,"r");
+    FILE *plan_estudios = fopen(ruta, "r");
     if (!plan_estudios) {
         printf("No se puede abrir el plan de estudios %s\n", ruta);
         return;
     }
     char buffer[TAM_LINEA];
-
     fgets(buffer, TAM_LINEA, plan_estudios);
 
     while (fgets(buffer, TAM_LINEA, plan_estudios)) {
-        if (buffer[0] == '\n' || buffer[0] == '\r') {
-            continue;
-        }
+        if (buffer[0] == '\n' || buffer[0] == '\r') continue;
 
-        struct Curso c = {0}; // se inicializa con 0 para evitar basura en memoria
-
+        struct Curso c = {0};
         char *cursor = buffer;
         char *columna = separarCampo(&cursor);
 
@@ -161,7 +211,7 @@ void cargar_plan_estudios(struct Nodo **inicio, const char *ruta) {
         if (columna) strncpy(c.nombre, columna, TAM_NOMBRE - 1);
 
         columna = separarCampo(&cursor);
-        if (columna) c.creditos = atoi(columna); //se convierte el texto a int
+        if (columna) c.creditos = atoi(columna);
 
         columna = separarCampo(&cursor);
         if (columna) c.horas = atoi(columna);
@@ -181,25 +231,23 @@ void cargar_plan_estudios(struct Nodo **inicio, const char *ruta) {
             quitarSaltoLinea(c.tipo);
         }
 
-		c.matriculable=0; // Se define como no matriculable por defecto
-
-        insertarFinal(inicio, &c, sizeof(struct Curso)); //guardar en estructura de datos utilizando la referencia del objeto
+        c.matriculable = 0;
+        insertarFinal(inicio, &c, sizeof(struct Curso));
     }
     fclose(plan_estudios);
 }
-
 /*
   Abre y procesa el archivo CSV con el historial del estudiante,
   cada linea tiene el codigo;aprobado;opcion. La columna aprobado se convierte a 1 (SI) o 0 (NO)
 */
 void cargar_historial(struct Nodo **inicio, const char *ruta) {
-    FILE *archivo = fopen(ruta,"r");
+    FILE *archivo = fopen(ruta, "r");
     if (!archivo) {
         printf("No se puede abrir el historial %s\n", ruta);
         return;
     }
     char buffer[TAM_LINEA];
-    int numeroLinea = 1; // la linea 1 es el encabezado
+    int numeroLinea = 1;
 
     fgets(buffer, TAM_LINEA, archivo);
 
@@ -209,7 +257,6 @@ void cargar_historial(struct Nodo **inicio, const char *ruta) {
         if (buffer[0] == '\0') continue;
 
         struct Historial h = {0};
-
         char *cursor = buffer;
         char *columna = separarCampo(&cursor);
         if (columna) strncpy(h.codigo, columna, TAM_CODIGO - 1);
@@ -231,7 +278,6 @@ void cargar_historial(struct Nodo **inicio, const char *ruta) {
     }
     fclose(archivo);
 }
-
 /*
   Abre y procesa el archivo CSV con la oferta de horarios. Cada linea es una
   sesion (codigo;grupo;dia;inicio;fin), asi que se busca el curso en el plan,
@@ -262,13 +308,14 @@ void cargar_oferta(struct Nodo *plan, const char *ruta) {
             continue;
         }
 
-        struct Curso *c = buscarCurso(plan, col_codigo);
+        struct Curso *c = buscarCursoConOpciones(plan, col_codigo);
+
         if (c != NULL) {
             int numGrupo = atoi(col_grupo);
-            
             int idxGrupo = -1;
+
             for (int i = 0; i < c->cantidadGrupos; i++) {
-                if (c->grupos[i].numeroGrupo == numGrupo) {
+                if (c->grupos[i].numeroGrupo == numGrupo && strcmp(c->grupos[i].codigoOpcion, col_codigo) == 0) {
                     idxGrupo = i;
                     break;
                 }
@@ -278,12 +325,19 @@ void cargar_oferta(struct Nodo *plan, const char *ruta) {
                 if (c->cantidadGrupos < MAX_GRUPOS) {
                     idxGrupo = c->cantidadGrupos;
                     c->grupos[idxGrupo].numeroGrupo = numGrupo;
+                    strncpy(c->grupos[idxGrupo].codigoOpcion, col_codigo, TAM_CODIGO - 1);
+                    
+                    Opcion *opc = buscarOpcion(col_codigo);
+                    if (opc) {
+                        strncpy(c->grupos[idxGrupo].nombreOpcion, opc->nombreOpcion, TAM_NOMBRE - 1);
+                    } else {
+                        strncpy(c->grupos[idxGrupo].nombreOpcion, c->nombre, TAM_NOMBRE - 1);
+                    }
+
                     c->grupos[idxGrupo].cantidadBloques = 0;
                     c->cantidadGrupos++;
                 } else {
-                    // si no se avisa, el curso queda con menos grupos de los que ofrece el TEC
-                    printf("Error en %s: el curso %s tiene mas de %d grupos, el grupo %d no se cargo\n",
-                           ruta, c->codigo, MAX_GRUPOS, numGrupo);
+                    printf("Error en %s: el curso %s tiene mas de %d grupos\n", ruta, c->codigo, MAX_GRUPOS);
                 }
             }
 
@@ -296,63 +350,45 @@ void cargar_oferta(struct Nodo *plan, const char *ruta) {
                     b->horaFin = horaAMinutos(col_fin);
                     g->cantidadBloques++;
                 } else {
-                    printf("Error en %s: el grupo %d de %s tiene mas de %d bloques\n",
-                           ruta, numGrupo, c->codigo, MAX_BLOQUES);
+                    printf("Error en %s: el grupo %d de %s tiene mas de %d bloques\n", ruta, numGrupo, c->codigo, MAX_BLOQUES);
                 }
             }
         }
     }
     fclose(archivo);
 }
-
 /*
   Recorre la lista de cursos y compara cada codigo con strcmp
   Retorna el puntero al curso encontrado o NULL si no esta
 */
-struct Curso *buscarCurso(struct Nodo *plan, const char *codigo) {
-    struct Nodo *actual = plan;
-    while (actual != NULL) {
-        struct Curso *c = (struct Curso *) actual->dato;
-        if (strcmp(c->codigo, codigo) == 0) {
-            return c;
-        }
-        actual = actual->siguiente;
-    }
-    return NULL;
-}
-
-/*
-  Revisa que el historial sea consistente, es decir, cada codigo del historial debe existir en el plan
-  y cada curso del plan debe aparecer en el historial
-  Retorna la cantidad de errores encontrados
-*/
 int validar_historial(struct Nodo *plan, struct Nodo *historial) {
     int errores = 0;
-    
     struct Nodo *actual = historial;
     while (actual != NULL) {
         struct Historial *h = (struct Historial *) actual->dato;
-        if (buscarCurso(plan, h->codigo) == NULL) {
+        if (buscarCursoConOpciones(plan, h->codigo) == NULL) {
             printf("Error: el curso %s del historial no esta en el plan de estudios\n", h->codigo);
             errores++;
         }
         actual = actual->siguiente;
     }
-
     actual = plan;
     while (actual != NULL) {
         struct Curso *c = (struct Curso *) actual->dato;
         int encontrado = 0;
-
         struct Nodo *otro = historial;
         while (otro != NULL && !encontrado) {
             struct Historial *h = (struct Historial *) otro->dato;
             if (strcmp(h->codigo, c->codigo) == 0) {
                 encontrado = 1;
+            } else {
+                Opcion *opc = buscarOpcion(h->codigo);
+                if (opc && (strcmp(opc->codigoPlan, c->codigo) == 0 || strcmp(c->codigo, "SE1400") == 0)) {
+                    encontrado = 1;
+                }
             }
             otro = otro->siguiente;
         }
-
         if (!encontrado) {
             printf("Error: el curso %s del plan no aparece en el historial\n", c->codigo);
             errores++;
@@ -361,7 +397,6 @@ int validar_historial(struct Nodo *plan, struct Nodo *historial) {
     }
     return errores;
 }
-
 /*
   Busca en la lista del historial el codigo de un curso dado.
   Retorna 1 si el curso fue aprobado (SI) o 0 en caso contrario.
@@ -370,16 +405,17 @@ int esCursoAprobado(struct Nodo *historial, const char *codigo) {
     struct Nodo *actual = historial;
     while (actual != NULL) {
         struct Historial *h = (struct Historial *) actual->dato;
-
-        if (h != NULL && strcmp(h->codigo, codigo) == 0) {
-            return h->aprobado;
+        if (h != NULL) {
+            if (strcmp(h->codigo, codigo) == 0) return h->aprobado;
+            Opcion *opc = buscarOpcion(h->codigo);
+            if (opc && (strcmp(opc->codigoPlan, codigo) == 0 || strcmp(codigo, "SE1400") == 0)) {
+                return h->aprobado;
+            }
         }
-
         actual = actual->siguiente;
     }
     return 0;
 }
-
 /*
   Recorre todos los cursos del plan de estudios. Para cada curso que el estudiante
   haya aprobado en su historial, separa sus requisitos obligatorios por comas
@@ -389,15 +425,12 @@ int esCursoAprobado(struct Nodo *historial, const char *codigo) {
 int validar_prerrequisitos(struct Nodo *plan, struct Nodo *historial) {
     int errores = 0;
     struct Nodo *actual = plan;
-
     while (actual != NULL) {
         struct Curso *c = (struct Curso *) actual->dato;
-
         if (c != NULL && esCursoAprobado(historial, c->codigo) == 1) {
-            if (strlen(c->requisitos) > 0) {
+            if (strlen(c->requisitos) > 0 && strcmp(c->requisitos, "NaN") != 0) {
                 char copiaReq[TAM_REQUISITOS];
                 strcpy(copiaReq, c->requisitos);
-
                 char *req = strtok(copiaReq, ",");
                 while (req != NULL) {
                     if (esCursoAprobado(historial, req) == 0) {
@@ -412,105 +445,57 @@ int validar_prerrequisitos(struct Nodo *plan, struct Nodo *historial) {
     }
     return errores;
 }
-
 /*
   Revisa si todos los requisitos de un curso estan aprobados en el historial.
   Retorna 1 si los cumple todos (o si el curso no tiene requisitos) y 0 si le falta alguno.
 */
 int cumple_requisitos(struct Nodo *historial, struct Curso *c) {
-    if (strlen(c->requisitos) == 0) {
-        return 1; // sin requisitos, se cumple
+    if (strlen(c->requisitos) == 0 || strcmp(c->requisitos, "NaN") == 0) {
+        return 1;
     }
-
     char copiaReq[TAM_REQUISITOS];
     strcpy(copiaReq, c->requisitos);
-
     char *req = strtok(copiaReq, ",");
     while (req != NULL) {
         if (esCursoAprobado(historial, req) == 0) {
-            return 0; // le falta un requisito
+            return 0;
         }
         req = strtok(NULL, ",");
     }
     return 1;
 }
-
 /*
-  Verifica si un correquisito esta aprobado O si el estudiante cumple
-  los requisitos para matricularlo simultaneamente este semestre.
+  Revisa si todos los requisitos de un curso estan aprobados en el historial.
+  Retorna 1 si los cumple todos (o si el curso no tiene requisitos) y 0 si le falta alguno.
 */
 int es_Correquisito_Posible(struct Nodo *plan, struct Nodo *historial, const char *codigo_Correq) {
-    // Si ya esta aprobado, es 100% valido
     if (esCursoAprobado(historial, codigo_Correq) == 1) {
         return 1;
     }
-
-    // Si no esta aprobado, se busca el curso en el plan para ver si se cumplen sus prerrequisitos
     struct Curso *cCorreq = buscarCurso(plan, codigo_Correq);
     if (cCorreq == NULL) {
-		printf("error: no se pudo cargar el curso en 'es_Correquisito_Posible'");
-		return 0;
-	}
-
-    // Verificar si el correquisito cumple sus propios prerrequisitos
-    if (strlen(cCorreq->requisitos) > 0) {
-        char copiaReq[TAM_REQUISITOS];
-        strcpy(copiaReq, cCorreq->requisitos);
-
-        char *req = strtok(copiaReq, ",");
-        while (req != NULL) {
-            if (esCursoAprobado(historial, req) == 0) {
-                return 0; // Le falta un requisito al correquisito, por lo que no se puede llevar
-            }
-            req = strtok(NULL, ",");
-        }
+        printf("Error: no se pudo cargar el curso en 'es_Correquisito_Posible'\n");
+        return 0;
     }
-
-    return 1; // Cumple sus requisitos, se puede llevar simultaneamente
+    return cumple_requisitos(historial, cCorreq);
 }
 
-/*
-  Recorre los cursos del plan de estudios. Para cada curso no aprobado,
-  verifica si todos sus requisitos obligatorios estan aprobados en el historial.
-  Asigna c->matriculable = 1 si se puede matricular o lo deja en su estado orignal (0).
-*/
 void actualizar_matriculables(struct Nodo *plan, struct Nodo *historial) {
     struct Nodo *actual = plan;
-
     while (actual != NULL) {
         struct Curso *c = (struct Curso *) actual->dato;
-
         if (c != NULL) {
-            // Si el curso ya fue aprobado, no es matriculable
             if (esCursoAprobado(historial, c->codigo) == 1) {
                 c->matriculable = 0;
             } else {
-                int requisitosCumplidos = 1;
+                int requisitosCumplidos = cumple_requisitos(historial, c);
 
-                if (strlen(c->requisitos) > 0 && strcmp(c->requisitos, "NaN") != 0) {
-                    char copiaReq[TAM_REQUISITOS];
-                    strncpy(copiaReq, c->requisitos, TAM_REQUISITOS - 1);
-                    copiaReq[TAM_REQUISITOS - 1] = '\0';
-
-                    char *req = strtok(copiaReq, ",");
-                    while (req != NULL) {
-                        if (esCursoAprobado(historial, req) == 0) {
-                            requisitosCumplidos = 0; // Le falta un requisito
-                            break;
-                        }
-                        req = strtok(NULL, ",");
-                    }
-                }
-
-                // Validar correquisitos solo
                 if (requisitosCumplidos && strlen(c->correquisitos) > 0 && strcmp(c->correquisitos, "NaN") != 0) {
                     char copiaCorreq[TAM_CORREQUISITOS];
                     strncpy(copiaCorreq, c->correquisitos, TAM_CORREQUISITOS - 1);
                     copiaCorreq[TAM_CORREQUISITOS - 1] = '\0';
-
                     char *correq = strtok(copiaCorreq, ",");
                     while (correq != NULL) {
-                        // Si el correquisito no esta aprobado Y no se puede matricular simultaneamente
                         if (!es_Correquisito_Posible(plan, historial, correq)) {
                             requisitosCumplidos = 0;
                             break;
@@ -518,25 +503,17 @@ void actualizar_matriculables(struct Nodo *plan, struct Nodo *historial) {
                         correq = strtok(NULL, ",");
                     }
                 }
-
-                c->matriculable = requisitosCumplidos; // 1 si cumple todos, 0 si no
+                c->matriculable = requisitosCumplidos;
             }
         }
-
-        actual = actual->siguiente; // Se avanza al siguiente nodo dentro del while
+        actual = actual->siguiente;
     }
 }
-/*
-  Dos bloques chocan si son el mismo dia y sus horas se traslapan.
-  Si uno termina justo cuando empieza el otro NO se considera choque.
-*/
+
 static int hayChoqueBloques(BloqueHorario b1, BloqueHorario b2) {
-    if (strcmp(b1.dia, b2.dia) != 0) {
-        return 0;
-    }
+    if (strcmp(b1.dia, b2.dia) != 0) return 0;
     return (b1.horaInicio < b2.horaFin && b2.horaInicio < b1.horaFin);
 }
-
 /*
   Compara todos los bloques de un grupo contra los del otro.
   Basta con que un par de bloques choque para que los grupos choquen.
@@ -551,7 +528,6 @@ static int hayChoqueGrupos(Grupo g1, Grupo g2) {
     }
     return 0;
 }
-
 /*
   Compara cada curso del catalogo contra todos los demas, grupo por grupo,
   y marca con tieneChoque = 1 a los que chocan con al menos otro curso.
@@ -562,11 +538,9 @@ void calcular_choques_catalogo(struct Nodo *plan) {
     struct Nodo *n1 = plan;
     while (n1 != NULL) {
         struct Curso *c1 = (struct Curso *) n1->dato;
-
         struct Nodo *n2 = plan;
         while (n2 != NULL) {
             struct Curso *c2 = (struct Curso *) n2->dato;
-
             if (strcmp(c1->codigo, c2->codigo) != 0) {
                 for (int i = 0; i < c1->cantidadGrupos; i++) {
                     for (int j = 0; j < c2->cantidadGrupos; j++) {
@@ -582,17 +556,9 @@ void calcular_choques_catalogo(struct Nodo *plan) {
         n1 = n1->siguiente;
     }
 }
-
 /*
   Convierte los minutos guardados en el bloque (450) al texto de la hora
   ("07:30")
-*/
-void minutosAHora(int minutos, char *destino) {
-    sprintf(destino, "%02d:%02d", minutos / 60, minutos % 60);
-}
-
-/*
-  Escribe un texto entre comillas en el JSON
 */
 static void escribir_texto_json(FILE *archivo, const char *texto) {
     fprintf(archivo, "\"");
@@ -606,18 +572,19 @@ static void escribir_texto_json(FILE *archivo, const char *texto) {
     }
     fprintf(archivo, "\"");
 }
-
 /*
   Escribe una lista de codigos como arreglo JSON
   Si el texto viene vacio escribe un arreglo vacio.
 */
 static void escribir_lista_json(FILE *archivo, const char *texto) {
+    if (strcmp(texto, "NaN") == 0) {
+        fprintf(archivo, "[]");
+        return;
+    }
     char copia[TAM_REQUISITOS];
     strncpy(copia, texto, TAM_REQUISITOS - 1);
     copia[TAM_REQUISITOS - 1] = '\0';
-
     fprintf(archivo, "[");
-
     char *cursor = copia;
     int primero = 1;
     while (cursor != NULL && *cursor != '\0') {
@@ -629,38 +596,34 @@ static void escribir_lista_json(FILE *archivo, const char *texto) {
         } else {
             cursor = NULL;
         }
-
-        if (!primero) {
-            fprintf(archivo, ", "); // la coma va entre elementos, no despues del ultimo
-        }
+        if (!primero) fprintf(archivo, ", ");
         escribir_texto_json(archivo, codigo);
         primero = 0;
     }
-
     fprintf(archivo, "]");
 }
-
 /*
   Escribe los grupos de un curso con sus bloques de horario. Cada bloque
   lleva el dia, la hora en texto y la hora en minutos (para que sea mas facil de comparar)
 */
 static void escribir_grupos_json(FILE *archivo, struct Curso *c) {
     fprintf(archivo, "      \"grupos\": [\n");
-
     for (int i = 0; i < c->cantidadGrupos; i++) {
         Grupo *g = &c->grupos[i];
-        fprintf(archivo, "        { \"numero\": %d, \"horarios\": [", g->numeroGrupo);
-
+        fprintf(archivo, "        { \"numero\": %d, ", g->numeroGrupo);
+        fprintf(archivo, "\"codigo_opcion\": ");
+        escribir_texto_json(archivo, g->codigoOpcion);
+        fprintf(archivo, ", \"nombre_opcion\": ");
+        escribir_texto_json(archivo, g->nombreOpcion);
+        fprintf(archivo, ", \"horarios\": [");
+        
         for (int j = 0; j < g->cantidadBloques; j++) {
             BloqueHorario *b = &g->bloques[j];
-            char horaInicio[TAM_HORA];
-            char horaFin[TAM_HORA];
+            char horaInicio[TAM_HORA], horaFin[TAM_HORA];
             minutosAHora(b->horaInicio, horaInicio);
             minutosAHora(b->horaFin, horaFin);
-
-            if (j > 0) {
-                fprintf(archivo, ", ");
-            }
+            
+            if (j > 0) fprintf(archivo, ", ");
             fprintf(archivo, "{ \"dia\": ");
             escribir_texto_json(archivo, b->dia);
             fprintf(archivo, ", \"inicio\": ");
@@ -669,27 +632,24 @@ static void escribir_grupos_json(FILE *archivo, struct Curso *c) {
             escribir_texto_json(archivo, horaFin);
             fprintf(archivo, ", \"inicio_min\": %d, \"fin_min\": %d }", b->horaInicio, b->horaFin);
         }
-
         fprintf(archivo, "] }");
-        if (i < c->cantidadGrupos - 1) {
-            fprintf(archivo, ",");
-        }
+        if (i < c->cantidadGrupos - 1) fprintf(archivo, ",");
         fprintf(archivo, "\n");
     }
-
     fprintf(archivo, "      ]\n");
 }
-
 /*
   Escribe como arreglo JSON los correquisitos que el estudiante todavia no ha aprobado
 */
 static void escribir_correquisitos_pendientes_json(FILE *archivo, struct Nodo *historial, struct Curso *c) {
+    if (strcmp(c->correquisitos, "NaN") == 0) {
+        fprintf(archivo, "[]");
+        return;
+    }
     char copia[TAM_CORREQUISITOS];
     strncpy(copia, c->correquisitos, TAM_CORREQUISITOS - 1);
     copia[TAM_CORREQUISITOS - 1] = '\0';
-
     fprintf(archivo, "[");
-
     char *cursor = copia;
     int primero = 1;
     while (cursor != NULL && *cursor != '\0') {
@@ -701,19 +661,14 @@ static void escribir_correquisitos_pendientes_json(FILE *archivo, struct Nodo *h
         } else {
             cursor = NULL;
         }
-
-        if (esCursoAprobado(historial, codigo) == 0) { // solo los que faltan
-            if (!primero) {
-                fprintf(archivo, ", ");
-            }
+        if (esCursoAprobado(historial, codigo) == 0) {
+            if (!primero) fprintf(archivo, ", ");
             escribir_texto_json(archivo, codigo);
             primero = 0;
         }
     }
-
     fprintf(archivo, "]");
 }
-
 /*
   Recorre todo el plan de estudios y escribe el JSON con todos los cursos.
 */
@@ -723,16 +678,14 @@ int exportar_json(struct Nodo *plan, struct Nodo *historial, const char *ruta, c
         printf("No se puede crear el archivo de salida %s\n", ruta);
         return ERROR_ARCHIVO;
     }
-
     fprintf(salida, "{\n");
     fprintf(salida, "  \"carrera\": \"%s\",\n", carrera);
     fprintf(salida, "  \"periodo\": \"%s\",\n", PERIODO);
     fprintf(salida, "  \"cursos\": [\n");
-
+    
     struct Nodo *actual = plan;
     while (actual != NULL) {
         struct Curso *c = (struct Curso *) actual->dato;
-
         fprintf(salida, "    {\n");
         fprintf(salida, "      \"codigo\": ");
         escribir_texto_json(salida, c->codigo);
@@ -754,19 +707,13 @@ int exportar_json(struct Nodo *plan, struct Nodo *historial, const char *ruta, c
         fprintf(salida, ",\n      \"matriculable\": %s,\n", c->matriculable ? "true" : "false");
         fprintf(salida, "      \"tiene_choque\": %s,\n", c->tieneChoque ? "true" : "false");
         escribir_grupos_json(salida, c);
-
         fprintf(salida, "    }");
-        if (actual->siguiente != NULL) {
-            fprintf(salida, ","); // el ultimo curso no lleva coma
-        }
+        if (actual->siguiente != NULL) fprintf(salida, ",");
         fprintf(salida, "\n");
-
         actual = actual->siguiente;
     }
-
     fprintf(salida, "  ]\n");
     fprintf(salida, "}\n");
-
     fclose(salida);
     printf("Catalogo exportado en %s\n", ruta);
     return EXITO;

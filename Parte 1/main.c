@@ -1,6 +1,11 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <stdbool.h>
 #include "constantes_y_auxiliares.h"
 #include "constantes.h"
+#include "config.h"
+
 /*
   Muestra en pantalla todos los cursos del plan de estudios, con sus datos y
   la cantidad de grupos y si tiene choques de horario con otros cursos.
@@ -60,6 +65,14 @@ int main(void) {
 
     int errores = 0; // se cuenta lo que no se pudo procesar correctamente, para retornar un codigo de salida distinto de cero
 
+    // CARGA DE OPCIONES CULTURALES/DEPORTIVAS
+    // Debe ejecutarse antes de cargar la oferta de cualquier plan.
+    // Se invoca con un solo argumento (la ruta del archivo)
+    cargar_opciones(RUTA_OPCIONES);
+
+    
+    // INGENIERÍA EN COMPUTADORES
+   
     printf("\n=== Plan de Ingenieria en Computadores ===\n");
     cargar_plan_estudios(&planCE, RUTA_PLAN_CE);
     if (planCE == NULL) {
@@ -84,6 +97,9 @@ int main(void) {
         errores++;
     }
 
+    
+    //  PRODUCCIÓN INDUSTRIAL
+    
     printf("\n=== Plan de Ingenieria en Produccion Industrial ===\n");
     cargar_plan_estudios(&planPI, RUTA_PLAN_PI);
     if (planPI == NULL) {
@@ -107,7 +123,9 @@ int main(void) {
         errores++;
     }
 
-    // Liberar memoria
+    
+    // LIBERACIÓN DE MEMORIA Y SALIDA
+    
     liberarLista(&planCE);
     liberarLista(&planPI);
     liberarLista(&historialCE);
