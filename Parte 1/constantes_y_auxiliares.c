@@ -417,6 +417,28 @@ int validar_prerrequisitos(struct Nodo *plan, struct Nodo *historial) {
 }
 
 /*
+  Revisa si todos los requisitos de un curso estan aprobados en el historial.
+  Retorna 1 si los cumple todos (o si el curso no tiene requisitos) y 0 si le falta alguno.
+*/
+int cumple_requisitos(struct Nodo *historial, struct Curso *c) {
+    if (strlen(c->requisitos) == 0) {
+        return 1; // sin requisitos, se cumple
+    }
+
+    char copiaReq[TAM_REQUISITOS];
+    strcpy(copiaReq, c->requisitos);
+
+    char *req = strtok(copiaReq, ",");
+    while (req != NULL) {
+        if (esCursoAprobado(historial, req) == 0) {
+            return 0; // le falta un requisito
+        }
+        req = strtok(NULL, ",");
+    }
+    return 1;
+}
+
+/*
   Verifica si un correquisito esta aprobado O si el estudiante cumple
   los requisitos para matricularlo simultaneamente este semestre.
 */
@@ -562,4 +584,193 @@ void calcular_choques_catalogo(struct Nodo *plan) {
         }
         n1 = n1->siguiente;
     }
+}
+
+/*
+  Convierte los minutos guardados en el bloque (450) al texto de la hora
+  ("07:30")
+*/
+void minutosAHora(int minutos, char *destino) {
+    sprintf(destino, "%02d:%02d", minutos / 60, minutos % 60);
+}
+
+/*
+  Escribe un texto entre comillas en el JSON
+*/
+static void escribir_texto_json(FILE *archivo, const char *texto) {
+    fprintf(archivo, "\"");
+    int i = 0;
+    while (texto[i] != '\0') {
+        if (texto[i] == '"' || texto[i] == '\\') {
+            fprintf(archivo, "\\");
+        }
+        fprintf(archivo, "%c", texto[i]);
+        i++;
+    }
+    fprintf(archivo, "\"");
+}
+
+/*
+  Escribe una lista de codigos como arreglo JSON
+  Si el texto viene vacio escribe un arreglo vacio.
+*/
+static void escribir_lista_json(FILE *archivo, const char *texto) {
+    char copia[TAM_REQUISITOS];
+    strncpy(copia, texto, TAM_REQUISITOS - 1);
+    copia[TAM_REQUISITOS - 1] = '\0';
+
+    fprintf(archivo, "[");
+
+    char *cursor = copia;
+    int primero = 1;
+    while (cursor != NULL && *cursor != '\0') {
+        char *codigo = cursor;
+        char *coma = strchr(cursor, ',');
+        if (coma != NULL) {
+            *coma = '\0';
+            cursor = coma + 1;
+        } else {
+            cursor = NULL;
+        }
+
+        if (!primero) {
+            fprintf(archivo, ", "); // la coma va entre elementos, no despues del ultimo
+        }
+        escribir_texto_json(archivo, codigo);
+        primero = 0;
+    }
+
+    fprintf(archivo, "]");
+}
+
+/*
+  Escribe los grupos de un curso con sus bloques de horario. Cada bloque
+  lleva el dia, la hora en texto y la hora en minutos (para que sea mas facil de comparar)
+*/
+static void escribir_grupos_json(FILE *archivo, struct Curso *c) {
+    fprintf(archivo, "      \"grupos\": [\n");
+
+    for (int i = 0; i < c->cantidadGrupos; i++) {
+        Grupo *g = &c->grupos[i];
+        fprintf(archivo, "        { \"numero\": %d, \"horarios\": [", g->numeroGrupo);
+
+        for (int j = 0; j < g->cantidadBloques; j++) {
+            BloqueHorario *b = &g->bloques[j];
+            char horaInicio[TAM_HORA];
+            char horaFin[TAM_HORA];
+            minutosAHora(b->horaInicio, horaInicio);
+            minutosAHora(b->horaFin, horaFin);
+
+            if (j > 0) {
+                fprintf(archivo, ", ");
+            }
+            fprintf(archivo, "{ \"dia\": ");
+            escribir_texto_json(archivo, b->dia);
+            fprintf(archivo, ", \"inicio\": ");
+            escribir_texto_json(archivo, horaInicio);
+            fprintf(archivo, ", \"fin\": ");
+            escribir_texto_json(archivo, horaFin);
+            fprintf(archivo, ", \"inicio_min\": %d, \"fin_min\": %d }", b->horaInicio, b->horaFin);
+        }
+
+        fprintf(archivo, "] }");
+        if (i < c->cantidadGrupos - 1) {
+            fprintf(archivo, ",");
+        }
+        fprintf(archivo, "\n");
+    }
+
+    fprintf(archivo, "      ]\n");
+}
+
+/*
+  Escribe como arreglo JSON los correquisitos que el estudiante todavia no ha aprobado
+*/
+static void escribir_correquisitos_pendientes_json(FILE *archivo, struct Nodo *historial, struct Curso *c) {
+    char copia[TAM_CORREQUISITOS];
+    strncpy(copia, c->correquisitos, TAM_CORREQUISITOS - 1);
+    copia[TAM_CORREQUISITOS - 1] = '\0';
+
+    fprintf(archivo, "[");
+
+    char *cursor = copia;
+    int primero = 1;
+    while (cursor != NULL && *cursor != '\0') {
+        char *codigo = cursor;
+        char *coma = strchr(cursor, ',');
+        if (coma != NULL) {
+            *coma = '\0';
+            cursor = coma + 1;
+        } else {
+            cursor = NULL;
+        }
+
+        if (esCursoAprobado(historial, codigo) == 0) { // solo los que faltan
+            if (!primero) {
+                fprintf(archivo, ", ");
+            }
+            escribir_texto_json(archivo, codigo);
+            primero = 0;
+        }
+    }
+
+    fprintf(archivo, "]");
+}
+
+/*
+  Recorre todo el plan de estudios y escribe el JSON con todos los cursos.
+*/
+int exportar_json(struct Nodo *plan, struct Nodo *historial, const char *ruta, const char *carrera) {
+    FILE *salida = fopen(ruta, "w");
+    if (!salida) {
+        printf("No se puede crear el archivo de salida %s\n", ruta);
+        return ERROR_ARCHIVO;
+    }
+
+    fprintf(salida, "{\n");
+    fprintf(salida, "  \"carrera\": \"%s\",\n", carrera);
+    fprintf(salida, "  \"periodo\": \"%s\",\n", PERIODO);
+    fprintf(salida, "  \"cursos\": [\n");
+
+    struct Nodo *actual = plan;
+    while (actual != NULL) {
+        struct Curso *c = (struct Curso *) actual->dato;
+
+        fprintf(salida, "    {\n");
+        fprintf(salida, "      \"codigo\": ");
+        escribir_texto_json(salida, c->codigo);
+        fprintf(salida, ",\n      \"nombre\": ");
+        escribir_texto_json(salida, c->nombre);
+        fprintf(salida, ",\n      \"creditos\": %d,\n", c->creditos);
+        fprintf(salida, "      \"horas\": %d,\n", c->horas);
+        fprintf(salida, "      \"semestre\": %d,\n", c->semestre);
+        fprintf(salida, "      \"tipo\": ");
+        escribir_texto_json(salida, c->tipo);
+        fprintf(salida, ",\n      \"requisitos\": ");
+        escribir_lista_json(salida, c->requisitos);
+        fprintf(salida, ",\n      \"correquisitos\": ");
+        escribir_lista_json(salida, c->correquisitos);
+        fprintf(salida, ",\n      \"aprobado\": %s,\n", esCursoAprobado(historial, c->codigo) ? "true" : "false");
+        fprintf(salida, "      \"cumple_requisitos\": %s,\n", cumple_requisitos(historial, c) ? "true" : "false");
+        fprintf(salida, "      \"correquisitos_pendientes\": ");
+        escribir_correquisitos_pendientes_json(salida, historial, c);
+        fprintf(salida, ",\n      \"matriculable\": %s,\n", c->matriculable ? "true" : "false");
+        fprintf(salida, "      \"tiene_choque\": %s,\n", c->tieneChoque ? "true" : "false");
+        escribir_grupos_json(salida, c);
+
+        fprintf(salida, "    }");
+        if (actual->siguiente != NULL) {
+            fprintf(salida, ","); // el ultimo curso no lleva coma
+        }
+        fprintf(salida, "\n");
+
+        actual = actual->siguiente;
+    }
+
+    fprintf(salida, "  ]\n");
+    fprintf(salida, "}\n");
+
+    fclose(salida);
+    printf("Catalogo exportado en %s\n", ruta);
+    return EXITO;
 }

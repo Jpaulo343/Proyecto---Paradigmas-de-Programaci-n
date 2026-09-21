@@ -31,6 +31,15 @@
 #define APROBADO_SI "SI"
 #define APROBADO_NO "NO"
 
+#define RUTA_SALIDA_CE "catalogo_CE.json"
+#define RUTA_SALIDA_PI "catalogo_PI.json"
+#define CARRERA_CE "CE"
+#define CARRERA_PI "PI"
+#define PERIODO "2026-2"
+
+#define EXITO 0
+#define ERROR_ARCHIVO 1
+
 /**
  * @struct BloqueHorario
  * @brief Representa un bloque de clase con dia y rango horario.
@@ -191,6 +200,14 @@ int validar_historial(struct Nodo *plan, struct Nodo *historial);
 int esCursoAprobado(struct Nodo *historial, const char *codigo);
 
 /**
+ * @brief Revisa si el estudiante tiene aprobados todos los requisitos de un curso.
+ * @param historial Lista con el historial del estudiante.
+ * @param c Curso que se desea revisar.
+ * @return 1 si cumple todos los requisitos (o si el curso no tiene), 0 si le falta alguno.
+ */
+int cumple_requisitos(struct Nodo *historial, struct Curso *c);
+
+/**
  * @brief Revisa que cada curso aprobado tenga tambien aprobados sus requisitos.
  * @param plan Lista con los cursos del plan.
  * @param historial Lista con el historial del estudiante.
@@ -204,6 +221,26 @@ int validar_prerrequisitos(struct Nodo *plan, struct Nodo *historial);
  * @param plan Lista con los cursos del plan, con la oferta ya cargada.
  */
 void calcular_choques_catalogo(struct Nodo *plan);
+
+// Exportacion 
+/**
+ * @brief Convierte minutos desde las 00:00 (450) al texto de la hora ("07:30").
+ * @param minutos Cantidad de minutos desde las 00:00.
+ * @param destino Arreglo de al menos TAM_HORA caracteres donde se escribe la hora.
+ */
+void minutosAHora(int minutos, char *destino); 
+
+/**
+ * @brief Escribe el catalogo completo en un archivo JSON
+ * Incluye por cada curso sus datos, requisitos, correquisitos, grupos con sus
+ * horarios, si choca con otro curso y si el estudiante lo puede matricular.
+ * @param plan Lista con los cursos del plan, con la oferta y los choques ya calculados.
+ * @param historial Lista con el historial del estudiante.
+ * @param ruta Ruta del archivo de salida (RUTA_SALIDA_CE o RUTA_SALIDA_PI).
+ * @param carrera Codigo de la carrera que se exporta (CARRERA_CE o CARRERA_PI).
+ * @return EXITO si se escribio el archivo, ERROR_ARCHIVO si no se pudo crear.
+ */
+int exportar_json(struct Nodo *plan, struct Nodo *historial, const char *ruta, const char *carrera);
 
 
 /**
