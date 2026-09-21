@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include "constantes_y_auxiliares.h"
-
+#include "constantes.h"
 /*
   Muestra en pantalla todos los cursos del plan de estudios, con sus datos y
   la cantidad de grupos y si tiene choques de horario con otros cursos.
