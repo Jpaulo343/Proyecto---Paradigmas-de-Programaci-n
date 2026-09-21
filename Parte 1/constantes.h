@@ -14,7 +14,11 @@
 
 // Límites de oferta
 #define MAX_BLOQUES 5
-#define MAX_GRUPOS 40
+#define MAX_GRUPOS 70 
+#define MAX_OPCIONES 100
+
+// Comodin que se cumple con cualquier actividad cultural o deportiva
+#define COMODIN_CULTURAL_DEPORTIVO "SE1400"
 
 #define SEPARADOR ';' // Separador CSV
 
