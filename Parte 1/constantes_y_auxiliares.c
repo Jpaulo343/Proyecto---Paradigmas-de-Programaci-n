@@ -183,7 +183,7 @@ struct Curso *buscarCursoConOpciones(struct Nodo *plan, const char *codigoOferta
     if (opc != NULL) {
         c = buscarCurso(plan, opc->codigoPlan);
         if (c != NULL) return c;
-        c = buscarCurso(plan, "SE1400");
+        c = buscarCurso(plan, COMODIN_CULTURAL_DEPORTIVO);
         if (c != NULL) return c;
     }
     return NULL;
@@ -280,8 +280,10 @@ void cargar_historial(struct Nodo **inicio, const char *ruta) {
 }
 /*
   Abre y procesa el archivo CSV con la oferta de horarios. Cada linea es una
-  sesion (codigo;grupo;dia;inicio;fin), asi que se busca el curso en el plan,
-  se busca o se crea su grupo y se le agrega el bloque de horario.
+  sesion (codigo;grupo;dia;inicio;fin), asi que se busca el curso en el plan
+  y se le agrega la sesion a su grupo. Las actividades culturales y deportivas
+  se agregan a su comodin (SE1100 o SE1200) y tambien a SE1400, porque
+  SE1400 se puede cumplir con cualquiera de ellas.
 */
 void cargar_oferta(struct Nodo *plan, const char *ruta) {
     FILE *archivo = fopen(ruta, "r");
@@ -308,9 +310,25 @@ void cargar_oferta(struct Nodo *plan, const char *ruta) {
             continue;
         }
 
-        struct Curso *c = buscarCursoConOpciones(plan, col_codigo);
+        // destinos[0] es el curso del plan (o el comodin SE1100/SE1200 si es una actividad).
+        // destinos[1] es SE1400, solo si la linea es una actividad cultural o deportiva,
+        // porque SE1400 se puede cumplir con cualquiera de ellas.
+        struct Curso *destinos[2];
+        destinos[0] = buscarCursoConOpciones(plan, col_codigo);
+        destinos[1] = NULL;
+        if (buscarOpcion(col_codigo) != NULL) {
+            destinos[1] = buscarCurso(plan, COMODIN_CULTURAL_DEPORTIVO);
+            if (destinos[1] == destinos[0]) {
+                destinos[1] = NULL; // no se agrega dos veces al mismo curso
+            }
+        }
 
-        if (c != NULL) {
+        for (int d = 0; d < 2; d++) {
+            struct Curso *c = destinos[d];
+            if (c == NULL) {
+                continue;
+            }
+
             int numGrupo = atoi(col_grupo);
             int idxGrupo = -1;
 
@@ -326,7 +344,7 @@ void cargar_oferta(struct Nodo *plan, const char *ruta) {
                     idxGrupo = c->cantidadGrupos;
                     c->grupos[idxGrupo].numeroGrupo = numGrupo;
                     strncpy(c->grupos[idxGrupo].codigoOpcion, col_codigo, TAM_CODIGO - 1);
-                    
+
                     Opcion *opc = buscarOpcion(col_codigo);
                     if (opc) {
                         strncpy(c->grupos[idxGrupo].nombreOpcion, opc->nombreOpcion, TAM_NOMBRE - 1);
@@ -383,7 +401,7 @@ int validar_historial(struct Nodo *plan, struct Nodo *historial) {
                 encontrado = 1;
             } else {
                 Opcion *opc = buscarOpcion(h->codigo);
-                if (opc && (strcmp(opc->codigoPlan, c->codigo) == 0 || strcmp(c->codigo, "SE1400") == 0)) {
+                if (opc && (strcmp(opc->codigoPlan, c->codigo) == 0 || strcmp(c->codigo, COMODIN_CULTURAL_DEPORTIVO) == 0)) {
                     encontrado = 1;
                 }
             }
@@ -408,7 +426,7 @@ int esCursoAprobado(struct Nodo *historial, const char *codigo) {
         if (h != NULL) {
             if (strcmp(h->codigo, codigo) == 0) return h->aprobado;
             Opcion *opc = buscarOpcion(h->codigo);
-            if (opc && (strcmp(opc->codigoPlan, codigo) == 0 || strcmp(codigo, "SE1400") == 0)) {
+            if (opc && (strcmp(opc->codigoPlan, codigo) == 0 || strcmp(codigo, COMODIN_CULTURAL_DEPORTIVO) == 0)) {
                 return h->aprobado;
             }
         }
@@ -480,6 +498,11 @@ int es_Correquisito_Posible(struct Nodo *plan, struct Nodo *historial, const cha
     return cumple_requisitos(historial, cCorreq);
 }
 
+/*
+  Recorre los cursos del plan de estudios y marca cuales puede matricular el estudiante.
+  Un curso es matriculable si no esta aprobado, si se ofrece en el periodo,
+  si cumple sus requisitos y si cada correquisito esta aprobado o se puede llevar a la vez.
+*/
 void actualizar_matriculables(struct Nodo *plan, struct Nodo *historial) {
     struct Nodo *actual = plan;
     while (actual != NULL) {
@@ -487,6 +510,8 @@ void actualizar_matriculables(struct Nodo *plan, struct Nodo *historial) {
         if (c != NULL) {
             if (esCursoAprobado(historial, c->codigo) == 1) {
                 c->matriculable = 0;
+            } else if (c->cantidadGrupos == 0) {
+                c->matriculable = 0; // no se ofrece en este periodo
             } else {
                 int requisitosCumplidos = cumple_requisitos(historial, c);
 
@@ -494,16 +519,56 @@ void actualizar_matriculables(struct Nodo *plan, struct Nodo *historial) {
                     char copiaCorreq[TAM_CORREQUISITOS];
                     strncpy(copiaCorreq, c->correquisitos, TAM_CORREQUISITOS - 1);
                     copiaCorreq[TAM_CORREQUISITOS - 1] = '\0';
-                    char *correq = strtok(copiaCorreq, ",");
-                    while (correq != NULL) {
+
+                    char *correq = copiaCorreq;
+                    while (correq != NULL && *correq != '\0') {
+                        char *coma = strchr(correq, ',');
+                        if (coma != NULL) {
+                            *coma = '\0'; // se corta el codigo actual
+                        }
+
                         if (!es_Correquisito_Posible(plan, historial, correq)) {
                             requisitosCumplidos = 0;
                             break;
                         }
-                        correq = strtok(NULL, ",");
+
+                        correq = (coma != NULL) ? coma + 1 : NULL; // se pasa al siguiente codigo
                     }
                 }
                 c->matriculable = requisitosCumplidos;
+            }
+        }
+        actual = actual->siguiente;
+    }
+}
+
+/*
+  Quita de SE1400 los grupos de las actividades que el estudiante ya llevo,
+  porque no puede repetir una actividad cultural o deportiva. Las actividades
+  ya llevadas se leen de la columna "opcion" del historial.
+*/
+void quitar_actividades_llevadas(struct Nodo *plan, struct Nodo *historial) {
+    struct Curso *mixto = buscarCurso(plan, COMODIN_CULTURAL_DEPORTIVO);
+    if (mixto == NULL) {
+        return;
+    }
+
+    struct Nodo *actual = historial;
+    while (actual != NULL) {
+        struct Historial *h = (struct Historial *) actual->dato;
+
+        if (h->opcion[0] != '\0') {
+            int i = 0;
+            while (i < mixto->cantidadGrupos) {
+                if (strcmp(mixto->grupos[i].codigoOpcion, h->opcion) == 0) {
+                    // se corren los grupos siguientes una posicion hacia atras
+                    for (int j = i; j < mixto->cantidadGrupos - 1; j++) {
+                        mixto->grupos[j] = mixto->grupos[j + 1];
+                    }
+                    mixto->cantidadGrupos--;
+                } else {
+                    i++;
+                }
             }
         }
         actual = actual->siguiente;
@@ -544,6 +609,11 @@ void calcular_choques_catalogo(struct Nodo *plan) {
             if (strcmp(c1->codigo, c2->codigo) != 0) {
                 for (int i = 0; i < c1->cantidadGrupos; i++) {
                     for (int j = 0; j < c2->cantidadGrupos; j++) {
+                        // SE1400 comparte grupos con SE1100 y SE1200: el mismo grupo real no choca consigo mismo
+                        if (c1->grupos[i].numeroGrupo == c2->grupos[j].numeroGrupo &&
+                            strcmp(c1->grupos[i].codigoOpcion, c2->grupos[j].codigoOpcion) == 0) {
+                            continue;
+                        }
                         if (hayChoqueGrupos(c1->grupos[i], c2->grupos[j])) {
                             c1->tieneChoque = 1;
                             c2->tieneChoque = 1;

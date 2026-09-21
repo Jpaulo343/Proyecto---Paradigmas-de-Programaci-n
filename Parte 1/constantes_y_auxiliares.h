@@ -4,8 +4,6 @@
 #include <stddef.h>
 #include "constantes.h"
 
-#define MAX_OPCIONES 100
-
 /**
  * @struct BloqueHorario
  * @brief Representa un bloque de clase con día y rango horario.
@@ -240,6 +238,14 @@ int es_Correquisito_Posible(struct Nodo *plan, struct Nodo *historial, const cha
  * @param historial Lista enlazada con el historial del estudiante.
  */
 void actualizar_matriculables(struct Nodo *plan, struct Nodo *historial);
+
+/**
+ * @brief Quita de SE1400 los grupos de las actividades que el estudiante ya llevo,
+ * porque una actividad cultural o deportiva no se puede repetir.
+ * @param plan Lista con los cursos del plan, con la oferta ya cargada.
+ * @param historial Lista con el historial del estudiante (columna opcion).
+ */
+void quitar_actividades_llevadas(struct Nodo *plan, struct Nodo *historial);
 
 // ---------- Exportación ----------
 
