@@ -1,4 +1,4 @@
-﻿codigo;nombre;creditos;horas;semestre;requisitos;correquisitos;tipo
+codigo;nombre;creditos;horas;semestre;requisitos;correquisitos;tipo
 CI0202;Inglés básico;2;3;0;;;CURSO
 CI1106;Comunicación escrita;2;6;1;;;CURSO
 CI1230;Inglés I;2;6;1;CI0202;;CURSO
@@ -31,3 +31,15 @@ MA2104;Cálculo superior;4;4;4;MA1103;;CURSO
 MI2109;Estática;3;9;4;FI1101,FI1201;;CURSO
 PI2304;Estudio del trabajo I;3;4;4;MI2101,PI3501;PI2610;CURSO
 PI2610;Probabilidad y estadística I;3;4;4;CA2125,MA1102;;CURSO
+CS3404;Seminario de ética para la ingeniería;2;5;5;CS2101;;CURSO
+MA2105;Ecuaciones diferenciales;4;4;5;MA1103;;CURSO
+MI3138;Máquinas y equipos;3;4;5;MI2109;;CURSO
+PI3308;Estudio del trabajo II;3;4;5;PI2304;;CURSO
+PI3407;Computación industrial;3;3;5;CA2125,CI1231;;CURSO
+PI3612;Probabilidad y estadística II;3;9;5;MA1103,PI2610;;CURSO
+CM3207;Métodos numéricos para ingeniería;3;4;6;MA2105,PI3407;;CURSO
+ME2208;Ciencias de los materiales;3;3;6;FI1102,QU1107;;CURSO
+PI3206;Logística y administración de la cadena de abastecimiento;3;3;6;PI3612;PI3603;CURSO
+PI3403;Sistema de información;3;3;6;PI3407;;CURSO
+PI3512;Dirección de personal;3;4;6;CS2303,PI3308;;CURSO
+PI3603;Investigación de operaciones I;3;4;6;MA2105;;CURSO
