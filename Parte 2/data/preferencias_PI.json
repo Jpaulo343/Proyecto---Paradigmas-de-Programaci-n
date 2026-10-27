@@ -1,0 +1,18 @@
+{
+    "creditos_min": 10,
+    "creditos_max": 13,
+    "cursos_interes": [
+        {
+            "codigo": "FI1101",
+            "numeros_grupos": [1,20]
+        },
+        {
+            "codigo": "FI1201",
+            "numeros_grupos": [5,24]
+        },
+        {
+            "codigo": "PI3501",
+            "numeros_grupos": [1,2,3]
+        }
+    ]
+}
