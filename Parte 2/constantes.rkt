@@ -1,9 +1,9 @@
 #lang typed/racket
 
 (provide RUTA-CATALOGO-CE
-         RUTA-CATALOGO-PI)
-         ;;RUTA-PREFERENCIAS
-         ;;RUTA-SALIDA)
+         RUTA-CATALOGO-PI
+         RUTA-PREFERENCIAS
+         RUTA-SALIDA)
 
 ;;; Rutas de los archivos de entrada y salida
 (: RUTA-CATALOGO-CE String)
@@ -12,8 +12,8 @@
 (: RUTA-CATALOGO-PI String)
 (define RUTA-CATALOGO-PI "../Parte 1/catalogo_PI.json")
 
-;;;(: RUTA-PREFERENCIAS String)
-;;;(define RUTA-PREFERENCIAS "data/preferencias_estudiante.json")
+(: RUTA-PREFERENCIAS String)
+(define RUTA-PREFERENCIAS "data/preferencias_estudiante.json")
 
-;;;(: RUTA-SALIDA String)
-;;;(define RUTA-SALIDA "data/combinaciones_salida.json")
+(: RUTA-SALIDA String)
+(define RUTA-SALIDA "data/combinaciones_salida.json")
