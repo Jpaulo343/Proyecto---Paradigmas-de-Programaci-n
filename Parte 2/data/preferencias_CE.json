@@ -1,0 +1,18 @@
+{
+    "creditos_min": 8,
+    "creditos_max": 12,
+    "cursos_interes": [
+        {
+            "codigo": "CE2103",
+            "numeros_grupos": [1]
+        },
+        {
+            "codigo": "CS2101",
+            "numeros_grupos": [1,5]
+        },
+        {
+            "codigo": "MA2104",
+            "numeros_grupos": [4,5]
+        }
+    ]
+}

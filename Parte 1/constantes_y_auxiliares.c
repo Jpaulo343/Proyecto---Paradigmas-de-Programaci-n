@@ -759,6 +759,8 @@ int exportar_json(struct Nodo *plan, struct Nodo *historial, const char *ruta, c
         fprintf(salida, "    {\n");
         fprintf(salida, "      \"codigo\": ");
         escribir_texto_json(salida, c->codigo);
+        fprintf(salida, ",\n      \"carrera\": ");
+        escribir_texto_json(salida, carrera);
         fprintf(salida, ",\n      \"nombre\": ");
         escribir_texto_json(salida, c->nombre);
         fprintf(salida, ",\n      \"creditos\": %d,\n", c->creditos);
