@@ -8,7 +8,8 @@
 (provide (contract-out
           [json->bloque (-> hash? Bloque-Horario?)]
           [json->grupo (-> hash? Grupo?)]
-          [json->curso (-> hash? Curso?)]))
+          [json->curso (-> hash? Curso?)]
+          [cargar-catalogo (-> path-string? (listof Curso?))]))
 
 ;;; Función: json->bloque
 ;;; Toma una tabla hash de un bloque horario (proveniente del JSON)
@@ -38,31 +39,46 @@
          (hash-ref g 'nombre_opcion)
          (map json->bloque (hash-ref g 'horarios))))
 
+
 ;;; Función: json->curso
 ;;; Toma una tabla hash de un curso (proveniente del JSON) y construye un struct Curso.
 ;;; Entrada:
-;;;   - c: Tabla hash con las llaves 'codigo, 'nombre, 'carrera, 'creditos, 'horas,
-;;;        'semestre, 'tipo, 'matriculable, 'correquisitos_pendientes y 'grupos.
+;;;   - c: Tabla hash con las llaves 'codigo, 'carrera, 'nombre, 'creditos, 'horas,
+;;;        'semestre, 'tipo, 'requisitos, 'correquisitos, 'aprobado,
+;;;        'cumple_requisitos, 'correquisitos_pendientes, 'matriculable,
+;;;        'tiene_choque y 'grupos.
 ;;; Salida:
 ;;;   - Instancia del struct Curso.
 (define (json->curso c)
   (Curso (hash-ref c 'codigo)
-         (hash-ref c 'nombre)
          (hash-ref c 'carrera)
+         (hash-ref c 'nombre)
          (hash-ref c 'creditos)
          (hash-ref c 'horas)
          (hash-ref c 'semestre)
          (hash-ref c 'tipo)
-         (hash-ref c 'matriculable)
+         (hash-ref c 'requisitos)
+         (hash-ref c 'correquisitos)
+         (hash-ref c 'aprobado)
+         (hash-ref c 'cumple_requisitos)
          (hash-ref c 'correquisitos_pendientes)
+         (hash-ref c 'matriculable)
+         (hash-ref c 'tiene_choque)
          (map json->grupo (hash-ref c 'grupos))))
 
 
+;;; Función: cargar-catalogo
+;;; Lee el archivo JSON de un catálogo de carrera y devuelve la lista de structs Curso.
+;;; Entrada:
+;;;   - ruta: Ruta del archivo JSON (ej. RUTA-CATALOGO-CE o RUTA-CATALOGO-PI).
+;;; Salida:
+;;;   - Lista de instancias del struct Curso.
+(define (cargar-catalogo ruta)
+  (define datos (call-with-input-file ruta read-json))
+  (map json->curso (hash-ref datos 'cursos)))
 
-;;; Prueba
-(define datos-prueba (call-with-input-file RUTA-CATALOGO-CE read-json))
-(define primer-curso (first (hash-ref datos-prueba 'cursos)))
 
-
-(displayln "Primer curso convertido (con sus grupos y horarios adentro):")
-(println (first (json->curso primer-curso)))
+;;; Prueba rápida de carga
+(define catalogo-ce (cargar-catalogo RUTA-CATALOGO-CE))
+(displayln "Primer curso convertido de catalogo_CE.json:")
+(println (first catalogo-ce))
