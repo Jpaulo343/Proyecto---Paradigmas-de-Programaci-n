@@ -40,7 +40,7 @@
 ;;; Salida:
 ;;;   - Instancia del struct Preferencias.
 (define (cargar-preferencias ruta)
-
+ (json->preferencias (call-with-input-file ruta read-json)))
 
 
 ;;; Prueba
