@@ -4,7 +4,8 @@
          "lector.rkt"
          "preferencias.rkt"
          "procesador.rkt"
-         "exportador.rkt")
+         "exportador.rkt"
+         "tipos.rkt")
 
 (define (ejecutar-etapa-2)
   (displayln "  CEmestre - Etapa 2 (Paradigma Funcional)")

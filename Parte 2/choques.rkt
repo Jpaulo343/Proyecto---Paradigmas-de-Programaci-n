@@ -31,18 +31,19 @@
 
 
 ;;; Pruebas
-(displayln "--- bloques-chocan? ---")
-(bloques-chocan? (Bloque-Horario "MAR" "07:30" "09:20" 450 560) (Bloque-Horario "MAR" "08:00" "10:00" 480 600))
-(bloques-chocan? (Bloque-Horario "MAR" "07:30" "09:20" 450 560) (Bloque-Horario "MAR" "09:20" "11:00" 560 660))
-(bloques-chocan? (Bloque-Horario "MAR" "07:30" "09:20" 450 560) (Bloque-Horario "MAR" "10:00" "11:00" 600 660))
-(bloques-chocan? (Bloque-Horario "MAR" "07:30" "09:20" 450 560) (Bloque-Horario "JUE" "07:30" "09:20" 450 560))
-(bloques-chocan? (Bloque-Horario "MAR" "07:30" "11:00" 450 660) (Bloque-Horario "MAR" "08:00" "09:00" 480 540))
+(module+ main
+  (displayln "--- bloques-chocan? ---")
+  (bloques-chocan? (Bloque-Horario "MAR" "07:30" "09:20" 450 560) (Bloque-Horario "MAR" "08:00" "10:00" 480 600))
+  (bloques-chocan? (Bloque-Horario "MAR" "07:30" "09:20" 450 560) (Bloque-Horario "MAR" "09:20" "11:00" 560 660))
+  (bloques-chocan? (Bloque-Horario "MAR" "07:30" "09:20" 450 560) (Bloque-Horario "MAR" "10:00" "11:00" 600 660))
+  (bloques-chocan? (Bloque-Horario "MAR" "07:30" "09:20" 450 560) (Bloque-Horario "JUE" "07:30" "09:20" 450 560))
+  (bloques-chocan? (Bloque-Horario "MAR" "07:30" "11:00" 450 660) (Bloque-Horario "MAR" "08:00" "09:00" 480 540))
 
-;; Datos para grupos
-(define ce2103-g1 (Grupo 1 "CE2103" "AED II" (list (Bloque-Horario "MAR" "07:30" "09:20" 450 560) (Bloque-Horario "JUE" "07:30" "09:20" 450 560))))
-(define pi3501-g1 (Grupo 1 "PI3501" "Costos I" (list (Bloque-Horario "MAR" "07:30" "10:20" 450 620))))
-(define pi3501-g2 (Grupo 2 "PI3501" "Costos I" (list (Bloque-Horario "MAR" "17:00" "19:50" 1020 1190))))
+  ;; Datos para grupos
+  (define ce2103-g1 (Grupo 1 "CE2103" "AED II" (list (Bloque-Horario "MAR" "07:30" "09:20" 450 560) (Bloque-Horario "JUE" "07:30" "09:20" 450 560))))
+  (define pi3501-g1 (Grupo 1 "PI3501" "Costos I" (list (Bloque-Horario "MAR" "07:30" "10:20" 450 620))))
+  (define pi3501-g2 (Grupo 2 "PI3501" "Costos I" (list (Bloque-Horario "MAR" "17:00" "19:50" 1020 1190))))
 
-(displayln "--- grupos-chocan? ---")
-(grupos-chocan? ce2103-g1 pi3501-g1)
-(grupos-chocan? ce2103-g1 pi3501-g2)
+  (displayln "--- grupos-chocan? ---")
+  (grupos-chocan? ce2103-g1 pi3501-g1)
+  (grupos-chocan? ce2103-g1 pi3501-g2))

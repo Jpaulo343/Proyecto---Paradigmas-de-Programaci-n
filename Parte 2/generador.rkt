@@ -60,25 +60,26 @@
 
 
 ;;; Pruebas
-(define ce2103-grupo1 (Grupo 1 "CE2103" "AED II"
-                              (list (Bloque-Horario "MAR" "07:30" "09:20" 450 560)
-                                    (Bloque-Horario "JUE" "07:30" "09:20" 450 560))))
-(define pi3501-grupo1 (Grupo 1 "PI3501" "Costos I" (list (Bloque-Horario "MAR" "07:30" "10:20" 450 620))))
-(define pi3501-grupo2 (Grupo 2 "PI3501" "Costos I" (list (Bloque-Horario "MAR" "17:00" "19:50" 1020 1190))))
-(define pi3501-grupo3 (Grupo 3 "PI3501" "Costos I" (list (Bloque-Horario "MIE" "13:00" "15:50" 780 950))))
+(module+ main
+  (define ce2103-grupo1 (Grupo 1 "CE2103" "AED II"
+                                (list (Bloque-Horario "MAR" "07:30" "09:20" 450 560)
+                                      (Bloque-Horario "JUE" "07:30" "09:20" 450 560))))
+  (define pi3501-grupo1 (Grupo 1 "PI3501" "Costos I" (list (Bloque-Horario "MAR" "07:30" "10:20" 450 620))))
+  (define pi3501-grupo2 (Grupo 2 "PI3501" "Costos I" (list (Bloque-Horario "MAR" "17:00" "19:50" 1020 1190))))
+  (define pi3501-grupo3 (Grupo 3 "PI3501" "Costos I" (list (Bloque-Horario "MIE" "13:00" "15:50" 780 950))))
 
-(define curso-ce2103 (Curso "CE2103" "CE" "AED II" 4 12 3 "CURSO" '() '() #f #t '() #t #f (list ce2103-grupo1)))
-(define curso-pi3501 (Curso "PI3501" "PI" "Costos I" 3 3 2 "CURSO" '() '() #f #t '() #t #f (list pi3501-grupo1 pi3501-grupo2 pi3501-grupo3)))
+  (define curso-ce2103 (Curso "CE2103" "CE" "AED II" 4 12 3 "CURSO" '() '() #f #t '() #t #f (list ce2103-grupo1)))
+  (define curso-pi3501 (Curso "PI3501" "PI" "Costos I" 3 3 2 "CURSO" '() '() #f #t '() #t #f (list pi3501-grupo1 pi3501-grupo2 pi3501-grupo3)))
 
-(define pendientes (list (cons curso-ce2103 (list ce2103-grupo1))
-                          (cons curso-pi3501 (list pi3501-grupo1 pi3501-grupo2 pi3501-grupo3))))
+  (define pendientes (list (cons curso-ce2103 (list ce2103-grupo1))
+                            (cons curso-pi3501 (list pi3501-grupo1 pi3501-grupo2 pi3501-grupo3))))
 
-(define crudas (generar-combinaciones-crudas pendientes '()))
+  (define crudas (generar-combinaciones-crudas pendientes '()))
 
-(displayln "--- generar-combinaciones-crudas ---")
-(displayln "primera combinacion, sin calcular las demas (laziness):")
-(for/list ([par (stream-first crudas)]) (list (Curso-codigo (car par)) (Grupo-numero (cdr par))))
+  (displayln "--- generar-combinaciones-crudas ---")
+  (displayln "primera combinacion, sin calcular las demas (laziness):")
+  (for/list ([par (stream-first crudas)]) (list (Curso-codigo (car par)) (Grupo-numero (cdr par))))
 
-(displayln "todas las combinaciones (deberian ser 2 de 3: PI3501 grupo 1 choca):")
-(for/list ([combo (stream->list crudas)])
-  (for/list ([par combo]) (list (Curso-codigo (car par)) (Grupo-numero (cdr par)))))
+  (displayln "todas las combinaciones (deberian ser 2 de 3: PI3501 grupo 1 choca):")
+  (for/list ([combo (stream->list crudas)])
+    (for/list ([par combo]) (list (Curso-codigo (car par)) (Grupo-numero (cdr par))))))

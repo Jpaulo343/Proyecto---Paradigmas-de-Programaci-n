@@ -39,26 +39,27 @@
 
 
 ;;; Pruebas
-(define grupo1 (Grupo 1 "CE2103" "AED II" '()))
-(define grupo2 (Grupo 2 "CE2103" "AED II" '()))
-(define grupo3 (Grupo 3 "CE2103" "AED II" '()))
+(module+ main
+  (define grupo1 (Grupo 1 "CE2103" "AED II" '()))
+  (define grupo2 (Grupo 2 "CE2103" "AED II" '()))
+  (define grupo3 (Grupo 3 "CE2103" "AED II" '()))
 
-(define ce2103 (Curso "CE2103" "CE" "AED II" 4 12 3 "CURSO" '() '() #f #t '() #t #f (list grupo1 grupo2 grupo3)))
-(define ma2104 (Curso "MA2104" "CE" "Calculo superior" 4 4 3 "CURSO" '() '() #f #t '() #f #f (list grupo1)))
-(define catalogo-prueba (list ce2103 ma2104))
+  (define ce2103 (Curso "CE2103" "CE" "AED II" 4 12 3 "CURSO" '() '() #f #t '() #t #f (list grupo1 grupo2 grupo3)))
+  (define ma2104 (Curso "MA2104" "CE" "Calculo superior" 4 4 3 "CURSO" '() '() #f #t '() #f #f (list grupo1)))
+  (define catalogo-prueba (list ce2103 ma2104))
 
-(displayln "--- candidatos-de-interes ---")
-(displayln "caso normal, pide los grupos 1 y 3:")
-(candidatos-de-interes catalogo-prueba (Curso-Interes "CE2103" '(1 3)))
+  (displayln "--- candidatos-de-interes ---")
+  (displayln "caso normal, pide los grupos 1 y 3:")
+  (candidatos-de-interes catalogo-prueba (Curso-Interes "CE2103" '(1 3)))
 
-(displayln "caso sin numeros de grupo, debe traer los 3:")
-(candidatos-de-interes catalogo-prueba (Curso-Interes "CE2103" '()))
+  (displayln "caso sin numeros de grupo, debe traer los 3:")
+  (candidatos-de-interes catalogo-prueba (Curso-Interes "CE2103" '()))
 
-(displayln "caso curso no matriculable, debe avisar y dar #f:")
-(candidatos-de-interes catalogo-prueba (Curso-Interes "MA2104" '(1)))
+  (displayln "caso curso no matriculable, debe avisar y dar #f:")
+  (candidatos-de-interes catalogo-prueba (Curso-Interes "MA2104" '(1)))
 
-(displayln "caso curso que no existe en el catalogo, debe avisar y dar #f:")
-(candidatos-de-interes catalogo-prueba (Curso-Interes "FI1101" '(1)))
+  (displayln "caso curso que no existe en el catalogo, debe avisar y dar #f:")
+  (candidatos-de-interes catalogo-prueba (Curso-Interes "FI1101" '(1)))
 
-(displayln "caso pide un grupo que no se oferta, debe avisar y dar #f:")
-(candidatos-de-interes catalogo-prueba (Curso-Interes "CE2103" '(9)))
+  (displayln "caso pide un grupo que no se oferta, debe avisar y dar #f:")
+  (candidatos-de-interes catalogo-prueba (Curso-Interes "CE2103" '(9))))

@@ -44,11 +44,11 @@
 
 
 ;;; Prueba
-(displayln " Preferencias CE cargadas ")
-(define prefs-ce (cargar-preferencias RUTA-PREFERENCIAS-CE))
-(println prefs-ce)
+(module+ main
+  (displayln " Preferencias CE cargadas ")
+  (define prefs-ce (cargar-preferencias RUTA-PREFERENCIAS-CE))
+  (println prefs-ce)
 
-(displayln "\n Preferencias PI cargadas ")
-(define prefs-pi (cargar-preferencias RUTA-PREFERENCIAS-PI))
-(println prefs-pi)
-
+  (displayln "\n Preferencias PI cargadas ")
+  (define prefs-pi (cargar-preferencias RUTA-PREFERENCIAS-PI))
+  (println prefs-pi))

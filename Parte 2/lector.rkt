@@ -79,6 +79,7 @@
 
 
 ;;; Prueba rápida de carga
-(define catalogo-ce (cargar-catalogo RUTA-CATALOGO-CE))
-(displayln "Primer curso convertido de catalogo_CE.json:")
-(println (first catalogo-ce))
+(module+ main
+  (define catalogo-ce (cargar-catalogo RUTA-CATALOGO-CE))
+  (displayln "Primer curso convertido de catalogo_CE.json:")
+  (println (first catalogo-ce)))
