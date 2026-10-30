@@ -1,5 +1,7 @@
 # CEmestre — Etapa 1: Paradigma Imperativo (C)
 
+[← Volver al índice del proyecto](../README.md)
+
 Instituto Tecnológico de Costa Rica · Escuela de Ingeniería en Computadores
 Paradigmas de Programación (CE1106) · II Semestre 2026
 
