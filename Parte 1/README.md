@@ -12,8 +12,6 @@ Paradigmas de Programación (CE1106) · II Semestre 2026
 
 ---
 
-# Etapa 1: Paradigma Imperativo (C)
-
 ## 1. Descripción general
 
 El presente proyecto corresponde a la Etapa 1 (Paradigma Imperativo) de **CEmestre**, un sistema que ayuda a un estudiante a construir su horario de matrícula. Esta etapa es un programa en C que:
@@ -240,3 +238,23 @@ Se generan `catalogo_CE.json` y `catalogo_PI.json`:
 | `matriculable` | No está aprobado, se ofrece en el periodo, cumple requisitos y sus correquisitos se pueden llevar |
 | `tiene_choque` | Al menos uno de sus grupos choca con un grupo de otro curso del catálogo |
 | `codigo_opcion` | Código real del grupo; en los comodines es la actividad concreta (ej. `SE1105`) |
+
+---
+
+## 5. Compilación y ejecución
+
+Desde la carpeta `Parte 1`:
+
+```bash
+gcc -Wall -Wextra -std=c99 main.c constantes_y_auxiliares.c -o cemestre
+./cemestre
+```
+
+En Windows (PowerShell / CMD):
+
+```powershell
+gcc -Wall -Wextra -std=c99 main.c constantes_y_auxiliares.c -o cemestre.exe
+.\cemestre.exe
+```
+
+Al ejecutarse, el programa valida ambos historiales y genera `catalogo_CE.json` y `catalogo_PI.json` dentro de `Parte 1/`.
