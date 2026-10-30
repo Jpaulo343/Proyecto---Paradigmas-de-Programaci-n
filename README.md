@@ -10,15 +10,17 @@ Paradigmas de Programación (CE1106) · II Semestre 2026
 
 ---
 
+# Etapa 1: Paradigma Imperativo (C)
+
 ## 1. Descripción general
 
 El presente proyecto corresponde a la Etapa 1 (Paradigma Imperativo) de **CEmestre**, un sistema que ayuda a un estudiante a construir su horario de matrícula. Esta etapa es un programa en C que:
 
-1. Carga y limpia los datos de los primeros 4 semestres de las carreras de Ingeniería en Computadores (CE, plan 2103) e Ingeniería en Producción Industrial (PI, plan 1425).
+1. Carga y limpia los datos de los primeros 6 semestres (bloques 0 a 6) de las carreras de Ingeniería en Computadores (`CE`, plan 2103) e Ingeniería en Producción Industrial (`PI`, plan 1425).
 2. Carga el historial del estudiante y valida que sea consistente con su plan (requisitos y correquisitos).
 3. Detecta choques de horario entre los grupos ofertados en la Guía de Horarios institucional.
 4. Determina qué cursos puede matricular el estudiante según su historial.
-5. Exporta el catálogo completo a un archivo JSON, que es el insumo de la Etapa 2 (Racket).
+5. Exporta el catálogo completo a un archivo JSON (incluyendo la carrera de origen por curso), que es el insumo de la Etapa 2 (Racket).
 
 Tal como indica el enunciado, esta etapa **no** arma un horario final, no sugiere combinaciones, no aplica preferencias del estudiante y no tiene interfaz: el resultado es un archivo.
 
@@ -26,12 +28,16 @@ Tal como indica el enunciado, esta etapa **no** arma un horario final, no sugier
 
 ## 2.1. Arquitectura del proyecto
 
+### Organización de archivos
+
 ```
 Parte 1/
 ├── constantes.h                 Todas las constantes del proyecto
 ├── constantes_y_auxiliares.h    Structs y prototipos de las funciones
 ├── constantes_y_auxiliares.c    Implementación: carga, validaciones, choques y exportación
 ├── main.c                       Programa principal
+├── catalogo_CE.json             Salida generada para Computadores
+├── catalogo_PI.json             Salida generada para Producción Industrial
 └── data/
     ├── CEmestre_datos.xlsx      Fuente editable de todos los datos
     ├── plan_CE.csv  plan_PI.csv
@@ -40,25 +46,29 @@ Parte 1/
     └── opciones.csv
 ```
 
-- **`constantes.h`**: contiene únicamente constantes: tamaños de los textos (`TAM_CODIGO`, `TAM_NOMBRE`…), límites de los arreglos (`MAX_GRUPOS`, `MAX_BLOQUES`, `MAX_OPCIONES`), rutas de los archivos de entrada y salida, el comodín `COMODIN_CULTURAL_DEPORTIVO` (`"SE1400"`) y los códigos de salida (`EXITO`, `ERROR_ARCHIVO`, `ERROR_DATOS`). Ningún otro archivo tiene números o rutas escritos directamente.
-- **`constantes_y_auxiliares.h`**: define el modelo de datos (`Curso`, `Grupo`, `BloqueHorario`, `Historial`, `Opcion` y el nodo genérico `Nodo`) y los prototipos documentados.
-- **`constantes_y_auxiliares.c`**, organizado por responsabilidad:
-  - *Lista enlazada genérica*: `insertarInicio`, `insertarFinal`, `liberarLista`.
-  - *Lectura de CSV*: `separarCampo` (separa por `;` sin saltarse los campos vacíos), `quitarSaltoLinea`.
-  - *Carga de datos*: `cargar_plan_estudios`, `cargar_historial`, `cargar_oferta`, `cargar_opciones`.
-  - *Validaciones*: `validar_historial`, `validar_prerrequisitos`, `esCursoAprobado`, `cumple_requisitos`, `es_Correquisito_Posible`.
-  - *Matrícula*: `actualizar_matriculables`, `quitar_actividades_llevadas`.
-  - *Horarios y choques*: `horaAMinutos`, `minutosAHora`, `calcular_choques_catalogo`.
-  - *Exportación*: `exportar_json`.
-- **`main.c`**: ejecuta el flujo para cada carrera en este orden:
+### Relación entre los archivos de código
 
-```
-cargar_opciones → cargar_plan_estudios → cargar_oferta → calcular_choques_catalogo
-→ cargar_historial → validar_historial + validar_prerrequisitos
-→ quitar_actividades_llevadas → actualizar_matriculables → exportar_json
-```
+- **`constantes.h`** es la base y no incluye a ningún otro archivo. Define los tamaños de los textos (`TAM_CODIGO`, `TAM_NOMBRE`…), los límites de los arreglos (`MAX_GRUPOS`, `MAX_BLOQUES`, `MAX_OPCIONES`), las rutas de entrada y salida, el comodín `COMODIN_CULTURAL_DEPORTIVO` (`"SE1400"`) y los códigos de salida (`EXITO`, `ERROR_ARCHIVO`, `ERROR_DATOS`).
+- **`constantes_y_auxiliares.h`** incluye a `constantes.h` porque necesita esos tamaños para definir los arreglos dentro de los structs (`Curso`, `Grupo`, `BloqueHorario`, `Historial`, `Opcion` y el nodo genérico `Nodo`), además de declarar los prototipos de todas las funciones.
+- **`constantes_y_auxiliares.c`** y **`main.c`** incluyen a `constantes_y_auxiliares.h`. El primero contiene toda la implementación de las funciones y el segundo las llama en orden desde `procesar_carrera` para cada plan de estudios.
 
-Si el historial no es consistente con el plan, **no se exporta** el catálogo de esa carrera, porque el resultado sería incorrecto, y el programa termina con código de salida `ERROR_DATOS`.
+### Cómo se conecta todo en la ejecución
+
+El programa no es un único bloque, sino que forma la primera etapa del sistema general: lee los archivos `.csv` de `Parte 1/data/` y produce `catalogo_CE.json` y `catalogo_PI.json`, los cuales son leídos directamente por la Etapa 2 en Racket.
+
+Por dentro, `main.c` carga una sola vez las opciones culturales y deportivas y luego llama a `procesar_carrera` para CE y para PI. Dentro de `procesar_carrera`, las estructuras en memoria y las funciones se van conectando en este orden:
+
+1. **Carga de opciones (`cargar_opciones`):** `main.c` crea el arreglo `Opcion opciones[MAX_OPCIONES]` y llama a `cargar_opciones`, que lee `opciones.csv` apoyándose en `separarCampo` y `quitarSaltoLinea`. Este arreglo se le pasa por parámetro a `procesar_carrera` porque más adelante se necesita para saber a qué comodín del plan (`SE1100`, `SE1200` o `SE1400`) pertenece cada actividad cultural o deportiva.
+2. **Creación del catálogo base (`cargar_plan_estudios`):** `procesar_carrera` declara la lista enlazada `Nodo *catalogo = NULL` y llama a `cargar_plan_estudios`. Esta función lee `plan_CE.csv` o `plan_PI.csv`, crea un `struct Curso` por fila (con sus créditos, horas, semestre, carrera, requisitos y correquisitos, pero todavía con `cantidadGrupos = 0`) y lo mete en la lista `catalogo` usando `insertarFinal`.
+3. **Unión del plan con la oferta de horarios (`cargar_oferta`):** Recibe la lista `catalogo` del paso anterior y el arreglo `opciones`. Al leer cada línea de `oferta_XX.csv`, usa `buscarCursoConOpciones` para encontrar el curso dentro de `catalogo`: si es un curso regular lo busca por su código, y si es una actividad (como `SE1105`) busca en `opciones` cuál es su comodín en el plan y le asigna el grupo a ese comodín. Las horas de inicio y fin se pasan a minutos con `horaAMinutos` y se guardan como `BloqueHorario` dentro del arreglo `grupos[]` del `Curso`.
+4. **Cálculo de choques entre grupos (`calcular_choques_catalogo`):** Una vez que cada `Curso` de la lista `catalogo` ya tiene sus grupos y horarios adentro, esta función recorre la lista comparando los bloques de horario de cada curso contra los de los demás cursos del mismo día. Si algún grupo se traslapa con otro curso del catálogo, marca `curso->tieneChoque = 1`.
+5. **Carga y validación del historial (`cargar_historial`, `validar_historial`, `validar_prerrequisitos`):** `cargar_historial` lee `historial_XX.csv` y arma una segunda lista enlazada `Nodo *historial = NULL` con `insertarFinal`. Luego se cruzan ambas listas (`catalogo` e `historial`):
+   - `validar_historial` revisa que todos los cursos del historial existan en `catalogo`, que no falten cursos del plan y que los comodines aprobados tengan una opción válida.
+   - `validar_prerrequisitos` recorre los cursos aprobados (usando `esCursoAprobado`) y verifica con `cumple_requisitos` que el estudiante también tenga aprobados los requisitos de esos cursos. Si el historial es inconsistente con el plan, se libera la memoria y la función termina con `ERROR_DATOS` sin exportar el JSON.
+6. **Limpieza de actividades repetidas y cálculo de cursos matriculables (`quitar_actividades_llevadas` y `actualizar_matriculables`):**
+   - `quitar_actividades_llevadas` busca en `historial` qué actividades específicas ya aprobó el estudiante en `SE1100` y `SE1200`, y borra esos grupos del comodín `SE1400` en `catalogo` para que no pueda repetir la misma actividad.
+   - `actualizar_matriculables` recorre cada curso de `catalogo` y calcula `curso->matriculable` verificando cuatro cosas con la lista `historial`: que no esté aprobado (`!esCursoAprobado`), que tenga grupos ofertados (`cantidadGrupos > 0`), que tenga sus requisitos aprobados (`cumple_requisitos`) y que sus correquisitos ya estén aprobados o se puedan matricular en este mismo semestre (`es_Correquisito_Posible`).
+7. **Exportación a JSON y liberación de memoria (`exportar_json` y `liberarLista`):** Con la lista `catalogo` ya validada y con todos sus campos calculados, `exportar_json` recorre `catalogo` e `historial`, vuelve a formatear las horas con `minutosAHora`, arma la lista de `correquisitos_pendientes` y escribe el archivo `catalogo_CE.json` o `catalogo_PI.json`. Al terminar, `procesar_carrera` llama a `liberarLista(&catalogo)` y `liberarLista(&historial)` para liberar toda la memoria dinámica.
 
 ---
 
@@ -67,7 +77,7 @@ Si el historial no es consistente con el plan, **no se exporta** el catálogo de
 ### 2.2.1. Decisiones propias del dataset (con ejemplos de los planes)
 
 **1. Un catálogo por carrera, porque los requisitos dependen del plan.**
-El mismo curso puede tener reglas distintas según la carrera. *Física General I* (`FI1101`) tiene a `MA1102` como **requisito** en Computadores, pero como **correquisito** en Producción Industrial. Lo mismo pasa con *Ambiente Humano* (`CS2101`): no tiene requisitos en CE, pero en PI requiere `CI1107`. Por eso cada carrera tiene su propio plan, su propia oferta y su propio archivo de salida.
+El mismo curso puede tener reglas distintas según la carrera. *Física General I* (`FI1101`) tiene a `MA1102` como **requisito** en Computadores, pero como **correquisito** en Producción Industrial. Lo mismo pasa con *Ambiente Humano* (`CS2101`): no tiene requisitos en CE, pero en PI requiere `CI1107`. Por eso cada carrera tiene su propio plan, su propia oferta y su propio archivo de salida, e incluye el campo `"carrera"` (`"CE"` o `"PI"`) en cada curso exportado.
 
 **2. Cursos comodín y actividades culturales/deportivas (`opciones.csv`).**
 En el plan aparecen `SE1100` (Actividad cultural I), `SE1200` (Actividad deportiva I) y `SE1400` (Actividad cultural-deportiva), pero en la Guía de Horarios esos códigos nunca aparecen. Lo que se oferta son actividades concretas, por ejemplo `SE1101` Artes dramáticas, `SE1105` Artes musicales, `SE1107` Apreciación de cine, `SE1204` Natación o `SE1209` Béisbol-softbol, y el estudiante elige cuál llevar.
@@ -81,8 +91,8 @@ Por indicación del profesor, las pruebas de inglés (`CI0205` en CE y `CI0200` 
 **4. Centros de Formación Humanística (`FH1000`) como un solo curso.**
 Los CFH no se ofrecen por semestre sino en ciclos propios. Por indicación del profesor se modelaron como un único curso con un horario representativo: el de `FH0035` *Globalización y humanismo* (martes 17:00–19:50, Cartago).
 
-**5. Se incluye el bloque 0 del plan.**
-El bloque 0 (nivelación) no es parte de "los 4 primeros semestres", pero sus cursos son requisito de cursos del bloque 1 (por ejemplo, `MA0101` es requisito de `MA1102`). Si no se incluyera, esos requisitos apuntarían a cursos inexistentes.
+**5. Se incluye el bloque 0 y se extiende hasta el bloque 6 del plan.**
+El bloque 0 (nivelación) se incluye porque sus cursos son requisito de cursos del bloque 1 (por ejemplo, `MA0101` es requisito de `MA1102`). Asimismo, los planes, historiales y ofertas abarcan hasta el semestre 6 de cada carrera reutilizando el mismo motor de validación y choques.
 
 **6. Correquisitos con dirección.**
 Los correquisitos no siempre son recíprocos: `CE1104` tiene a `CE1101` como correquisito, pero `CE1101` no tiene a `CE1104`. Solo algunos son mutuos, como `QU1102` ↔ `QU1106`. Por eso la validación revisa cada correquisito en la dirección en que aparece en el plan.
@@ -97,21 +107,19 @@ Las horas se convierten a minutos desde las 00:00 con `horaAMinutos` ("07:30" �
 
 **El caso: un laboratorio matriculable cuyo correquisito no se puede llevar.**
 
-Inicialmente el sistema solo consideraba los requisitos para determinar si se podía matricular un curso o no, sin tener en cuenta sus correquisitas,
-pero se encontró un caso relacionado a los **correquisitos**, si el correquisito de un curso no se puede matricular, el curso no es elegible.
+Inicialmente el sistema solo consideraba los requisitos para determinar si se podía matricular un curso o no, sin tener en cuenta sus correquisitos, pero se encontró un caso relacionado a los **correquisitos**: si el correquisito de un curso no se puede matricular, el curso tampoco es elegible.
 
 El estudiante de prueba de CE aprobó *Laboratorio de Física General I* (`FI1201`) pero reprobó la teoría, *Física General I* (`FI1101`). Esto es real y válido: son correquisitos, se llevan juntos, y se puede aprobar uno y reprobar el otro.
 
 Con eso, *Laboratorio de Física General II* (`FI1202`) salía como **matriculable**, porque su requisito (`FI1201`) estaba aprobado. Pero su correquisito es *Física General II* (`FI1102`), que requiere `FI1101`. Como el estudiante no puede matricular `FI1102`, tampoco puede matricular `FI1202`.
 
-**Cómo se resolvió:** Para solucionar esto, era necesario comprobar que el requisito fuera matriculable, entonces se implementó una función auxiliar llamada `es_Correquisito_Posible`. 
-Esta función toma el correquisito y verifica si se puede matricular o no. Si el correquisito no es matriculable por falta de requisitos previos, 
-el sistema bloquea automáticamente también el curso original.
+**Cómo se resolvió:** Para solucionar esto, era necesario comprobar que el correquisito fuera matriculable, entonces se implementó una función auxiliar llamada `es_Correquisito_Posible`. Esta función toma el correquisito y verifica si se puede matricular o no. Si el correquisito no es matriculable por falta de requisitos previos, el sistema bloquea automáticamente también el curso original.
 
 Resultado en `catalogo_CE.json`:
 
 ```json
 "codigo": "FI1202",
+"carrera": "CE",
 "requisitos": ["FI1201"],
 "correquisitos": ["FI1102"],
 "cumple_requisitos": true,
@@ -127,7 +135,7 @@ Se eligió **JSON**:
 
 - **Lo consume directamente la Etapa 2.** Racket incluye la librería `json`, y `read-json` convierte el archivo en listas y tablas hash sin escribir un parser.
 - **Los datos son jerárquicos.** Un curso tiene N grupos y cada grupo tiene M sesiones. En CSV habría que repetir los datos del curso en cada fila o partirlo en varios archivos y volver a unirlos. En JSON la jerarquía es natural.
-- **Lleva lo que necesita la etapa siguiente, no solo lo mínimo.** Además de los campos que pide el enunciado, cada curso incluye `correquisitos_pendientes` (los que habría que matricular junto con el curso) y cada sesión incluye la hora en texto y en minutos (`inicio_min`, `fin_min`), para que Racket compare horarios sin volver a convertirlos.
+- **Lleva lo que necesita la etapa siguiente, no solo lo mínimo.** Además de los campos que pide el enunciado, cada curso incluye `carrera`, `correquisitos_pendientes` (los que habría que matricular junto con el curso) y cada sesión incluye la hora en texto y en minutos (`inicio_min`, `fin_min`), para que Racket compare horarios sin volver a convertirlos.
 
 La entrada, en cambio, es **CSV**, porque Excel la exporta directamente y en C se lee con `fgets` y `separarCampo`, sin necesitar un parser de JSON.
 
@@ -139,7 +147,7 @@ La entrada, en cambio, es **CSV**, porque Excel la exporta directamente y en C s
 |---|---|---|
 | `BloqueHorario` | `dia`, `horaInicio`, `horaFin` (en minutos) | Una sesión de clase |
 | `Grupo` | `numeroGrupo`, `codigoOpcion`, `nombreOpcion`, `bloques[MAX_BLOQUES]`, `cantidadBloques` | Un grupo ofertado. En los comodines, `codigoOpcion` indica la actividad real (ej. `SE1105`) |
-| `Curso` | `codigo`, `nombre`, `creditos`, `horas`, `semestre`, `requisitos`, `correquisitos`, `tipo`, `matriculable`, `grupos[MAX_GRUPOS]`, `cantidadGrupos`, `tieneChoque` | Un curso del plan con su oferta y los resultados calculados |
+| `Curso` | `codigo`, `carrera`, `nombre`, `creditos`, `horas`, `semestre`, `requisitos`, `correquisitos`, `tipo`, `matriculable`, `grupos[MAX_GRUPOS]`, `cantidadGrupos`, `tieneChoque` | Un curso del plan con su carrera de origen, su oferta y los resultados calculados |
 | `Historial` | `codigo`, `aprobado`, `opcion` | Una fila del historial del estudiante |
 | `Opcion` | `codigoPlan`, `codigoOpcion`, `nombreOpcion`, `categoria` | Qué actividad cumple qué comodín |
 | `Nodo` | `void *dato`, `struct Nodo *siguiente` | Nodo de la lista enlazada genérica |
@@ -162,7 +170,7 @@ El programa devuelve `EXITO` (0) si todo salió bien y `ERROR_DATOS` (2) si algo
 ## 3. Datos de entrada: recolección y limpieza
 
 **Fuentes**
-- **Planes de estudio:** páginas oficiales del TEC (tec.ac.cr). Computadores plan 2103 y Producción Industrial plan 1425, última actualización 20 de octubre de 2025. Bloques 0 a 4.
+- **Planes de estudio:** páginas oficiales del TEC (tec.ac.cr). Computadores plan 2103 y Producción Industrial plan 1425, última actualización 20 de octubre de 2025. Bloques 0 a 6.
 - **Oferta de horarios:** Guía de Horarios institucional, año 2026, II semestre, Campus Tecnológico Central Cartago, modalidad semestral. Se descartaron otras sedes y otras modalidades (bimestre, cuatrimestre, etc.).
 
 **Limpieza y verificación**
@@ -196,6 +204,7 @@ Se generan `catalogo_CE.json` y `catalogo_PI.json`:
   "cursos": [
     {
       "codigo": "FI1202",
+      "carrera": "CE",
       "nombre": "Laboratorio física general II",
       "creditos": 1, "horas": 2, "semestre": 3, "tipo": "CURSO",
       "requisitos": ["FI1201"],
@@ -222,6 +231,7 @@ Se generan `catalogo_CE.json` y `catalogo_PI.json`:
 
 | Campo | Significado |
 |---|---|
+| `carrera` | Carrera de origen que aporta el curso (`"CE"` o `"PI"`) |
 | `aprobado` | El estudiante ya aprobó el curso |
 | `cumple_requisitos` | Todos los requisitos están aprobados |
 | `correquisitos_pendientes` | Correquisitos no aprobados, que habría que matricular en el mismo semestre |
