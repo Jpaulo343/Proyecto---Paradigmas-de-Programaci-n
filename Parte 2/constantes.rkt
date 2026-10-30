@@ -4,8 +4,8 @@
          RUTA-CATALOGO-PI
          RUTA-PREFERENCIAS-CE
          RUTA-PREFERENCIAS-PI
-         RUTA-PREFERENCIAS
-         RUTA-SALIDA)
+         RUTA-SALIDA-CE
+         RUTA-SALIDA-PI)
 
 ;;; Rutas de los catálogos exportados por la Etapa 1 (C)
 (: RUTA-CATALOGO-CE String)
@@ -21,9 +21,8 @@
 (: RUTA-PREFERENCIAS-PI String)
 (define RUTA-PREFERENCIAS-PI "data/preferencias_PI.json")
 
-(: RUTA-PREFERENCIAS String)
-(define RUTA-PREFERENCIAS RUTA-PREFERENCIAS-CE)
+(: RUTA-SALIDA-CE String)
+(define RUTA-SALIDA-CE "data/salida_CE.json")
 
-;;; Ruta del archivo de salida con las combinaciones generadas 
-(: RUTA-SALIDA String)
-(define RUTA-SALIDA "data/combinaciones_salida.json")
+(: RUTA-SALIDA-PI String)
+(define RUTA-SALIDA-PI "data/salida_PI.json")
