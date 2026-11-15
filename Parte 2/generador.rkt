@@ -11,9 +11,10 @@
                                              stream?)]))
 
 ;;; Este módulo genera, de forma perezosa (con streams) e inmutable, las
-;;; combinaciones de horario: un grupo por cada curso de la lista de
-;;; pendientes, sin que ningún par de grupos elegidos choque entre sí. No
-;;; usa set! ni ninguna estructura mutable: el estado de "lo que ya se
+;;; combinaciones de horario: probando incluir un grupo compatible por cada
+;;; curso de la lista de pendientes o bien omitir ese curso para formar
+;;; subconjuntos válidos sin que ningún par de grupos elegidos choque entre sí.
+
 ;;; eligió" se pasa como argumento (elegidos) en cada llamada recursiva,
 ;;; nunca se modifica.
 
@@ -41,22 +42,32 @@
 
 ;;; Función: generar-combinaciones-crudas
 ;;; Genera un stream con todas las combinaciones válidas de un grupo por cada curso.
+;;; cursos como subconjuntos de ellos, excepto la combinación vacía).
 ;;; Descarta los grupos que chocan de forma inmediata en cada llamada recursiva.
 ;;; E: pendientes (lista de pares Curso . Listof Grupo) y elegidos (lista de pares Curso . Grupo).
 ;;; S: Stream de combinaciones, donde cada combinación es una lista de pares Curso . Grupo.
 
 (define (generar-combinaciones-crudas pendientes elegidos)
   (cond
-    [(null? pendientes) (stream (reverse elegidos))]
+    [(null? pendientes)
+     (if (null? elegidos)
+         empty-stream
+         (stream (reverse elegidos)))]
     [else
      (define curso (car (car pendientes)))
      (define grupos-candidatos (cdr (car pendientes)))
      (define resto-pendientes (cdr pendientes))
      (define grupos-compatibles
        (filter (lambda (g) (compatible-con-elegidos? g elegidos)) grupos-candidatos))
-     (apply mi-stream-append
-            (map (lambda (g) (generar-combinaciones-crudas resto-pendientes (cons (cons curso g) elegidos)))
-                 grupos-compatibles))]))
+     ;;  Ramas donde si se matricula el curso (probando cada grupo compatible)
+     (define ramas-con-curso
+       (map (lambda (g) (generar-combinaciones-crudas resto-pendientes (cons (cons curso g) elegidos)))
+            grupos-compatibles))
+
+     ;; Rama donde no se matricula el curso
+     (define rama-sin-curso
+       (generar-combinaciones-crudas resto-pendientes elegidos))
+     (apply mi-stream-append (append ramas-con-curso (list rama-sin-curso)))]))
 
 
 ;;; Pruebas
@@ -80,6 +91,6 @@
   (displayln "primera combinacion, sin calcular las demas (laziness):")
   (for/list ([par (stream-first crudas)]) (list (Curso-codigo (car par)) (Grupo-numero (cdr par))))
 
-  (displayln "todas las combinaciones (deberian ser 2 de 3: PI3501 grupo 1 choca):")
+  (displayln "todas las combinaciones (incluyendo subconjuntos donde falta algun curso):")
   (for/list ([combo (stream->list crudas)])
     (for/list ([par combo]) (list (Curso-codigo (car par)) (Grupo-numero (cdr par))))))
