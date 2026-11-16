@@ -7,6 +7,7 @@
 #define TAM_REQUISITOS 30
 #define TAM_CORREQUISITOS 30
 #define TAM_TIPO 10
+#define TAM_AREA 30
 #define TAM_LINEA 256
 #define TAM_DIA 5
 #define TAM_HORA 10

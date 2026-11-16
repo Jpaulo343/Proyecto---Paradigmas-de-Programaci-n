@@ -41,6 +41,7 @@ typedef struct Curso {
     char requisitos[TAM_REQUISITOS];
     char correquisitos[TAM_CORREQUISITOS];
     char tipo[TAM_TIPO];
+    char area[TAM_AREA];
     int matriculable; // 1 = SI, 0 = NO
     
     // Oferta y choques

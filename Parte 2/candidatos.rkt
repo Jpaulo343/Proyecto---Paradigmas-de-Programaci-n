@@ -44,8 +44,8 @@
   (define grupo2 (Grupo 2 "CE2103" "AED II" '()))
   (define grupo3 (Grupo 3 "CE2103" "AED II" '()))
 
-  (define ce2103 (Curso "CE2103" "CE" "AED II" 4 12 3 "CURSO" '() '() #f #t '() #t #f (list grupo1 grupo2 grupo3)))
-  (define ma2104 (Curso "MA2104" "CE" "Calculo superior" 4 4 3 "CURSO" '() '() #f #t '() #f #f (list grupo1)))
+  (define ce2103 (Curso "CE2103" "CE" "AED II" 4 12 3 "CURSO" "X" '() '() #f #t '() #t #f (list grupo1 grupo2 grupo3)))
+  (define ma2104 (Curso "MA2104" "CE" "Calculo superior" 4 4 3 "CURSO" "X" '() '() #f #t '() #f #f (list grupo1)))
   (define catalogo-prueba (list ce2103 ma2104))
 
   (displayln "--- candidatos-de-interes ---")
