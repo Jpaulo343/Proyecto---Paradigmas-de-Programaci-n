@@ -1,5 +1,6 @@
 #ifndef CONSTANTES_H
 #define CONSTANTES_H
+#define TAM_AREA 35
 
 // Tamaño de campos de texto
 #define TAM_CODIGO 15

@@ -228,7 +228,12 @@ void cargar_plan_estudios(struct Nodo **inicio, const char *ruta) {
         columna = separarCampo(&cursor);
         if (columna) {
             strncpy(c.tipo, columna, TAM_TIPO - 1);
-            quitarSaltoLinea(c.tipo);
+        }
+
+        columna = separarCampo(&cursor);
+        if (columna) {
+            strncpy(c.area, columna, TAM_AREA - 1);
+            quitarSaltoLinea(c.area);
         }
 
         c.matriculable = 0;
@@ -768,6 +773,8 @@ int exportar_json(struct Nodo *plan, struct Nodo *historial, const char *ruta, c
         fprintf(salida, "      \"semestre\": %d,\n", c->semestre);
         fprintf(salida, "      \"tipo\": ");
         escribir_texto_json(salida, c->tipo);
+        fprintf(salida, ",\n      \"area\": ");
+        escribir_texto_json(salida, c->area);
         fprintf(salida, ",\n      \"requisitos\": ");
         escribir_lista_json(salida, c->requisitos);
         fprintf(salida, ",\n      \"correquisitos\": ");

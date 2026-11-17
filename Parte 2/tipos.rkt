@@ -70,6 +70,7 @@
                [correquisitos-pendientes : (Listof String)]
                [matriculable : Boolean]
                [tiene-choque : Boolean]
+               [area : String]
                [grupos : (Listof Grupo)])
   #:transparent)
 
