@@ -73,9 +73,16 @@ lista_dicts_a_bloques([B | Resto], [Bloque | RestoBloques]) :-
 % reglas de Prolog y la exportación final.
 % E: c (diccionario con codigo, carrera, area, nombre, creditos y grupo).
 % S: Término curso_sel(Codigo, Carrera, Area, Nombre, Creditos, GrupoTerms).
-dict_a_curso_sel(C, curso_sel(C.codigo, C.carrera, C.area, C.nombre, C.creditos,
-                              grupo(G.numero, G.codigo_opcion, Horarios))) :-
+dict_a_curso_sel(C, curso_sel(Codigo, Carrera, Area, Nombre, Creditos,
+                              grupo(Numero, CodigoOpcion, Horarios))) :-
+    Codigo = C.codigo,
+    Carrera = C.carrera,
+    Area = C.area,
+    Nombre = C.nombre,
+    Creditos = C.creditos,
     G = C.grupo,
+    Numero = G.numero,
+    CodigoOpcion = G.codigo_opcion,
     lista_dicts_a_bloques(G.horarios, Horarios).
 
 
