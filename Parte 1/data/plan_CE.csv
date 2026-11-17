@@ -39,3 +39,13 @@ CE1109;Circuitos analógicos;4;12;6;EL2207,SO4604;;CURSO
 CE1110;Análisis de señales mixtas;4;12;6;EL2114,MA2105;;CURSO
 CE4301;Arquitectura de computadores I;4;12;6;CE1107,CE3201;;CURSO
 CI3203;Inglés especializado para ingenierías en computadores;2;6;6;;;CURSO
+CE1111;Análisis numérico para la ingeniería;3;9;7;MA2105;;CURSO
+CE1112;Taller de señales mixtas;3;9;7;CE1109,CE1110;;CURSO
+CE1116;Diseño y calidad en productos tecnológicos;4;12;7;CE3101,CE4301,PI5516;;CURSO
+CE4302;Arquitectura de computadores II;4;12;7;CE4301;CE4303;CURSO
+CE4303;Principios de sistemas operativos;4;12;7;CE1108;;CURSO
+AE4208;Desarrollo de emprendedores;4;12;8;CS2101;;CURSO
+CE1113;Sistemas empotrados;3;9;8;CE4303;;CURSO
+CE5301;Redes de computadores;4;12;8;CE1116,CE4303;;CURSO
+CE5701;Electiva I;3;9;8;CE4302,CI3203;;CURSO
+CS3404;Seminario de ética para la ingeniería;2;5;8;CS2101;;CURSO

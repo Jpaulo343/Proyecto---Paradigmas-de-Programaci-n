@@ -43,3 +43,14 @@ PI3206;Logística y administración de la cadena de abastecimiento;3;3;6;PI3612;
 PI3403;Sistema de información;3;3;6;PI3407;;CURSO
 PI3512;Dirección de personal;3;4;6;CS2303,PI3308;;CURSO
 PI3603;Investigación de operaciones I;3;4;6;MA2105;;CURSO
+PI4303;Control de producción;4;4;7;PI3206,PI3603;;CURSO
+PI4306;Metrología y normalización;3;4;7;PI3308;PI4307;CURSO
+PI4307;Control de calidad;4;4;7;PI3612;;CURSO
+PI4309;Planeación y diseño de instalaciones;3;4;7;PI3308;;CURSO
+PI4505;Análisis económico;3;4;7;PI3308,PI3502;;CURSO
+CS4402;Seminario de estudios costarricenses;2;3;8;CS3404;;CURSO
+PI4308;Electiva I;3;3;8;PI4303,PI4307;;CURSO
+PI4802;Administración de proyectos;3;4;8;PI4303;;CURSO
+PI4803;Gestión de la innovación;3;4;8;PI3512;;CURSO
+PI5707;Ingeniería de la confiabilidad;3;4;8;PI4307;;CURSO
+SO4604;Seguridad y salud ocupacional;3;3;8;PI3308;;CURSO
