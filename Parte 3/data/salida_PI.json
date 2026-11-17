@@ -1,0 +1,6981 @@
+{
+  "total_combinaciones":132,
+  "combinaciones": [
+    {
+      "id":1,
+      "creditos_totales":13,
+      "cumple":false,
+      "razon":"limite_area",
+      "detalle":"Incumple limite de cursos en el area: ciencias_basicas",
+      "cursos": [
+	{
+	  "codigo":"FI1101",
+	  "grupo":1,
+	  "codigo_opcion":"FI1101",
+	  "carrera":"PI",
+	  "nombre":"Física general I",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"07:30","fin":"09:20"},
+	    {"dia":"JUE","inicio":"07:30","fin":"09:20"}
+	  ]
+	},
+	{
+	  "codigo":"FI1201",
+	  "grupo":2,
+	  "codigo_opcion":"FI1201",
+	  "carrera":"PI",
+	  "nombre":"Laboratorio física general I",
+	  "creditos":1,
+	  "area":"ciencias_basicas",
+	  "horarios": [ {"dia":"MAR","inicio":"09:30","fin":"11:20"} ]
+	},
+	{
+	  "codigo":"QU1107",
+	  "grupo":5,
+	  "codigo_opcion":"QU1107",
+	  "carrera":"PI",
+	  "nombre":"Química básica II",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"13:00","fin":"14:50"},
+	    {"dia":"JUE","inicio":"13:00","fin":"14:50"}
+	  ]
+	},
+	{
+	  "codigo":"PI3501",
+	  "grupo":2,
+	  "codigo_opcion":"PI3501",
+	  "carrera":"PI",
+	  "nombre":"Costos industriales I",
+	  "creditos":3,
+	  "area":"industrial_gestion",
+	  "horarios": [ {"dia":"MAR","inicio":"17:00","fin":"19:50"} ]
+	},
+	{
+	  "codigo":"CA2125",
+	  "grupo":1,
+	  "codigo_opcion":"CA2125",
+	  "carrera":"PI",
+	  "nombre":"Elementos de computación",
+	  "creditos":3,
+	  "area":"computacion",
+	  "horarios": [
+	    {"dia":"MIE","inicio":"09:30","fin":"11:20"},
+	    {"dia":"VIE","inicio":"09:30","fin":"11:20"}
+	  ]
+	}
+      ]
+    },
+    {
+      "id":2,
+      "creditos_totales":13,
+      "cumple":false,
+      "razon":"limite_area",
+      "detalle":"Incumple limite de cursos en el area: ciencias_basicas",
+      "cursos": [
+	{
+	  "codigo":"FI1101",
+	  "grupo":1,
+	  "codigo_opcion":"FI1101",
+	  "carrera":"PI",
+	  "nombre":"Física general I",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"07:30","fin":"09:20"},
+	    {"dia":"JUE","inicio":"07:30","fin":"09:20"}
+	  ]
+	},
+	{
+	  "codigo":"FI1201",
+	  "grupo":2,
+	  "codigo_opcion":"FI1201",
+	  "carrera":"PI",
+	  "nombre":"Laboratorio física general I",
+	  "creditos":1,
+	  "area":"ciencias_basicas",
+	  "horarios": [ {"dia":"MAR","inicio":"09:30","fin":"11:20"} ]
+	},
+	{
+	  "codigo":"QU1107",
+	  "grupo":5,
+	  "codigo_opcion":"QU1107",
+	  "carrera":"PI",
+	  "nombre":"Química básica II",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"13:00","fin":"14:50"},
+	    {"dia":"JUE","inicio":"13:00","fin":"14:50"}
+	  ]
+	},
+	{
+	  "codigo":"PI3501",
+	  "grupo":2,
+	  "codigo_opcion":"PI3501",
+	  "carrera":"PI",
+	  "nombre":"Costos industriales I",
+	  "creditos":3,
+	  "area":"industrial_gestion",
+	  "horarios": [ {"dia":"MAR","inicio":"17:00","fin":"19:50"} ]
+	},
+	{
+	  "codigo":"CA2125",
+	  "grupo":2,
+	  "codigo_opcion":"CA2125",
+	  "carrera":"PI",
+	  "nombre":"Elementos de computación",
+	  "creditos":3,
+	  "area":"computacion",
+	  "horarios": [
+	    {"dia":"MIE","inicio":"09:30","fin":"11:20"},
+	    {"dia":"VIE","inicio":"09:30","fin":"11:20"}
+	  ]
+	}
+      ]
+    },
+    {
+      "id":3,
+      "creditos_totales":12,
+      "cumple":false,
+      "razon":"limite_area",
+      "detalle":"Incumple limite de cursos en el area: ciencias_basicas",
+      "cursos": [
+	{
+	  "codigo":"FI1101",
+	  "grupo":1,
+	  "codigo_opcion":"FI1101",
+	  "carrera":"PI",
+	  "nombre":"Física general I",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"07:30","fin":"09:20"},
+	    {"dia":"JUE","inicio":"07:30","fin":"09:20"}
+	  ]
+	},
+	{
+	  "codigo":"FI1201",
+	  "grupo":2,
+	  "codigo_opcion":"FI1201",
+	  "carrera":"PI",
+	  "nombre":"Laboratorio física general I",
+	  "creditos":1,
+	  "area":"ciencias_basicas",
+	  "horarios": [ {"dia":"MAR","inicio":"09:30","fin":"11:20"} ]
+	},
+	{
+	  "codigo":"QU1107",
+	  "grupo":5,
+	  "codigo_opcion":"QU1107",
+	  "carrera":"PI",
+	  "nombre":"Química básica II",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"13:00","fin":"14:50"},
+	    {"dia":"JUE","inicio":"13:00","fin":"14:50"}
+	  ]
+	},
+	{
+	  "codigo":"PI3501",
+	  "grupo":2,
+	  "codigo_opcion":"PI3501",
+	  "carrera":"PI",
+	  "nombre":"Costos industriales I",
+	  "creditos":3,
+	  "area":"industrial_gestion",
+	  "horarios": [ {"dia":"MAR","inicio":"17:00","fin":"19:50"} ]
+	},
+	{
+	  "codigo":"CS2101",
+	  "grupo":1,
+	  "codigo_opcion":"CS2101",
+	  "carrera":"PI",
+	  "nombre":"Ambiente humano",
+	  "creditos":2,
+	  "area":"humanidades_complementarias",
+	  "horarios": [ {"dia":"VIE","inicio":"09:30","fin":"12:20"} ]
+	}
+      ]
+    },
+    {
+      "id":4,
+      "creditos_totales":10,
+      "cumple":false,
+      "razon":"limite_area",
+      "detalle":"Incumple limite de cursos en el area: ciencias_basicas",
+      "cursos": [
+	{
+	  "codigo":"FI1101",
+	  "grupo":1,
+	  "codigo_opcion":"FI1101",
+	  "carrera":"PI",
+	  "nombre":"Física general I",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"07:30","fin":"09:20"},
+	    {"dia":"JUE","inicio":"07:30","fin":"09:20"}
+	  ]
+	},
+	{
+	  "codigo":"FI1201",
+	  "grupo":2,
+	  "codigo_opcion":"FI1201",
+	  "carrera":"PI",
+	  "nombre":"Laboratorio física general I",
+	  "creditos":1,
+	  "area":"ciencias_basicas",
+	  "horarios": [ {"dia":"MAR","inicio":"09:30","fin":"11:20"} ]
+	},
+	{
+	  "codigo":"QU1107",
+	  "grupo":5,
+	  "codigo_opcion":"QU1107",
+	  "carrera":"PI",
+	  "nombre":"Química básica II",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"13:00","fin":"14:50"},
+	    {"dia":"JUE","inicio":"13:00","fin":"14:50"}
+	  ]
+	},
+	{
+	  "codigo":"PI3501",
+	  "grupo":2,
+	  "codigo_opcion":"PI3501",
+	  "carrera":"PI",
+	  "nombre":"Costos industriales I",
+	  "creditos":3,
+	  "area":"industrial_gestion",
+	  "horarios": [ {"dia":"MAR","inicio":"17:00","fin":"19:50"} ]
+	}
+      ]
+    },
+    {
+      "id":5,
+      "creditos_totales":13,
+      "cumple":false,
+      "razon":"limite_area",
+      "detalle":"Incumple limite de cursos en el area: ciencias_basicas",
+      "cursos": [
+	{
+	  "codigo":"FI1101",
+	  "grupo":1,
+	  "codigo_opcion":"FI1101",
+	  "carrera":"PI",
+	  "nombre":"Física general I",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"07:30","fin":"09:20"},
+	    {"dia":"JUE","inicio":"07:30","fin":"09:20"}
+	  ]
+	},
+	{
+	  "codigo":"FI1201",
+	  "grupo":2,
+	  "codigo_opcion":"FI1201",
+	  "carrera":"PI",
+	  "nombre":"Laboratorio física general I",
+	  "creditos":1,
+	  "area":"ciencias_basicas",
+	  "horarios": [ {"dia":"MAR","inicio":"09:30","fin":"11:20"} ]
+	},
+	{
+	  "codigo":"QU1107",
+	  "grupo":5,
+	  "codigo_opcion":"QU1107",
+	  "carrera":"PI",
+	  "nombre":"Química básica II",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"13:00","fin":"14:50"},
+	    {"dia":"JUE","inicio":"13:00","fin":"14:50"}
+	  ]
+	},
+	{
+	  "codigo":"PI3501",
+	  "grupo":3,
+	  "codigo_opcion":"PI3501",
+	  "carrera":"PI",
+	  "nombre":"Costos industriales I",
+	  "creditos":3,
+	  "area":"industrial_gestion",
+	  "horarios": [ {"dia":"MIE","inicio":"13:00","fin":"15:50"} ]
+	},
+	{
+	  "codigo":"CA2125",
+	  "grupo":1,
+	  "codigo_opcion":"CA2125",
+	  "carrera":"PI",
+	  "nombre":"Elementos de computación",
+	  "creditos":3,
+	  "area":"computacion",
+	  "horarios": [
+	    {"dia":"MIE","inicio":"09:30","fin":"11:20"},
+	    {"dia":"VIE","inicio":"09:30","fin":"11:20"}
+	  ]
+	}
+      ]
+    },
+    {
+      "id":6,
+      "creditos_totales":13,
+      "cumple":false,
+      "razon":"limite_area",
+      "detalle":"Incumple limite de cursos en el area: ciencias_basicas",
+      "cursos": [
+	{
+	  "codigo":"FI1101",
+	  "grupo":1,
+	  "codigo_opcion":"FI1101",
+	  "carrera":"PI",
+	  "nombre":"Física general I",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"07:30","fin":"09:20"},
+	    {"dia":"JUE","inicio":"07:30","fin":"09:20"}
+	  ]
+	},
+	{
+	  "codigo":"FI1201",
+	  "grupo":2,
+	  "codigo_opcion":"FI1201",
+	  "carrera":"PI",
+	  "nombre":"Laboratorio física general I",
+	  "creditos":1,
+	  "area":"ciencias_basicas",
+	  "horarios": [ {"dia":"MAR","inicio":"09:30","fin":"11:20"} ]
+	},
+	{
+	  "codigo":"QU1107",
+	  "grupo":5,
+	  "codigo_opcion":"QU1107",
+	  "carrera":"PI",
+	  "nombre":"Química básica II",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"13:00","fin":"14:50"},
+	    {"dia":"JUE","inicio":"13:00","fin":"14:50"}
+	  ]
+	},
+	{
+	  "codigo":"PI3501",
+	  "grupo":3,
+	  "codigo_opcion":"PI3501",
+	  "carrera":"PI",
+	  "nombre":"Costos industriales I",
+	  "creditos":3,
+	  "area":"industrial_gestion",
+	  "horarios": [ {"dia":"MIE","inicio":"13:00","fin":"15:50"} ]
+	},
+	{
+	  "codigo":"CA2125",
+	  "grupo":2,
+	  "codigo_opcion":"CA2125",
+	  "carrera":"PI",
+	  "nombre":"Elementos de computación",
+	  "creditos":3,
+	  "area":"computacion",
+	  "horarios": [
+	    {"dia":"MIE","inicio":"09:30","fin":"11:20"},
+	    {"dia":"VIE","inicio":"09:30","fin":"11:20"}
+	  ]
+	}
+      ]
+    },
+    {
+      "id":7,
+      "creditos_totales":12,
+      "cumple":false,
+      "razon":"limite_area",
+      "detalle":"Incumple limite de cursos en el area: ciencias_basicas",
+      "cursos": [
+	{
+	  "codigo":"FI1101",
+	  "grupo":1,
+	  "codigo_opcion":"FI1101",
+	  "carrera":"PI",
+	  "nombre":"Física general I",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"07:30","fin":"09:20"},
+	    {"dia":"JUE","inicio":"07:30","fin":"09:20"}
+	  ]
+	},
+	{
+	  "codigo":"FI1201",
+	  "grupo":2,
+	  "codigo_opcion":"FI1201",
+	  "carrera":"PI",
+	  "nombre":"Laboratorio física general I",
+	  "creditos":1,
+	  "area":"ciencias_basicas",
+	  "horarios": [ {"dia":"MAR","inicio":"09:30","fin":"11:20"} ]
+	},
+	{
+	  "codigo":"QU1107",
+	  "grupo":5,
+	  "codigo_opcion":"QU1107",
+	  "carrera":"PI",
+	  "nombre":"Química básica II",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"13:00","fin":"14:50"},
+	    {"dia":"JUE","inicio":"13:00","fin":"14:50"}
+	  ]
+	},
+	{
+	  "codigo":"PI3501",
+	  "grupo":3,
+	  "codigo_opcion":"PI3501",
+	  "carrera":"PI",
+	  "nombre":"Costos industriales I",
+	  "creditos":3,
+	  "area":"industrial_gestion",
+	  "horarios": [ {"dia":"MIE","inicio":"13:00","fin":"15:50"} ]
+	},
+	{
+	  "codigo":"CS2101",
+	  "grupo":1,
+	  "codigo_opcion":"CS2101",
+	  "carrera":"PI",
+	  "nombre":"Ambiente humano",
+	  "creditos":2,
+	  "area":"humanidades_complementarias",
+	  "horarios": [ {"dia":"VIE","inicio":"09:30","fin":"12:20"} ]
+	}
+      ]
+    },
+    {
+      "id":8,
+      "creditos_totales":10,
+      "cumple":false,
+      "razon":"limite_area",
+      "detalle":"Incumple limite de cursos en el area: ciencias_basicas",
+      "cursos": [
+	{
+	  "codigo":"FI1101",
+	  "grupo":1,
+	  "codigo_opcion":"FI1101",
+	  "carrera":"PI",
+	  "nombre":"Física general I",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"07:30","fin":"09:20"},
+	    {"dia":"JUE","inicio":"07:30","fin":"09:20"}
+	  ]
+	},
+	{
+	  "codigo":"FI1201",
+	  "grupo":2,
+	  "codigo_opcion":"FI1201",
+	  "carrera":"PI",
+	  "nombre":"Laboratorio física general I",
+	  "creditos":1,
+	  "area":"ciencias_basicas",
+	  "horarios": [ {"dia":"MAR","inicio":"09:30","fin":"11:20"} ]
+	},
+	{
+	  "codigo":"QU1107",
+	  "grupo":5,
+	  "codigo_opcion":"QU1107",
+	  "carrera":"PI",
+	  "nombre":"Química básica II",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"13:00","fin":"14:50"},
+	    {"dia":"JUE","inicio":"13:00","fin":"14:50"}
+	  ]
+	},
+	{
+	  "codigo":"PI3501",
+	  "grupo":3,
+	  "codigo_opcion":"PI3501",
+	  "carrera":"PI",
+	  "nombre":"Costos industriales I",
+	  "creditos":3,
+	  "area":"industrial_gestion",
+	  "horarios": [ {"dia":"MIE","inicio":"13:00","fin":"15:50"} ]
+	}
+      ]
+    },
+    {
+      "id":9,
+      "creditos_totales":10,
+      "cumple":false,
+      "razon":"limite_area",
+      "detalle":"Incumple limite de cursos en el area: ciencias_basicas",
+      "cursos": [
+	{
+	  "codigo":"FI1101",
+	  "grupo":1,
+	  "codigo_opcion":"FI1101",
+	  "carrera":"PI",
+	  "nombre":"Física general I",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"07:30","fin":"09:20"},
+	    {"dia":"JUE","inicio":"07:30","fin":"09:20"}
+	  ]
+	},
+	{
+	  "codigo":"FI1201",
+	  "grupo":2,
+	  "codigo_opcion":"FI1201",
+	  "carrera":"PI",
+	  "nombre":"Laboratorio física general I",
+	  "creditos":1,
+	  "area":"ciencias_basicas",
+	  "horarios": [ {"dia":"MAR","inicio":"09:30","fin":"11:20"} ]
+	},
+	{
+	  "codigo":"QU1107",
+	  "grupo":5,
+	  "codigo_opcion":"QU1107",
+	  "carrera":"PI",
+	  "nombre":"Química básica II",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"13:00","fin":"14:50"},
+	    {"dia":"JUE","inicio":"13:00","fin":"14:50"}
+	  ]
+	},
+	{
+	  "codigo":"CA2125",
+	  "grupo":1,
+	  "codigo_opcion":"CA2125",
+	  "carrera":"PI",
+	  "nombre":"Elementos de computación",
+	  "creditos":3,
+	  "area":"computacion",
+	  "horarios": [
+	    {"dia":"MIE","inicio":"09:30","fin":"11:20"},
+	    {"dia":"VIE","inicio":"09:30","fin":"11:20"}
+	  ]
+	}
+      ]
+    },
+    {
+      "id":10,
+      "creditos_totales":10,
+      "cumple":false,
+      "razon":"limite_area",
+      "detalle":"Incumple limite de cursos en el area: ciencias_basicas",
+      "cursos": [
+	{
+	  "codigo":"FI1101",
+	  "grupo":1,
+	  "codigo_opcion":"FI1101",
+	  "carrera":"PI",
+	  "nombre":"Física general I",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"07:30","fin":"09:20"},
+	    {"dia":"JUE","inicio":"07:30","fin":"09:20"}
+	  ]
+	},
+	{
+	  "codigo":"FI1201",
+	  "grupo":2,
+	  "codigo_opcion":"FI1201",
+	  "carrera":"PI",
+	  "nombre":"Laboratorio física general I",
+	  "creditos":1,
+	  "area":"ciencias_basicas",
+	  "horarios": [ {"dia":"MAR","inicio":"09:30","fin":"11:20"} ]
+	},
+	{
+	  "codigo":"QU1107",
+	  "grupo":5,
+	  "codigo_opcion":"QU1107",
+	  "carrera":"PI",
+	  "nombre":"Química básica II",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"13:00","fin":"14:50"},
+	    {"dia":"JUE","inicio":"13:00","fin":"14:50"}
+	  ]
+	},
+	{
+	  "codigo":"CA2125",
+	  "grupo":2,
+	  "codigo_opcion":"CA2125",
+	  "carrera":"PI",
+	  "nombre":"Elementos de computación",
+	  "creditos":3,
+	  "area":"computacion",
+	  "horarios": [
+	    {"dia":"MIE","inicio":"09:30","fin":"11:20"},
+	    {"dia":"VIE","inicio":"09:30","fin":"11:20"}
+	  ]
+	}
+      ]
+    },
+    {
+      "id":11,
+      "creditos_totales":9,
+      "cumple":false,
+      "razon":"limite_area",
+      "detalle":"Incumple limite de cursos en el area: ciencias_basicas",
+      "cursos": [
+	{
+	  "codigo":"FI1101",
+	  "grupo":1,
+	  "codigo_opcion":"FI1101",
+	  "carrera":"PI",
+	  "nombre":"Física general I",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"07:30","fin":"09:20"},
+	    {"dia":"JUE","inicio":"07:30","fin":"09:20"}
+	  ]
+	},
+	{
+	  "codigo":"FI1201",
+	  "grupo":2,
+	  "codigo_opcion":"FI1201",
+	  "carrera":"PI",
+	  "nombre":"Laboratorio física general I",
+	  "creditos":1,
+	  "area":"ciencias_basicas",
+	  "horarios": [ {"dia":"MAR","inicio":"09:30","fin":"11:20"} ]
+	},
+	{
+	  "codigo":"QU1107",
+	  "grupo":5,
+	  "codigo_opcion":"QU1107",
+	  "carrera":"PI",
+	  "nombre":"Química básica II",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"13:00","fin":"14:50"},
+	    {"dia":"JUE","inicio":"13:00","fin":"14:50"}
+	  ]
+	},
+	{
+	  "codigo":"CS2101",
+	  "grupo":1,
+	  "codigo_opcion":"CS2101",
+	  "carrera":"PI",
+	  "nombre":"Ambiente humano",
+	  "creditos":2,
+	  "area":"humanidades_complementarias",
+	  "horarios": [ {"dia":"VIE","inicio":"09:30","fin":"12:20"} ]
+	}
+      ]
+    },
+    {
+      "id":12,
+      "creditos_totales":13,
+      "cumple":false,
+      "razon":"limite_area",
+      "detalle":"Incumple limite de cursos en el area: ciencias_basicas",
+      "cursos": [
+	{
+	  "codigo":"FI1101",
+	  "grupo":1,
+	  "codigo_opcion":"FI1101",
+	  "carrera":"PI",
+	  "nombre":"Física general I",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"07:30","fin":"09:20"},
+	    {"dia":"JUE","inicio":"07:30","fin":"09:20"}
+	  ]
+	},
+	{
+	  "codigo":"FI1201",
+	  "grupo":2,
+	  "codigo_opcion":"FI1201",
+	  "carrera":"PI",
+	  "nombre":"Laboratorio física general I",
+	  "creditos":1,
+	  "area":"ciencias_basicas",
+	  "horarios": [ {"dia":"MAR","inicio":"09:30","fin":"11:20"} ]
+	},
+	{
+	  "codigo":"QU1107",
+	  "grupo":6,
+	  "codigo_opcion":"QU1107",
+	  "carrera":"PI",
+	  "nombre":"Química básica II",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"15:00","fin":"16:50"},
+	    {"dia":"JUE","inicio":"15:00","fin":"16:50"}
+	  ]
+	},
+	{
+	  "codigo":"PI3501",
+	  "grupo":2,
+	  "codigo_opcion":"PI3501",
+	  "carrera":"PI",
+	  "nombre":"Costos industriales I",
+	  "creditos":3,
+	  "area":"industrial_gestion",
+	  "horarios": [ {"dia":"MAR","inicio":"17:00","fin":"19:50"} ]
+	},
+	{
+	  "codigo":"CA2125",
+	  "grupo":1,
+	  "codigo_opcion":"CA2125",
+	  "carrera":"PI",
+	  "nombre":"Elementos de computación",
+	  "creditos":3,
+	  "area":"computacion",
+	  "horarios": [
+	    {"dia":"MIE","inicio":"09:30","fin":"11:20"},
+	    {"dia":"VIE","inicio":"09:30","fin":"11:20"}
+	  ]
+	}
+      ]
+    },
+    {
+      "id":13,
+      "creditos_totales":13,
+      "cumple":false,
+      "razon":"limite_area",
+      "detalle":"Incumple limite de cursos en el area: ciencias_basicas",
+      "cursos": [
+	{
+	  "codigo":"FI1101",
+	  "grupo":1,
+	  "codigo_opcion":"FI1101",
+	  "carrera":"PI",
+	  "nombre":"Física general I",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"07:30","fin":"09:20"},
+	    {"dia":"JUE","inicio":"07:30","fin":"09:20"}
+	  ]
+	},
+	{
+	  "codigo":"FI1201",
+	  "grupo":2,
+	  "codigo_opcion":"FI1201",
+	  "carrera":"PI",
+	  "nombre":"Laboratorio física general I",
+	  "creditos":1,
+	  "area":"ciencias_basicas",
+	  "horarios": [ {"dia":"MAR","inicio":"09:30","fin":"11:20"} ]
+	},
+	{
+	  "codigo":"QU1107",
+	  "grupo":6,
+	  "codigo_opcion":"QU1107",
+	  "carrera":"PI",
+	  "nombre":"Química básica II",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"15:00","fin":"16:50"},
+	    {"dia":"JUE","inicio":"15:00","fin":"16:50"}
+	  ]
+	},
+	{
+	  "codigo":"PI3501",
+	  "grupo":2,
+	  "codigo_opcion":"PI3501",
+	  "carrera":"PI",
+	  "nombre":"Costos industriales I",
+	  "creditos":3,
+	  "area":"industrial_gestion",
+	  "horarios": [ {"dia":"MAR","inicio":"17:00","fin":"19:50"} ]
+	},
+	{
+	  "codigo":"CA2125",
+	  "grupo":2,
+	  "codigo_opcion":"CA2125",
+	  "carrera":"PI",
+	  "nombre":"Elementos de computación",
+	  "creditos":3,
+	  "area":"computacion",
+	  "horarios": [
+	    {"dia":"MIE","inicio":"09:30","fin":"11:20"},
+	    {"dia":"VIE","inicio":"09:30","fin":"11:20"}
+	  ]
+	}
+      ]
+    },
+    {
+      "id":14,
+      "creditos_totales":12,
+      "cumple":false,
+      "razon":"limite_area",
+      "detalle":"Incumple limite de cursos en el area: ciencias_basicas",
+      "cursos": [
+	{
+	  "codigo":"FI1101",
+	  "grupo":1,
+	  "codigo_opcion":"FI1101",
+	  "carrera":"PI",
+	  "nombre":"Física general I",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"07:30","fin":"09:20"},
+	    {"dia":"JUE","inicio":"07:30","fin":"09:20"}
+	  ]
+	},
+	{
+	  "codigo":"FI1201",
+	  "grupo":2,
+	  "codigo_opcion":"FI1201",
+	  "carrera":"PI",
+	  "nombre":"Laboratorio física general I",
+	  "creditos":1,
+	  "area":"ciencias_basicas",
+	  "horarios": [ {"dia":"MAR","inicio":"09:30","fin":"11:20"} ]
+	},
+	{
+	  "codigo":"QU1107",
+	  "grupo":6,
+	  "codigo_opcion":"QU1107",
+	  "carrera":"PI",
+	  "nombre":"Química básica II",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"15:00","fin":"16:50"},
+	    {"dia":"JUE","inicio":"15:00","fin":"16:50"}
+	  ]
+	},
+	{
+	  "codigo":"PI3501",
+	  "grupo":2,
+	  "codigo_opcion":"PI3501",
+	  "carrera":"PI",
+	  "nombre":"Costos industriales I",
+	  "creditos":3,
+	  "area":"industrial_gestion",
+	  "horarios": [ {"dia":"MAR","inicio":"17:00","fin":"19:50"} ]
+	},
+	{
+	  "codigo":"CS2101",
+	  "grupo":1,
+	  "codigo_opcion":"CS2101",
+	  "carrera":"PI",
+	  "nombre":"Ambiente humano",
+	  "creditos":2,
+	  "area":"humanidades_complementarias",
+	  "horarios": [ {"dia":"VIE","inicio":"09:30","fin":"12:20"} ]
+	}
+      ]
+    },
+    {
+      "id":15,
+      "creditos_totales":10,
+      "cumple":false,
+      "razon":"limite_area",
+      "detalle":"Incumple limite de cursos en el area: ciencias_basicas",
+      "cursos": [
+	{
+	  "codigo":"FI1101",
+	  "grupo":1,
+	  "codigo_opcion":"FI1101",
+	  "carrera":"PI",
+	  "nombre":"Física general I",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"07:30","fin":"09:20"},
+	    {"dia":"JUE","inicio":"07:30","fin":"09:20"}
+	  ]
+	},
+	{
+	  "codigo":"FI1201",
+	  "grupo":2,
+	  "codigo_opcion":"FI1201",
+	  "carrera":"PI",
+	  "nombre":"Laboratorio física general I",
+	  "creditos":1,
+	  "area":"ciencias_basicas",
+	  "horarios": [ {"dia":"MAR","inicio":"09:30","fin":"11:20"} ]
+	},
+	{
+	  "codigo":"QU1107",
+	  "grupo":6,
+	  "codigo_opcion":"QU1107",
+	  "carrera":"PI",
+	  "nombre":"Química básica II",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"15:00","fin":"16:50"},
+	    {"dia":"JUE","inicio":"15:00","fin":"16:50"}
+	  ]
+	},
+	{
+	  "codigo":"PI3501",
+	  "grupo":2,
+	  "codigo_opcion":"PI3501",
+	  "carrera":"PI",
+	  "nombre":"Costos industriales I",
+	  "creditos":3,
+	  "area":"industrial_gestion",
+	  "horarios": [ {"dia":"MAR","inicio":"17:00","fin":"19:50"} ]
+	}
+      ]
+    },
+    {
+      "id":16,
+      "creditos_totales":13,
+      "cumple":false,
+      "razon":"limite_area",
+      "detalle":"Incumple limite de cursos en el area: ciencias_basicas",
+      "cursos": [
+	{
+	  "codigo":"FI1101",
+	  "grupo":1,
+	  "codigo_opcion":"FI1101",
+	  "carrera":"PI",
+	  "nombre":"Física general I",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"07:30","fin":"09:20"},
+	    {"dia":"JUE","inicio":"07:30","fin":"09:20"}
+	  ]
+	},
+	{
+	  "codigo":"FI1201",
+	  "grupo":2,
+	  "codigo_opcion":"FI1201",
+	  "carrera":"PI",
+	  "nombre":"Laboratorio física general I",
+	  "creditos":1,
+	  "area":"ciencias_basicas",
+	  "horarios": [ {"dia":"MAR","inicio":"09:30","fin":"11:20"} ]
+	},
+	{
+	  "codigo":"QU1107",
+	  "grupo":6,
+	  "codigo_opcion":"QU1107",
+	  "carrera":"PI",
+	  "nombre":"Química básica II",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"15:00","fin":"16:50"},
+	    {"dia":"JUE","inicio":"15:00","fin":"16:50"}
+	  ]
+	},
+	{
+	  "codigo":"PI3501",
+	  "grupo":3,
+	  "codigo_opcion":"PI3501",
+	  "carrera":"PI",
+	  "nombre":"Costos industriales I",
+	  "creditos":3,
+	  "area":"industrial_gestion",
+	  "horarios": [ {"dia":"MIE","inicio":"13:00","fin":"15:50"} ]
+	},
+	{
+	  "codigo":"CA2125",
+	  "grupo":1,
+	  "codigo_opcion":"CA2125",
+	  "carrera":"PI",
+	  "nombre":"Elementos de computación",
+	  "creditos":3,
+	  "area":"computacion",
+	  "horarios": [
+	    {"dia":"MIE","inicio":"09:30","fin":"11:20"},
+	    {"dia":"VIE","inicio":"09:30","fin":"11:20"}
+	  ]
+	}
+      ]
+    },
+    {
+      "id":17,
+      "creditos_totales":13,
+      "cumple":false,
+      "razon":"limite_area",
+      "detalle":"Incumple limite de cursos en el area: ciencias_basicas",
+      "cursos": [
+	{
+	  "codigo":"FI1101",
+	  "grupo":1,
+	  "codigo_opcion":"FI1101",
+	  "carrera":"PI",
+	  "nombre":"Física general I",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"07:30","fin":"09:20"},
+	    {"dia":"JUE","inicio":"07:30","fin":"09:20"}
+	  ]
+	},
+	{
+	  "codigo":"FI1201",
+	  "grupo":2,
+	  "codigo_opcion":"FI1201",
+	  "carrera":"PI",
+	  "nombre":"Laboratorio física general I",
+	  "creditos":1,
+	  "area":"ciencias_basicas",
+	  "horarios": [ {"dia":"MAR","inicio":"09:30","fin":"11:20"} ]
+	},
+	{
+	  "codigo":"QU1107",
+	  "grupo":6,
+	  "codigo_opcion":"QU1107",
+	  "carrera":"PI",
+	  "nombre":"Química básica II",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"15:00","fin":"16:50"},
+	    {"dia":"JUE","inicio":"15:00","fin":"16:50"}
+	  ]
+	},
+	{
+	  "codigo":"PI3501",
+	  "grupo":3,
+	  "codigo_opcion":"PI3501",
+	  "carrera":"PI",
+	  "nombre":"Costos industriales I",
+	  "creditos":3,
+	  "area":"industrial_gestion",
+	  "horarios": [ {"dia":"MIE","inicio":"13:00","fin":"15:50"} ]
+	},
+	{
+	  "codigo":"CA2125",
+	  "grupo":2,
+	  "codigo_opcion":"CA2125",
+	  "carrera":"PI",
+	  "nombre":"Elementos de computación",
+	  "creditos":3,
+	  "area":"computacion",
+	  "horarios": [
+	    {"dia":"MIE","inicio":"09:30","fin":"11:20"},
+	    {"dia":"VIE","inicio":"09:30","fin":"11:20"}
+	  ]
+	}
+      ]
+    },
+    {
+      "id":18,
+      "creditos_totales":12,
+      "cumple":false,
+      "razon":"limite_area",
+      "detalle":"Incumple limite de cursos en el area: ciencias_basicas",
+      "cursos": [
+	{
+	  "codigo":"FI1101",
+	  "grupo":1,
+	  "codigo_opcion":"FI1101",
+	  "carrera":"PI",
+	  "nombre":"Física general I",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"07:30","fin":"09:20"},
+	    {"dia":"JUE","inicio":"07:30","fin":"09:20"}
+	  ]
+	},
+	{
+	  "codigo":"FI1201",
+	  "grupo":2,
+	  "codigo_opcion":"FI1201",
+	  "carrera":"PI",
+	  "nombre":"Laboratorio física general I",
+	  "creditos":1,
+	  "area":"ciencias_basicas",
+	  "horarios": [ {"dia":"MAR","inicio":"09:30","fin":"11:20"} ]
+	},
+	{
+	  "codigo":"QU1107",
+	  "grupo":6,
+	  "codigo_opcion":"QU1107",
+	  "carrera":"PI",
+	  "nombre":"Química básica II",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"15:00","fin":"16:50"},
+	    {"dia":"JUE","inicio":"15:00","fin":"16:50"}
+	  ]
+	},
+	{
+	  "codigo":"PI3501",
+	  "grupo":3,
+	  "codigo_opcion":"PI3501",
+	  "carrera":"PI",
+	  "nombre":"Costos industriales I",
+	  "creditos":3,
+	  "area":"industrial_gestion",
+	  "horarios": [ {"dia":"MIE","inicio":"13:00","fin":"15:50"} ]
+	},
+	{
+	  "codigo":"CS2101",
+	  "grupo":1,
+	  "codigo_opcion":"CS2101",
+	  "carrera":"PI",
+	  "nombre":"Ambiente humano",
+	  "creditos":2,
+	  "area":"humanidades_complementarias",
+	  "horarios": [ {"dia":"VIE","inicio":"09:30","fin":"12:20"} ]
+	}
+      ]
+    },
+    {
+      "id":19,
+      "creditos_totales":10,
+      "cumple":false,
+      "razon":"limite_area",
+      "detalle":"Incumple limite de cursos en el area: ciencias_basicas",
+      "cursos": [
+	{
+	  "codigo":"FI1101",
+	  "grupo":1,
+	  "codigo_opcion":"FI1101",
+	  "carrera":"PI",
+	  "nombre":"Física general I",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"07:30","fin":"09:20"},
+	    {"dia":"JUE","inicio":"07:30","fin":"09:20"}
+	  ]
+	},
+	{
+	  "codigo":"FI1201",
+	  "grupo":2,
+	  "codigo_opcion":"FI1201",
+	  "carrera":"PI",
+	  "nombre":"Laboratorio física general I",
+	  "creditos":1,
+	  "area":"ciencias_basicas",
+	  "horarios": [ {"dia":"MAR","inicio":"09:30","fin":"11:20"} ]
+	},
+	{
+	  "codigo":"QU1107",
+	  "grupo":6,
+	  "codigo_opcion":"QU1107",
+	  "carrera":"PI",
+	  "nombre":"Química básica II",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"15:00","fin":"16:50"},
+	    {"dia":"JUE","inicio":"15:00","fin":"16:50"}
+	  ]
+	},
+	{
+	  "codigo":"PI3501",
+	  "grupo":3,
+	  "codigo_opcion":"PI3501",
+	  "carrera":"PI",
+	  "nombre":"Costos industriales I",
+	  "creditos":3,
+	  "area":"industrial_gestion",
+	  "horarios": [ {"dia":"MIE","inicio":"13:00","fin":"15:50"} ]
+	}
+      ]
+    },
+    {
+      "id":20,
+      "creditos_totales":10,
+      "cumple":false,
+      "razon":"limite_area",
+      "detalle":"Incumple limite de cursos en el area: ciencias_basicas",
+      "cursos": [
+	{
+	  "codigo":"FI1101",
+	  "grupo":1,
+	  "codigo_opcion":"FI1101",
+	  "carrera":"PI",
+	  "nombre":"Física general I",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"07:30","fin":"09:20"},
+	    {"dia":"JUE","inicio":"07:30","fin":"09:20"}
+	  ]
+	},
+	{
+	  "codigo":"FI1201",
+	  "grupo":2,
+	  "codigo_opcion":"FI1201",
+	  "carrera":"PI",
+	  "nombre":"Laboratorio física general I",
+	  "creditos":1,
+	  "area":"ciencias_basicas",
+	  "horarios": [ {"dia":"MAR","inicio":"09:30","fin":"11:20"} ]
+	},
+	{
+	  "codigo":"QU1107",
+	  "grupo":6,
+	  "codigo_opcion":"QU1107",
+	  "carrera":"PI",
+	  "nombre":"Química básica II",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"15:00","fin":"16:50"},
+	    {"dia":"JUE","inicio":"15:00","fin":"16:50"}
+	  ]
+	},
+	{
+	  "codigo":"CA2125",
+	  "grupo":1,
+	  "codigo_opcion":"CA2125",
+	  "carrera":"PI",
+	  "nombre":"Elementos de computación",
+	  "creditos":3,
+	  "area":"computacion",
+	  "horarios": [
+	    {"dia":"MIE","inicio":"09:30","fin":"11:20"},
+	    {"dia":"VIE","inicio":"09:30","fin":"11:20"}
+	  ]
+	}
+      ]
+    },
+    {
+      "id":21,
+      "creditos_totales":10,
+      "cumple":false,
+      "razon":"limite_area",
+      "detalle":"Incumple limite de cursos en el area: ciencias_basicas",
+      "cursos": [
+	{
+	  "codigo":"FI1101",
+	  "grupo":1,
+	  "codigo_opcion":"FI1101",
+	  "carrera":"PI",
+	  "nombre":"Física general I",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"07:30","fin":"09:20"},
+	    {"dia":"JUE","inicio":"07:30","fin":"09:20"}
+	  ]
+	},
+	{
+	  "codigo":"FI1201",
+	  "grupo":2,
+	  "codigo_opcion":"FI1201",
+	  "carrera":"PI",
+	  "nombre":"Laboratorio física general I",
+	  "creditos":1,
+	  "area":"ciencias_basicas",
+	  "horarios": [ {"dia":"MAR","inicio":"09:30","fin":"11:20"} ]
+	},
+	{
+	  "codigo":"QU1107",
+	  "grupo":6,
+	  "codigo_opcion":"QU1107",
+	  "carrera":"PI",
+	  "nombre":"Química básica II",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"15:00","fin":"16:50"},
+	    {"dia":"JUE","inicio":"15:00","fin":"16:50"}
+	  ]
+	},
+	{
+	  "codigo":"CA2125",
+	  "grupo":2,
+	  "codigo_opcion":"CA2125",
+	  "carrera":"PI",
+	  "nombre":"Elementos de computación",
+	  "creditos":3,
+	  "area":"computacion",
+	  "horarios": [
+	    {"dia":"MIE","inicio":"09:30","fin":"11:20"},
+	    {"dia":"VIE","inicio":"09:30","fin":"11:20"}
+	  ]
+	}
+      ]
+    },
+    {
+      "id":22,
+      "creditos_totales":9,
+      "cumple":false,
+      "razon":"limite_area",
+      "detalle":"Incumple limite de cursos en el area: ciencias_basicas",
+      "cursos": [
+	{
+	  "codigo":"FI1101",
+	  "grupo":1,
+	  "codigo_opcion":"FI1101",
+	  "carrera":"PI",
+	  "nombre":"Física general I",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"07:30","fin":"09:20"},
+	    {"dia":"JUE","inicio":"07:30","fin":"09:20"}
+	  ]
+	},
+	{
+	  "codigo":"FI1201",
+	  "grupo":2,
+	  "codigo_opcion":"FI1201",
+	  "carrera":"PI",
+	  "nombre":"Laboratorio física general I",
+	  "creditos":1,
+	  "area":"ciencias_basicas",
+	  "horarios": [ {"dia":"MAR","inicio":"09:30","fin":"11:20"} ]
+	},
+	{
+	  "codigo":"QU1107",
+	  "grupo":6,
+	  "codigo_opcion":"QU1107",
+	  "carrera":"PI",
+	  "nombre":"Química básica II",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"15:00","fin":"16:50"},
+	    {"dia":"JUE","inicio":"15:00","fin":"16:50"}
+	  ]
+	},
+	{
+	  "codigo":"CS2101",
+	  "grupo":1,
+	  "codigo_opcion":"CS2101",
+	  "carrera":"PI",
+	  "nombre":"Ambiente humano",
+	  "creditos":2,
+	  "area":"humanidades_complementarias",
+	  "horarios": [ {"dia":"VIE","inicio":"09:30","fin":"12:20"} ]
+	}
+      ]
+    },
+    {
+      "id":23,
+      "creditos_totales":10,
+      "cumple":true,
+      "razon":"ninguna",
+      "detalle":"Ninguna",
+      "cursos": [
+	{
+	  "codigo":"FI1101",
+	  "grupo":1,
+	  "codigo_opcion":"FI1101",
+	  "carrera":"PI",
+	  "nombre":"Física general I",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"07:30","fin":"09:20"},
+	    {"dia":"JUE","inicio":"07:30","fin":"09:20"}
+	  ]
+	},
+	{
+	  "codigo":"FI1201",
+	  "grupo":2,
+	  "codigo_opcion":"FI1201",
+	  "carrera":"PI",
+	  "nombre":"Laboratorio física general I",
+	  "creditos":1,
+	  "area":"ciencias_basicas",
+	  "horarios": [ {"dia":"MAR","inicio":"09:30","fin":"11:20"} ]
+	},
+	{
+	  "codigo":"PI3501",
+	  "grupo":2,
+	  "codigo_opcion":"PI3501",
+	  "carrera":"PI",
+	  "nombre":"Costos industriales I",
+	  "creditos":3,
+	  "area":"industrial_gestion",
+	  "horarios": [ {"dia":"MAR","inicio":"17:00","fin":"19:50"} ]
+	},
+	{
+	  "codigo":"CA2125",
+	  "grupo":1,
+	  "codigo_opcion":"CA2125",
+	  "carrera":"PI",
+	  "nombre":"Elementos de computación",
+	  "creditos":3,
+	  "area":"computacion",
+	  "horarios": [
+	    {"dia":"MIE","inicio":"09:30","fin":"11:20"},
+	    {"dia":"VIE","inicio":"09:30","fin":"11:20"}
+	  ]
+	}
+      ]
+    },
+    {
+      "id":24,
+      "creditos_totales":10,
+      "cumple":true,
+      "razon":"ninguna",
+      "detalle":"Ninguna",
+      "cursos": [
+	{
+	  "codigo":"FI1101",
+	  "grupo":1,
+	  "codigo_opcion":"FI1101",
+	  "carrera":"PI",
+	  "nombre":"Física general I",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"07:30","fin":"09:20"},
+	    {"dia":"JUE","inicio":"07:30","fin":"09:20"}
+	  ]
+	},
+	{
+	  "codigo":"FI1201",
+	  "grupo":2,
+	  "codigo_opcion":"FI1201",
+	  "carrera":"PI",
+	  "nombre":"Laboratorio física general I",
+	  "creditos":1,
+	  "area":"ciencias_basicas",
+	  "horarios": [ {"dia":"MAR","inicio":"09:30","fin":"11:20"} ]
+	},
+	{
+	  "codigo":"PI3501",
+	  "grupo":2,
+	  "codigo_opcion":"PI3501",
+	  "carrera":"PI",
+	  "nombre":"Costos industriales I",
+	  "creditos":3,
+	  "area":"industrial_gestion",
+	  "horarios": [ {"dia":"MAR","inicio":"17:00","fin":"19:50"} ]
+	},
+	{
+	  "codigo":"CA2125",
+	  "grupo":2,
+	  "codigo_opcion":"CA2125",
+	  "carrera":"PI",
+	  "nombre":"Elementos de computación",
+	  "creditos":3,
+	  "area":"computacion",
+	  "horarios": [
+	    {"dia":"MIE","inicio":"09:30","fin":"11:20"},
+	    {"dia":"VIE","inicio":"09:30","fin":"11:20"}
+	  ]
+	}
+      ]
+    },
+    {
+      "id":25,
+      "creditos_totales":9,
+      "cumple":true,
+      "razon":"ninguna",
+      "detalle":"Ninguna",
+      "cursos": [
+	{
+	  "codigo":"FI1101",
+	  "grupo":1,
+	  "codigo_opcion":"FI1101",
+	  "carrera":"PI",
+	  "nombre":"Física general I",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"07:30","fin":"09:20"},
+	    {"dia":"JUE","inicio":"07:30","fin":"09:20"}
+	  ]
+	},
+	{
+	  "codigo":"FI1201",
+	  "grupo":2,
+	  "codigo_opcion":"FI1201",
+	  "carrera":"PI",
+	  "nombre":"Laboratorio física general I",
+	  "creditos":1,
+	  "area":"ciencias_basicas",
+	  "horarios": [ {"dia":"MAR","inicio":"09:30","fin":"11:20"} ]
+	},
+	{
+	  "codigo":"PI3501",
+	  "grupo":2,
+	  "codigo_opcion":"PI3501",
+	  "carrera":"PI",
+	  "nombre":"Costos industriales I",
+	  "creditos":3,
+	  "area":"industrial_gestion",
+	  "horarios": [ {"dia":"MAR","inicio":"17:00","fin":"19:50"} ]
+	},
+	{
+	  "codigo":"CS2101",
+	  "grupo":1,
+	  "codigo_opcion":"CS2101",
+	  "carrera":"PI",
+	  "nombre":"Ambiente humano",
+	  "creditos":2,
+	  "area":"humanidades_complementarias",
+	  "horarios": [ {"dia":"VIE","inicio":"09:30","fin":"12:20"} ]
+	}
+      ]
+    },
+    {
+      "id":26,
+      "creditos_totales":10,
+      "cumple":true,
+      "razon":"ninguna",
+      "detalle":"Ninguna",
+      "cursos": [
+	{
+	  "codigo":"FI1101",
+	  "grupo":1,
+	  "codigo_opcion":"FI1101",
+	  "carrera":"PI",
+	  "nombre":"Física general I",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"07:30","fin":"09:20"},
+	    {"dia":"JUE","inicio":"07:30","fin":"09:20"}
+	  ]
+	},
+	{
+	  "codigo":"FI1201",
+	  "grupo":2,
+	  "codigo_opcion":"FI1201",
+	  "carrera":"PI",
+	  "nombre":"Laboratorio física general I",
+	  "creditos":1,
+	  "area":"ciencias_basicas",
+	  "horarios": [ {"dia":"MAR","inicio":"09:30","fin":"11:20"} ]
+	},
+	{
+	  "codigo":"PI3501",
+	  "grupo":3,
+	  "codigo_opcion":"PI3501",
+	  "carrera":"PI",
+	  "nombre":"Costos industriales I",
+	  "creditos":3,
+	  "area":"industrial_gestion",
+	  "horarios": [ {"dia":"MIE","inicio":"13:00","fin":"15:50"} ]
+	},
+	{
+	  "codigo":"CA2125",
+	  "grupo":1,
+	  "codigo_opcion":"CA2125",
+	  "carrera":"PI",
+	  "nombre":"Elementos de computación",
+	  "creditos":3,
+	  "area":"computacion",
+	  "horarios": [
+	    {"dia":"MIE","inicio":"09:30","fin":"11:20"},
+	    {"dia":"VIE","inicio":"09:30","fin":"11:20"}
+	  ]
+	}
+      ]
+    },
+    {
+      "id":27,
+      "creditos_totales":10,
+      "cumple":true,
+      "razon":"ninguna",
+      "detalle":"Ninguna",
+      "cursos": [
+	{
+	  "codigo":"FI1101",
+	  "grupo":1,
+	  "codigo_opcion":"FI1101",
+	  "carrera":"PI",
+	  "nombre":"Física general I",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"07:30","fin":"09:20"},
+	    {"dia":"JUE","inicio":"07:30","fin":"09:20"}
+	  ]
+	},
+	{
+	  "codigo":"FI1201",
+	  "grupo":2,
+	  "codigo_opcion":"FI1201",
+	  "carrera":"PI",
+	  "nombre":"Laboratorio física general I",
+	  "creditos":1,
+	  "area":"ciencias_basicas",
+	  "horarios": [ {"dia":"MAR","inicio":"09:30","fin":"11:20"} ]
+	},
+	{
+	  "codigo":"PI3501",
+	  "grupo":3,
+	  "codigo_opcion":"PI3501",
+	  "carrera":"PI",
+	  "nombre":"Costos industriales I",
+	  "creditos":3,
+	  "area":"industrial_gestion",
+	  "horarios": [ {"dia":"MIE","inicio":"13:00","fin":"15:50"} ]
+	},
+	{
+	  "codigo":"CA2125",
+	  "grupo":2,
+	  "codigo_opcion":"CA2125",
+	  "carrera":"PI",
+	  "nombre":"Elementos de computación",
+	  "creditos":3,
+	  "area":"computacion",
+	  "horarios": [
+	    {"dia":"MIE","inicio":"09:30","fin":"11:20"},
+	    {"dia":"VIE","inicio":"09:30","fin":"11:20"}
+	  ]
+	}
+      ]
+    },
+    {
+      "id":28,
+      "creditos_totales":9,
+      "cumple":true,
+      "razon":"ninguna",
+      "detalle":"Ninguna",
+      "cursos": [
+	{
+	  "codigo":"FI1101",
+	  "grupo":1,
+	  "codigo_opcion":"FI1101",
+	  "carrera":"PI",
+	  "nombre":"Física general I",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"07:30","fin":"09:20"},
+	    {"dia":"JUE","inicio":"07:30","fin":"09:20"}
+	  ]
+	},
+	{
+	  "codigo":"FI1201",
+	  "grupo":2,
+	  "codigo_opcion":"FI1201",
+	  "carrera":"PI",
+	  "nombre":"Laboratorio física general I",
+	  "creditos":1,
+	  "area":"ciencias_basicas",
+	  "horarios": [ {"dia":"MAR","inicio":"09:30","fin":"11:20"} ]
+	},
+	{
+	  "codigo":"PI3501",
+	  "grupo":3,
+	  "codigo_opcion":"PI3501",
+	  "carrera":"PI",
+	  "nombre":"Costos industriales I",
+	  "creditos":3,
+	  "area":"industrial_gestion",
+	  "horarios": [ {"dia":"MIE","inicio":"13:00","fin":"15:50"} ]
+	},
+	{
+	  "codigo":"CS2101",
+	  "grupo":1,
+	  "codigo_opcion":"CS2101",
+	  "carrera":"PI",
+	  "nombre":"Ambiente humano",
+	  "creditos":2,
+	  "area":"humanidades_complementarias",
+	  "horarios": [ {"dia":"VIE","inicio":"09:30","fin":"12:20"} ]
+	}
+      ]
+    },
+    {
+      "id":29,
+      "creditos_totales":14,
+      "cumple":true,
+      "razon":"ninguna",
+      "detalle":"Ninguna",
+      "cursos": [
+	{
+	  "codigo":"FI1101",
+	  "grupo":1,
+	  "codigo_opcion":"FI1101",
+	  "carrera":"PI",
+	  "nombre":"Física general I",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"07:30","fin":"09:20"},
+	    {"dia":"JUE","inicio":"07:30","fin":"09:20"}
+	  ]
+	},
+	{
+	  "codigo":"QU1107",
+	  "grupo":5,
+	  "codigo_opcion":"QU1107",
+	  "carrera":"PI",
+	  "nombre":"Química básica II",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"13:00","fin":"14:50"},
+	    {"dia":"JUE","inicio":"13:00","fin":"14:50"}
+	  ]
+	},
+	{
+	  "codigo":"PI3501",
+	  "grupo":2,
+	  "codigo_opcion":"PI3501",
+	  "carrera":"PI",
+	  "nombre":"Costos industriales I",
+	  "creditos":3,
+	  "area":"industrial_gestion",
+	  "horarios": [ {"dia":"MAR","inicio":"17:00","fin":"19:50"} ]
+	},
+	{
+	  "codigo":"CA2125",
+	  "grupo":1,
+	  "codigo_opcion":"CA2125",
+	  "carrera":"PI",
+	  "nombre":"Elementos de computación",
+	  "creditos":3,
+	  "area":"computacion",
+	  "horarios": [
+	    {"dia":"MIE","inicio":"09:30","fin":"11:20"},
+	    {"dia":"VIE","inicio":"09:30","fin":"11:20"}
+	  ]
+	},
+	{
+	  "codigo":"CS2101",
+	  "grupo":2,
+	  "codigo_opcion":"CS2101",
+	  "carrera":"PI",
+	  "nombre":"Ambiente humano",
+	  "creditos":2,
+	  "area":"humanidades_complementarias",
+	  "horarios": [ {"dia":"MAR","inicio":"09:30","fin":"12:20"} ]
+	}
+      ]
+    },
+    {
+      "id":30,
+      "creditos_totales":12,
+      "cumple":true,
+      "razon":"ninguna",
+      "detalle":"Ninguna",
+      "cursos": [
+	{
+	  "codigo":"FI1101",
+	  "grupo":1,
+	  "codigo_opcion":"FI1101",
+	  "carrera":"PI",
+	  "nombre":"Física general I",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"07:30","fin":"09:20"},
+	    {"dia":"JUE","inicio":"07:30","fin":"09:20"}
+	  ]
+	},
+	{
+	  "codigo":"QU1107",
+	  "grupo":5,
+	  "codigo_opcion":"QU1107",
+	  "carrera":"PI",
+	  "nombre":"Química básica II",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"13:00","fin":"14:50"},
+	    {"dia":"JUE","inicio":"13:00","fin":"14:50"}
+	  ]
+	},
+	{
+	  "codigo":"PI3501",
+	  "grupo":2,
+	  "codigo_opcion":"PI3501",
+	  "carrera":"PI",
+	  "nombre":"Costos industriales I",
+	  "creditos":3,
+	  "area":"industrial_gestion",
+	  "horarios": [ {"dia":"MAR","inicio":"17:00","fin":"19:50"} ]
+	},
+	{
+	  "codigo":"CA2125",
+	  "grupo":1,
+	  "codigo_opcion":"CA2125",
+	  "carrera":"PI",
+	  "nombre":"Elementos de computación",
+	  "creditos":3,
+	  "area":"computacion",
+	  "horarios": [
+	    {"dia":"MIE","inicio":"09:30","fin":"11:20"},
+	    {"dia":"VIE","inicio":"09:30","fin":"11:20"}
+	  ]
+	}
+      ]
+    },
+    {
+      "id":31,
+      "creditos_totales":14,
+      "cumple":true,
+      "razon":"ninguna",
+      "detalle":"Ninguna",
+      "cursos": [
+	{
+	  "codigo":"FI1101",
+	  "grupo":1,
+	  "codigo_opcion":"FI1101",
+	  "carrera":"PI",
+	  "nombre":"Física general I",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"07:30","fin":"09:20"},
+	    {"dia":"JUE","inicio":"07:30","fin":"09:20"}
+	  ]
+	},
+	{
+	  "codigo":"QU1107",
+	  "grupo":5,
+	  "codigo_opcion":"QU1107",
+	  "carrera":"PI",
+	  "nombre":"Química básica II",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"13:00","fin":"14:50"},
+	    {"dia":"JUE","inicio":"13:00","fin":"14:50"}
+	  ]
+	},
+	{
+	  "codigo":"PI3501",
+	  "grupo":2,
+	  "codigo_opcion":"PI3501",
+	  "carrera":"PI",
+	  "nombre":"Costos industriales I",
+	  "creditos":3,
+	  "area":"industrial_gestion",
+	  "horarios": [ {"dia":"MAR","inicio":"17:00","fin":"19:50"} ]
+	},
+	{
+	  "codigo":"CA2125",
+	  "grupo":2,
+	  "codigo_opcion":"CA2125",
+	  "carrera":"PI",
+	  "nombre":"Elementos de computación",
+	  "creditos":3,
+	  "area":"computacion",
+	  "horarios": [
+	    {"dia":"MIE","inicio":"09:30","fin":"11:20"},
+	    {"dia":"VIE","inicio":"09:30","fin":"11:20"}
+	  ]
+	},
+	{
+	  "codigo":"CS2101",
+	  "grupo":2,
+	  "codigo_opcion":"CS2101",
+	  "carrera":"PI",
+	  "nombre":"Ambiente humano",
+	  "creditos":2,
+	  "area":"humanidades_complementarias",
+	  "horarios": [ {"dia":"MAR","inicio":"09:30","fin":"12:20"} ]
+	}
+      ]
+    },
+    {
+      "id":32,
+      "creditos_totales":12,
+      "cumple":true,
+      "razon":"ninguna",
+      "detalle":"Ninguna",
+      "cursos": [
+	{
+	  "codigo":"FI1101",
+	  "grupo":1,
+	  "codigo_opcion":"FI1101",
+	  "carrera":"PI",
+	  "nombre":"Física general I",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"07:30","fin":"09:20"},
+	    {"dia":"JUE","inicio":"07:30","fin":"09:20"}
+	  ]
+	},
+	{
+	  "codigo":"QU1107",
+	  "grupo":5,
+	  "codigo_opcion":"QU1107",
+	  "carrera":"PI",
+	  "nombre":"Química básica II",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"13:00","fin":"14:50"},
+	    {"dia":"JUE","inicio":"13:00","fin":"14:50"}
+	  ]
+	},
+	{
+	  "codigo":"PI3501",
+	  "grupo":2,
+	  "codigo_opcion":"PI3501",
+	  "carrera":"PI",
+	  "nombre":"Costos industriales I",
+	  "creditos":3,
+	  "area":"industrial_gestion",
+	  "horarios": [ {"dia":"MAR","inicio":"17:00","fin":"19:50"} ]
+	},
+	{
+	  "codigo":"CA2125",
+	  "grupo":2,
+	  "codigo_opcion":"CA2125",
+	  "carrera":"PI",
+	  "nombre":"Elementos de computación",
+	  "creditos":3,
+	  "area":"computacion",
+	  "horarios": [
+	    {"dia":"MIE","inicio":"09:30","fin":"11:20"},
+	    {"dia":"VIE","inicio":"09:30","fin":"11:20"}
+	  ]
+	}
+      ]
+    },
+    {
+      "id":33,
+      "creditos_totales":11,
+      "cumple":true,
+      "razon":"ninguna",
+      "detalle":"Ninguna",
+      "cursos": [
+	{
+	  "codigo":"FI1101",
+	  "grupo":1,
+	  "codigo_opcion":"FI1101",
+	  "carrera":"PI",
+	  "nombre":"Física general I",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"07:30","fin":"09:20"},
+	    {"dia":"JUE","inicio":"07:30","fin":"09:20"}
+	  ]
+	},
+	{
+	  "codigo":"QU1107",
+	  "grupo":5,
+	  "codigo_opcion":"QU1107",
+	  "carrera":"PI",
+	  "nombre":"Química básica II",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"13:00","fin":"14:50"},
+	    {"dia":"JUE","inicio":"13:00","fin":"14:50"}
+	  ]
+	},
+	{
+	  "codigo":"PI3501",
+	  "grupo":2,
+	  "codigo_opcion":"PI3501",
+	  "carrera":"PI",
+	  "nombre":"Costos industriales I",
+	  "creditos":3,
+	  "area":"industrial_gestion",
+	  "horarios": [ {"dia":"MAR","inicio":"17:00","fin":"19:50"} ]
+	},
+	{
+	  "codigo":"CS2101",
+	  "grupo":1,
+	  "codigo_opcion":"CS2101",
+	  "carrera":"PI",
+	  "nombre":"Ambiente humano",
+	  "creditos":2,
+	  "area":"humanidades_complementarias",
+	  "horarios": [ {"dia":"VIE","inicio":"09:30","fin":"12:20"} ]
+	}
+      ]
+    },
+    {
+      "id":34,
+      "creditos_totales":11,
+      "cumple":true,
+      "razon":"ninguna",
+      "detalle":"Ninguna",
+      "cursos": [
+	{
+	  "codigo":"FI1101",
+	  "grupo":1,
+	  "codigo_opcion":"FI1101",
+	  "carrera":"PI",
+	  "nombre":"Física general I",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"07:30","fin":"09:20"},
+	    {"dia":"JUE","inicio":"07:30","fin":"09:20"}
+	  ]
+	},
+	{
+	  "codigo":"QU1107",
+	  "grupo":5,
+	  "codigo_opcion":"QU1107",
+	  "carrera":"PI",
+	  "nombre":"Química básica II",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"13:00","fin":"14:50"},
+	    {"dia":"JUE","inicio":"13:00","fin":"14:50"}
+	  ]
+	},
+	{
+	  "codigo":"PI3501",
+	  "grupo":2,
+	  "codigo_opcion":"PI3501",
+	  "carrera":"PI",
+	  "nombre":"Costos industriales I",
+	  "creditos":3,
+	  "area":"industrial_gestion",
+	  "horarios": [ {"dia":"MAR","inicio":"17:00","fin":"19:50"} ]
+	},
+	{
+	  "codigo":"CS2101",
+	  "grupo":2,
+	  "codigo_opcion":"CS2101",
+	  "carrera":"PI",
+	  "nombre":"Ambiente humano",
+	  "creditos":2,
+	  "area":"humanidades_complementarias",
+	  "horarios": [ {"dia":"MAR","inicio":"09:30","fin":"12:20"} ]
+	}
+      ]
+    },
+    {
+      "id":35,
+      "creditos_totales":9,
+      "cumple":true,
+      "razon":"ninguna",
+      "detalle":"Ninguna",
+      "cursos": [
+	{
+	  "codigo":"FI1101",
+	  "grupo":1,
+	  "codigo_opcion":"FI1101",
+	  "carrera":"PI",
+	  "nombre":"Física general I",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"07:30","fin":"09:20"},
+	    {"dia":"JUE","inicio":"07:30","fin":"09:20"}
+	  ]
+	},
+	{
+	  "codigo":"QU1107",
+	  "grupo":5,
+	  "codigo_opcion":"QU1107",
+	  "carrera":"PI",
+	  "nombre":"Química básica II",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"13:00","fin":"14:50"},
+	    {"dia":"JUE","inicio":"13:00","fin":"14:50"}
+	  ]
+	},
+	{
+	  "codigo":"PI3501",
+	  "grupo":2,
+	  "codigo_opcion":"PI3501",
+	  "carrera":"PI",
+	  "nombre":"Costos industriales I",
+	  "creditos":3,
+	  "area":"industrial_gestion",
+	  "horarios": [ {"dia":"MAR","inicio":"17:00","fin":"19:50"} ]
+	}
+      ]
+    },
+    {
+      "id":36,
+      "creditos_totales":14,
+      "cumple":true,
+      "razon":"ninguna",
+      "detalle":"Ninguna",
+      "cursos": [
+	{
+	  "codigo":"FI1101",
+	  "grupo":1,
+	  "codigo_opcion":"FI1101",
+	  "carrera":"PI",
+	  "nombre":"Física general I",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"07:30","fin":"09:20"},
+	    {"dia":"JUE","inicio":"07:30","fin":"09:20"}
+	  ]
+	},
+	{
+	  "codigo":"QU1107",
+	  "grupo":5,
+	  "codigo_opcion":"QU1107",
+	  "carrera":"PI",
+	  "nombre":"Química básica II",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"13:00","fin":"14:50"},
+	    {"dia":"JUE","inicio":"13:00","fin":"14:50"}
+	  ]
+	},
+	{
+	  "codigo":"PI3501",
+	  "grupo":3,
+	  "codigo_opcion":"PI3501",
+	  "carrera":"PI",
+	  "nombre":"Costos industriales I",
+	  "creditos":3,
+	  "area":"industrial_gestion",
+	  "horarios": [ {"dia":"MIE","inicio":"13:00","fin":"15:50"} ]
+	},
+	{
+	  "codigo":"CA2125",
+	  "grupo":1,
+	  "codigo_opcion":"CA2125",
+	  "carrera":"PI",
+	  "nombre":"Elementos de computación",
+	  "creditos":3,
+	  "area":"computacion",
+	  "horarios": [
+	    {"dia":"MIE","inicio":"09:30","fin":"11:20"},
+	    {"dia":"VIE","inicio":"09:30","fin":"11:20"}
+	  ]
+	},
+	{
+	  "codigo":"CS2101",
+	  "grupo":2,
+	  "codigo_opcion":"CS2101",
+	  "carrera":"PI",
+	  "nombre":"Ambiente humano",
+	  "creditos":2,
+	  "area":"humanidades_complementarias",
+	  "horarios": [ {"dia":"MAR","inicio":"09:30","fin":"12:20"} ]
+	}
+      ]
+    },
+    {
+      "id":37,
+      "creditos_totales":12,
+      "cumple":true,
+      "razon":"ninguna",
+      "detalle":"Ninguna",
+      "cursos": [
+	{
+	  "codigo":"FI1101",
+	  "grupo":1,
+	  "codigo_opcion":"FI1101",
+	  "carrera":"PI",
+	  "nombre":"Física general I",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"07:30","fin":"09:20"},
+	    {"dia":"JUE","inicio":"07:30","fin":"09:20"}
+	  ]
+	},
+	{
+	  "codigo":"QU1107",
+	  "grupo":5,
+	  "codigo_opcion":"QU1107",
+	  "carrera":"PI",
+	  "nombre":"Química básica II",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"13:00","fin":"14:50"},
+	    {"dia":"JUE","inicio":"13:00","fin":"14:50"}
+	  ]
+	},
+	{
+	  "codigo":"PI3501",
+	  "grupo":3,
+	  "codigo_opcion":"PI3501",
+	  "carrera":"PI",
+	  "nombre":"Costos industriales I",
+	  "creditos":3,
+	  "area":"industrial_gestion",
+	  "horarios": [ {"dia":"MIE","inicio":"13:00","fin":"15:50"} ]
+	},
+	{
+	  "codigo":"CA2125",
+	  "grupo":1,
+	  "codigo_opcion":"CA2125",
+	  "carrera":"PI",
+	  "nombre":"Elementos de computación",
+	  "creditos":3,
+	  "area":"computacion",
+	  "horarios": [
+	    {"dia":"MIE","inicio":"09:30","fin":"11:20"},
+	    {"dia":"VIE","inicio":"09:30","fin":"11:20"}
+	  ]
+	}
+      ]
+    },
+    {
+      "id":38,
+      "creditos_totales":14,
+      "cumple":true,
+      "razon":"ninguna",
+      "detalle":"Ninguna",
+      "cursos": [
+	{
+	  "codigo":"FI1101",
+	  "grupo":1,
+	  "codigo_opcion":"FI1101",
+	  "carrera":"PI",
+	  "nombre":"Física general I",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"07:30","fin":"09:20"},
+	    {"dia":"JUE","inicio":"07:30","fin":"09:20"}
+	  ]
+	},
+	{
+	  "codigo":"QU1107",
+	  "grupo":5,
+	  "codigo_opcion":"QU1107",
+	  "carrera":"PI",
+	  "nombre":"Química básica II",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"13:00","fin":"14:50"},
+	    {"dia":"JUE","inicio":"13:00","fin":"14:50"}
+	  ]
+	},
+	{
+	  "codigo":"PI3501",
+	  "grupo":3,
+	  "codigo_opcion":"PI3501",
+	  "carrera":"PI",
+	  "nombre":"Costos industriales I",
+	  "creditos":3,
+	  "area":"industrial_gestion",
+	  "horarios": [ {"dia":"MIE","inicio":"13:00","fin":"15:50"} ]
+	},
+	{
+	  "codigo":"CA2125",
+	  "grupo":2,
+	  "codigo_opcion":"CA2125",
+	  "carrera":"PI",
+	  "nombre":"Elementos de computación",
+	  "creditos":3,
+	  "area":"computacion",
+	  "horarios": [
+	    {"dia":"MIE","inicio":"09:30","fin":"11:20"},
+	    {"dia":"VIE","inicio":"09:30","fin":"11:20"}
+	  ]
+	},
+	{
+	  "codigo":"CS2101",
+	  "grupo":2,
+	  "codigo_opcion":"CS2101",
+	  "carrera":"PI",
+	  "nombre":"Ambiente humano",
+	  "creditos":2,
+	  "area":"humanidades_complementarias",
+	  "horarios": [ {"dia":"MAR","inicio":"09:30","fin":"12:20"} ]
+	}
+      ]
+    },
+    {
+      "id":39,
+      "creditos_totales":12,
+      "cumple":true,
+      "razon":"ninguna",
+      "detalle":"Ninguna",
+      "cursos": [
+	{
+	  "codigo":"FI1101",
+	  "grupo":1,
+	  "codigo_opcion":"FI1101",
+	  "carrera":"PI",
+	  "nombre":"Física general I",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"07:30","fin":"09:20"},
+	    {"dia":"JUE","inicio":"07:30","fin":"09:20"}
+	  ]
+	},
+	{
+	  "codigo":"QU1107",
+	  "grupo":5,
+	  "codigo_opcion":"QU1107",
+	  "carrera":"PI",
+	  "nombre":"Química básica II",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"13:00","fin":"14:50"},
+	    {"dia":"JUE","inicio":"13:00","fin":"14:50"}
+	  ]
+	},
+	{
+	  "codigo":"PI3501",
+	  "grupo":3,
+	  "codigo_opcion":"PI3501",
+	  "carrera":"PI",
+	  "nombre":"Costos industriales I",
+	  "creditos":3,
+	  "area":"industrial_gestion",
+	  "horarios": [ {"dia":"MIE","inicio":"13:00","fin":"15:50"} ]
+	},
+	{
+	  "codigo":"CA2125",
+	  "grupo":2,
+	  "codigo_opcion":"CA2125",
+	  "carrera":"PI",
+	  "nombre":"Elementos de computación",
+	  "creditos":3,
+	  "area":"computacion",
+	  "horarios": [
+	    {"dia":"MIE","inicio":"09:30","fin":"11:20"},
+	    {"dia":"VIE","inicio":"09:30","fin":"11:20"}
+	  ]
+	}
+      ]
+    },
+    {
+      "id":40,
+      "creditos_totales":11,
+      "cumple":true,
+      "razon":"ninguna",
+      "detalle":"Ninguna",
+      "cursos": [
+	{
+	  "codigo":"FI1101",
+	  "grupo":1,
+	  "codigo_opcion":"FI1101",
+	  "carrera":"PI",
+	  "nombre":"Física general I",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"07:30","fin":"09:20"},
+	    {"dia":"JUE","inicio":"07:30","fin":"09:20"}
+	  ]
+	},
+	{
+	  "codigo":"QU1107",
+	  "grupo":5,
+	  "codigo_opcion":"QU1107",
+	  "carrera":"PI",
+	  "nombre":"Química básica II",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"13:00","fin":"14:50"},
+	    {"dia":"JUE","inicio":"13:00","fin":"14:50"}
+	  ]
+	},
+	{
+	  "codigo":"PI3501",
+	  "grupo":3,
+	  "codigo_opcion":"PI3501",
+	  "carrera":"PI",
+	  "nombre":"Costos industriales I",
+	  "creditos":3,
+	  "area":"industrial_gestion",
+	  "horarios": [ {"dia":"MIE","inicio":"13:00","fin":"15:50"} ]
+	},
+	{
+	  "codigo":"CS2101",
+	  "grupo":1,
+	  "codigo_opcion":"CS2101",
+	  "carrera":"PI",
+	  "nombre":"Ambiente humano",
+	  "creditos":2,
+	  "area":"humanidades_complementarias",
+	  "horarios": [ {"dia":"VIE","inicio":"09:30","fin":"12:20"} ]
+	}
+      ]
+    },
+    {
+      "id":41,
+      "creditos_totales":11,
+      "cumple":true,
+      "razon":"ninguna",
+      "detalle":"Ninguna",
+      "cursos": [
+	{
+	  "codigo":"FI1101",
+	  "grupo":1,
+	  "codigo_opcion":"FI1101",
+	  "carrera":"PI",
+	  "nombre":"Física general I",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"07:30","fin":"09:20"},
+	    {"dia":"JUE","inicio":"07:30","fin":"09:20"}
+	  ]
+	},
+	{
+	  "codigo":"QU1107",
+	  "grupo":5,
+	  "codigo_opcion":"QU1107",
+	  "carrera":"PI",
+	  "nombre":"Química básica II",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"13:00","fin":"14:50"},
+	    {"dia":"JUE","inicio":"13:00","fin":"14:50"}
+	  ]
+	},
+	{
+	  "codigo":"PI3501",
+	  "grupo":3,
+	  "codigo_opcion":"PI3501",
+	  "carrera":"PI",
+	  "nombre":"Costos industriales I",
+	  "creditos":3,
+	  "area":"industrial_gestion",
+	  "horarios": [ {"dia":"MIE","inicio":"13:00","fin":"15:50"} ]
+	},
+	{
+	  "codigo":"CS2101",
+	  "grupo":2,
+	  "codigo_opcion":"CS2101",
+	  "carrera":"PI",
+	  "nombre":"Ambiente humano",
+	  "creditos":2,
+	  "area":"humanidades_complementarias",
+	  "horarios": [ {"dia":"MAR","inicio":"09:30","fin":"12:20"} ]
+	}
+      ]
+    },
+    {
+      "id":42,
+      "creditos_totales":9,
+      "cumple":true,
+      "razon":"ninguna",
+      "detalle":"Ninguna",
+      "cursos": [
+	{
+	  "codigo":"FI1101",
+	  "grupo":1,
+	  "codigo_opcion":"FI1101",
+	  "carrera":"PI",
+	  "nombre":"Física general I",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"07:30","fin":"09:20"},
+	    {"dia":"JUE","inicio":"07:30","fin":"09:20"}
+	  ]
+	},
+	{
+	  "codigo":"QU1107",
+	  "grupo":5,
+	  "codigo_opcion":"QU1107",
+	  "carrera":"PI",
+	  "nombre":"Química básica II",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"13:00","fin":"14:50"},
+	    {"dia":"JUE","inicio":"13:00","fin":"14:50"}
+	  ]
+	},
+	{
+	  "codigo":"PI3501",
+	  "grupo":3,
+	  "codigo_opcion":"PI3501",
+	  "carrera":"PI",
+	  "nombre":"Costos industriales I",
+	  "creditos":3,
+	  "area":"industrial_gestion",
+	  "horarios": [ {"dia":"MIE","inicio":"13:00","fin":"15:50"} ]
+	}
+      ]
+    },
+    {
+      "id":43,
+      "creditos_totales":11,
+      "cumple":true,
+      "razon":"ninguna",
+      "detalle":"Ninguna",
+      "cursos": [
+	{
+	  "codigo":"FI1101",
+	  "grupo":1,
+	  "codigo_opcion":"FI1101",
+	  "carrera":"PI",
+	  "nombre":"Física general I",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"07:30","fin":"09:20"},
+	    {"dia":"JUE","inicio":"07:30","fin":"09:20"}
+	  ]
+	},
+	{
+	  "codigo":"QU1107",
+	  "grupo":5,
+	  "codigo_opcion":"QU1107",
+	  "carrera":"PI",
+	  "nombre":"Química básica II",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"13:00","fin":"14:50"},
+	    {"dia":"JUE","inicio":"13:00","fin":"14:50"}
+	  ]
+	},
+	{
+	  "codigo":"CA2125",
+	  "grupo":1,
+	  "codigo_opcion":"CA2125",
+	  "carrera":"PI",
+	  "nombre":"Elementos de computación",
+	  "creditos":3,
+	  "area":"computacion",
+	  "horarios": [
+	    {"dia":"MIE","inicio":"09:30","fin":"11:20"},
+	    {"dia":"VIE","inicio":"09:30","fin":"11:20"}
+	  ]
+	},
+	{
+	  "codigo":"CS2101",
+	  "grupo":2,
+	  "codigo_opcion":"CS2101",
+	  "carrera":"PI",
+	  "nombre":"Ambiente humano",
+	  "creditos":2,
+	  "area":"humanidades_complementarias",
+	  "horarios": [ {"dia":"MAR","inicio":"09:30","fin":"12:20"} ]
+	}
+      ]
+    },
+    {
+      "id":44,
+      "creditos_totales":9,
+      "cumple":true,
+      "razon":"ninguna",
+      "detalle":"Ninguna",
+      "cursos": [
+	{
+	  "codigo":"FI1101",
+	  "grupo":1,
+	  "codigo_opcion":"FI1101",
+	  "carrera":"PI",
+	  "nombre":"Física general I",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"07:30","fin":"09:20"},
+	    {"dia":"JUE","inicio":"07:30","fin":"09:20"}
+	  ]
+	},
+	{
+	  "codigo":"QU1107",
+	  "grupo":5,
+	  "codigo_opcion":"QU1107",
+	  "carrera":"PI",
+	  "nombre":"Química básica II",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"13:00","fin":"14:50"},
+	    {"dia":"JUE","inicio":"13:00","fin":"14:50"}
+	  ]
+	},
+	{
+	  "codigo":"CA2125",
+	  "grupo":1,
+	  "codigo_opcion":"CA2125",
+	  "carrera":"PI",
+	  "nombre":"Elementos de computación",
+	  "creditos":3,
+	  "area":"computacion",
+	  "horarios": [
+	    {"dia":"MIE","inicio":"09:30","fin":"11:20"},
+	    {"dia":"VIE","inicio":"09:30","fin":"11:20"}
+	  ]
+	}
+      ]
+    },
+    {
+      "id":45,
+      "creditos_totales":11,
+      "cumple":true,
+      "razon":"ninguna",
+      "detalle":"Ninguna",
+      "cursos": [
+	{
+	  "codigo":"FI1101",
+	  "grupo":1,
+	  "codigo_opcion":"FI1101",
+	  "carrera":"PI",
+	  "nombre":"Física general I",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"07:30","fin":"09:20"},
+	    {"dia":"JUE","inicio":"07:30","fin":"09:20"}
+	  ]
+	},
+	{
+	  "codigo":"QU1107",
+	  "grupo":5,
+	  "codigo_opcion":"QU1107",
+	  "carrera":"PI",
+	  "nombre":"Química básica II",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"13:00","fin":"14:50"},
+	    {"dia":"JUE","inicio":"13:00","fin":"14:50"}
+	  ]
+	},
+	{
+	  "codigo":"CA2125",
+	  "grupo":2,
+	  "codigo_opcion":"CA2125",
+	  "carrera":"PI",
+	  "nombre":"Elementos de computación",
+	  "creditos":3,
+	  "area":"computacion",
+	  "horarios": [
+	    {"dia":"MIE","inicio":"09:30","fin":"11:20"},
+	    {"dia":"VIE","inicio":"09:30","fin":"11:20"}
+	  ]
+	},
+	{
+	  "codigo":"CS2101",
+	  "grupo":2,
+	  "codigo_opcion":"CS2101",
+	  "carrera":"PI",
+	  "nombre":"Ambiente humano",
+	  "creditos":2,
+	  "area":"humanidades_complementarias",
+	  "horarios": [ {"dia":"MAR","inicio":"09:30","fin":"12:20"} ]
+	}
+      ]
+    },
+    {
+      "id":46,
+      "creditos_totales":9,
+      "cumple":true,
+      "razon":"ninguna",
+      "detalle":"Ninguna",
+      "cursos": [
+	{
+	  "codigo":"FI1101",
+	  "grupo":1,
+	  "codigo_opcion":"FI1101",
+	  "carrera":"PI",
+	  "nombre":"Física general I",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"07:30","fin":"09:20"},
+	    {"dia":"JUE","inicio":"07:30","fin":"09:20"}
+	  ]
+	},
+	{
+	  "codigo":"QU1107",
+	  "grupo":5,
+	  "codigo_opcion":"QU1107",
+	  "carrera":"PI",
+	  "nombre":"Química básica II",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"13:00","fin":"14:50"},
+	    {"dia":"JUE","inicio":"13:00","fin":"14:50"}
+	  ]
+	},
+	{
+	  "codigo":"CA2125",
+	  "grupo":2,
+	  "codigo_opcion":"CA2125",
+	  "carrera":"PI",
+	  "nombre":"Elementos de computación",
+	  "creditos":3,
+	  "area":"computacion",
+	  "horarios": [
+	    {"dia":"MIE","inicio":"09:30","fin":"11:20"},
+	    {"dia":"VIE","inicio":"09:30","fin":"11:20"}
+	  ]
+	}
+      ]
+    },
+    {
+      "id":47,
+      "creditos_totales":8,
+      "cumple":true,
+      "razon":"ninguna",
+      "detalle":"Ninguna",
+      "cursos": [
+	{
+	  "codigo":"FI1101",
+	  "grupo":1,
+	  "codigo_opcion":"FI1101",
+	  "carrera":"PI",
+	  "nombre":"Física general I",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"07:30","fin":"09:20"},
+	    {"dia":"JUE","inicio":"07:30","fin":"09:20"}
+	  ]
+	},
+	{
+	  "codigo":"QU1107",
+	  "grupo":5,
+	  "codigo_opcion":"QU1107",
+	  "carrera":"PI",
+	  "nombre":"Química básica II",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"13:00","fin":"14:50"},
+	    {"dia":"JUE","inicio":"13:00","fin":"14:50"}
+	  ]
+	},
+	{
+	  "codigo":"CS2101",
+	  "grupo":1,
+	  "codigo_opcion":"CS2101",
+	  "carrera":"PI",
+	  "nombre":"Ambiente humano",
+	  "creditos":2,
+	  "area":"humanidades_complementarias",
+	  "horarios": [ {"dia":"VIE","inicio":"09:30","fin":"12:20"} ]
+	}
+      ]
+    },
+    {
+      "id":48,
+      "creditos_totales":8,
+      "cumple":true,
+      "razon":"ninguna",
+      "detalle":"Ninguna",
+      "cursos": [
+	{
+	  "codigo":"FI1101",
+	  "grupo":1,
+	  "codigo_opcion":"FI1101",
+	  "carrera":"PI",
+	  "nombre":"Física general I",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"07:30","fin":"09:20"},
+	    {"dia":"JUE","inicio":"07:30","fin":"09:20"}
+	  ]
+	},
+	{
+	  "codigo":"QU1107",
+	  "grupo":5,
+	  "codigo_opcion":"QU1107",
+	  "carrera":"PI",
+	  "nombre":"Química básica II",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"13:00","fin":"14:50"},
+	    {"dia":"JUE","inicio":"13:00","fin":"14:50"}
+	  ]
+	},
+	{
+	  "codigo":"CS2101",
+	  "grupo":2,
+	  "codigo_opcion":"CS2101",
+	  "carrera":"PI",
+	  "nombre":"Ambiente humano",
+	  "creditos":2,
+	  "area":"humanidades_complementarias",
+	  "horarios": [ {"dia":"MAR","inicio":"09:30","fin":"12:20"} ]
+	}
+      ]
+    },
+    {
+      "id":49,
+      "creditos_totales":14,
+      "cumple":true,
+      "razon":"ninguna",
+      "detalle":"Ninguna",
+      "cursos": [
+	{
+	  "codigo":"FI1101",
+	  "grupo":1,
+	  "codigo_opcion":"FI1101",
+	  "carrera":"PI",
+	  "nombre":"Física general I",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"07:30","fin":"09:20"},
+	    {"dia":"JUE","inicio":"07:30","fin":"09:20"}
+	  ]
+	},
+	{
+	  "codigo":"QU1107",
+	  "grupo":6,
+	  "codigo_opcion":"QU1107",
+	  "carrera":"PI",
+	  "nombre":"Química básica II",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"15:00","fin":"16:50"},
+	    {"dia":"JUE","inicio":"15:00","fin":"16:50"}
+	  ]
+	},
+	{
+	  "codigo":"PI3501",
+	  "grupo":2,
+	  "codigo_opcion":"PI3501",
+	  "carrera":"PI",
+	  "nombre":"Costos industriales I",
+	  "creditos":3,
+	  "area":"industrial_gestion",
+	  "horarios": [ {"dia":"MAR","inicio":"17:00","fin":"19:50"} ]
+	},
+	{
+	  "codigo":"CA2125",
+	  "grupo":1,
+	  "codigo_opcion":"CA2125",
+	  "carrera":"PI",
+	  "nombre":"Elementos de computación",
+	  "creditos":3,
+	  "area":"computacion",
+	  "horarios": [
+	    {"dia":"MIE","inicio":"09:30","fin":"11:20"},
+	    {"dia":"VIE","inicio":"09:30","fin":"11:20"}
+	  ]
+	},
+	{
+	  "codigo":"CS2101",
+	  "grupo":2,
+	  "codigo_opcion":"CS2101",
+	  "carrera":"PI",
+	  "nombre":"Ambiente humano",
+	  "creditos":2,
+	  "area":"humanidades_complementarias",
+	  "horarios": [ {"dia":"MAR","inicio":"09:30","fin":"12:20"} ]
+	}
+      ]
+    },
+    {
+      "id":50,
+      "creditos_totales":12,
+      "cumple":true,
+      "razon":"ninguna",
+      "detalle":"Ninguna",
+      "cursos": [
+	{
+	  "codigo":"FI1101",
+	  "grupo":1,
+	  "codigo_opcion":"FI1101",
+	  "carrera":"PI",
+	  "nombre":"Física general I",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"07:30","fin":"09:20"},
+	    {"dia":"JUE","inicio":"07:30","fin":"09:20"}
+	  ]
+	},
+	{
+	  "codigo":"QU1107",
+	  "grupo":6,
+	  "codigo_opcion":"QU1107",
+	  "carrera":"PI",
+	  "nombre":"Química básica II",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"15:00","fin":"16:50"},
+	    {"dia":"JUE","inicio":"15:00","fin":"16:50"}
+	  ]
+	},
+	{
+	  "codigo":"PI3501",
+	  "grupo":2,
+	  "codigo_opcion":"PI3501",
+	  "carrera":"PI",
+	  "nombre":"Costos industriales I",
+	  "creditos":3,
+	  "area":"industrial_gestion",
+	  "horarios": [ {"dia":"MAR","inicio":"17:00","fin":"19:50"} ]
+	},
+	{
+	  "codigo":"CA2125",
+	  "grupo":1,
+	  "codigo_opcion":"CA2125",
+	  "carrera":"PI",
+	  "nombre":"Elementos de computación",
+	  "creditos":3,
+	  "area":"computacion",
+	  "horarios": [
+	    {"dia":"MIE","inicio":"09:30","fin":"11:20"},
+	    {"dia":"VIE","inicio":"09:30","fin":"11:20"}
+	  ]
+	}
+      ]
+    },
+    {
+      "id":51,
+      "creditos_totales":14,
+      "cumple":true,
+      "razon":"ninguna",
+      "detalle":"Ninguna",
+      "cursos": [
+	{
+	  "codigo":"FI1101",
+	  "grupo":1,
+	  "codigo_opcion":"FI1101",
+	  "carrera":"PI",
+	  "nombre":"Física general I",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"07:30","fin":"09:20"},
+	    {"dia":"JUE","inicio":"07:30","fin":"09:20"}
+	  ]
+	},
+	{
+	  "codigo":"QU1107",
+	  "grupo":6,
+	  "codigo_opcion":"QU1107",
+	  "carrera":"PI",
+	  "nombre":"Química básica II",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"15:00","fin":"16:50"},
+	    {"dia":"JUE","inicio":"15:00","fin":"16:50"}
+	  ]
+	},
+	{
+	  "codigo":"PI3501",
+	  "grupo":2,
+	  "codigo_opcion":"PI3501",
+	  "carrera":"PI",
+	  "nombre":"Costos industriales I",
+	  "creditos":3,
+	  "area":"industrial_gestion",
+	  "horarios": [ {"dia":"MAR","inicio":"17:00","fin":"19:50"} ]
+	},
+	{
+	  "codigo":"CA2125",
+	  "grupo":2,
+	  "codigo_opcion":"CA2125",
+	  "carrera":"PI",
+	  "nombre":"Elementos de computación",
+	  "creditos":3,
+	  "area":"computacion",
+	  "horarios": [
+	    {"dia":"MIE","inicio":"09:30","fin":"11:20"},
+	    {"dia":"VIE","inicio":"09:30","fin":"11:20"}
+	  ]
+	},
+	{
+	  "codigo":"CS2101",
+	  "grupo":2,
+	  "codigo_opcion":"CS2101",
+	  "carrera":"PI",
+	  "nombre":"Ambiente humano",
+	  "creditos":2,
+	  "area":"humanidades_complementarias",
+	  "horarios": [ {"dia":"MAR","inicio":"09:30","fin":"12:20"} ]
+	}
+      ]
+    },
+    {
+      "id":52,
+      "creditos_totales":12,
+      "cumple":true,
+      "razon":"ninguna",
+      "detalle":"Ninguna",
+      "cursos": [
+	{
+	  "codigo":"FI1101",
+	  "grupo":1,
+	  "codigo_opcion":"FI1101",
+	  "carrera":"PI",
+	  "nombre":"Física general I",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"07:30","fin":"09:20"},
+	    {"dia":"JUE","inicio":"07:30","fin":"09:20"}
+	  ]
+	},
+	{
+	  "codigo":"QU1107",
+	  "grupo":6,
+	  "codigo_opcion":"QU1107",
+	  "carrera":"PI",
+	  "nombre":"Química básica II",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"15:00","fin":"16:50"},
+	    {"dia":"JUE","inicio":"15:00","fin":"16:50"}
+	  ]
+	},
+	{
+	  "codigo":"PI3501",
+	  "grupo":2,
+	  "codigo_opcion":"PI3501",
+	  "carrera":"PI",
+	  "nombre":"Costos industriales I",
+	  "creditos":3,
+	  "area":"industrial_gestion",
+	  "horarios": [ {"dia":"MAR","inicio":"17:00","fin":"19:50"} ]
+	},
+	{
+	  "codigo":"CA2125",
+	  "grupo":2,
+	  "codigo_opcion":"CA2125",
+	  "carrera":"PI",
+	  "nombre":"Elementos de computación",
+	  "creditos":3,
+	  "area":"computacion",
+	  "horarios": [
+	    {"dia":"MIE","inicio":"09:30","fin":"11:20"},
+	    {"dia":"VIE","inicio":"09:30","fin":"11:20"}
+	  ]
+	}
+      ]
+    },
+    {
+      "id":53,
+      "creditos_totales":11,
+      "cumple":true,
+      "razon":"ninguna",
+      "detalle":"Ninguna",
+      "cursos": [
+	{
+	  "codigo":"FI1101",
+	  "grupo":1,
+	  "codigo_opcion":"FI1101",
+	  "carrera":"PI",
+	  "nombre":"Física general I",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"07:30","fin":"09:20"},
+	    {"dia":"JUE","inicio":"07:30","fin":"09:20"}
+	  ]
+	},
+	{
+	  "codigo":"QU1107",
+	  "grupo":6,
+	  "codigo_opcion":"QU1107",
+	  "carrera":"PI",
+	  "nombre":"Química básica II",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"15:00","fin":"16:50"},
+	    {"dia":"JUE","inicio":"15:00","fin":"16:50"}
+	  ]
+	},
+	{
+	  "codigo":"PI3501",
+	  "grupo":2,
+	  "codigo_opcion":"PI3501",
+	  "carrera":"PI",
+	  "nombre":"Costos industriales I",
+	  "creditos":3,
+	  "area":"industrial_gestion",
+	  "horarios": [ {"dia":"MAR","inicio":"17:00","fin":"19:50"} ]
+	},
+	{
+	  "codigo":"CS2101",
+	  "grupo":1,
+	  "codigo_opcion":"CS2101",
+	  "carrera":"PI",
+	  "nombre":"Ambiente humano",
+	  "creditos":2,
+	  "area":"humanidades_complementarias",
+	  "horarios": [ {"dia":"VIE","inicio":"09:30","fin":"12:20"} ]
+	}
+      ]
+    },
+    {
+      "id":54,
+      "creditos_totales":11,
+      "cumple":true,
+      "razon":"ninguna",
+      "detalle":"Ninguna",
+      "cursos": [
+	{
+	  "codigo":"FI1101",
+	  "grupo":1,
+	  "codigo_opcion":"FI1101",
+	  "carrera":"PI",
+	  "nombre":"Física general I",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"07:30","fin":"09:20"},
+	    {"dia":"JUE","inicio":"07:30","fin":"09:20"}
+	  ]
+	},
+	{
+	  "codigo":"QU1107",
+	  "grupo":6,
+	  "codigo_opcion":"QU1107",
+	  "carrera":"PI",
+	  "nombre":"Química básica II",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"15:00","fin":"16:50"},
+	    {"dia":"JUE","inicio":"15:00","fin":"16:50"}
+	  ]
+	},
+	{
+	  "codigo":"PI3501",
+	  "grupo":2,
+	  "codigo_opcion":"PI3501",
+	  "carrera":"PI",
+	  "nombre":"Costos industriales I",
+	  "creditos":3,
+	  "area":"industrial_gestion",
+	  "horarios": [ {"dia":"MAR","inicio":"17:00","fin":"19:50"} ]
+	},
+	{
+	  "codigo":"CS2101",
+	  "grupo":2,
+	  "codigo_opcion":"CS2101",
+	  "carrera":"PI",
+	  "nombre":"Ambiente humano",
+	  "creditos":2,
+	  "area":"humanidades_complementarias",
+	  "horarios": [ {"dia":"MAR","inicio":"09:30","fin":"12:20"} ]
+	}
+      ]
+    },
+    {
+      "id":55,
+      "creditos_totales":9,
+      "cumple":true,
+      "razon":"ninguna",
+      "detalle":"Ninguna",
+      "cursos": [
+	{
+	  "codigo":"FI1101",
+	  "grupo":1,
+	  "codigo_opcion":"FI1101",
+	  "carrera":"PI",
+	  "nombre":"Física general I",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"07:30","fin":"09:20"},
+	    {"dia":"JUE","inicio":"07:30","fin":"09:20"}
+	  ]
+	},
+	{
+	  "codigo":"QU1107",
+	  "grupo":6,
+	  "codigo_opcion":"QU1107",
+	  "carrera":"PI",
+	  "nombre":"Química básica II",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"15:00","fin":"16:50"},
+	    {"dia":"JUE","inicio":"15:00","fin":"16:50"}
+	  ]
+	},
+	{
+	  "codigo":"PI3501",
+	  "grupo":2,
+	  "codigo_opcion":"PI3501",
+	  "carrera":"PI",
+	  "nombre":"Costos industriales I",
+	  "creditos":3,
+	  "area":"industrial_gestion",
+	  "horarios": [ {"dia":"MAR","inicio":"17:00","fin":"19:50"} ]
+	}
+      ]
+    },
+    {
+      "id":56,
+      "creditos_totales":14,
+      "cumple":true,
+      "razon":"ninguna",
+      "detalle":"Ninguna",
+      "cursos": [
+	{
+	  "codigo":"FI1101",
+	  "grupo":1,
+	  "codigo_opcion":"FI1101",
+	  "carrera":"PI",
+	  "nombre":"Física general I",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"07:30","fin":"09:20"},
+	    {"dia":"JUE","inicio":"07:30","fin":"09:20"}
+	  ]
+	},
+	{
+	  "codigo":"QU1107",
+	  "grupo":6,
+	  "codigo_opcion":"QU1107",
+	  "carrera":"PI",
+	  "nombre":"Química básica II",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"15:00","fin":"16:50"},
+	    {"dia":"JUE","inicio":"15:00","fin":"16:50"}
+	  ]
+	},
+	{
+	  "codigo":"PI3501",
+	  "grupo":3,
+	  "codigo_opcion":"PI3501",
+	  "carrera":"PI",
+	  "nombre":"Costos industriales I",
+	  "creditos":3,
+	  "area":"industrial_gestion",
+	  "horarios": [ {"dia":"MIE","inicio":"13:00","fin":"15:50"} ]
+	},
+	{
+	  "codigo":"CA2125",
+	  "grupo":1,
+	  "codigo_opcion":"CA2125",
+	  "carrera":"PI",
+	  "nombre":"Elementos de computación",
+	  "creditos":3,
+	  "area":"computacion",
+	  "horarios": [
+	    {"dia":"MIE","inicio":"09:30","fin":"11:20"},
+	    {"dia":"VIE","inicio":"09:30","fin":"11:20"}
+	  ]
+	},
+	{
+	  "codigo":"CS2101",
+	  "grupo":2,
+	  "codigo_opcion":"CS2101",
+	  "carrera":"PI",
+	  "nombre":"Ambiente humano",
+	  "creditos":2,
+	  "area":"humanidades_complementarias",
+	  "horarios": [ {"dia":"MAR","inicio":"09:30","fin":"12:20"} ]
+	}
+      ]
+    },
+    {
+      "id":57,
+      "creditos_totales":12,
+      "cumple":true,
+      "razon":"ninguna",
+      "detalle":"Ninguna",
+      "cursos": [
+	{
+	  "codigo":"FI1101",
+	  "grupo":1,
+	  "codigo_opcion":"FI1101",
+	  "carrera":"PI",
+	  "nombre":"Física general I",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"07:30","fin":"09:20"},
+	    {"dia":"JUE","inicio":"07:30","fin":"09:20"}
+	  ]
+	},
+	{
+	  "codigo":"QU1107",
+	  "grupo":6,
+	  "codigo_opcion":"QU1107",
+	  "carrera":"PI",
+	  "nombre":"Química básica II",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"15:00","fin":"16:50"},
+	    {"dia":"JUE","inicio":"15:00","fin":"16:50"}
+	  ]
+	},
+	{
+	  "codigo":"PI3501",
+	  "grupo":3,
+	  "codigo_opcion":"PI3501",
+	  "carrera":"PI",
+	  "nombre":"Costos industriales I",
+	  "creditos":3,
+	  "area":"industrial_gestion",
+	  "horarios": [ {"dia":"MIE","inicio":"13:00","fin":"15:50"} ]
+	},
+	{
+	  "codigo":"CA2125",
+	  "grupo":1,
+	  "codigo_opcion":"CA2125",
+	  "carrera":"PI",
+	  "nombre":"Elementos de computación",
+	  "creditos":3,
+	  "area":"computacion",
+	  "horarios": [
+	    {"dia":"MIE","inicio":"09:30","fin":"11:20"},
+	    {"dia":"VIE","inicio":"09:30","fin":"11:20"}
+	  ]
+	}
+      ]
+    },
+    {
+      "id":58,
+      "creditos_totales":14,
+      "cumple":true,
+      "razon":"ninguna",
+      "detalle":"Ninguna",
+      "cursos": [
+	{
+	  "codigo":"FI1101",
+	  "grupo":1,
+	  "codigo_opcion":"FI1101",
+	  "carrera":"PI",
+	  "nombre":"Física general I",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"07:30","fin":"09:20"},
+	    {"dia":"JUE","inicio":"07:30","fin":"09:20"}
+	  ]
+	},
+	{
+	  "codigo":"QU1107",
+	  "grupo":6,
+	  "codigo_opcion":"QU1107",
+	  "carrera":"PI",
+	  "nombre":"Química básica II",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"15:00","fin":"16:50"},
+	    {"dia":"JUE","inicio":"15:00","fin":"16:50"}
+	  ]
+	},
+	{
+	  "codigo":"PI3501",
+	  "grupo":3,
+	  "codigo_opcion":"PI3501",
+	  "carrera":"PI",
+	  "nombre":"Costos industriales I",
+	  "creditos":3,
+	  "area":"industrial_gestion",
+	  "horarios": [ {"dia":"MIE","inicio":"13:00","fin":"15:50"} ]
+	},
+	{
+	  "codigo":"CA2125",
+	  "grupo":2,
+	  "codigo_opcion":"CA2125",
+	  "carrera":"PI",
+	  "nombre":"Elementos de computación",
+	  "creditos":3,
+	  "area":"computacion",
+	  "horarios": [
+	    {"dia":"MIE","inicio":"09:30","fin":"11:20"},
+	    {"dia":"VIE","inicio":"09:30","fin":"11:20"}
+	  ]
+	},
+	{
+	  "codigo":"CS2101",
+	  "grupo":2,
+	  "codigo_opcion":"CS2101",
+	  "carrera":"PI",
+	  "nombre":"Ambiente humano",
+	  "creditos":2,
+	  "area":"humanidades_complementarias",
+	  "horarios": [ {"dia":"MAR","inicio":"09:30","fin":"12:20"} ]
+	}
+      ]
+    },
+    {
+      "id":59,
+      "creditos_totales":12,
+      "cumple":true,
+      "razon":"ninguna",
+      "detalle":"Ninguna",
+      "cursos": [
+	{
+	  "codigo":"FI1101",
+	  "grupo":1,
+	  "codigo_opcion":"FI1101",
+	  "carrera":"PI",
+	  "nombre":"Física general I",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"07:30","fin":"09:20"},
+	    {"dia":"JUE","inicio":"07:30","fin":"09:20"}
+	  ]
+	},
+	{
+	  "codigo":"QU1107",
+	  "grupo":6,
+	  "codigo_opcion":"QU1107",
+	  "carrera":"PI",
+	  "nombre":"Química básica II",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"15:00","fin":"16:50"},
+	    {"dia":"JUE","inicio":"15:00","fin":"16:50"}
+	  ]
+	},
+	{
+	  "codigo":"PI3501",
+	  "grupo":3,
+	  "codigo_opcion":"PI3501",
+	  "carrera":"PI",
+	  "nombre":"Costos industriales I",
+	  "creditos":3,
+	  "area":"industrial_gestion",
+	  "horarios": [ {"dia":"MIE","inicio":"13:00","fin":"15:50"} ]
+	},
+	{
+	  "codigo":"CA2125",
+	  "grupo":2,
+	  "codigo_opcion":"CA2125",
+	  "carrera":"PI",
+	  "nombre":"Elementos de computación",
+	  "creditos":3,
+	  "area":"computacion",
+	  "horarios": [
+	    {"dia":"MIE","inicio":"09:30","fin":"11:20"},
+	    {"dia":"VIE","inicio":"09:30","fin":"11:20"}
+	  ]
+	}
+      ]
+    },
+    {
+      "id":60,
+      "creditos_totales":11,
+      "cumple":true,
+      "razon":"ninguna",
+      "detalle":"Ninguna",
+      "cursos": [
+	{
+	  "codigo":"FI1101",
+	  "grupo":1,
+	  "codigo_opcion":"FI1101",
+	  "carrera":"PI",
+	  "nombre":"Física general I",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"07:30","fin":"09:20"},
+	    {"dia":"JUE","inicio":"07:30","fin":"09:20"}
+	  ]
+	},
+	{
+	  "codigo":"QU1107",
+	  "grupo":6,
+	  "codigo_opcion":"QU1107",
+	  "carrera":"PI",
+	  "nombre":"Química básica II",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"15:00","fin":"16:50"},
+	    {"dia":"JUE","inicio":"15:00","fin":"16:50"}
+	  ]
+	},
+	{
+	  "codigo":"PI3501",
+	  "grupo":3,
+	  "codigo_opcion":"PI3501",
+	  "carrera":"PI",
+	  "nombre":"Costos industriales I",
+	  "creditos":3,
+	  "area":"industrial_gestion",
+	  "horarios": [ {"dia":"MIE","inicio":"13:00","fin":"15:50"} ]
+	},
+	{
+	  "codigo":"CS2101",
+	  "grupo":1,
+	  "codigo_opcion":"CS2101",
+	  "carrera":"PI",
+	  "nombre":"Ambiente humano",
+	  "creditos":2,
+	  "area":"humanidades_complementarias",
+	  "horarios": [ {"dia":"VIE","inicio":"09:30","fin":"12:20"} ]
+	}
+      ]
+    },
+    {
+      "id":61,
+      "creditos_totales":11,
+      "cumple":true,
+      "razon":"ninguna",
+      "detalle":"Ninguna",
+      "cursos": [
+	{
+	  "codigo":"FI1101",
+	  "grupo":1,
+	  "codigo_opcion":"FI1101",
+	  "carrera":"PI",
+	  "nombre":"Física general I",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"07:30","fin":"09:20"},
+	    {"dia":"JUE","inicio":"07:30","fin":"09:20"}
+	  ]
+	},
+	{
+	  "codigo":"QU1107",
+	  "grupo":6,
+	  "codigo_opcion":"QU1107",
+	  "carrera":"PI",
+	  "nombre":"Química básica II",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"15:00","fin":"16:50"},
+	    {"dia":"JUE","inicio":"15:00","fin":"16:50"}
+	  ]
+	},
+	{
+	  "codigo":"PI3501",
+	  "grupo":3,
+	  "codigo_opcion":"PI3501",
+	  "carrera":"PI",
+	  "nombre":"Costos industriales I",
+	  "creditos":3,
+	  "area":"industrial_gestion",
+	  "horarios": [ {"dia":"MIE","inicio":"13:00","fin":"15:50"} ]
+	},
+	{
+	  "codigo":"CS2101",
+	  "grupo":2,
+	  "codigo_opcion":"CS2101",
+	  "carrera":"PI",
+	  "nombre":"Ambiente humano",
+	  "creditos":2,
+	  "area":"humanidades_complementarias",
+	  "horarios": [ {"dia":"MAR","inicio":"09:30","fin":"12:20"} ]
+	}
+      ]
+    },
+    {
+      "id":62,
+      "creditos_totales":9,
+      "cumple":true,
+      "razon":"ninguna",
+      "detalle":"Ninguna",
+      "cursos": [
+	{
+	  "codigo":"FI1101",
+	  "grupo":1,
+	  "codigo_opcion":"FI1101",
+	  "carrera":"PI",
+	  "nombre":"Física general I",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"07:30","fin":"09:20"},
+	    {"dia":"JUE","inicio":"07:30","fin":"09:20"}
+	  ]
+	},
+	{
+	  "codigo":"QU1107",
+	  "grupo":6,
+	  "codigo_opcion":"QU1107",
+	  "carrera":"PI",
+	  "nombre":"Química básica II",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"15:00","fin":"16:50"},
+	    {"dia":"JUE","inicio":"15:00","fin":"16:50"}
+	  ]
+	},
+	{
+	  "codigo":"PI3501",
+	  "grupo":3,
+	  "codigo_opcion":"PI3501",
+	  "carrera":"PI",
+	  "nombre":"Costos industriales I",
+	  "creditos":3,
+	  "area":"industrial_gestion",
+	  "horarios": [ {"dia":"MIE","inicio":"13:00","fin":"15:50"} ]
+	}
+      ]
+    },
+    {
+      "id":63,
+      "creditos_totales":11,
+      "cumple":true,
+      "razon":"ninguna",
+      "detalle":"Ninguna",
+      "cursos": [
+	{
+	  "codigo":"FI1101",
+	  "grupo":1,
+	  "codigo_opcion":"FI1101",
+	  "carrera":"PI",
+	  "nombre":"Física general I",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"07:30","fin":"09:20"},
+	    {"dia":"JUE","inicio":"07:30","fin":"09:20"}
+	  ]
+	},
+	{
+	  "codigo":"QU1107",
+	  "grupo":6,
+	  "codigo_opcion":"QU1107",
+	  "carrera":"PI",
+	  "nombre":"Química básica II",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"15:00","fin":"16:50"},
+	    {"dia":"JUE","inicio":"15:00","fin":"16:50"}
+	  ]
+	},
+	{
+	  "codigo":"CA2125",
+	  "grupo":1,
+	  "codigo_opcion":"CA2125",
+	  "carrera":"PI",
+	  "nombre":"Elementos de computación",
+	  "creditos":3,
+	  "area":"computacion",
+	  "horarios": [
+	    {"dia":"MIE","inicio":"09:30","fin":"11:20"},
+	    {"dia":"VIE","inicio":"09:30","fin":"11:20"}
+	  ]
+	},
+	{
+	  "codigo":"CS2101",
+	  "grupo":2,
+	  "codigo_opcion":"CS2101",
+	  "carrera":"PI",
+	  "nombre":"Ambiente humano",
+	  "creditos":2,
+	  "area":"humanidades_complementarias",
+	  "horarios": [ {"dia":"MAR","inicio":"09:30","fin":"12:20"} ]
+	}
+      ]
+    },
+    {
+      "id":64,
+      "creditos_totales":9,
+      "cumple":true,
+      "razon":"ninguna",
+      "detalle":"Ninguna",
+      "cursos": [
+	{
+	  "codigo":"FI1101",
+	  "grupo":1,
+	  "codigo_opcion":"FI1101",
+	  "carrera":"PI",
+	  "nombre":"Física general I",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"07:30","fin":"09:20"},
+	    {"dia":"JUE","inicio":"07:30","fin":"09:20"}
+	  ]
+	},
+	{
+	  "codigo":"QU1107",
+	  "grupo":6,
+	  "codigo_opcion":"QU1107",
+	  "carrera":"PI",
+	  "nombre":"Química básica II",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"15:00","fin":"16:50"},
+	    {"dia":"JUE","inicio":"15:00","fin":"16:50"}
+	  ]
+	},
+	{
+	  "codigo":"CA2125",
+	  "grupo":1,
+	  "codigo_opcion":"CA2125",
+	  "carrera":"PI",
+	  "nombre":"Elementos de computación",
+	  "creditos":3,
+	  "area":"computacion",
+	  "horarios": [
+	    {"dia":"MIE","inicio":"09:30","fin":"11:20"},
+	    {"dia":"VIE","inicio":"09:30","fin":"11:20"}
+	  ]
+	}
+      ]
+    },
+    {
+      "id":65,
+      "creditos_totales":11,
+      "cumple":true,
+      "razon":"ninguna",
+      "detalle":"Ninguna",
+      "cursos": [
+	{
+	  "codigo":"FI1101",
+	  "grupo":1,
+	  "codigo_opcion":"FI1101",
+	  "carrera":"PI",
+	  "nombre":"Física general I",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"07:30","fin":"09:20"},
+	    {"dia":"JUE","inicio":"07:30","fin":"09:20"}
+	  ]
+	},
+	{
+	  "codigo":"QU1107",
+	  "grupo":6,
+	  "codigo_opcion":"QU1107",
+	  "carrera":"PI",
+	  "nombre":"Química básica II",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"15:00","fin":"16:50"},
+	    {"dia":"JUE","inicio":"15:00","fin":"16:50"}
+	  ]
+	},
+	{
+	  "codigo":"CA2125",
+	  "grupo":2,
+	  "codigo_opcion":"CA2125",
+	  "carrera":"PI",
+	  "nombre":"Elementos de computación",
+	  "creditos":3,
+	  "area":"computacion",
+	  "horarios": [
+	    {"dia":"MIE","inicio":"09:30","fin":"11:20"},
+	    {"dia":"VIE","inicio":"09:30","fin":"11:20"}
+	  ]
+	},
+	{
+	  "codigo":"CS2101",
+	  "grupo":2,
+	  "codigo_opcion":"CS2101",
+	  "carrera":"PI",
+	  "nombre":"Ambiente humano",
+	  "creditos":2,
+	  "area":"humanidades_complementarias",
+	  "horarios": [ {"dia":"MAR","inicio":"09:30","fin":"12:20"} ]
+	}
+      ]
+    },
+    {
+      "id":66,
+      "creditos_totales":9,
+      "cumple":true,
+      "razon":"ninguna",
+      "detalle":"Ninguna",
+      "cursos": [
+	{
+	  "codigo":"FI1101",
+	  "grupo":1,
+	  "codigo_opcion":"FI1101",
+	  "carrera":"PI",
+	  "nombre":"Física general I",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"07:30","fin":"09:20"},
+	    {"dia":"JUE","inicio":"07:30","fin":"09:20"}
+	  ]
+	},
+	{
+	  "codigo":"QU1107",
+	  "grupo":6,
+	  "codigo_opcion":"QU1107",
+	  "carrera":"PI",
+	  "nombre":"Química básica II",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"15:00","fin":"16:50"},
+	    {"dia":"JUE","inicio":"15:00","fin":"16:50"}
+	  ]
+	},
+	{
+	  "codigo":"CA2125",
+	  "grupo":2,
+	  "codigo_opcion":"CA2125",
+	  "carrera":"PI",
+	  "nombre":"Elementos de computación",
+	  "creditos":3,
+	  "area":"computacion",
+	  "horarios": [
+	    {"dia":"MIE","inicio":"09:30","fin":"11:20"},
+	    {"dia":"VIE","inicio":"09:30","fin":"11:20"}
+	  ]
+	}
+      ]
+    },
+    {
+      "id":67,
+      "creditos_totales":8,
+      "cumple":true,
+      "razon":"ninguna",
+      "detalle":"Ninguna",
+      "cursos": [
+	{
+	  "codigo":"FI1101",
+	  "grupo":1,
+	  "codigo_opcion":"FI1101",
+	  "carrera":"PI",
+	  "nombre":"Física general I",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"07:30","fin":"09:20"},
+	    {"dia":"JUE","inicio":"07:30","fin":"09:20"}
+	  ]
+	},
+	{
+	  "codigo":"QU1107",
+	  "grupo":6,
+	  "codigo_opcion":"QU1107",
+	  "carrera":"PI",
+	  "nombre":"Química básica II",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"15:00","fin":"16:50"},
+	    {"dia":"JUE","inicio":"15:00","fin":"16:50"}
+	  ]
+	},
+	{
+	  "codigo":"CS2101",
+	  "grupo":1,
+	  "codigo_opcion":"CS2101",
+	  "carrera":"PI",
+	  "nombre":"Ambiente humano",
+	  "creditos":2,
+	  "area":"humanidades_complementarias",
+	  "horarios": [ {"dia":"VIE","inicio":"09:30","fin":"12:20"} ]
+	}
+      ]
+    },
+    {
+      "id":68,
+      "creditos_totales":8,
+      "cumple":true,
+      "razon":"ninguna",
+      "detalle":"Ninguna",
+      "cursos": [
+	{
+	  "codigo":"FI1101",
+	  "grupo":1,
+	  "codigo_opcion":"FI1101",
+	  "carrera":"PI",
+	  "nombre":"Física general I",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"07:30","fin":"09:20"},
+	    {"dia":"JUE","inicio":"07:30","fin":"09:20"}
+	  ]
+	},
+	{
+	  "codigo":"QU1107",
+	  "grupo":6,
+	  "codigo_opcion":"QU1107",
+	  "carrera":"PI",
+	  "nombre":"Química básica II",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"15:00","fin":"16:50"},
+	    {"dia":"JUE","inicio":"15:00","fin":"16:50"}
+	  ]
+	},
+	{
+	  "codigo":"CS2101",
+	  "grupo":2,
+	  "codigo_opcion":"CS2101",
+	  "carrera":"PI",
+	  "nombre":"Ambiente humano",
+	  "creditos":2,
+	  "area":"humanidades_complementarias",
+	  "horarios": [ {"dia":"MAR","inicio":"09:30","fin":"12:20"} ]
+	}
+      ]
+    },
+    {
+      "id":69,
+      "creditos_totales":11,
+      "cumple":true,
+      "razon":"ninguna",
+      "detalle":"Ninguna",
+      "cursos": [
+	{
+	  "codigo":"FI1101",
+	  "grupo":1,
+	  "codigo_opcion":"FI1101",
+	  "carrera":"PI",
+	  "nombre":"Física general I",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"07:30","fin":"09:20"},
+	    {"dia":"JUE","inicio":"07:30","fin":"09:20"}
+	  ]
+	},
+	{
+	  "codigo":"PI3501",
+	  "grupo":2,
+	  "codigo_opcion":"PI3501",
+	  "carrera":"PI",
+	  "nombre":"Costos industriales I",
+	  "creditos":3,
+	  "area":"industrial_gestion",
+	  "horarios": [ {"dia":"MAR","inicio":"17:00","fin":"19:50"} ]
+	},
+	{
+	  "codigo":"CA2125",
+	  "grupo":1,
+	  "codigo_opcion":"CA2125",
+	  "carrera":"PI",
+	  "nombre":"Elementos de computación",
+	  "creditos":3,
+	  "area":"computacion",
+	  "horarios": [
+	    {"dia":"MIE","inicio":"09:30","fin":"11:20"},
+	    {"dia":"VIE","inicio":"09:30","fin":"11:20"}
+	  ]
+	},
+	{
+	  "codigo":"CS2101",
+	  "grupo":2,
+	  "codigo_opcion":"CS2101",
+	  "carrera":"PI",
+	  "nombre":"Ambiente humano",
+	  "creditos":2,
+	  "area":"humanidades_complementarias",
+	  "horarios": [ {"dia":"MAR","inicio":"09:30","fin":"12:20"} ]
+	}
+      ]
+    },
+    {
+      "id":70,
+      "creditos_totales":9,
+      "cumple":true,
+      "razon":"ninguna",
+      "detalle":"Ninguna",
+      "cursos": [
+	{
+	  "codigo":"FI1101",
+	  "grupo":1,
+	  "codigo_opcion":"FI1101",
+	  "carrera":"PI",
+	  "nombre":"Física general I",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"07:30","fin":"09:20"},
+	    {"dia":"JUE","inicio":"07:30","fin":"09:20"}
+	  ]
+	},
+	{
+	  "codigo":"PI3501",
+	  "grupo":2,
+	  "codigo_opcion":"PI3501",
+	  "carrera":"PI",
+	  "nombre":"Costos industriales I",
+	  "creditos":3,
+	  "area":"industrial_gestion",
+	  "horarios": [ {"dia":"MAR","inicio":"17:00","fin":"19:50"} ]
+	},
+	{
+	  "codigo":"CA2125",
+	  "grupo":1,
+	  "codigo_opcion":"CA2125",
+	  "carrera":"PI",
+	  "nombre":"Elementos de computación",
+	  "creditos":3,
+	  "area":"computacion",
+	  "horarios": [
+	    {"dia":"MIE","inicio":"09:30","fin":"11:20"},
+	    {"dia":"VIE","inicio":"09:30","fin":"11:20"}
+	  ]
+	}
+      ]
+    },
+    {
+      "id":71,
+      "creditos_totales":11,
+      "cumple":true,
+      "razon":"ninguna",
+      "detalle":"Ninguna",
+      "cursos": [
+	{
+	  "codigo":"FI1101",
+	  "grupo":1,
+	  "codigo_opcion":"FI1101",
+	  "carrera":"PI",
+	  "nombre":"Física general I",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"07:30","fin":"09:20"},
+	    {"dia":"JUE","inicio":"07:30","fin":"09:20"}
+	  ]
+	},
+	{
+	  "codigo":"PI3501",
+	  "grupo":2,
+	  "codigo_opcion":"PI3501",
+	  "carrera":"PI",
+	  "nombre":"Costos industriales I",
+	  "creditos":3,
+	  "area":"industrial_gestion",
+	  "horarios": [ {"dia":"MAR","inicio":"17:00","fin":"19:50"} ]
+	},
+	{
+	  "codigo":"CA2125",
+	  "grupo":2,
+	  "codigo_opcion":"CA2125",
+	  "carrera":"PI",
+	  "nombre":"Elementos de computación",
+	  "creditos":3,
+	  "area":"computacion",
+	  "horarios": [
+	    {"dia":"MIE","inicio":"09:30","fin":"11:20"},
+	    {"dia":"VIE","inicio":"09:30","fin":"11:20"}
+	  ]
+	},
+	{
+	  "codigo":"CS2101",
+	  "grupo":2,
+	  "codigo_opcion":"CS2101",
+	  "carrera":"PI",
+	  "nombre":"Ambiente humano",
+	  "creditos":2,
+	  "area":"humanidades_complementarias",
+	  "horarios": [ {"dia":"MAR","inicio":"09:30","fin":"12:20"} ]
+	}
+      ]
+    },
+    {
+      "id":72,
+      "creditos_totales":9,
+      "cumple":true,
+      "razon":"ninguna",
+      "detalle":"Ninguna",
+      "cursos": [
+	{
+	  "codigo":"FI1101",
+	  "grupo":1,
+	  "codigo_opcion":"FI1101",
+	  "carrera":"PI",
+	  "nombre":"Física general I",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"07:30","fin":"09:20"},
+	    {"dia":"JUE","inicio":"07:30","fin":"09:20"}
+	  ]
+	},
+	{
+	  "codigo":"PI3501",
+	  "grupo":2,
+	  "codigo_opcion":"PI3501",
+	  "carrera":"PI",
+	  "nombre":"Costos industriales I",
+	  "creditos":3,
+	  "area":"industrial_gestion",
+	  "horarios": [ {"dia":"MAR","inicio":"17:00","fin":"19:50"} ]
+	},
+	{
+	  "codigo":"CA2125",
+	  "grupo":2,
+	  "codigo_opcion":"CA2125",
+	  "carrera":"PI",
+	  "nombre":"Elementos de computación",
+	  "creditos":3,
+	  "area":"computacion",
+	  "horarios": [
+	    {"dia":"MIE","inicio":"09:30","fin":"11:20"},
+	    {"dia":"VIE","inicio":"09:30","fin":"11:20"}
+	  ]
+	}
+      ]
+    },
+    {
+      "id":73,
+      "creditos_totales":8,
+      "cumple":true,
+      "razon":"ninguna",
+      "detalle":"Ninguna",
+      "cursos": [
+	{
+	  "codigo":"FI1101",
+	  "grupo":1,
+	  "codigo_opcion":"FI1101",
+	  "carrera":"PI",
+	  "nombre":"Física general I",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"07:30","fin":"09:20"},
+	    {"dia":"JUE","inicio":"07:30","fin":"09:20"}
+	  ]
+	},
+	{
+	  "codigo":"PI3501",
+	  "grupo":2,
+	  "codigo_opcion":"PI3501",
+	  "carrera":"PI",
+	  "nombre":"Costos industriales I",
+	  "creditos":3,
+	  "area":"industrial_gestion",
+	  "horarios": [ {"dia":"MAR","inicio":"17:00","fin":"19:50"} ]
+	},
+	{
+	  "codigo":"CS2101",
+	  "grupo":1,
+	  "codigo_opcion":"CS2101",
+	  "carrera":"PI",
+	  "nombre":"Ambiente humano",
+	  "creditos":2,
+	  "area":"humanidades_complementarias",
+	  "horarios": [ {"dia":"VIE","inicio":"09:30","fin":"12:20"} ]
+	}
+      ]
+    },
+    {
+      "id":74,
+      "creditos_totales":8,
+      "cumple":true,
+      "razon":"ninguna",
+      "detalle":"Ninguna",
+      "cursos": [
+	{
+	  "codigo":"FI1101",
+	  "grupo":1,
+	  "codigo_opcion":"FI1101",
+	  "carrera":"PI",
+	  "nombre":"Física general I",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"07:30","fin":"09:20"},
+	    {"dia":"JUE","inicio":"07:30","fin":"09:20"}
+	  ]
+	},
+	{
+	  "codigo":"PI3501",
+	  "grupo":2,
+	  "codigo_opcion":"PI3501",
+	  "carrera":"PI",
+	  "nombre":"Costos industriales I",
+	  "creditos":3,
+	  "area":"industrial_gestion",
+	  "horarios": [ {"dia":"MAR","inicio":"17:00","fin":"19:50"} ]
+	},
+	{
+	  "codigo":"CS2101",
+	  "grupo":2,
+	  "codigo_opcion":"CS2101",
+	  "carrera":"PI",
+	  "nombre":"Ambiente humano",
+	  "creditos":2,
+	  "area":"humanidades_complementarias",
+	  "horarios": [ {"dia":"MAR","inicio":"09:30","fin":"12:20"} ]
+	}
+      ]
+    },
+    {
+      "id":75,
+      "creditos_totales":11,
+      "cumple":true,
+      "razon":"ninguna",
+      "detalle":"Ninguna",
+      "cursos": [
+	{
+	  "codigo":"FI1101",
+	  "grupo":1,
+	  "codigo_opcion":"FI1101",
+	  "carrera":"PI",
+	  "nombre":"Física general I",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"07:30","fin":"09:20"},
+	    {"dia":"JUE","inicio":"07:30","fin":"09:20"}
+	  ]
+	},
+	{
+	  "codigo":"PI3501",
+	  "grupo":3,
+	  "codigo_opcion":"PI3501",
+	  "carrera":"PI",
+	  "nombre":"Costos industriales I",
+	  "creditos":3,
+	  "area":"industrial_gestion",
+	  "horarios": [ {"dia":"MIE","inicio":"13:00","fin":"15:50"} ]
+	},
+	{
+	  "codigo":"CA2125",
+	  "grupo":1,
+	  "codigo_opcion":"CA2125",
+	  "carrera":"PI",
+	  "nombre":"Elementos de computación",
+	  "creditos":3,
+	  "area":"computacion",
+	  "horarios": [
+	    {"dia":"MIE","inicio":"09:30","fin":"11:20"},
+	    {"dia":"VIE","inicio":"09:30","fin":"11:20"}
+	  ]
+	},
+	{
+	  "codigo":"CS2101",
+	  "grupo":2,
+	  "codigo_opcion":"CS2101",
+	  "carrera":"PI",
+	  "nombre":"Ambiente humano",
+	  "creditos":2,
+	  "area":"humanidades_complementarias",
+	  "horarios": [ {"dia":"MAR","inicio":"09:30","fin":"12:20"} ]
+	}
+      ]
+    },
+    {
+      "id":76,
+      "creditos_totales":9,
+      "cumple":true,
+      "razon":"ninguna",
+      "detalle":"Ninguna",
+      "cursos": [
+	{
+	  "codigo":"FI1101",
+	  "grupo":1,
+	  "codigo_opcion":"FI1101",
+	  "carrera":"PI",
+	  "nombre":"Física general I",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"07:30","fin":"09:20"},
+	    {"dia":"JUE","inicio":"07:30","fin":"09:20"}
+	  ]
+	},
+	{
+	  "codigo":"PI3501",
+	  "grupo":3,
+	  "codigo_opcion":"PI3501",
+	  "carrera":"PI",
+	  "nombre":"Costos industriales I",
+	  "creditos":3,
+	  "area":"industrial_gestion",
+	  "horarios": [ {"dia":"MIE","inicio":"13:00","fin":"15:50"} ]
+	},
+	{
+	  "codigo":"CA2125",
+	  "grupo":1,
+	  "codigo_opcion":"CA2125",
+	  "carrera":"PI",
+	  "nombre":"Elementos de computación",
+	  "creditos":3,
+	  "area":"computacion",
+	  "horarios": [
+	    {"dia":"MIE","inicio":"09:30","fin":"11:20"},
+	    {"dia":"VIE","inicio":"09:30","fin":"11:20"}
+	  ]
+	}
+      ]
+    },
+    {
+      "id":77,
+      "creditos_totales":11,
+      "cumple":true,
+      "razon":"ninguna",
+      "detalle":"Ninguna",
+      "cursos": [
+	{
+	  "codigo":"FI1101",
+	  "grupo":1,
+	  "codigo_opcion":"FI1101",
+	  "carrera":"PI",
+	  "nombre":"Física general I",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"07:30","fin":"09:20"},
+	    {"dia":"JUE","inicio":"07:30","fin":"09:20"}
+	  ]
+	},
+	{
+	  "codigo":"PI3501",
+	  "grupo":3,
+	  "codigo_opcion":"PI3501",
+	  "carrera":"PI",
+	  "nombre":"Costos industriales I",
+	  "creditos":3,
+	  "area":"industrial_gestion",
+	  "horarios": [ {"dia":"MIE","inicio":"13:00","fin":"15:50"} ]
+	},
+	{
+	  "codigo":"CA2125",
+	  "grupo":2,
+	  "codigo_opcion":"CA2125",
+	  "carrera":"PI",
+	  "nombre":"Elementos de computación",
+	  "creditos":3,
+	  "area":"computacion",
+	  "horarios": [
+	    {"dia":"MIE","inicio":"09:30","fin":"11:20"},
+	    {"dia":"VIE","inicio":"09:30","fin":"11:20"}
+	  ]
+	},
+	{
+	  "codigo":"CS2101",
+	  "grupo":2,
+	  "codigo_opcion":"CS2101",
+	  "carrera":"PI",
+	  "nombre":"Ambiente humano",
+	  "creditos":2,
+	  "area":"humanidades_complementarias",
+	  "horarios": [ {"dia":"MAR","inicio":"09:30","fin":"12:20"} ]
+	}
+      ]
+    },
+    {
+      "id":78,
+      "creditos_totales":9,
+      "cumple":true,
+      "razon":"ninguna",
+      "detalle":"Ninguna",
+      "cursos": [
+	{
+	  "codigo":"FI1101",
+	  "grupo":1,
+	  "codigo_opcion":"FI1101",
+	  "carrera":"PI",
+	  "nombre":"Física general I",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"07:30","fin":"09:20"},
+	    {"dia":"JUE","inicio":"07:30","fin":"09:20"}
+	  ]
+	},
+	{
+	  "codigo":"PI3501",
+	  "grupo":3,
+	  "codigo_opcion":"PI3501",
+	  "carrera":"PI",
+	  "nombre":"Costos industriales I",
+	  "creditos":3,
+	  "area":"industrial_gestion",
+	  "horarios": [ {"dia":"MIE","inicio":"13:00","fin":"15:50"} ]
+	},
+	{
+	  "codigo":"CA2125",
+	  "grupo":2,
+	  "codigo_opcion":"CA2125",
+	  "carrera":"PI",
+	  "nombre":"Elementos de computación",
+	  "creditos":3,
+	  "area":"computacion",
+	  "horarios": [
+	    {"dia":"MIE","inicio":"09:30","fin":"11:20"},
+	    {"dia":"VIE","inicio":"09:30","fin":"11:20"}
+	  ]
+	}
+      ]
+    },
+    {
+      "id":79,
+      "creditos_totales":8,
+      "cumple":true,
+      "razon":"ninguna",
+      "detalle":"Ninguna",
+      "cursos": [
+	{
+	  "codigo":"FI1101",
+	  "grupo":1,
+	  "codigo_opcion":"FI1101",
+	  "carrera":"PI",
+	  "nombre":"Física general I",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"07:30","fin":"09:20"},
+	    {"dia":"JUE","inicio":"07:30","fin":"09:20"}
+	  ]
+	},
+	{
+	  "codigo":"PI3501",
+	  "grupo":3,
+	  "codigo_opcion":"PI3501",
+	  "carrera":"PI",
+	  "nombre":"Costos industriales I",
+	  "creditos":3,
+	  "area":"industrial_gestion",
+	  "horarios": [ {"dia":"MIE","inicio":"13:00","fin":"15:50"} ]
+	},
+	{
+	  "codigo":"CS2101",
+	  "grupo":1,
+	  "codigo_opcion":"CS2101",
+	  "carrera":"PI",
+	  "nombre":"Ambiente humano",
+	  "creditos":2,
+	  "area":"humanidades_complementarias",
+	  "horarios": [ {"dia":"VIE","inicio":"09:30","fin":"12:20"} ]
+	}
+      ]
+    },
+    {
+      "id":80,
+      "creditos_totales":8,
+      "cumple":true,
+      "razon":"ninguna",
+      "detalle":"Ninguna",
+      "cursos": [
+	{
+	  "codigo":"FI1101",
+	  "grupo":1,
+	  "codigo_opcion":"FI1101",
+	  "carrera":"PI",
+	  "nombre":"Física general I",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"07:30","fin":"09:20"},
+	    {"dia":"JUE","inicio":"07:30","fin":"09:20"}
+	  ]
+	},
+	{
+	  "codigo":"PI3501",
+	  "grupo":3,
+	  "codigo_opcion":"PI3501",
+	  "carrera":"PI",
+	  "nombre":"Costos industriales I",
+	  "creditos":3,
+	  "area":"industrial_gestion",
+	  "horarios": [ {"dia":"MIE","inicio":"13:00","fin":"15:50"} ]
+	},
+	{
+	  "codigo":"CS2101",
+	  "grupo":2,
+	  "codigo_opcion":"CS2101",
+	  "carrera":"PI",
+	  "nombre":"Ambiente humano",
+	  "creditos":2,
+	  "area":"humanidades_complementarias",
+	  "horarios": [ {"dia":"MAR","inicio":"09:30","fin":"12:20"} ]
+	}
+      ]
+    },
+    {
+      "id":81,
+      "creditos_totales":8,
+      "cumple":true,
+      "razon":"ninguna",
+      "detalle":"Ninguna",
+      "cursos": [
+	{
+	  "codigo":"FI1101",
+	  "grupo":1,
+	  "codigo_opcion":"FI1101",
+	  "carrera":"PI",
+	  "nombre":"Física general I",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"07:30","fin":"09:20"},
+	    {"dia":"JUE","inicio":"07:30","fin":"09:20"}
+	  ]
+	},
+	{
+	  "codigo":"CA2125",
+	  "grupo":1,
+	  "codigo_opcion":"CA2125",
+	  "carrera":"PI",
+	  "nombre":"Elementos de computación",
+	  "creditos":3,
+	  "area":"computacion",
+	  "horarios": [
+	    {"dia":"MIE","inicio":"09:30","fin":"11:20"},
+	    {"dia":"VIE","inicio":"09:30","fin":"11:20"}
+	  ]
+	},
+	{
+	  "codigo":"CS2101",
+	  "grupo":2,
+	  "codigo_opcion":"CS2101",
+	  "carrera":"PI",
+	  "nombre":"Ambiente humano",
+	  "creditos":2,
+	  "area":"humanidades_complementarias",
+	  "horarios": [ {"dia":"MAR","inicio":"09:30","fin":"12:20"} ]
+	}
+      ]
+    },
+    {
+      "id":82,
+      "creditos_totales":8,
+      "cumple":true,
+      "razon":"ninguna",
+      "detalle":"Ninguna",
+      "cursos": [
+	{
+	  "codigo":"FI1101",
+	  "grupo":1,
+	  "codigo_opcion":"FI1101",
+	  "carrera":"PI",
+	  "nombre":"Física general I",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"07:30","fin":"09:20"},
+	    {"dia":"JUE","inicio":"07:30","fin":"09:20"}
+	  ]
+	},
+	{
+	  "codigo":"CA2125",
+	  "grupo":2,
+	  "codigo_opcion":"CA2125",
+	  "carrera":"PI",
+	  "nombre":"Elementos de computación",
+	  "creditos":3,
+	  "area":"computacion",
+	  "horarios": [
+	    {"dia":"MIE","inicio":"09:30","fin":"11:20"},
+	    {"dia":"VIE","inicio":"09:30","fin":"11:20"}
+	  ]
+	},
+	{
+	  "codigo":"CS2101",
+	  "grupo":2,
+	  "codigo_opcion":"CS2101",
+	  "carrera":"PI",
+	  "nombre":"Ambiente humano",
+	  "creditos":2,
+	  "area":"humanidades_complementarias",
+	  "horarios": [ {"dia":"MAR","inicio":"09:30","fin":"12:20"} ]
+	}
+      ]
+    },
+    {
+      "id":83,
+      "creditos_totales":10,
+      "cumple":true,
+      "razon":"ninguna",
+      "detalle":"Ninguna",
+      "cursos": [
+	{
+	  "codigo":"FI1201",
+	  "grupo":2,
+	  "codigo_opcion":"FI1201",
+	  "carrera":"PI",
+	  "nombre":"Laboratorio física general I",
+	  "creditos":1,
+	  "area":"ciencias_basicas",
+	  "horarios": [ {"dia":"MAR","inicio":"09:30","fin":"11:20"} ]
+	},
+	{
+	  "codigo":"QU1107",
+	  "grupo":5,
+	  "codigo_opcion":"QU1107",
+	  "carrera":"PI",
+	  "nombre":"Química básica II",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"13:00","fin":"14:50"},
+	    {"dia":"JUE","inicio":"13:00","fin":"14:50"}
+	  ]
+	},
+	{
+	  "codigo":"PI3501",
+	  "grupo":2,
+	  "codigo_opcion":"PI3501",
+	  "carrera":"PI",
+	  "nombre":"Costos industriales I",
+	  "creditos":3,
+	  "area":"industrial_gestion",
+	  "horarios": [ {"dia":"MAR","inicio":"17:00","fin":"19:50"} ]
+	},
+	{
+	  "codigo":"CA2125",
+	  "grupo":1,
+	  "codigo_opcion":"CA2125",
+	  "carrera":"PI",
+	  "nombre":"Elementos de computación",
+	  "creditos":3,
+	  "area":"computacion",
+	  "horarios": [
+	    {"dia":"MIE","inicio":"09:30","fin":"11:20"},
+	    {"dia":"VIE","inicio":"09:30","fin":"11:20"}
+	  ]
+	}
+      ]
+    },
+    {
+      "id":84,
+      "creditos_totales":10,
+      "cumple":true,
+      "razon":"ninguna",
+      "detalle":"Ninguna",
+      "cursos": [
+	{
+	  "codigo":"FI1201",
+	  "grupo":2,
+	  "codigo_opcion":"FI1201",
+	  "carrera":"PI",
+	  "nombre":"Laboratorio física general I",
+	  "creditos":1,
+	  "area":"ciencias_basicas",
+	  "horarios": [ {"dia":"MAR","inicio":"09:30","fin":"11:20"} ]
+	},
+	{
+	  "codigo":"QU1107",
+	  "grupo":5,
+	  "codigo_opcion":"QU1107",
+	  "carrera":"PI",
+	  "nombre":"Química básica II",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"13:00","fin":"14:50"},
+	    {"dia":"JUE","inicio":"13:00","fin":"14:50"}
+	  ]
+	},
+	{
+	  "codigo":"PI3501",
+	  "grupo":2,
+	  "codigo_opcion":"PI3501",
+	  "carrera":"PI",
+	  "nombre":"Costos industriales I",
+	  "creditos":3,
+	  "area":"industrial_gestion",
+	  "horarios": [ {"dia":"MAR","inicio":"17:00","fin":"19:50"} ]
+	},
+	{
+	  "codigo":"CA2125",
+	  "grupo":2,
+	  "codigo_opcion":"CA2125",
+	  "carrera":"PI",
+	  "nombre":"Elementos de computación",
+	  "creditos":3,
+	  "area":"computacion",
+	  "horarios": [
+	    {"dia":"MIE","inicio":"09:30","fin":"11:20"},
+	    {"dia":"VIE","inicio":"09:30","fin":"11:20"}
+	  ]
+	}
+      ]
+    },
+    {
+      "id":85,
+      "creditos_totales":9,
+      "cumple":true,
+      "razon":"ninguna",
+      "detalle":"Ninguna",
+      "cursos": [
+	{
+	  "codigo":"FI1201",
+	  "grupo":2,
+	  "codigo_opcion":"FI1201",
+	  "carrera":"PI",
+	  "nombre":"Laboratorio física general I",
+	  "creditos":1,
+	  "area":"ciencias_basicas",
+	  "horarios": [ {"dia":"MAR","inicio":"09:30","fin":"11:20"} ]
+	},
+	{
+	  "codigo":"QU1107",
+	  "grupo":5,
+	  "codigo_opcion":"QU1107",
+	  "carrera":"PI",
+	  "nombre":"Química básica II",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"13:00","fin":"14:50"},
+	    {"dia":"JUE","inicio":"13:00","fin":"14:50"}
+	  ]
+	},
+	{
+	  "codigo":"PI3501",
+	  "grupo":2,
+	  "codigo_opcion":"PI3501",
+	  "carrera":"PI",
+	  "nombre":"Costos industriales I",
+	  "creditos":3,
+	  "area":"industrial_gestion",
+	  "horarios": [ {"dia":"MAR","inicio":"17:00","fin":"19:50"} ]
+	},
+	{
+	  "codigo":"CS2101",
+	  "grupo":1,
+	  "codigo_opcion":"CS2101",
+	  "carrera":"PI",
+	  "nombre":"Ambiente humano",
+	  "creditos":2,
+	  "area":"humanidades_complementarias",
+	  "horarios": [ {"dia":"VIE","inicio":"09:30","fin":"12:20"} ]
+	}
+      ]
+    },
+    {
+      "id":86,
+      "creditos_totales":10,
+      "cumple":true,
+      "razon":"ninguna",
+      "detalle":"Ninguna",
+      "cursos": [
+	{
+	  "codigo":"FI1201",
+	  "grupo":2,
+	  "codigo_opcion":"FI1201",
+	  "carrera":"PI",
+	  "nombre":"Laboratorio física general I",
+	  "creditos":1,
+	  "area":"ciencias_basicas",
+	  "horarios": [ {"dia":"MAR","inicio":"09:30","fin":"11:20"} ]
+	},
+	{
+	  "codigo":"QU1107",
+	  "grupo":5,
+	  "codigo_opcion":"QU1107",
+	  "carrera":"PI",
+	  "nombre":"Química básica II",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"13:00","fin":"14:50"},
+	    {"dia":"JUE","inicio":"13:00","fin":"14:50"}
+	  ]
+	},
+	{
+	  "codigo":"PI3501",
+	  "grupo":3,
+	  "codigo_opcion":"PI3501",
+	  "carrera":"PI",
+	  "nombre":"Costos industriales I",
+	  "creditos":3,
+	  "area":"industrial_gestion",
+	  "horarios": [ {"dia":"MIE","inicio":"13:00","fin":"15:50"} ]
+	},
+	{
+	  "codigo":"CA2125",
+	  "grupo":1,
+	  "codigo_opcion":"CA2125",
+	  "carrera":"PI",
+	  "nombre":"Elementos de computación",
+	  "creditos":3,
+	  "area":"computacion",
+	  "horarios": [
+	    {"dia":"MIE","inicio":"09:30","fin":"11:20"},
+	    {"dia":"VIE","inicio":"09:30","fin":"11:20"}
+	  ]
+	}
+      ]
+    },
+    {
+      "id":87,
+      "creditos_totales":10,
+      "cumple":true,
+      "razon":"ninguna",
+      "detalle":"Ninguna",
+      "cursos": [
+	{
+	  "codigo":"FI1201",
+	  "grupo":2,
+	  "codigo_opcion":"FI1201",
+	  "carrera":"PI",
+	  "nombre":"Laboratorio física general I",
+	  "creditos":1,
+	  "area":"ciencias_basicas",
+	  "horarios": [ {"dia":"MAR","inicio":"09:30","fin":"11:20"} ]
+	},
+	{
+	  "codigo":"QU1107",
+	  "grupo":5,
+	  "codigo_opcion":"QU1107",
+	  "carrera":"PI",
+	  "nombre":"Química básica II",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"13:00","fin":"14:50"},
+	    {"dia":"JUE","inicio":"13:00","fin":"14:50"}
+	  ]
+	},
+	{
+	  "codigo":"PI3501",
+	  "grupo":3,
+	  "codigo_opcion":"PI3501",
+	  "carrera":"PI",
+	  "nombre":"Costos industriales I",
+	  "creditos":3,
+	  "area":"industrial_gestion",
+	  "horarios": [ {"dia":"MIE","inicio":"13:00","fin":"15:50"} ]
+	},
+	{
+	  "codigo":"CA2125",
+	  "grupo":2,
+	  "codigo_opcion":"CA2125",
+	  "carrera":"PI",
+	  "nombre":"Elementos de computación",
+	  "creditos":3,
+	  "area":"computacion",
+	  "horarios": [
+	    {"dia":"MIE","inicio":"09:30","fin":"11:20"},
+	    {"dia":"VIE","inicio":"09:30","fin":"11:20"}
+	  ]
+	}
+      ]
+    },
+    {
+      "id":88,
+      "creditos_totales":9,
+      "cumple":true,
+      "razon":"ninguna",
+      "detalle":"Ninguna",
+      "cursos": [
+	{
+	  "codigo":"FI1201",
+	  "grupo":2,
+	  "codigo_opcion":"FI1201",
+	  "carrera":"PI",
+	  "nombre":"Laboratorio física general I",
+	  "creditos":1,
+	  "area":"ciencias_basicas",
+	  "horarios": [ {"dia":"MAR","inicio":"09:30","fin":"11:20"} ]
+	},
+	{
+	  "codigo":"QU1107",
+	  "grupo":5,
+	  "codigo_opcion":"QU1107",
+	  "carrera":"PI",
+	  "nombre":"Química básica II",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"13:00","fin":"14:50"},
+	    {"dia":"JUE","inicio":"13:00","fin":"14:50"}
+	  ]
+	},
+	{
+	  "codigo":"PI3501",
+	  "grupo":3,
+	  "codigo_opcion":"PI3501",
+	  "carrera":"PI",
+	  "nombre":"Costos industriales I",
+	  "creditos":3,
+	  "area":"industrial_gestion",
+	  "horarios": [ {"dia":"MIE","inicio":"13:00","fin":"15:50"} ]
+	},
+	{
+	  "codigo":"CS2101",
+	  "grupo":1,
+	  "codigo_opcion":"CS2101",
+	  "carrera":"PI",
+	  "nombre":"Ambiente humano",
+	  "creditos":2,
+	  "area":"humanidades_complementarias",
+	  "horarios": [ {"dia":"VIE","inicio":"09:30","fin":"12:20"} ]
+	}
+      ]
+    },
+    {
+      "id":89,
+      "creditos_totales":10,
+      "cumple":true,
+      "razon":"ninguna",
+      "detalle":"Ninguna",
+      "cursos": [
+	{
+	  "codigo":"FI1201",
+	  "grupo":2,
+	  "codigo_opcion":"FI1201",
+	  "carrera":"PI",
+	  "nombre":"Laboratorio física general I",
+	  "creditos":1,
+	  "area":"ciencias_basicas",
+	  "horarios": [ {"dia":"MAR","inicio":"09:30","fin":"11:20"} ]
+	},
+	{
+	  "codigo":"QU1107",
+	  "grupo":6,
+	  "codigo_opcion":"QU1107",
+	  "carrera":"PI",
+	  "nombre":"Química básica II",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"15:00","fin":"16:50"},
+	    {"dia":"JUE","inicio":"15:00","fin":"16:50"}
+	  ]
+	},
+	{
+	  "codigo":"PI3501",
+	  "grupo":2,
+	  "codigo_opcion":"PI3501",
+	  "carrera":"PI",
+	  "nombre":"Costos industriales I",
+	  "creditos":3,
+	  "area":"industrial_gestion",
+	  "horarios": [ {"dia":"MAR","inicio":"17:00","fin":"19:50"} ]
+	},
+	{
+	  "codigo":"CA2125",
+	  "grupo":1,
+	  "codigo_opcion":"CA2125",
+	  "carrera":"PI",
+	  "nombre":"Elementos de computación",
+	  "creditos":3,
+	  "area":"computacion",
+	  "horarios": [
+	    {"dia":"MIE","inicio":"09:30","fin":"11:20"},
+	    {"dia":"VIE","inicio":"09:30","fin":"11:20"}
+	  ]
+	}
+      ]
+    },
+    {
+      "id":90,
+      "creditos_totales":10,
+      "cumple":true,
+      "razon":"ninguna",
+      "detalle":"Ninguna",
+      "cursos": [
+	{
+	  "codigo":"FI1201",
+	  "grupo":2,
+	  "codigo_opcion":"FI1201",
+	  "carrera":"PI",
+	  "nombre":"Laboratorio física general I",
+	  "creditos":1,
+	  "area":"ciencias_basicas",
+	  "horarios": [ {"dia":"MAR","inicio":"09:30","fin":"11:20"} ]
+	},
+	{
+	  "codigo":"QU1107",
+	  "grupo":6,
+	  "codigo_opcion":"QU1107",
+	  "carrera":"PI",
+	  "nombre":"Química básica II",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"15:00","fin":"16:50"},
+	    {"dia":"JUE","inicio":"15:00","fin":"16:50"}
+	  ]
+	},
+	{
+	  "codigo":"PI3501",
+	  "grupo":2,
+	  "codigo_opcion":"PI3501",
+	  "carrera":"PI",
+	  "nombre":"Costos industriales I",
+	  "creditos":3,
+	  "area":"industrial_gestion",
+	  "horarios": [ {"dia":"MAR","inicio":"17:00","fin":"19:50"} ]
+	},
+	{
+	  "codigo":"CA2125",
+	  "grupo":2,
+	  "codigo_opcion":"CA2125",
+	  "carrera":"PI",
+	  "nombre":"Elementos de computación",
+	  "creditos":3,
+	  "area":"computacion",
+	  "horarios": [
+	    {"dia":"MIE","inicio":"09:30","fin":"11:20"},
+	    {"dia":"VIE","inicio":"09:30","fin":"11:20"}
+	  ]
+	}
+      ]
+    },
+    {
+      "id":91,
+      "creditos_totales":9,
+      "cumple":true,
+      "razon":"ninguna",
+      "detalle":"Ninguna",
+      "cursos": [
+	{
+	  "codigo":"FI1201",
+	  "grupo":2,
+	  "codigo_opcion":"FI1201",
+	  "carrera":"PI",
+	  "nombre":"Laboratorio física general I",
+	  "creditos":1,
+	  "area":"ciencias_basicas",
+	  "horarios": [ {"dia":"MAR","inicio":"09:30","fin":"11:20"} ]
+	},
+	{
+	  "codigo":"QU1107",
+	  "grupo":6,
+	  "codigo_opcion":"QU1107",
+	  "carrera":"PI",
+	  "nombre":"Química básica II",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"15:00","fin":"16:50"},
+	    {"dia":"JUE","inicio":"15:00","fin":"16:50"}
+	  ]
+	},
+	{
+	  "codigo":"PI3501",
+	  "grupo":2,
+	  "codigo_opcion":"PI3501",
+	  "carrera":"PI",
+	  "nombre":"Costos industriales I",
+	  "creditos":3,
+	  "area":"industrial_gestion",
+	  "horarios": [ {"dia":"MAR","inicio":"17:00","fin":"19:50"} ]
+	},
+	{
+	  "codigo":"CS2101",
+	  "grupo":1,
+	  "codigo_opcion":"CS2101",
+	  "carrera":"PI",
+	  "nombre":"Ambiente humano",
+	  "creditos":2,
+	  "area":"humanidades_complementarias",
+	  "horarios": [ {"dia":"VIE","inicio":"09:30","fin":"12:20"} ]
+	}
+      ]
+    },
+    {
+      "id":92,
+      "creditos_totales":10,
+      "cumple":true,
+      "razon":"ninguna",
+      "detalle":"Ninguna",
+      "cursos": [
+	{
+	  "codigo":"FI1201",
+	  "grupo":2,
+	  "codigo_opcion":"FI1201",
+	  "carrera":"PI",
+	  "nombre":"Laboratorio física general I",
+	  "creditos":1,
+	  "area":"ciencias_basicas",
+	  "horarios": [ {"dia":"MAR","inicio":"09:30","fin":"11:20"} ]
+	},
+	{
+	  "codigo":"QU1107",
+	  "grupo":6,
+	  "codigo_opcion":"QU1107",
+	  "carrera":"PI",
+	  "nombre":"Química básica II",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"15:00","fin":"16:50"},
+	    {"dia":"JUE","inicio":"15:00","fin":"16:50"}
+	  ]
+	},
+	{
+	  "codigo":"PI3501",
+	  "grupo":3,
+	  "codigo_opcion":"PI3501",
+	  "carrera":"PI",
+	  "nombre":"Costos industriales I",
+	  "creditos":3,
+	  "area":"industrial_gestion",
+	  "horarios": [ {"dia":"MIE","inicio":"13:00","fin":"15:50"} ]
+	},
+	{
+	  "codigo":"CA2125",
+	  "grupo":1,
+	  "codigo_opcion":"CA2125",
+	  "carrera":"PI",
+	  "nombre":"Elementos de computación",
+	  "creditos":3,
+	  "area":"computacion",
+	  "horarios": [
+	    {"dia":"MIE","inicio":"09:30","fin":"11:20"},
+	    {"dia":"VIE","inicio":"09:30","fin":"11:20"}
+	  ]
+	}
+      ]
+    },
+    {
+      "id":93,
+      "creditos_totales":10,
+      "cumple":true,
+      "razon":"ninguna",
+      "detalle":"Ninguna",
+      "cursos": [
+	{
+	  "codigo":"FI1201",
+	  "grupo":2,
+	  "codigo_opcion":"FI1201",
+	  "carrera":"PI",
+	  "nombre":"Laboratorio física general I",
+	  "creditos":1,
+	  "area":"ciencias_basicas",
+	  "horarios": [ {"dia":"MAR","inicio":"09:30","fin":"11:20"} ]
+	},
+	{
+	  "codigo":"QU1107",
+	  "grupo":6,
+	  "codigo_opcion":"QU1107",
+	  "carrera":"PI",
+	  "nombre":"Química básica II",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"15:00","fin":"16:50"},
+	    {"dia":"JUE","inicio":"15:00","fin":"16:50"}
+	  ]
+	},
+	{
+	  "codigo":"PI3501",
+	  "grupo":3,
+	  "codigo_opcion":"PI3501",
+	  "carrera":"PI",
+	  "nombre":"Costos industriales I",
+	  "creditos":3,
+	  "area":"industrial_gestion",
+	  "horarios": [ {"dia":"MIE","inicio":"13:00","fin":"15:50"} ]
+	},
+	{
+	  "codigo":"CA2125",
+	  "grupo":2,
+	  "codigo_opcion":"CA2125",
+	  "carrera":"PI",
+	  "nombre":"Elementos de computación",
+	  "creditos":3,
+	  "area":"computacion",
+	  "horarios": [
+	    {"dia":"MIE","inicio":"09:30","fin":"11:20"},
+	    {"dia":"VIE","inicio":"09:30","fin":"11:20"}
+	  ]
+	}
+      ]
+    },
+    {
+      "id":94,
+      "creditos_totales":9,
+      "cumple":true,
+      "razon":"ninguna",
+      "detalle":"Ninguna",
+      "cursos": [
+	{
+	  "codigo":"FI1201",
+	  "grupo":2,
+	  "codigo_opcion":"FI1201",
+	  "carrera":"PI",
+	  "nombre":"Laboratorio física general I",
+	  "creditos":1,
+	  "area":"ciencias_basicas",
+	  "horarios": [ {"dia":"MAR","inicio":"09:30","fin":"11:20"} ]
+	},
+	{
+	  "codigo":"QU1107",
+	  "grupo":6,
+	  "codigo_opcion":"QU1107",
+	  "carrera":"PI",
+	  "nombre":"Química básica II",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"15:00","fin":"16:50"},
+	    {"dia":"JUE","inicio":"15:00","fin":"16:50"}
+	  ]
+	},
+	{
+	  "codigo":"PI3501",
+	  "grupo":3,
+	  "codigo_opcion":"PI3501",
+	  "carrera":"PI",
+	  "nombre":"Costos industriales I",
+	  "creditos":3,
+	  "area":"industrial_gestion",
+	  "horarios": [ {"dia":"MIE","inicio":"13:00","fin":"15:50"} ]
+	},
+	{
+	  "codigo":"CS2101",
+	  "grupo":1,
+	  "codigo_opcion":"CS2101",
+	  "carrera":"PI",
+	  "nombre":"Ambiente humano",
+	  "creditos":2,
+	  "area":"humanidades_complementarias",
+	  "horarios": [ {"dia":"VIE","inicio":"09:30","fin":"12:20"} ]
+	}
+      ]
+    },
+    {
+      "id":95,
+      "creditos_totales":9,
+      "cumple":true,
+      "razon":"ninguna",
+      "detalle":"Ninguna",
+      "cursos": [
+	{
+	  "codigo":"QU1107",
+	  "grupo":5,
+	  "codigo_opcion":"QU1107",
+	  "carrera":"PI",
+	  "nombre":"Química básica II",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"13:00","fin":"14:50"},
+	    {"dia":"JUE","inicio":"13:00","fin":"14:50"}
+	  ]
+	},
+	{
+	  "codigo":"PI3501",
+	  "grupo":1,
+	  "codigo_opcion":"PI3501",
+	  "carrera":"PI",
+	  "nombre":"Costos industriales I",
+	  "creditos":3,
+	  "area":"industrial_gestion",
+	  "horarios": [ {"dia":"MAR","inicio":"07:30","fin":"10:20"} ]
+	},
+	{
+	  "codigo":"CA2125",
+	  "grupo":1,
+	  "codigo_opcion":"CA2125",
+	  "carrera":"PI",
+	  "nombre":"Elementos de computación",
+	  "creditos":3,
+	  "area":"computacion",
+	  "horarios": [
+	    {"dia":"MIE","inicio":"09:30","fin":"11:20"},
+	    {"dia":"VIE","inicio":"09:30","fin":"11:20"}
+	  ]
+	}
+      ]
+    },
+    {
+      "id":96,
+      "creditos_totales":9,
+      "cumple":true,
+      "razon":"ninguna",
+      "detalle":"Ninguna",
+      "cursos": [
+	{
+	  "codigo":"QU1107",
+	  "grupo":5,
+	  "codigo_opcion":"QU1107",
+	  "carrera":"PI",
+	  "nombre":"Química básica II",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"13:00","fin":"14:50"},
+	    {"dia":"JUE","inicio":"13:00","fin":"14:50"}
+	  ]
+	},
+	{
+	  "codigo":"PI3501",
+	  "grupo":1,
+	  "codigo_opcion":"PI3501",
+	  "carrera":"PI",
+	  "nombre":"Costos industriales I",
+	  "creditos":3,
+	  "area":"industrial_gestion",
+	  "horarios": [ {"dia":"MAR","inicio":"07:30","fin":"10:20"} ]
+	},
+	{
+	  "codigo":"CA2125",
+	  "grupo":2,
+	  "codigo_opcion":"CA2125",
+	  "carrera":"PI",
+	  "nombre":"Elementos de computación",
+	  "creditos":3,
+	  "area":"computacion",
+	  "horarios": [
+	    {"dia":"MIE","inicio":"09:30","fin":"11:20"},
+	    {"dia":"VIE","inicio":"09:30","fin":"11:20"}
+	  ]
+	}
+      ]
+    },
+    {
+      "id":97,
+      "creditos_totales":8,
+      "cumple":true,
+      "razon":"ninguna",
+      "detalle":"Ninguna",
+      "cursos": [
+	{
+	  "codigo":"QU1107",
+	  "grupo":5,
+	  "codigo_opcion":"QU1107",
+	  "carrera":"PI",
+	  "nombre":"Química básica II",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"13:00","fin":"14:50"},
+	    {"dia":"JUE","inicio":"13:00","fin":"14:50"}
+	  ]
+	},
+	{
+	  "codigo":"PI3501",
+	  "grupo":1,
+	  "codigo_opcion":"PI3501",
+	  "carrera":"PI",
+	  "nombre":"Costos industriales I",
+	  "creditos":3,
+	  "area":"industrial_gestion",
+	  "horarios": [ {"dia":"MAR","inicio":"07:30","fin":"10:20"} ]
+	},
+	{
+	  "codigo":"CS2101",
+	  "grupo":1,
+	  "codigo_opcion":"CS2101",
+	  "carrera":"PI",
+	  "nombre":"Ambiente humano",
+	  "creditos":2,
+	  "area":"humanidades_complementarias",
+	  "horarios": [ {"dia":"VIE","inicio":"09:30","fin":"12:20"} ]
+	}
+      ]
+    },
+    {
+      "id":98,
+      "creditos_totales":11,
+      "cumple":true,
+      "razon":"ninguna",
+      "detalle":"Ninguna",
+      "cursos": [
+	{
+	  "codigo":"QU1107",
+	  "grupo":5,
+	  "codigo_opcion":"QU1107",
+	  "carrera":"PI",
+	  "nombre":"Química básica II",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"13:00","fin":"14:50"},
+	    {"dia":"JUE","inicio":"13:00","fin":"14:50"}
+	  ]
+	},
+	{
+	  "codigo":"PI3501",
+	  "grupo":2,
+	  "codigo_opcion":"PI3501",
+	  "carrera":"PI",
+	  "nombre":"Costos industriales I",
+	  "creditos":3,
+	  "area":"industrial_gestion",
+	  "horarios": [ {"dia":"MAR","inicio":"17:00","fin":"19:50"} ]
+	},
+	{
+	  "codigo":"CA2125",
+	  "grupo":1,
+	  "codigo_opcion":"CA2125",
+	  "carrera":"PI",
+	  "nombre":"Elementos de computación",
+	  "creditos":3,
+	  "area":"computacion",
+	  "horarios": [
+	    {"dia":"MIE","inicio":"09:30","fin":"11:20"},
+	    {"dia":"VIE","inicio":"09:30","fin":"11:20"}
+	  ]
+	},
+	{
+	  "codigo":"CS2101",
+	  "grupo":2,
+	  "codigo_opcion":"CS2101",
+	  "carrera":"PI",
+	  "nombre":"Ambiente humano",
+	  "creditos":2,
+	  "area":"humanidades_complementarias",
+	  "horarios": [ {"dia":"MAR","inicio":"09:30","fin":"12:20"} ]
+	}
+      ]
+    },
+    {
+      "id":99,
+      "creditos_totales":9,
+      "cumple":true,
+      "razon":"ninguna",
+      "detalle":"Ninguna",
+      "cursos": [
+	{
+	  "codigo":"QU1107",
+	  "grupo":5,
+	  "codigo_opcion":"QU1107",
+	  "carrera":"PI",
+	  "nombre":"Química básica II",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"13:00","fin":"14:50"},
+	    {"dia":"JUE","inicio":"13:00","fin":"14:50"}
+	  ]
+	},
+	{
+	  "codigo":"PI3501",
+	  "grupo":2,
+	  "codigo_opcion":"PI3501",
+	  "carrera":"PI",
+	  "nombre":"Costos industriales I",
+	  "creditos":3,
+	  "area":"industrial_gestion",
+	  "horarios": [ {"dia":"MAR","inicio":"17:00","fin":"19:50"} ]
+	},
+	{
+	  "codigo":"CA2125",
+	  "grupo":1,
+	  "codigo_opcion":"CA2125",
+	  "carrera":"PI",
+	  "nombre":"Elementos de computación",
+	  "creditos":3,
+	  "area":"computacion",
+	  "horarios": [
+	    {"dia":"MIE","inicio":"09:30","fin":"11:20"},
+	    {"dia":"VIE","inicio":"09:30","fin":"11:20"}
+	  ]
+	}
+      ]
+    },
+    {
+      "id":100,
+      "creditos_totales":11,
+      "cumple":true,
+      "razon":"ninguna",
+      "detalle":"Ninguna",
+      "cursos": [
+	{
+	  "codigo":"QU1107",
+	  "grupo":5,
+	  "codigo_opcion":"QU1107",
+	  "carrera":"PI",
+	  "nombre":"Química básica II",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"13:00","fin":"14:50"},
+	    {"dia":"JUE","inicio":"13:00","fin":"14:50"}
+	  ]
+	},
+	{
+	  "codigo":"PI3501",
+	  "grupo":2,
+	  "codigo_opcion":"PI3501",
+	  "carrera":"PI",
+	  "nombre":"Costos industriales I",
+	  "creditos":3,
+	  "area":"industrial_gestion",
+	  "horarios": [ {"dia":"MAR","inicio":"17:00","fin":"19:50"} ]
+	},
+	{
+	  "codigo":"CA2125",
+	  "grupo":2,
+	  "codigo_opcion":"CA2125",
+	  "carrera":"PI",
+	  "nombre":"Elementos de computación",
+	  "creditos":3,
+	  "area":"computacion",
+	  "horarios": [
+	    {"dia":"MIE","inicio":"09:30","fin":"11:20"},
+	    {"dia":"VIE","inicio":"09:30","fin":"11:20"}
+	  ]
+	},
+	{
+	  "codigo":"CS2101",
+	  "grupo":2,
+	  "codigo_opcion":"CS2101",
+	  "carrera":"PI",
+	  "nombre":"Ambiente humano",
+	  "creditos":2,
+	  "area":"humanidades_complementarias",
+	  "horarios": [ {"dia":"MAR","inicio":"09:30","fin":"12:20"} ]
+	}
+      ]
+    },
+    {
+      "id":101,
+      "creditos_totales":9,
+      "cumple":true,
+      "razon":"ninguna",
+      "detalle":"Ninguna",
+      "cursos": [
+	{
+	  "codigo":"QU1107",
+	  "grupo":5,
+	  "codigo_opcion":"QU1107",
+	  "carrera":"PI",
+	  "nombre":"Química básica II",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"13:00","fin":"14:50"},
+	    {"dia":"JUE","inicio":"13:00","fin":"14:50"}
+	  ]
+	},
+	{
+	  "codigo":"PI3501",
+	  "grupo":2,
+	  "codigo_opcion":"PI3501",
+	  "carrera":"PI",
+	  "nombre":"Costos industriales I",
+	  "creditos":3,
+	  "area":"industrial_gestion",
+	  "horarios": [ {"dia":"MAR","inicio":"17:00","fin":"19:50"} ]
+	},
+	{
+	  "codigo":"CA2125",
+	  "grupo":2,
+	  "codigo_opcion":"CA2125",
+	  "carrera":"PI",
+	  "nombre":"Elementos de computación",
+	  "creditos":3,
+	  "area":"computacion",
+	  "horarios": [
+	    {"dia":"MIE","inicio":"09:30","fin":"11:20"},
+	    {"dia":"VIE","inicio":"09:30","fin":"11:20"}
+	  ]
+	}
+      ]
+    },
+    {
+      "id":102,
+      "creditos_totales":8,
+      "cumple":true,
+      "razon":"ninguna",
+      "detalle":"Ninguna",
+      "cursos": [
+	{
+	  "codigo":"QU1107",
+	  "grupo":5,
+	  "codigo_opcion":"QU1107",
+	  "carrera":"PI",
+	  "nombre":"Química básica II",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"13:00","fin":"14:50"},
+	    {"dia":"JUE","inicio":"13:00","fin":"14:50"}
+	  ]
+	},
+	{
+	  "codigo":"PI3501",
+	  "grupo":2,
+	  "codigo_opcion":"PI3501",
+	  "carrera":"PI",
+	  "nombre":"Costos industriales I",
+	  "creditos":3,
+	  "area":"industrial_gestion",
+	  "horarios": [ {"dia":"MAR","inicio":"17:00","fin":"19:50"} ]
+	},
+	{
+	  "codigo":"CS2101",
+	  "grupo":1,
+	  "codigo_opcion":"CS2101",
+	  "carrera":"PI",
+	  "nombre":"Ambiente humano",
+	  "creditos":2,
+	  "area":"humanidades_complementarias",
+	  "horarios": [ {"dia":"VIE","inicio":"09:30","fin":"12:20"} ]
+	}
+      ]
+    },
+    {
+      "id":103,
+      "creditos_totales":8,
+      "cumple":true,
+      "razon":"ninguna",
+      "detalle":"Ninguna",
+      "cursos": [
+	{
+	  "codigo":"QU1107",
+	  "grupo":5,
+	  "codigo_opcion":"QU1107",
+	  "carrera":"PI",
+	  "nombre":"Química básica II",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"13:00","fin":"14:50"},
+	    {"dia":"JUE","inicio":"13:00","fin":"14:50"}
+	  ]
+	},
+	{
+	  "codigo":"PI3501",
+	  "grupo":2,
+	  "codigo_opcion":"PI3501",
+	  "carrera":"PI",
+	  "nombre":"Costos industriales I",
+	  "creditos":3,
+	  "area":"industrial_gestion",
+	  "horarios": [ {"dia":"MAR","inicio":"17:00","fin":"19:50"} ]
+	},
+	{
+	  "codigo":"CS2101",
+	  "grupo":2,
+	  "codigo_opcion":"CS2101",
+	  "carrera":"PI",
+	  "nombre":"Ambiente humano",
+	  "creditos":2,
+	  "area":"humanidades_complementarias",
+	  "horarios": [ {"dia":"MAR","inicio":"09:30","fin":"12:20"} ]
+	}
+      ]
+    },
+    {
+      "id":104,
+      "creditos_totales":11,
+      "cumple":true,
+      "razon":"ninguna",
+      "detalle":"Ninguna",
+      "cursos": [
+	{
+	  "codigo":"QU1107",
+	  "grupo":5,
+	  "codigo_opcion":"QU1107",
+	  "carrera":"PI",
+	  "nombre":"Química básica II",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"13:00","fin":"14:50"},
+	    {"dia":"JUE","inicio":"13:00","fin":"14:50"}
+	  ]
+	},
+	{
+	  "codigo":"PI3501",
+	  "grupo":3,
+	  "codigo_opcion":"PI3501",
+	  "carrera":"PI",
+	  "nombre":"Costos industriales I",
+	  "creditos":3,
+	  "area":"industrial_gestion",
+	  "horarios": [ {"dia":"MIE","inicio":"13:00","fin":"15:50"} ]
+	},
+	{
+	  "codigo":"CA2125",
+	  "grupo":1,
+	  "codigo_opcion":"CA2125",
+	  "carrera":"PI",
+	  "nombre":"Elementos de computación",
+	  "creditos":3,
+	  "area":"computacion",
+	  "horarios": [
+	    {"dia":"MIE","inicio":"09:30","fin":"11:20"},
+	    {"dia":"VIE","inicio":"09:30","fin":"11:20"}
+	  ]
+	},
+	{
+	  "codigo":"CS2101",
+	  "grupo":2,
+	  "codigo_opcion":"CS2101",
+	  "carrera":"PI",
+	  "nombre":"Ambiente humano",
+	  "creditos":2,
+	  "area":"humanidades_complementarias",
+	  "horarios": [ {"dia":"MAR","inicio":"09:30","fin":"12:20"} ]
+	}
+      ]
+    },
+    {
+      "id":105,
+      "creditos_totales":9,
+      "cumple":true,
+      "razon":"ninguna",
+      "detalle":"Ninguna",
+      "cursos": [
+	{
+	  "codigo":"QU1107",
+	  "grupo":5,
+	  "codigo_opcion":"QU1107",
+	  "carrera":"PI",
+	  "nombre":"Química básica II",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"13:00","fin":"14:50"},
+	    {"dia":"JUE","inicio":"13:00","fin":"14:50"}
+	  ]
+	},
+	{
+	  "codigo":"PI3501",
+	  "grupo":3,
+	  "codigo_opcion":"PI3501",
+	  "carrera":"PI",
+	  "nombre":"Costos industriales I",
+	  "creditos":3,
+	  "area":"industrial_gestion",
+	  "horarios": [ {"dia":"MIE","inicio":"13:00","fin":"15:50"} ]
+	},
+	{
+	  "codigo":"CA2125",
+	  "grupo":1,
+	  "codigo_opcion":"CA2125",
+	  "carrera":"PI",
+	  "nombre":"Elementos de computación",
+	  "creditos":3,
+	  "area":"computacion",
+	  "horarios": [
+	    {"dia":"MIE","inicio":"09:30","fin":"11:20"},
+	    {"dia":"VIE","inicio":"09:30","fin":"11:20"}
+	  ]
+	}
+      ]
+    },
+    {
+      "id":106,
+      "creditos_totales":11,
+      "cumple":true,
+      "razon":"ninguna",
+      "detalle":"Ninguna",
+      "cursos": [
+	{
+	  "codigo":"QU1107",
+	  "grupo":5,
+	  "codigo_opcion":"QU1107",
+	  "carrera":"PI",
+	  "nombre":"Química básica II",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"13:00","fin":"14:50"},
+	    {"dia":"JUE","inicio":"13:00","fin":"14:50"}
+	  ]
+	},
+	{
+	  "codigo":"PI3501",
+	  "grupo":3,
+	  "codigo_opcion":"PI3501",
+	  "carrera":"PI",
+	  "nombre":"Costos industriales I",
+	  "creditos":3,
+	  "area":"industrial_gestion",
+	  "horarios": [ {"dia":"MIE","inicio":"13:00","fin":"15:50"} ]
+	},
+	{
+	  "codigo":"CA2125",
+	  "grupo":2,
+	  "codigo_opcion":"CA2125",
+	  "carrera":"PI",
+	  "nombre":"Elementos de computación",
+	  "creditos":3,
+	  "area":"computacion",
+	  "horarios": [
+	    {"dia":"MIE","inicio":"09:30","fin":"11:20"},
+	    {"dia":"VIE","inicio":"09:30","fin":"11:20"}
+	  ]
+	},
+	{
+	  "codigo":"CS2101",
+	  "grupo":2,
+	  "codigo_opcion":"CS2101",
+	  "carrera":"PI",
+	  "nombre":"Ambiente humano",
+	  "creditos":2,
+	  "area":"humanidades_complementarias",
+	  "horarios": [ {"dia":"MAR","inicio":"09:30","fin":"12:20"} ]
+	}
+      ]
+    },
+    {
+      "id":107,
+      "creditos_totales":9,
+      "cumple":true,
+      "razon":"ninguna",
+      "detalle":"Ninguna",
+      "cursos": [
+	{
+	  "codigo":"QU1107",
+	  "grupo":5,
+	  "codigo_opcion":"QU1107",
+	  "carrera":"PI",
+	  "nombre":"Química básica II",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"13:00","fin":"14:50"},
+	    {"dia":"JUE","inicio":"13:00","fin":"14:50"}
+	  ]
+	},
+	{
+	  "codigo":"PI3501",
+	  "grupo":3,
+	  "codigo_opcion":"PI3501",
+	  "carrera":"PI",
+	  "nombre":"Costos industriales I",
+	  "creditos":3,
+	  "area":"industrial_gestion",
+	  "horarios": [ {"dia":"MIE","inicio":"13:00","fin":"15:50"} ]
+	},
+	{
+	  "codigo":"CA2125",
+	  "grupo":2,
+	  "codigo_opcion":"CA2125",
+	  "carrera":"PI",
+	  "nombre":"Elementos de computación",
+	  "creditos":3,
+	  "area":"computacion",
+	  "horarios": [
+	    {"dia":"MIE","inicio":"09:30","fin":"11:20"},
+	    {"dia":"VIE","inicio":"09:30","fin":"11:20"}
+	  ]
+	}
+      ]
+    },
+    {
+      "id":108,
+      "creditos_totales":8,
+      "cumple":true,
+      "razon":"ninguna",
+      "detalle":"Ninguna",
+      "cursos": [
+	{
+	  "codigo":"QU1107",
+	  "grupo":5,
+	  "codigo_opcion":"QU1107",
+	  "carrera":"PI",
+	  "nombre":"Química básica II",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"13:00","fin":"14:50"},
+	    {"dia":"JUE","inicio":"13:00","fin":"14:50"}
+	  ]
+	},
+	{
+	  "codigo":"PI3501",
+	  "grupo":3,
+	  "codigo_opcion":"PI3501",
+	  "carrera":"PI",
+	  "nombre":"Costos industriales I",
+	  "creditos":3,
+	  "area":"industrial_gestion",
+	  "horarios": [ {"dia":"MIE","inicio":"13:00","fin":"15:50"} ]
+	},
+	{
+	  "codigo":"CS2101",
+	  "grupo":1,
+	  "codigo_opcion":"CS2101",
+	  "carrera":"PI",
+	  "nombre":"Ambiente humano",
+	  "creditos":2,
+	  "area":"humanidades_complementarias",
+	  "horarios": [ {"dia":"VIE","inicio":"09:30","fin":"12:20"} ]
+	}
+      ]
+    },
+    {
+      "id":109,
+      "creditos_totales":8,
+      "cumple":true,
+      "razon":"ninguna",
+      "detalle":"Ninguna",
+      "cursos": [
+	{
+	  "codigo":"QU1107",
+	  "grupo":5,
+	  "codigo_opcion":"QU1107",
+	  "carrera":"PI",
+	  "nombre":"Química básica II",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"13:00","fin":"14:50"},
+	    {"dia":"JUE","inicio":"13:00","fin":"14:50"}
+	  ]
+	},
+	{
+	  "codigo":"PI3501",
+	  "grupo":3,
+	  "codigo_opcion":"PI3501",
+	  "carrera":"PI",
+	  "nombre":"Costos industriales I",
+	  "creditos":3,
+	  "area":"industrial_gestion",
+	  "horarios": [ {"dia":"MIE","inicio":"13:00","fin":"15:50"} ]
+	},
+	{
+	  "codigo":"CS2101",
+	  "grupo":2,
+	  "codigo_opcion":"CS2101",
+	  "carrera":"PI",
+	  "nombre":"Ambiente humano",
+	  "creditos":2,
+	  "area":"humanidades_complementarias",
+	  "horarios": [ {"dia":"MAR","inicio":"09:30","fin":"12:20"} ]
+	}
+      ]
+    },
+    {
+      "id":110,
+      "creditos_totales":8,
+      "cumple":true,
+      "razon":"ninguna",
+      "detalle":"Ninguna",
+      "cursos": [
+	{
+	  "codigo":"QU1107",
+	  "grupo":5,
+	  "codigo_opcion":"QU1107",
+	  "carrera":"PI",
+	  "nombre":"Química básica II",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"13:00","fin":"14:50"},
+	    {"dia":"JUE","inicio":"13:00","fin":"14:50"}
+	  ]
+	},
+	{
+	  "codigo":"CA2125",
+	  "grupo":1,
+	  "codigo_opcion":"CA2125",
+	  "carrera":"PI",
+	  "nombre":"Elementos de computación",
+	  "creditos":3,
+	  "area":"computacion",
+	  "horarios": [
+	    {"dia":"MIE","inicio":"09:30","fin":"11:20"},
+	    {"dia":"VIE","inicio":"09:30","fin":"11:20"}
+	  ]
+	},
+	{
+	  "codigo":"CS2101",
+	  "grupo":2,
+	  "codigo_opcion":"CS2101",
+	  "carrera":"PI",
+	  "nombre":"Ambiente humano",
+	  "creditos":2,
+	  "area":"humanidades_complementarias",
+	  "horarios": [ {"dia":"MAR","inicio":"09:30","fin":"12:20"} ]
+	}
+      ]
+    },
+    {
+      "id":111,
+      "creditos_totales":8,
+      "cumple":true,
+      "razon":"ninguna",
+      "detalle":"Ninguna",
+      "cursos": [
+	{
+	  "codigo":"QU1107",
+	  "grupo":5,
+	  "codigo_opcion":"QU1107",
+	  "carrera":"PI",
+	  "nombre":"Química básica II",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"13:00","fin":"14:50"},
+	    {"dia":"JUE","inicio":"13:00","fin":"14:50"}
+	  ]
+	},
+	{
+	  "codigo":"CA2125",
+	  "grupo":2,
+	  "codigo_opcion":"CA2125",
+	  "carrera":"PI",
+	  "nombre":"Elementos de computación",
+	  "creditos":3,
+	  "area":"computacion",
+	  "horarios": [
+	    {"dia":"MIE","inicio":"09:30","fin":"11:20"},
+	    {"dia":"VIE","inicio":"09:30","fin":"11:20"}
+	  ]
+	},
+	{
+	  "codigo":"CS2101",
+	  "grupo":2,
+	  "codigo_opcion":"CS2101",
+	  "carrera":"PI",
+	  "nombre":"Ambiente humano",
+	  "creditos":2,
+	  "area":"humanidades_complementarias",
+	  "horarios": [ {"dia":"MAR","inicio":"09:30","fin":"12:20"} ]
+	}
+      ]
+    },
+    {
+      "id":112,
+      "creditos_totales":9,
+      "cumple":true,
+      "razon":"ninguna",
+      "detalle":"Ninguna",
+      "cursos": [
+	{
+	  "codigo":"QU1107",
+	  "grupo":6,
+	  "codigo_opcion":"QU1107",
+	  "carrera":"PI",
+	  "nombre":"Química básica II",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"15:00","fin":"16:50"},
+	    {"dia":"JUE","inicio":"15:00","fin":"16:50"}
+	  ]
+	},
+	{
+	  "codigo":"PI3501",
+	  "grupo":1,
+	  "codigo_opcion":"PI3501",
+	  "carrera":"PI",
+	  "nombre":"Costos industriales I",
+	  "creditos":3,
+	  "area":"industrial_gestion",
+	  "horarios": [ {"dia":"MAR","inicio":"07:30","fin":"10:20"} ]
+	},
+	{
+	  "codigo":"CA2125",
+	  "grupo":1,
+	  "codigo_opcion":"CA2125",
+	  "carrera":"PI",
+	  "nombre":"Elementos de computación",
+	  "creditos":3,
+	  "area":"computacion",
+	  "horarios": [
+	    {"dia":"MIE","inicio":"09:30","fin":"11:20"},
+	    {"dia":"VIE","inicio":"09:30","fin":"11:20"}
+	  ]
+	}
+      ]
+    },
+    {
+      "id":113,
+      "creditos_totales":9,
+      "cumple":true,
+      "razon":"ninguna",
+      "detalle":"Ninguna",
+      "cursos": [
+	{
+	  "codigo":"QU1107",
+	  "grupo":6,
+	  "codigo_opcion":"QU1107",
+	  "carrera":"PI",
+	  "nombre":"Química básica II",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"15:00","fin":"16:50"},
+	    {"dia":"JUE","inicio":"15:00","fin":"16:50"}
+	  ]
+	},
+	{
+	  "codigo":"PI3501",
+	  "grupo":1,
+	  "codigo_opcion":"PI3501",
+	  "carrera":"PI",
+	  "nombre":"Costos industriales I",
+	  "creditos":3,
+	  "area":"industrial_gestion",
+	  "horarios": [ {"dia":"MAR","inicio":"07:30","fin":"10:20"} ]
+	},
+	{
+	  "codigo":"CA2125",
+	  "grupo":2,
+	  "codigo_opcion":"CA2125",
+	  "carrera":"PI",
+	  "nombre":"Elementos de computación",
+	  "creditos":3,
+	  "area":"computacion",
+	  "horarios": [
+	    {"dia":"MIE","inicio":"09:30","fin":"11:20"},
+	    {"dia":"VIE","inicio":"09:30","fin":"11:20"}
+	  ]
+	}
+      ]
+    },
+    {
+      "id":114,
+      "creditos_totales":8,
+      "cumple":true,
+      "razon":"ninguna",
+      "detalle":"Ninguna",
+      "cursos": [
+	{
+	  "codigo":"QU1107",
+	  "grupo":6,
+	  "codigo_opcion":"QU1107",
+	  "carrera":"PI",
+	  "nombre":"Química básica II",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"15:00","fin":"16:50"},
+	    {"dia":"JUE","inicio":"15:00","fin":"16:50"}
+	  ]
+	},
+	{
+	  "codigo":"PI3501",
+	  "grupo":1,
+	  "codigo_opcion":"PI3501",
+	  "carrera":"PI",
+	  "nombre":"Costos industriales I",
+	  "creditos":3,
+	  "area":"industrial_gestion",
+	  "horarios": [ {"dia":"MAR","inicio":"07:30","fin":"10:20"} ]
+	},
+	{
+	  "codigo":"CS2101",
+	  "grupo":1,
+	  "codigo_opcion":"CS2101",
+	  "carrera":"PI",
+	  "nombre":"Ambiente humano",
+	  "creditos":2,
+	  "area":"humanidades_complementarias",
+	  "horarios": [ {"dia":"VIE","inicio":"09:30","fin":"12:20"} ]
+	}
+      ]
+    },
+    {
+      "id":115,
+      "creditos_totales":11,
+      "cumple":true,
+      "razon":"ninguna",
+      "detalle":"Ninguna",
+      "cursos": [
+	{
+	  "codigo":"QU1107",
+	  "grupo":6,
+	  "codigo_opcion":"QU1107",
+	  "carrera":"PI",
+	  "nombre":"Química básica II",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"15:00","fin":"16:50"},
+	    {"dia":"JUE","inicio":"15:00","fin":"16:50"}
+	  ]
+	},
+	{
+	  "codigo":"PI3501",
+	  "grupo":2,
+	  "codigo_opcion":"PI3501",
+	  "carrera":"PI",
+	  "nombre":"Costos industriales I",
+	  "creditos":3,
+	  "area":"industrial_gestion",
+	  "horarios": [ {"dia":"MAR","inicio":"17:00","fin":"19:50"} ]
+	},
+	{
+	  "codigo":"CA2125",
+	  "grupo":1,
+	  "codigo_opcion":"CA2125",
+	  "carrera":"PI",
+	  "nombre":"Elementos de computación",
+	  "creditos":3,
+	  "area":"computacion",
+	  "horarios": [
+	    {"dia":"MIE","inicio":"09:30","fin":"11:20"},
+	    {"dia":"VIE","inicio":"09:30","fin":"11:20"}
+	  ]
+	},
+	{
+	  "codigo":"CS2101",
+	  "grupo":2,
+	  "codigo_opcion":"CS2101",
+	  "carrera":"PI",
+	  "nombre":"Ambiente humano",
+	  "creditos":2,
+	  "area":"humanidades_complementarias",
+	  "horarios": [ {"dia":"MAR","inicio":"09:30","fin":"12:20"} ]
+	}
+      ]
+    },
+    {
+      "id":116,
+      "creditos_totales":9,
+      "cumple":true,
+      "razon":"ninguna",
+      "detalle":"Ninguna",
+      "cursos": [
+	{
+	  "codigo":"QU1107",
+	  "grupo":6,
+	  "codigo_opcion":"QU1107",
+	  "carrera":"PI",
+	  "nombre":"Química básica II",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"15:00","fin":"16:50"},
+	    {"dia":"JUE","inicio":"15:00","fin":"16:50"}
+	  ]
+	},
+	{
+	  "codigo":"PI3501",
+	  "grupo":2,
+	  "codigo_opcion":"PI3501",
+	  "carrera":"PI",
+	  "nombre":"Costos industriales I",
+	  "creditos":3,
+	  "area":"industrial_gestion",
+	  "horarios": [ {"dia":"MAR","inicio":"17:00","fin":"19:50"} ]
+	},
+	{
+	  "codigo":"CA2125",
+	  "grupo":1,
+	  "codigo_opcion":"CA2125",
+	  "carrera":"PI",
+	  "nombre":"Elementos de computación",
+	  "creditos":3,
+	  "area":"computacion",
+	  "horarios": [
+	    {"dia":"MIE","inicio":"09:30","fin":"11:20"},
+	    {"dia":"VIE","inicio":"09:30","fin":"11:20"}
+	  ]
+	}
+      ]
+    },
+    {
+      "id":117,
+      "creditos_totales":11,
+      "cumple":true,
+      "razon":"ninguna",
+      "detalle":"Ninguna",
+      "cursos": [
+	{
+	  "codigo":"QU1107",
+	  "grupo":6,
+	  "codigo_opcion":"QU1107",
+	  "carrera":"PI",
+	  "nombre":"Química básica II",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"15:00","fin":"16:50"},
+	    {"dia":"JUE","inicio":"15:00","fin":"16:50"}
+	  ]
+	},
+	{
+	  "codigo":"PI3501",
+	  "grupo":2,
+	  "codigo_opcion":"PI3501",
+	  "carrera":"PI",
+	  "nombre":"Costos industriales I",
+	  "creditos":3,
+	  "area":"industrial_gestion",
+	  "horarios": [ {"dia":"MAR","inicio":"17:00","fin":"19:50"} ]
+	},
+	{
+	  "codigo":"CA2125",
+	  "grupo":2,
+	  "codigo_opcion":"CA2125",
+	  "carrera":"PI",
+	  "nombre":"Elementos de computación",
+	  "creditos":3,
+	  "area":"computacion",
+	  "horarios": [
+	    {"dia":"MIE","inicio":"09:30","fin":"11:20"},
+	    {"dia":"VIE","inicio":"09:30","fin":"11:20"}
+	  ]
+	},
+	{
+	  "codigo":"CS2101",
+	  "grupo":2,
+	  "codigo_opcion":"CS2101",
+	  "carrera":"PI",
+	  "nombre":"Ambiente humano",
+	  "creditos":2,
+	  "area":"humanidades_complementarias",
+	  "horarios": [ {"dia":"MAR","inicio":"09:30","fin":"12:20"} ]
+	}
+      ]
+    },
+    {
+      "id":118,
+      "creditos_totales":9,
+      "cumple":true,
+      "razon":"ninguna",
+      "detalle":"Ninguna",
+      "cursos": [
+	{
+	  "codigo":"QU1107",
+	  "grupo":6,
+	  "codigo_opcion":"QU1107",
+	  "carrera":"PI",
+	  "nombre":"Química básica II",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"15:00","fin":"16:50"},
+	    {"dia":"JUE","inicio":"15:00","fin":"16:50"}
+	  ]
+	},
+	{
+	  "codigo":"PI3501",
+	  "grupo":2,
+	  "codigo_opcion":"PI3501",
+	  "carrera":"PI",
+	  "nombre":"Costos industriales I",
+	  "creditos":3,
+	  "area":"industrial_gestion",
+	  "horarios": [ {"dia":"MAR","inicio":"17:00","fin":"19:50"} ]
+	},
+	{
+	  "codigo":"CA2125",
+	  "grupo":2,
+	  "codigo_opcion":"CA2125",
+	  "carrera":"PI",
+	  "nombre":"Elementos de computación",
+	  "creditos":3,
+	  "area":"computacion",
+	  "horarios": [
+	    {"dia":"MIE","inicio":"09:30","fin":"11:20"},
+	    {"dia":"VIE","inicio":"09:30","fin":"11:20"}
+	  ]
+	}
+      ]
+    },
+    {
+      "id":119,
+      "creditos_totales":8,
+      "cumple":true,
+      "razon":"ninguna",
+      "detalle":"Ninguna",
+      "cursos": [
+	{
+	  "codigo":"QU1107",
+	  "grupo":6,
+	  "codigo_opcion":"QU1107",
+	  "carrera":"PI",
+	  "nombre":"Química básica II",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"15:00","fin":"16:50"},
+	    {"dia":"JUE","inicio":"15:00","fin":"16:50"}
+	  ]
+	},
+	{
+	  "codigo":"PI3501",
+	  "grupo":2,
+	  "codigo_opcion":"PI3501",
+	  "carrera":"PI",
+	  "nombre":"Costos industriales I",
+	  "creditos":3,
+	  "area":"industrial_gestion",
+	  "horarios": [ {"dia":"MAR","inicio":"17:00","fin":"19:50"} ]
+	},
+	{
+	  "codigo":"CS2101",
+	  "grupo":1,
+	  "codigo_opcion":"CS2101",
+	  "carrera":"PI",
+	  "nombre":"Ambiente humano",
+	  "creditos":2,
+	  "area":"humanidades_complementarias",
+	  "horarios": [ {"dia":"VIE","inicio":"09:30","fin":"12:20"} ]
+	}
+      ]
+    },
+    {
+      "id":120,
+      "creditos_totales":8,
+      "cumple":true,
+      "razon":"ninguna",
+      "detalle":"Ninguna",
+      "cursos": [
+	{
+	  "codigo":"QU1107",
+	  "grupo":6,
+	  "codigo_opcion":"QU1107",
+	  "carrera":"PI",
+	  "nombre":"Química básica II",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"15:00","fin":"16:50"},
+	    {"dia":"JUE","inicio":"15:00","fin":"16:50"}
+	  ]
+	},
+	{
+	  "codigo":"PI3501",
+	  "grupo":2,
+	  "codigo_opcion":"PI3501",
+	  "carrera":"PI",
+	  "nombre":"Costos industriales I",
+	  "creditos":3,
+	  "area":"industrial_gestion",
+	  "horarios": [ {"dia":"MAR","inicio":"17:00","fin":"19:50"} ]
+	},
+	{
+	  "codigo":"CS2101",
+	  "grupo":2,
+	  "codigo_opcion":"CS2101",
+	  "carrera":"PI",
+	  "nombre":"Ambiente humano",
+	  "creditos":2,
+	  "area":"humanidades_complementarias",
+	  "horarios": [ {"dia":"MAR","inicio":"09:30","fin":"12:20"} ]
+	}
+      ]
+    },
+    {
+      "id":121,
+      "creditos_totales":11,
+      "cumple":true,
+      "razon":"ninguna",
+      "detalle":"Ninguna",
+      "cursos": [
+	{
+	  "codigo":"QU1107",
+	  "grupo":6,
+	  "codigo_opcion":"QU1107",
+	  "carrera":"PI",
+	  "nombre":"Química básica II",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"15:00","fin":"16:50"},
+	    {"dia":"JUE","inicio":"15:00","fin":"16:50"}
+	  ]
+	},
+	{
+	  "codigo":"PI3501",
+	  "grupo":3,
+	  "codigo_opcion":"PI3501",
+	  "carrera":"PI",
+	  "nombre":"Costos industriales I",
+	  "creditos":3,
+	  "area":"industrial_gestion",
+	  "horarios": [ {"dia":"MIE","inicio":"13:00","fin":"15:50"} ]
+	},
+	{
+	  "codigo":"CA2125",
+	  "grupo":1,
+	  "codigo_opcion":"CA2125",
+	  "carrera":"PI",
+	  "nombre":"Elementos de computación",
+	  "creditos":3,
+	  "area":"computacion",
+	  "horarios": [
+	    {"dia":"MIE","inicio":"09:30","fin":"11:20"},
+	    {"dia":"VIE","inicio":"09:30","fin":"11:20"}
+	  ]
+	},
+	{
+	  "codigo":"CS2101",
+	  "grupo":2,
+	  "codigo_opcion":"CS2101",
+	  "carrera":"PI",
+	  "nombre":"Ambiente humano",
+	  "creditos":2,
+	  "area":"humanidades_complementarias",
+	  "horarios": [ {"dia":"MAR","inicio":"09:30","fin":"12:20"} ]
+	}
+      ]
+    },
+    {
+      "id":122,
+      "creditos_totales":9,
+      "cumple":true,
+      "razon":"ninguna",
+      "detalle":"Ninguna",
+      "cursos": [
+	{
+	  "codigo":"QU1107",
+	  "grupo":6,
+	  "codigo_opcion":"QU1107",
+	  "carrera":"PI",
+	  "nombre":"Química básica II",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"15:00","fin":"16:50"},
+	    {"dia":"JUE","inicio":"15:00","fin":"16:50"}
+	  ]
+	},
+	{
+	  "codigo":"PI3501",
+	  "grupo":3,
+	  "codigo_opcion":"PI3501",
+	  "carrera":"PI",
+	  "nombre":"Costos industriales I",
+	  "creditos":3,
+	  "area":"industrial_gestion",
+	  "horarios": [ {"dia":"MIE","inicio":"13:00","fin":"15:50"} ]
+	},
+	{
+	  "codigo":"CA2125",
+	  "grupo":1,
+	  "codigo_opcion":"CA2125",
+	  "carrera":"PI",
+	  "nombre":"Elementos de computación",
+	  "creditos":3,
+	  "area":"computacion",
+	  "horarios": [
+	    {"dia":"MIE","inicio":"09:30","fin":"11:20"},
+	    {"dia":"VIE","inicio":"09:30","fin":"11:20"}
+	  ]
+	}
+      ]
+    },
+    {
+      "id":123,
+      "creditos_totales":11,
+      "cumple":true,
+      "razon":"ninguna",
+      "detalle":"Ninguna",
+      "cursos": [
+	{
+	  "codigo":"QU1107",
+	  "grupo":6,
+	  "codigo_opcion":"QU1107",
+	  "carrera":"PI",
+	  "nombre":"Química básica II",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"15:00","fin":"16:50"},
+	    {"dia":"JUE","inicio":"15:00","fin":"16:50"}
+	  ]
+	},
+	{
+	  "codigo":"PI3501",
+	  "grupo":3,
+	  "codigo_opcion":"PI3501",
+	  "carrera":"PI",
+	  "nombre":"Costos industriales I",
+	  "creditos":3,
+	  "area":"industrial_gestion",
+	  "horarios": [ {"dia":"MIE","inicio":"13:00","fin":"15:50"} ]
+	},
+	{
+	  "codigo":"CA2125",
+	  "grupo":2,
+	  "codigo_opcion":"CA2125",
+	  "carrera":"PI",
+	  "nombre":"Elementos de computación",
+	  "creditos":3,
+	  "area":"computacion",
+	  "horarios": [
+	    {"dia":"MIE","inicio":"09:30","fin":"11:20"},
+	    {"dia":"VIE","inicio":"09:30","fin":"11:20"}
+	  ]
+	},
+	{
+	  "codigo":"CS2101",
+	  "grupo":2,
+	  "codigo_opcion":"CS2101",
+	  "carrera":"PI",
+	  "nombre":"Ambiente humano",
+	  "creditos":2,
+	  "area":"humanidades_complementarias",
+	  "horarios": [ {"dia":"MAR","inicio":"09:30","fin":"12:20"} ]
+	}
+      ]
+    },
+    {
+      "id":124,
+      "creditos_totales":9,
+      "cumple":true,
+      "razon":"ninguna",
+      "detalle":"Ninguna",
+      "cursos": [
+	{
+	  "codigo":"QU1107",
+	  "grupo":6,
+	  "codigo_opcion":"QU1107",
+	  "carrera":"PI",
+	  "nombre":"Química básica II",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"15:00","fin":"16:50"},
+	    {"dia":"JUE","inicio":"15:00","fin":"16:50"}
+	  ]
+	},
+	{
+	  "codigo":"PI3501",
+	  "grupo":3,
+	  "codigo_opcion":"PI3501",
+	  "carrera":"PI",
+	  "nombre":"Costos industriales I",
+	  "creditos":3,
+	  "area":"industrial_gestion",
+	  "horarios": [ {"dia":"MIE","inicio":"13:00","fin":"15:50"} ]
+	},
+	{
+	  "codigo":"CA2125",
+	  "grupo":2,
+	  "codigo_opcion":"CA2125",
+	  "carrera":"PI",
+	  "nombre":"Elementos de computación",
+	  "creditos":3,
+	  "area":"computacion",
+	  "horarios": [
+	    {"dia":"MIE","inicio":"09:30","fin":"11:20"},
+	    {"dia":"VIE","inicio":"09:30","fin":"11:20"}
+	  ]
+	}
+      ]
+    },
+    {
+      "id":125,
+      "creditos_totales":8,
+      "cumple":true,
+      "razon":"ninguna",
+      "detalle":"Ninguna",
+      "cursos": [
+	{
+	  "codigo":"QU1107",
+	  "grupo":6,
+	  "codigo_opcion":"QU1107",
+	  "carrera":"PI",
+	  "nombre":"Química básica II",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"15:00","fin":"16:50"},
+	    {"dia":"JUE","inicio":"15:00","fin":"16:50"}
+	  ]
+	},
+	{
+	  "codigo":"PI3501",
+	  "grupo":3,
+	  "codigo_opcion":"PI3501",
+	  "carrera":"PI",
+	  "nombre":"Costos industriales I",
+	  "creditos":3,
+	  "area":"industrial_gestion",
+	  "horarios": [ {"dia":"MIE","inicio":"13:00","fin":"15:50"} ]
+	},
+	{
+	  "codigo":"CS2101",
+	  "grupo":1,
+	  "codigo_opcion":"CS2101",
+	  "carrera":"PI",
+	  "nombre":"Ambiente humano",
+	  "creditos":2,
+	  "area":"humanidades_complementarias",
+	  "horarios": [ {"dia":"VIE","inicio":"09:30","fin":"12:20"} ]
+	}
+      ]
+    },
+    {
+      "id":126,
+      "creditos_totales":8,
+      "cumple":true,
+      "razon":"ninguna",
+      "detalle":"Ninguna",
+      "cursos": [
+	{
+	  "codigo":"QU1107",
+	  "grupo":6,
+	  "codigo_opcion":"QU1107",
+	  "carrera":"PI",
+	  "nombre":"Química básica II",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"15:00","fin":"16:50"},
+	    {"dia":"JUE","inicio":"15:00","fin":"16:50"}
+	  ]
+	},
+	{
+	  "codigo":"PI3501",
+	  "grupo":3,
+	  "codigo_opcion":"PI3501",
+	  "carrera":"PI",
+	  "nombre":"Costos industriales I",
+	  "creditos":3,
+	  "area":"industrial_gestion",
+	  "horarios": [ {"dia":"MIE","inicio":"13:00","fin":"15:50"} ]
+	},
+	{
+	  "codigo":"CS2101",
+	  "grupo":2,
+	  "codigo_opcion":"CS2101",
+	  "carrera":"PI",
+	  "nombre":"Ambiente humano",
+	  "creditos":2,
+	  "area":"humanidades_complementarias",
+	  "horarios": [ {"dia":"MAR","inicio":"09:30","fin":"12:20"} ]
+	}
+      ]
+    },
+    {
+      "id":127,
+      "creditos_totales":8,
+      "cumple":true,
+      "razon":"ninguna",
+      "detalle":"Ninguna",
+      "cursos": [
+	{
+	  "codigo":"QU1107",
+	  "grupo":6,
+	  "codigo_opcion":"QU1107",
+	  "carrera":"PI",
+	  "nombre":"Química básica II",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"15:00","fin":"16:50"},
+	    {"dia":"JUE","inicio":"15:00","fin":"16:50"}
+	  ]
+	},
+	{
+	  "codigo":"CA2125",
+	  "grupo":1,
+	  "codigo_opcion":"CA2125",
+	  "carrera":"PI",
+	  "nombre":"Elementos de computación",
+	  "creditos":3,
+	  "area":"computacion",
+	  "horarios": [
+	    {"dia":"MIE","inicio":"09:30","fin":"11:20"},
+	    {"dia":"VIE","inicio":"09:30","fin":"11:20"}
+	  ]
+	},
+	{
+	  "codigo":"CS2101",
+	  "grupo":2,
+	  "codigo_opcion":"CS2101",
+	  "carrera":"PI",
+	  "nombre":"Ambiente humano",
+	  "creditos":2,
+	  "area":"humanidades_complementarias",
+	  "horarios": [ {"dia":"MAR","inicio":"09:30","fin":"12:20"} ]
+	}
+      ]
+    },
+    {
+      "id":128,
+      "creditos_totales":8,
+      "cumple":true,
+      "razon":"ninguna",
+      "detalle":"Ninguna",
+      "cursos": [
+	{
+	  "codigo":"QU1107",
+	  "grupo":6,
+	  "codigo_opcion":"QU1107",
+	  "carrera":"PI",
+	  "nombre":"Química básica II",
+	  "creditos":3,
+	  "area":"ciencias_basicas",
+	  "horarios": [
+	    {"dia":"MAR","inicio":"15:00","fin":"16:50"},
+	    {"dia":"JUE","inicio":"15:00","fin":"16:50"}
+	  ]
+	},
+	{
+	  "codigo":"CA2125",
+	  "grupo":2,
+	  "codigo_opcion":"CA2125",
+	  "carrera":"PI",
+	  "nombre":"Elementos de computación",
+	  "creditos":3,
+	  "area":"computacion",
+	  "horarios": [
+	    {"dia":"MIE","inicio":"09:30","fin":"11:20"},
+	    {"dia":"VIE","inicio":"09:30","fin":"11:20"}
+	  ]
+	},
+	{
+	  "codigo":"CS2101",
+	  "grupo":2,
+	  "codigo_opcion":"CS2101",
+	  "carrera":"PI",
+	  "nombre":"Ambiente humano",
+	  "creditos":2,
+	  "area":"humanidades_complementarias",
+	  "horarios": [ {"dia":"MAR","inicio":"09:30","fin":"12:20"} ]
+	}
+      ]
+    },
+    {
+      "id":129,
+      "creditos_totales":8,
+      "cumple":true,
+      "razon":"ninguna",
+      "detalle":"Ninguna",
+      "cursos": [
+	{
+	  "codigo":"PI3501",
+	  "grupo":2,
+	  "codigo_opcion":"PI3501",
+	  "carrera":"PI",
+	  "nombre":"Costos industriales I",
+	  "creditos":3,
+	  "area":"industrial_gestion",
+	  "horarios": [ {"dia":"MAR","inicio":"17:00","fin":"19:50"} ]
+	},
+	{
+	  "codigo":"CA2125",
+	  "grupo":1,
+	  "codigo_opcion":"CA2125",
+	  "carrera":"PI",
+	  "nombre":"Elementos de computación",
+	  "creditos":3,
+	  "area":"computacion",
+	  "horarios": [
+	    {"dia":"MIE","inicio":"09:30","fin":"11:20"},
+	    {"dia":"VIE","inicio":"09:30","fin":"11:20"}
+	  ]
+	},
+	{
+	  "codigo":"CS2101",
+	  "grupo":2,
+	  "codigo_opcion":"CS2101",
+	  "carrera":"PI",
+	  "nombre":"Ambiente humano",
+	  "creditos":2,
+	  "area":"humanidades_complementarias",
+	  "horarios": [ {"dia":"MAR","inicio":"09:30","fin":"12:20"} ]
+	}
+      ]
+    },
+    {
+      "id":130,
+      "creditos_totales":8,
+      "cumple":true,
+      "razon":"ninguna",
+      "detalle":"Ninguna",
+      "cursos": [
+	{
+	  "codigo":"PI3501",
+	  "grupo":2,
+	  "codigo_opcion":"PI3501",
+	  "carrera":"PI",
+	  "nombre":"Costos industriales I",
+	  "creditos":3,
+	  "area":"industrial_gestion",
+	  "horarios": [ {"dia":"MAR","inicio":"17:00","fin":"19:50"} ]
+	},
+	{
+	  "codigo":"CA2125",
+	  "grupo":2,
+	  "codigo_opcion":"CA2125",
+	  "carrera":"PI",
+	  "nombre":"Elementos de computación",
+	  "creditos":3,
+	  "area":"computacion",
+	  "horarios": [
+	    {"dia":"MIE","inicio":"09:30","fin":"11:20"},
+	    {"dia":"VIE","inicio":"09:30","fin":"11:20"}
+	  ]
+	},
+	{
+	  "codigo":"CS2101",
+	  "grupo":2,
+	  "codigo_opcion":"CS2101",
+	  "carrera":"PI",
+	  "nombre":"Ambiente humano",
+	  "creditos":2,
+	  "area":"humanidades_complementarias",
+	  "horarios": [ {"dia":"MAR","inicio":"09:30","fin":"12:20"} ]
+	}
+      ]
+    },
+    {
+      "id":131,
+      "creditos_totales":8,
+      "cumple":true,
+      "razon":"ninguna",
+      "detalle":"Ninguna",
+      "cursos": [
+	{
+	  "codigo":"PI3501",
+	  "grupo":3,
+	  "codigo_opcion":"PI3501",
+	  "carrera":"PI",
+	  "nombre":"Costos industriales I",
+	  "creditos":3,
+	  "area":"industrial_gestion",
+	  "horarios": [ {"dia":"MIE","inicio":"13:00","fin":"15:50"} ]
+	},
+	{
+	  "codigo":"CA2125",
+	  "grupo":1,
+	  "codigo_opcion":"CA2125",
+	  "carrera":"PI",
+	  "nombre":"Elementos de computación",
+	  "creditos":3,
+	  "area":"computacion",
+	  "horarios": [
+	    {"dia":"MIE","inicio":"09:30","fin":"11:20"},
+	    {"dia":"VIE","inicio":"09:30","fin":"11:20"}
+	  ]
+	},
+	{
+	  "codigo":"CS2101",
+	  "grupo":2,
+	  "codigo_opcion":"CS2101",
+	  "carrera":"PI",
+	  "nombre":"Ambiente humano",
+	  "creditos":2,
+	  "area":"humanidades_complementarias",
+	  "horarios": [ {"dia":"MAR","inicio":"09:30","fin":"12:20"} ]
+	}
+      ]
+    },
+    {
+      "id":132,
+      "creditos_totales":8,
+      "cumple":true,
+      "razon":"ninguna",
+      "detalle":"Ninguna",
+      "cursos": [
+	{
+	  "codigo":"PI3501",
+	  "grupo":3,
+	  "codigo_opcion":"PI3501",
+	  "carrera":"PI",
+	  "nombre":"Costos industriales I",
+	  "creditos":3,
+	  "area":"industrial_gestion",
+	  "horarios": [ {"dia":"MIE","inicio":"13:00","fin":"15:50"} ]
+	},
+	{
+	  "codigo":"CA2125",
+	  "grupo":2,
+	  "codigo_opcion":"CA2125",
+	  "carrera":"PI",
+	  "nombre":"Elementos de computación",
+	  "creditos":3,
+	  "area":"computacion",
+	  "horarios": [
+	    {"dia":"MIE","inicio":"09:30","fin":"11:20"},
+	    {"dia":"VIE","inicio":"09:30","fin":"11:20"}
+	  ]
+	},
+	{
+	  "codigo":"CS2101",
+	  "grupo":2,
+	  "codigo_opcion":"CS2101",
+	  "carrera":"PI",
+	  "nombre":"Ambiente humano",
+	  "creditos":2,
+	  "area":"humanidades_complementarias",
+	  "horarios": [ {"dia":"MAR","inicio":"09:30","fin":"12:20"} ]
+	}
+      ]
+    }
+  ]
+}
