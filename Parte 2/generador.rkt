@@ -79,8 +79,8 @@
   (define pi3501-grupo2 (Grupo 2 "PI3501" "Costos I" (list (Bloque-Horario "MAR" "17:00" "19:50" 1020 1190))))
   (define pi3501-grupo3 (Grupo 3 "PI3501" "Costos I" (list (Bloque-Horario "MIE" "13:00" "15:50" 780 950))))
 
-  (define curso-ce2103 (Curso "CE2103" "CE" "AED II" 4 12 3 "CURSO" '() '() #f #t '() #t #f (list ce2103-grupo1)))
-  (define curso-pi3501 (Curso "PI3501" "PI" "Costos I" 3 3 2 "CURSO" '() '() #f #t '() #t #f (list pi3501-grupo1 pi3501-grupo2 pi3501-grupo3)))
+  (define curso-ce2103 (Curso "CE2103" "CE" "AED II" 4 12 3 "CURSO" '() '() #f #t '() #t #f "computacion" (list ce2103-grupo1)))
+  (define curso-pi3501 (Curso "PI3501" "PI" "Costos I" 3 3 2 "CURSO" '() '() #f #t '() #t #f "industrial_gestion" (list pi3501-grupo1 pi3501-grupo2 pi3501-grupo3)))
 
   (define pendientes (list (cons curso-ce2103 (list ce2103-grupo1))
                             (cons curso-pi3501 (list pi3501-grupo1 pi3501-grupo2 pi3501-grupo3))))
