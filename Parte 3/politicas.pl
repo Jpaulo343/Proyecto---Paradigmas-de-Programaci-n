@@ -1,6 +1,5 @@
 :- module(politicas, [
     max_porcentaje_carrera/2,
-    limite_cursos_area/1,
     max_cursos_area/2,
     incompatible/2
 ]).
@@ -18,12 +17,10 @@ max_porcentaje_carrera("CE", 100).
 max_porcentaje_carrera("PI", 100).
 
 
-% Hechos: limite_cursos_area y max_cursos_area
-% Definen el máximo N de cursos de una misma área que puede llevar una
-% combinación (tanto el valor general N como por nombre de área).
+% Hecho: max_cursos_area
+% Define el máximo N de cursos de una misma área que puede llevar una
+% combinación.
 % E: área (string) y cantidad máxima de cursos permitidos (entero).
-limite_cursos_area(2).
-
 max_cursos_area("X", 2).
 max_cursos_area("ciencias_basicas", 2).
 max_cursos_area("computacion", 4).
@@ -31,7 +28,6 @@ max_cursos_area("electronica", 2).
 max_cursos_area("industrial_gestion", 4).
 max_cursos_area("humanidades_complementarias", 2).
 max_cursos_area("administracion", 2).
-
 
 
 % Hecho: incompatible

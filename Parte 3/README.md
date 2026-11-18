@@ -405,15 +405,38 @@ Se eligió JSON porque permite mantener una estructura organizada y facilita la 
 
 ### Ejecución
 
-Dentro de la carpeta `Parte 3` :
+Dentro de la carpeta `Parte 3`, para ejecutar el flujo completo de ambas carreras y generar los archivos JSON:
 
 ```bash
 swipl -s main.pl
 ```
 
-El programa procesa ambas carreras y genera los archivos de resultados en la carpeta `data/`.
+Durante la ejecución se muestra el resumen del procesamiento:
 
-Durante la ejecución se muestra un resumen similar al siguiente:
+```text
+CEmestre - Etapa 3 (Paradigma Logico)
+CE
+[1/2] Cargando combinaciones desde ../Parte 2/data/salida_CE.json...
+[2/2] Evaluando combinaciones contra las reglas de politica...
+      -> 5 combinaciones evaluadas, 5 cumplen las reglas de politica.
+      -> Archivo generado en: data/salida_CE.json
+
+PI
+[1/2] Cargando combinaciones desde ../Parte 2/data/salida_PI.json...
+[2/2] Evaluando combinaciones contra las reglas de politica...
+      -> 132 combinaciones evaluadas, 108 cumplen las reglas de politica.
+      -> Archivo generado en: data/salida_PI.json
+
+Proceso finalizado para ambas carreras.
+```
+
+Adicionalmente, `reglas.pl` incluye sus propias pruebas unitarias, que se pueden ejecutar por separado con:
+
+```bash
+swipl -s reglas.pl
+```
+
+Mostrando en consola:
 
 ```text
 --- combinacion que deberia cumplir ---
