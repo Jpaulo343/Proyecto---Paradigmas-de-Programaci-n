@@ -12,15 +12,15 @@ El objetivo de esta etapa es evaluar las combinaciones de horarios generadas por
 2. Límite por área: comprueba que una combinación no exceda la cantidad máxima de cursos permitidos en una misma área académica.
 3. Incompatibilidad: verifica que una combinación no contenga simultáneamente dos cursos declarados incompatibles.
 
-Cuando una combinación incumple alguna regla, el programa registra la primera regla que viola y genera una descripción del motivo. Además esta etapa no genera nuevas combinaciones. Su responsabilidad es evaluar las combinaciones recibidas y exportar los resultados para que puedan ser utilizados por la Etapa 4 (Java).
+**Decisión de alcance:** cada combinación pertenece a un solo plan de estudios. Un estudiante matricula los cursos del plan de su propia carrera, así que Racket genera las combinaciones de CE y las de PI por separado y no se mezclan cursos de ambas carreras en una misma combinación. Las tres reglas están implementadas para el caso general (por eso `curso_sel/6` incluye la carrera), pero con este alcance el balance entre carreras y los pares incompatibles entre planes distintos no se activan con los datos reales; se comprueban con pruebas escritas a mano. El detalle y sus consecuencias están en la sección 2.2.1, punto 5.
+
+Cuando una combinación incumple alguna regla, el programa registra la primera regla que viola y genera una descripción del motivo. Esta etapa no genera nuevas combinaciones ni vuelve a filtrar por créditos: su responsabilidad es evaluar las combinaciones recibidas y exportar los resultados para que puedan ser utilizados por la Etapa 4 (Java).
 
 ---
 
 ## 2.1. Arquitectura del proyecto
 
 ### Organización de archivos
-
-La carpeta de la Parte 3 tiene la siguiente estructura:
 
 ```text
 Parte 3/
@@ -30,6 +30,7 @@ Parte 3/
 ├── politicas.pl
 ├── exportador.pl
 ├── main.pl
+├── README.md
 └── data/
     ├── salida_CE.json
     └── salida_PI.json
@@ -37,46 +38,39 @@ Parte 3/
 
 ### Responsabilidad de cada archivo
 
-- **`constantes.pl`:** define las rutas de entrada y salida para cada carrera. Permite identificar los archivos JSON generados por Racket y los archivos donde se guardarán los resultados de Prolog.
+- **`constantes.pl`:** define las rutas de entrada y salida para cada carrera (`ruta_entrada/2` y `ruta_salida/2`).
 
-- **`lector.pl`:** se encarga de leer los archivos JSON producidos por la Etapa 2. Convierte los diccionarios JSON en términos compuestos de Prolog y registra las combinaciones como hechos `combinacion_cargada/3`. Este módulo utiliza la biblioteca `library(http/json)`.
+- **`lector.pl`:** lee los archivos JSON producidos por la Etapa 2. Convierte los diccionarios JSON en términos compuestos de Prolog y registra las combinaciones como hechos `combinacion_cargada/3`. Utiliza `library(http/json)`. En versiones recientes de SWI-Prolog se muestra el aviso informativo `Library was moved: library(http/json) --> library(json)`; no afecta el funcionamiento.
 
-- **`politicas.pl`:** contiene los hechos que representan las políticas académicas. Aquí se establecen los porcentajes máximos por carrera, los límites de cursos por área y los pares de cursos incompatibles. Los valores pueden modificarse sin necesidad de cambiar las reglas de validación.
+- **`politicas.pl`:** contiene los hechos de política académica: porcentaje máximo por carrera, máximo de cursos por área y pares de cursos incompatibles. Los valores se pueden modificar sin tocar las reglas de validación.
 
-- **`reglas.pl`:** implementa la lógica de evaluación de las combinaciones. Contiene los predicados encargados de calcular los créditos por carrera, identificar las áreas, contar cursos y comprobar las tres restricciones académicas. También determina cuál es la primera regla incumplida.
+- **`reglas.pl`:** implementa la lógica de evaluación. Contiene los predicados que calculan los créditos por carrera, identifican las áreas, cuentan cursos y comprueban las tres restricciones, además de determinar cuál es la primera regla incumplida. Incluye pruebas con datos escritos a mano que se ejecutan al correr el archivo directamente (`swipl reglas.pl`).
 
-- **`exportador.pl`:** conecta la carga de datos con la evaluación y la generación de resultados. Recorre todas las combinaciones mediante backtracking, convierte los resultados a diccionarios JSON y escribe el archivo de salida.
+- **`exportador.pl`:** conecta la carga de datos con la evaluación y la generación de resultados. Recorre todas las combinaciones mediante backtracking (`findall/3`), construye la estructura JSON de cada resultado y escribe el archivo de salida. Ofrece `procesar_y_exportar/2` y `procesar_y_exportar/4` (esta última además devuelve cuántas combinaciones se evaluaron y cuántas cumplen).
 
-- **`main.pl`:** contiene el punto de entrada del programa. Ejecuta el procesamiento para las carreras CE y PI, mostrando en consola la cantidad de combinaciones evaluadas y cuántas cumplen las políticas.
+- **`main.pl`:** punto de entrada. Procesa las carreras CE y PI y muestra en consola un resumen por carrera.
 
-- **`data/`:** almacena los archivos JSON de entrada y salida. Los archivos de entrada provienen de Racket, mientras que los de salida contienen los resultados de la evaluación realizada en Prolog.
+- **`data/`:** contiene los JSON de salida de esta etapa. Los de entrada se leen desde `../Parte 2/data/`.
 
 ### Cómo se conectan los módulos durante la ejecución
 
-El funcionamiento de la Etapa 3 sigue un flujo secuencial:
+1. **Inicio (`main.pl`):** se ejecuta `main/0`, que procesa primero CE y después PI.
 
-1. **Inicio del programa (`main.pl`):** se ejecuta el predicado `main/0`, que procesa primero la carrera CE y después la carrera PI.
+2. **Rutas (`constantes.pl`):** `ruta_entrada/2` y `ruta_salida/2` indican qué archivos corresponden a cada carrera.
 
-2. **Obtención de las rutas (`constantes.pl`):** mediante `ruta_entrada/2` y `ruta_salida/2`, se determinan los archivos que corresponden a cada carrera.
+3. **Lectura (`lector.pl`):** se abre el JSON de Racket y se convierte en términos compuestos:
+   - `combinacion/3`: identificador, créditos totales y cursos de la combinación.
+   - `curso_sel/6`: código, carrera, área, nombre, créditos y grupo del curso.
+   - `grupo/3`: número de grupo, código de opción y horarios.
+   - `bloque/3`: día, hora de inicio y hora de fin.
 
-3. **Lectura de combinaciones (`lector.pl`):** se abre el JSON generado por Racket y se convierten sus datos en términos compuestos:
-   - `combinacion/3`: representa una combinación, su identificador, sus créditos totales y sus cursos.
-   - `curso_sel/6`: representa un curso seleccionado con su código, carrera, área, nombre, créditos y grupo.
-   - `grupo/3`: contiene el número de grupo, el código de opción y sus horarios.
-   - `bloque/3`: representa cada bloque horario mediante el día, la hora de inicio y la hora de finalización.
+   Cada combinación se registra como un hecho `combinacion_cargada/3` para poder recorrerlas por backtracking.
 
-   Finalmente, cada combinación se registra como un hecho `combinacion_cargada/3` para poder recorrerlas posteriormente.
+4. **Evaluación (`reglas.pl` y `politicas.pl`):** cada combinación se compara con los hechos de `politicas.pl`. Las reglas se revisan en este orden: balance entre carreras, límite por área, incompatibilidad. Al encontrar una violación se registra esa razón y no se revisan las siguientes.
 
-4. **Evaluación de políticas (`reglas.pl` y `politicas.pl`):** cada combinación se compara con los hechos definidos en `politicas.pl`. Se ejecutan las reglas en el siguiente orden:
-   1. Balance entre carreras.
-   2. Límite por área.
-   3. Incompatibilidad.
+5. **Resultados (`exportador.pl`):** se recorren todas las combinaciones con `findall/3` y cada resultado se transforma a JSON con los cursos, grupos, veredicto y razón.
 
-   Si se encuentra una violación, se registra esa razón y no se continúan evaluando las siguientes reglas para esa combinación.
-
-5. **Generación de resultados (`exportador.pl`):** se recorren todas las combinaciones cargadas mediante `findall/3`, aprovechando el backtracking de Prolog. Cada resultado se transforma a una estructura JSON que incluye los cursos, grupos, veredicto y razón.
-
-6. **Finalización (`main.pl`):** se guarda el archivo JSON correspondiente a cada carrera y se muestra un resumen de las combinaciones procesadas.
+6. **Finalización (`main.pl`):** se guarda el archivo de cada carrera y se muestra el resumen.
 
 ### Flujo general de información
 
@@ -84,8 +78,8 @@ El funcionamiento de la Etapa 3 sigue un flujo secuencial:
        ETAPA 2 (RACKET)
                |
                v
-       salida_CE.json
-       salida_PI.json
+  Parte 2/data/salida_CE.json
+  Parte 2/data/salida_PI.json
                |
                v
           lector.pl
@@ -126,71 +120,58 @@ El funcionamiento de la Etapa 3 sigue un flujo secuencial:
 
 **1. Representación de las combinaciones mediante términos compuestos.**
 
-Se decidió representar cada combinación mediante el término:
+Cada combinación se representa con:
 
 ```prolog
 combinacion(Id, CreditosTotales, Cursos).
 ```
 
-Donde:
-
-- `Id`: identificador de la combinación.
+- `Id`: identificador de la combinación (se numeran desde 1 al leer el JSON).
 - `CreditosTotales`: cantidad total de créditos.
 - `Cursos`: lista de cursos seleccionados.
 
-Cada curso se representa mediante:
+Cada curso:
 
 ```prolog
 curso_sel(Codigo, Carrera, Area, Nombre, Creditos, Grupo).
 ```
 
-Esta estructura permite acceder directamente a la información necesaria para evaluar las políticas sin tener que consultar nuevamente el catálogo de la Etapa 1.
-
-Además, el grupo se representa mediante:
+El grupo elegido y cada bloque horario:
 
 ```prolog
 grupo(Numero, CodigoOpcion, Horarios).
-```
-
-Y cada bloque horario mediante:
-
-```prolog
 bloque(Dia, Inicio, Fin).
 ```
 
-Se eligieron términos compuestos porque permiten organizar la información relacionada y acceder a sus campos mediante unificación y patrones de Prolog.
+Se eligieron términos compuestos porque agrupan la información relacionada y se consultan por unificación y patrones, sin tener que volver al catálogo de la Etapa 1. Cada curso lleva consigo todo lo que las reglas necesitan: carrera (balance), área (límite) y código (incompatibilidad).
 
 **2. Asignación de áreas académicas.**
 
-Se incorporó el campo `area` a cada curso para poder aplicar la restricción de cantidad máxima de cursos por área.
+El campo `area` se agrega en C: el plan de estudios de cada carrera (`plan_CE.csv`, `plan_PI.csv`) tiene una columna `area` por curso, C la lee y la exporta en el catálogo JSON, y Racket la propaga hasta la salida que consume Prolog. El criterio es el **campo académico del curso**, no el prefijo de su código ni la carrera donde aparece: dos cursos de la misma disciplina quedan en la misma área aunque pertenezcan a planes distintos.
 
-Las áreas utilizadas en el proyecto son:
+| Área | Cursos en CE | Cursos en PI | Ejemplos |
+|---|---|---|---|
+| `ciencias_basicas` | 13 | 15 | MA1102 Cálculo, FI1101 Física I, QU1106 Química básica I |
+| `computacion` | 11 | 1 | CE2103 Algoritmos y estructuras de datos II, CE3101 Bases de datos, CA2125 Elementos de computación |
+| `electronica` | 13 | 0 | EL2113 Circuitos en corriente continua, CE1107 Fundamentos de arquitectura, CE4301 Arquitectura de computadores I |
+| `industrial_gestion` | 2 | 24 | PI3501 Costos industriales I, PI4303 Control de producción, PI2609 Probabilidad y estadística |
+| `humanidades_complementarias` | 7 | 12 | CS2101 Ambiente humano, CI1407 Habilidades de comunicación, CS3404 Seminario de ética |
+| `administracion` | 1 | 0 | AE4208 Desarrollo de emprendedores |
+| `X` | 3 | 3 | SE1100, SE1200, SE1400 |
 
-| Área | Ejemplos de cursos |
-|---|---|
-| `ciencias_basicas` | MA1102, FI1101, QU1106 |
-| `computacion` | CE2103 |
-| `electronica` | Cursos del área de electrónica |
-| `industrial_gestion` | Cursos del área de producción industrial |
-| `humanidades_complementarias` | CS2101 |
-| `administracion` | Cursos del área de administración |
-| `X` | Comodín |
+Casos que conviene explicar:
 
-La asignación se realiza desde los datos del catálogo de cursos y se mantiene durante el procesamiento de Racket hasta llegar a Prolog.
+- **`PI2609` (Probabilidad y estadística)** figura en el plan de CE pero se dicta como curso de producción industrial; su área es `industrial_gestion` aunque su carrera sea `CE`. Por eso área y carrera son campos distintos: la carrera dice de qué plan viene el curso; el área, a qué disciplina pertenece.
+- **`CE1111` (Análisis numérico para la ingeniería)** está en `ciencias_basicas` porque es una materia de matemática aplicada, aunque su código empiece con `CE`.
+- **`X`** es el área de los cursos comodín de actividad cultural y deportiva (`SE1100`, `SE1200`, `SE1400`). No son cursos académicos de ninguna disciplina, así que se agrupan en un área aparte con su propio máximo en `politicas.pl`.
 
-Por ejemplo, en la carrera de Ingeniería en Computadores:
+Por ejemplo, en un horario de CE: `CE2103` es `computacion`, `MA2104` es `ciencias_basicas` y `CS2101` es `humanidades_complementarias`, de modo que Prolog puede contar cuántos cursos de cada área hay en la combinación.
 
-- `CE2103` (Algoritmos y Estructuras de Datos II) pertenece a `computacion`.
-- `MA2104` (Cálculo Superior) pertenece a `ciencias_basicas`.
-- `CS2101` (Ambiente Humano) pertenece a `humanidades_complementarias`.
-
-Esto permite que Prolog identifique los cursos que pertenecen a una misma área y contabilice cuántos aparecen en cada combinación.
+Los máximos por área son parámetros de política (`computacion` e `industrial_gestion`, las áreas más amplias, permiten 4; el resto, 2) y se pueden cambiar sin tocar las reglas.
 
 **3. Declaración de cursos incompatibles.**
 
-Los pares incompatibles se representan mediante hechos `incompatible/2` dentro de `politicas.pl`.
-
-Actualmente se definieron los siguientes pares:
+Los pares incompatibles son hechos `incompatible/2` en `politicas.pl`:
 
 ```prolog
 incompatible("PI2609", "PI2610").
@@ -198,9 +179,15 @@ incompatible("CE1101", "CA2125").
 incompatible("CE3101", "PI3403").
 ```
 
-Se decidió almacenar cada par una sola vez, sin duplicar la relación en sentido contrario.
+| Par | Por qué son incompatibles |
+|---|---|
+| `PI2609` / `PI2610` | Es la misma materia (Probabilidad y estadística) en los dos planes: CE la lleva como `PI2609` y PI como `PI2610`. Un estudiante no debe llevar ambas. |
+| `CE1101` / `CA2125` | Cursos introductorios de computación (Introducción a la programación y Elementos de computación) con contenido que se solapa. |
+| `CE3101` / `PI3403` | Bases de datos y Sistema de información abordan el manejo de datos y sus contenidos se superponen. |
 
-La simetría se resuelve directamente en `reglas.pl`, comprobando ambas posibilidades:
+Los pares se identificaron revisando los dos planes de estudio en busca de cursos con equivalencias o superposición temática. Cumple el mínimo de dos pares entre los planes que pide el enunciado.
+
+Cada par se declara **una sola vez** y la simetría se resuelve en `reglas.pl`, probando ambos sentidos:
 
 ```prolog
 ( incompatible(Codigo1, Codigo2)
@@ -208,71 +195,91 @@ La simetría se resuelve directamente en `reglas.pl`, comprobando ambas posibili
 ).
 ```
 
-De esta forma, no importa el orden en que aparezcan los cursos dentro de la combinación: si ambos pertenecen a un par incompatible, la regla detecta la violación.
+Así no importa el orden en que aparezcan los cursos y no se duplica información. Los tres pares son entre un curso del plan de CE y uno del plan de PI, por lo que solo pueden coincidir en una combinación que mezcle ambos planes (ver punto 5).
 
-Para establecer los pares de cursos incompatibles, se realizó una revisión de los planes de estudio de Ingeniería en Computadores e Ingeniería en Producción Industrial. Se decidió identificar cursos que presentan similitudes en sus contenidos o que pertenecen a campos académicos relacionados, con el propósito de evitar que determinadas combinaciones incluyan cursos con posibles equivalencias o superposiciones temáticas. Estas incompatibilidades fueron definidas como parte de las decisiones de diseño del grupo y se representan mediante hechos incompatible/2 en el archivo `politicas.pl`. 
+**4. Orden de evaluación de las reglas y un caso donde cambia la razón.**
 
-Se decidió declarar cada par una sola vez y manejar la simetría desde `reglas.pl`, evitando duplicar información y permitiendo detectar la incompatibilidad independientemente del orden en que aparezcan los cursos en una combinación.
-
-**4. Orden de evaluación de las reglas.**
-
-Se estableció un orden de prioridad para determinar la primera razón de rechazo de una combinación:
+El orden de prioridad para determinar la primera razón de rechazo es:
 
 1. Balance entre carreras.
 2. Límite por área.
 3. Incompatibilidad.
 
-Esto se implementa mediante condicionales encadenados (`->` y `;`) en el predicado `evaluar_combinacion/3`.
+Se implementa con condicionales encadenados (`->` y `;`) en `evaluar_combinacion/3`.
 
-Por ejemplo, se puede considerar una combinación que incluya los cursos `PI2609`, `PI2610` y `PI5516`, suponiendo que sus áreas sean `industrial_gestion` y que los parámetros de política se mantengan como están definidos.
+Caso donde el orden cambia el resultado. Se considera la combinación (de prueba) con `PI2609`, `PI2610`, `PI3501`, `PI3502` y `PI2304`, todos de área `industrial_gestion`, cuyo máximo es 4:
 
-En este caso:
-
-- Los tres cursos pertenecen a `industrial_gestion`, cuyo máximo es de dos cursos.
-- `PI2609` y `PI2610` forman un par declarado incompatible.
-- El balance entre carreras no se incumple con los porcentajes actuales del 100 %.
+- Hay 5 cursos de `industrial_gestion` (5 > 4): incumple el límite por área.
+- `PI2609` y `PI2610` forman un par incompatible: incumple la incompatibilidad.
+- El balance no se incumple (el máximo por carrera es 100 %).
 
 Como el límite por área se revisa antes que la incompatibilidad, Prolog reporta:
 
 ```prolog
-resultado(false, limite_area("industrial_gestion"))
+resultado(false, limite_area(industrial_gestion))
 ```
 
-Si se cambiara el orden de evaluación y se revisara primero la incompatibilidad, la razón reportada sería:
+Si se invierte el orden y se revisa primero la incompatibilidad, el mismo caso reporta:
 
 ```prolog
 resultado(false, incompatibilidad("PI2609", "PI2610"))
 ```
 
-Ambas restricciones se incumplen, pero el resultado cambia porque el programa solamente devuelve la primera regla violada.
+Ambas reglas se incumplen en los dos casos; lo que cambia es cuál se informa, porque el programa solo devuelve la primera violada. Por eso el orden es parte del diseño.
 
-### 2.2.2. Caso límite real y cómo se resolvió
+**5. Cada combinación es de un solo plan de estudios.**
 
-**El caso: una combinación que alcanza exactamente el máximo permitido de cursos en un área.**
+Racket genera las combinaciones de cada carrera por separado (CE con el catálogo de CE y PI con el de PI), de modo que ninguna combinación mezcla cursos de las dos carreras. Esto responde a que, en la práctica, un estudiante matricula los cursos de su propio plan. Consecuencias que se documentan para la defensa:
 
-Una situación importante es cuando una combinación tiene exactamente la cantidad máxima de cursos permitidos en una determinada área.
+- Con una sola carrera, esa carrera aporta el 100 % de los créditos. La regla de balance **nunca se incumple mientras el máximo sea 100** (valor actual). Si el máximo baja de 100 (por ejemplo 60 o 40), **todas** las combinaciones se rechazan con `balance_carrera`: se verificó con CE (5 combinaciones) y PI (132 combinaciones), todas rechazadas. Es el comportamiento que pide el enunciado: una combinación de una sola carrera es válida mientras no supere su máximo.
+- Los tres pares incompatibles son entre cursos de planes distintos, por lo que solo se activarían en una combinación que mezcle ambos planes. Las reglas están implementadas y probadas con datos escritos a mano (`swipl reglas.pl`) para ese caso.
 
-Por ejemplo, si el máximo de `ciencias_basicas` es de dos cursos y una combinación contiene:
+**6. Uso del corte y la negación por falla.**
 
-- `MA1102` (Cálculo).
-- `FI1101` (Física I).
+- **Razón de rechazo (`evaluar_combinacion/3`):** se usa `Condicion -> Entonces ; Otra ...`. El `->` equivale a un corte seguido de negación por falla: si `incumple_balance_carreras/3` tiene éxito, Prolog se compromete con esa rama (corte) y no prueba las demás reglas; si falla, continúa con la siguiente regla (negación por falla). Así la razón es siempre la primera regla violada en el orden elegido, y la rama final `Cumple = true, Razon = ninguna` solo se alcanza si ninguna regla se incumple.
+- **Corte al final de `incumple_balance_carreras/3`, `incumple_limite_area/2` e `incumple_incompatibilidad/3`:** estos predicados buscan por backtracking una carrera, un área o un par que viole la regla. Con `!` se detienen en la primera solución, porque solo se necesita una razón; sin él, Prolog seguiría buscando más violaciones al reintentar.
+- **Corte en `creditos_por_carrera_acc/4`:** las dos cláusulas recursivas son excluyentes (el curso es de la carrera buscada o no lo es). El `!` en la primera, que suma los créditos, evita que al reintentar Prolog tome también la segunda cláusula y cuente mal.
 
-La combinación tiene exactamente dos cursos de esa área.
+**7. Manejo del estado: sin `assert`/`retract` ni variables globales.**
 
-La condición implementada en `incumple_limite_area/2` es:
+El enunciado prohíbe almacenar resultados intermedios con `assert`/`retract` o variables globales. En esta etapa:
+
+- El único uso de `assertz`/`retractall` está en `lector.pl` (`cargar_combinaciones/1`), y es únicamente para cargar los datos de entrada, que es lo permitido.
+- Los créditos acumulados se llevan como argumento (acumulador) en `creditos_por_carrera_acc/4`.
+- Los resultados se recolectan con `findall/3` y se pasan como argumento hasta el exportador.
+- Las reglas devuelven su resultado por unificación (`Carrera`, `Area`, `Codigo1`, `Codigo2`, `Razon`).
+
+### 2.2.2. Casos límite reales y cómo se resolvieron
+
+**Caso 1: una combinación que alcanza exactamente el máximo permitido de cursos en un área.**
+
+Si el máximo de `ciencias_basicas` es de dos cursos y una combinación contiene `MA1102` (Cálculo) y `FI1101` (Física I), tiene exactamente dos cursos de esa área. La condición implementada en `incumple_limite_area/2` es:
 
 ```prolog
 Cantidad > Maximo
 ```
 
-Se utiliza el operador `>` en lugar de `>=`, porque la política establece que una combinación incumple únicamente cuando supera el límite, no cuando lo alcanza.
+Se usa `>` y no `>=` porque la política establece que una combinación incumple solo cuando supera el límite, no cuando lo alcanza. Dos cursos cumplen; tres incumplen. Así no se rechazan combinaciones que usan correctamente toda la cantidad permitida.
 
-Por lo tanto:
+**Caso 2: una carrera sin ninguna combinación.**
 
-- Dos cursos: cumple el límite.
-- Tres cursos: incumple el límite.
+Cuando las preferencias de PI pedían entre 10 y 13 créditos pero los cursos de interés sumaban como máximo 7, Racket generó `salida_PI.json` con `"total_combinaciones": 0`, una lista vacía y un campo extra `aviso`. Prolog debía tolerarlo y no fallar: `dicts_a_combinaciones/3` tiene el caso base para la lista vacía, no se cargan hechos `combinacion_cargada/3`, `findall/3` devuelve `[]` y el exportador escribe un archivo válido con `total_combinaciones` en 0. El resumen muestra `0 combinaciones evaluadas, 0 cumplen`.
 
-Esta decisión evita rechazar combinaciones que utilizan correctamente toda la cantidad permitida de cursos en un área.
+**Caso 3: error al convertir los cursos con datos reales.**
+
+La primera versión de `dict_a_curso_sel/2` usaba la notación de diccionarios (`G.numero`) dentro de la cabeza de la cláusula, pero el grupo `G` solo se obtenía en el cuerpo. Con datos reales fallaba con `Arguments are not sufficiently instantiated`, algo que no se veía con las pruebas manuales. Se resolvió extrayendo cada campo en el cuerpo (`Codigo = C.codigo`, `G = C.grupo`, `Numero = G.numero`, ...) antes de construir el término.
+
+---
+
+## 2.2.3. Extensión de las etapas previas
+
+El enunciado pide agregar el campo `area` sin modificar la lógica ya construida. Solo se propagó un dato nuevo:
+
+- **Etapa 1 (C):** el plan de cada carrera incluye la columna `area`; C la lee en `cargar_plan_estudios` y la escribe en el catálogo JSON. Los planes se extendieron a los primeros 8 semestres de cada carrera reutilizando el mismo módulo con más datos.
+- **Etapa 2 (Racket):** el struct `Curso` y el struct `Curso-Seleccionado` reciben el campo `area`; `lector.rkt` lo lee del catálogo, `filtros.rkt` lo copia al armar cada selección y `exportador.rkt` lo escribe en la salida. No se tocó la generación de combinaciones, los choques ni el filtro de créditos.
+- **Etapa 3 (Prolog):** el área llega en `curso_sel/6` y es la que usa la regla de límite por área.
+
+Ajuste justificado a la exportación de Racket: la salida ya incluía código, grupo, créditos y carrera; se agregó `area` porque es un campo obligatorio de esta etapa y la regla 2 no se puede evaluar sin él.
 
 ---
 
@@ -284,33 +291,27 @@ Esta decisión evita rechazar combinaciones que utilizan correctamente toda la c
 |---|---|
 | `cargar_combinaciones/1` | Lee el JSON de entrada y carga las combinaciones como hechos. |
 | `dict_a_curso_sel/2` | Convierte un diccionario de curso a un término compuesto. |
-| `creditos_por_carrera/3` | Calcula los créditos pertenecientes a una carrera. |
-| `pertenece_area/2` | Identifica los cursos que pertenecen a un área. |
-| `contar_cursos_area/3` | Cuenta los cursos que pertenecen a una misma área. |
+| `creditos_por_carrera/3` | Suma los créditos de una carrera (con acumulador). |
+| `pertenece_area/2` | Relación entre un área y los cursos de la combinación (usable en más de un modo). |
+| `contar_cursos_area/3` | Cuenta los cursos de una misma área. |
 | `incumple_balance_carreras/3` | Comprueba si alguna carrera supera su porcentaje máximo. |
 | `incumple_limite_area/2` | Comprueba si alguna área supera su cantidad máxima de cursos. |
-| `incumple_incompatibilidad/3` | Identifica pares de cursos incompatibles. |
-| `evaluar_combinacion/3` | Aplica las reglas en orden y determina el resultado. |
-| `procesar_y_exportar/4` | Carga, evalúa y exporta todas las combinaciones. |
+| `incumple_incompatibilidad/3` | Identifica un par de cursos incompatibles en la combinación. |
+| `evaluar_combinacion/3` | Aplica las reglas en orden y devuelve `resultado(Cumple, Razon)`. |
+| `procesar_y_exportar/2` y `/4` | Cargan, evalúan y exportan todas las combinaciones (la versión `/4` devuelve los totales). |
 
 ### Predicado utilizado en más de un modo de consulta
 
-Para cumplir este requerimiento se implementó `pertenece_area/2`.
-
-Este predicado permite identificar si un área aparece dentro de una combinación y también permite enumerar las áreas de los cursos cuando la variable `Area` no está instanciada.
-
-Su implementación es:
+Se implementó `pertenece_area/2`:
 
 ```prolog
 pertenece_area(Area, Cursos) :-
     member(curso_sel(_, _, Area, _, _, _), Cursos).
 ```
 
-Se puede utilizar en dos modos diferentes:
+Permite comprobar si un área aparece en una combinación y también enumerar las áreas de sus cursos cuando `Area` no está instanciada.
 
-**Modo 1: variable en el área (`-`, `+`).**
-
-Se utiliza para obtener las áreas de los cursos presentes en una combinación.
+**Modo 1: área sin instanciar (`-`, `+`).** Obtiene las áreas de los cursos de la combinación:
 
 ```prolog
 ?- findall(Area,
@@ -321,17 +322,10 @@ Se utiliza para obtener las áreas de los cursos presentes en una combinación.
                          "Calculo superior", 4, grupo(4, "MA2104", []))
            ]),
            Areas).
-```
-
-Resultado:
-
-```prolog
 Areas = ["computacion", "ciencias_basicas"].
 ```
 
-**Modo 2: área instanciada (`+`, `+`).**
-
-Se utiliza para comprobar si una combinación contiene cursos de un área específica.
+**Modo 2: área instanciada (`+`, `+`).** Comprueba si la combinación contiene cursos de un área concreta:
 
 ```prolog
 ?- pertenece_area("computacion", [
@@ -340,17 +334,12 @@ Se utiliza para comprobar si una combinación contiene cursos de un área espec�
        curso_sel("MA2104", "CE", "ciencias_basicas",
                  "Calculo superior", 4, grupo(4, "MA2104", []))
    ]).
-```
-
-Resultado:
-
-```prolog
 true.
 ```
 
-Si se consulta un área que no aparece en la combinación, el predicado devuelve `false`.
+Si el área no aparece, responde `false`. Con un área repetida (dos cursos de la misma área) el modo 1 devuelve esa área una vez por cada curso.
 
-La ventaja de este diseño es que el mismo predicado se reutiliza dentro de `contar_cursos_area/3` y `incumple_limite_area/2`, evitando duplicar la lógica para buscar cursos por área.
+El mismo predicado se reutiliza en `contar_cursos_area/3` (modo `+`, `+`, dentro de `aggregate_all/3`) y en `incumple_limite_area/2` (modo `-`, `+`, para descubrir qué áreas hay), evitando duplicar la lógica de buscar cursos por área.
 
 ---
 
@@ -358,41 +347,60 @@ La ventaja de este diseño es que el mismo predicado se reutiliza dentro de `con
 
 ### Entrada
 
-La Etapa 3 recibe los archivos JSON generados por Racket:
+La Etapa 3 recibe los JSON generados por Racket:
 
 - `../Parte 2/data/salida_CE.json`
 - `../Parte 2/data/salida_PI.json`
 
-Cada combinación contiene sus créditos totales y una lista de cursos seleccionados. Cada curso incluye su código, carrera, nombre, créditos, área, grupo y horarios.
+Cada combinación contiene sus créditos totales y la lista de cursos seleccionados; cada curso incluye código, carrera, nombre, créditos, área y grupo con sus horarios.
 
 ### Salida
 
-Prolog genera:
-
-- `data/salida_CE.json`
-- `data/salida_PI.json`
-
-Cada archivo contiene el total de combinaciones evaluadas y una lista de resultados.
-
-Cada resultado incluye:
+Prolog genera `data/salida_CE.json` y `data/salida_PI.json`. Cada archivo contiene `total_combinaciones` y la lista `combinaciones`; cada resultado incluye:
 
 | Campo | Descripción |
 |---|---|
 | `id` | Identificador de la combinación. |
 | `creditos_totales` | Total de créditos de la combinación. |
-| `cumple` | Valor booleano que indica si cumple las políticas. |
+| `cumple` | Booleano que indica si cumple las políticas. |
 | `razon` | Código de la primera regla incumplida. |
 | `detalle` | Descripción legible del resultado. |
-| `cursos` | Lista de cursos seleccionados con sus grupos y horarios. |
+| `cursos` | Lista de cursos con su grupo, créditos, carrera, área y horarios. |
 
-Los códigos posibles para el campo `razon` son:
+Los valores posibles de `razon` son `ninguna`, `balance_carrera`, `limite_area` e `incompatibilidad`.
 
-- `ninguna`
-- `balance_carrera`
-- `limite_area`
-- `incompatibilidad`
+Ejemplo de una combinación rechazada (recortada):
 
-Se eligió JSON porque permite mantener una estructura organizada y facilita la comunicación entre las diferentes etapas del proyecto. Además, Java puede acceder directamente a los campos sin tener que interpretar estructuras específicas de Prolog.
+```json
+{
+  "id": 1,
+  "creditos_totales": 13,
+  "cumple": false,
+  "razon": "limite_area",
+  "detalle": "Incumple limite de cursos en el area: ciencias_basicas",
+  "cursos": [
+    {
+      "codigo": "FI1101",
+      "grupo": 1,
+      "codigo_opcion": "FI1101",
+      "carrera": "PI",
+      "nombre": "Física general I",
+      "creditos": 3,
+      "area": "ciencias_basicas",
+      "horarios": [
+        {"dia": "MAR", "inicio": "07:30", "fin": "09:20"}
+      ]
+    }
+  ]
+}
+```
+
+### Justificación del formato
+
+- **JSON** mantiene la misma convención que las etapas 1 y 2, es un formato estándar y Java puede leer sus campos por nombre sin interpretar estructuras propias de Prolog.
+- **`razon` como código y `detalle` como texto:** el código corto permite a Java comparar sin interpretar frases; el detalle es para mostrar al usuario e incluye los datos (la carrera, el área o los cursos involucrados).
+- **Información agregada respecto al mínimo del enunciado** (pares curso-grupo, veredicto y razón): se incluyen carrera, nombre, créditos, área y horarios de cada curso. Se justifica porque la Etapa 4 debe presentar el horario al usuario y, sin estos datos, tendría que volver a leer el catálogo de la Etapa 1. También se agrega `creditos_totales` y `total_combinaciones`.
+- El JSON se escribe con `json/1` de la librería estándar, que respeta el orden de los campos y escapa correctamente los caracteres especiales.
 
 ---
 
@@ -401,17 +409,17 @@ Se eligió JSON porque permite mantener una estructura organizada y facilita la 
 ### Requisitos
 
 - SWI-Prolog instalado.
-- Archivos JSON generados por la Etapa 2.
+- Archivos JSON generados por la Etapa 2 (`racket main.rkt` en `Parte 2`).
 
 ### Ejecución
 
-Dentro de la carpeta `Parte 3`, para ejecutar el flujo completo de ambas carreras y generar los archivos JSON:
+Dentro de la carpeta `Parte 3`:
 
 ```bash
-swipl -s main.pl
+swipl main.pl
 ```
 
-Durante la ejecución se muestra el resumen del procesamiento:
+El programa procesa ambas carreras y genera los archivos en `data/`. Muestra un resumen como el siguiente (los totales dependen de las preferencias usadas en la Etapa 2):
 
 ```text
 CEmestre - Etapa 3 (Paradigma Logico)
@@ -424,19 +432,19 @@ CE
 PI
 [1/2] Cargando combinaciones desde ../Parte 2/data/salida_PI.json...
 [2/2] Evaluando combinaciones contra las reglas de politica...
-      -> 132 combinaciones evaluadas, 108 cumplen las reglas de politica.
+      -> 132 combinaciones evaluadas, 110 cumplen las reglas de politica.
       -> Archivo generado en: data/salida_PI.json
 
 Proceso finalizado para ambas carreras.
 ```
 
-Adicionalmente, `reglas.pl` incluye sus propias pruebas unitarias, que se pueden ejecutar por separado con:
+### Pruebas de las reglas
+
+Las reglas tienen pruebas con datos escritos a mano, sin depender del JSON de Racket:
 
 ```bash
-swipl -s reglas.pl
+swipl reglas.pl
 ```
-
-Mostrando en consola:
 
 ```text
 --- combinacion que deberia cumplir ---
@@ -451,4 +459,6 @@ resultado(false,incompatibilidad(PI2609,PI2610))
 si_tiene_computacion
 ```
 
-El resultado se exporta en archivos JSON que contienen tanto el veredicto como la razón de rechazo y la información de los cursos seleccionados.
+### Cambiar los parámetros de política
+
+Los parámetros están en `politicas.pl` y se pueden modificar sin tocar las reglas: `max_porcentaje_carrera/2`, `max_cursos_area/2` e `incompatible/2`. Después de editarlos basta volver a ejecutar `swipl main.pl` para ver el nuevo resultado de cada combinación.

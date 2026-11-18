@@ -44,7 +44,7 @@
 ;;; Toma una tabla hash de un curso (proveniente del JSON) y construye un struct Curso.
 ;;; Entrada:
 ;;;   - c: Tabla hash con las llaves 'codigo, 'carrera, 'nombre, 'creditos, 'horas,
-;;;        'semestre, 'tipo, 'area, 'requisitos, 'correquisitos, 'aprobado,
+;;;        'semestre, 'tipo, 'requisitos, 'correquisitos, 'aprobado,
 ;;;        'cumple_requisitos, 'correquisitos_pendientes, 'matriculable,
 ;;;        'tiene_choque, 'area y 'grupos.
 ;;; Salida:
@@ -57,7 +57,6 @@
          (hash-ref c 'horas)
          (hash-ref c 'semestre)
          (hash-ref c 'tipo)
-         (hash-ref c 'area)
          (hash-ref c 'requisitos)
          (hash-ref c 'correquisitos)
          (hash-ref c 'aprobado)

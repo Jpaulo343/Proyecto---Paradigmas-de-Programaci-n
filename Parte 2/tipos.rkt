@@ -48,7 +48,6 @@
 ;;;   - horas: Horas semanales de dedicación.
 ;;;   - semestre: Nivel en el plan (0..6).
 ;;;   - tipo: Tipo de curso ("CURSO" o "COMODIN").
-;;;   - Area: área a la que pertenece el curso 
 ;;;   - requisitos: Lista de códigos de cursos requisito según el plan.
 ;;;   - correquisitos: Lista de códigos de cursos correquisito según el plan.
 ;;;   - aprobado: #t si el estudiante ya aprobó el curso en su historial.
@@ -64,7 +63,6 @@
                [horas : Integer]
                [semestre : Integer]
                [tipo : String]
-               [area : String]
                [requisitos : (Listof String)]
                [correquisitos : (Listof String)]
                [aprobado : Boolean]

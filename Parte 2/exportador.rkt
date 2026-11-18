@@ -117,7 +117,6 @@
 (define (seleccionado->json sel)
   (objeto-json (list (cons "codigo" (Curso-Seleccionado-codigo-curso sel))
                       (cons "carrera" (Curso-Seleccionado-carrera sel))
-                      (cons "area" (Curso-Seleccionado-area sel))
                       (cons "nombre" (Curso-Seleccionado-nombre-curso sel))
                       (cons "creditos" (Curso-Seleccionado-creditos sel))
                       (cons "area" (Curso-Seleccionado-area sel))

@@ -236,12 +236,6 @@ void cargar_plan_estudios(struct Nodo **inicio, const char *ruta) {
             quitarSaltoLinea(c.area);
         }
 
-        columna = separarCampo(&cursor);
-        if (columna) {
-            strncpy(c.area, columna, TAM_AREA - 1);
-            quitarSaltoLinea(c.area);
-        }
-
         c.matriculable = 0;
         insertarFinal(inicio, &c, sizeof(struct Curso));
     }
@@ -787,7 +781,7 @@ int exportar_json(struct Nodo *plan, struct Nodo *historial, const char *ruta, c
         escribir_lista_json(salida, c->correquisitos);
         fprintf(salida, ",\n      \"aprobado\": %s,\n", esCursoAprobado(historial, c->codigo) ? "true" : "false");
         fprintf(salida, "      \"cumple_requisitos\": %s,\n", cumple_requisitos(historial, c) ? "true" : "false");
-        fprintf(salida, ",\n      \"correquisitos_pendientes\": ");
+        fprintf(salida, "      \"correquisitos_pendientes\": ");
         escribir_correquisitos_pendientes_json(salida, historial, c);
         fprintf(salida, ",\n      \"matriculable\": %s,\n", c->matriculable ? "true" : "false");
         fprintf(salida, "      \"tiene_choque\": %s,\n", c->tieneChoque ? "true" : "false");
