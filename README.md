@@ -16,7 +16,7 @@ CEmestre es un sistema que ayuda a un estudiante a construir su horario de matr�
 |---|---|---|---|
 | 1 | C (imperativo) | Construye el catálogo de cursos y calcula, para cada grupo, choques de horario y elegibilidad por requisitos/correquisitos | [Parte 1/README.md](Parte%201/README.md) |
 | 2 | Racket (funcional) | Genera y filtra, con streams, las combinaciones válidas de horario a partir del catálogo de la Etapa 1 | [Parte 2/README.md](Parte%202/README.md) |
-| 3 | Prolog (lógico) | Aplica reglas de restricción (créditos máximos, compatibilidades) sobre las combinaciones generadas | pendiente |
+| 3 | Prolog (lógico) | Aplica reglas de restricción (créditos máximos, compatibilidades) sobre las combinaciones generadas | [Parte 3/README.md](Parte%203/README.md) |
 | 4 | Java (orientado a objetos) | Integra el resultado final y lo presenta al usuario | pendiente |
 
 Cada carpeta (`Parte 1/`, `Parte 2/`...) tiene su propio README con la arquitectura, las decisiones de diseño y las estructuras de datos de esa etapa.

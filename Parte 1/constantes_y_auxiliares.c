@@ -228,7 +228,12 @@ void cargar_plan_estudios(struct Nodo **inicio, const char *ruta) {
         columna = separarCampo(&cursor);
         if (columna) {
             strncpy(c.tipo, columna, TAM_TIPO - 1);
-            quitarSaltoLinea(c.tipo);
+        }
+
+        columna = separarCampo(&cursor);
+        if (columna) {
+            strncpy(c.area, columna, TAM_AREA - 1);
+            quitarSaltoLinea(c.area);
         }
 
         columna = separarCampo(&cursor);

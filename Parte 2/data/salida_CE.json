@@ -1,0 +1,337 @@
+{
+  "total_combinaciones": 5,
+  "combinaciones": [
+    {
+      "creditos_totales": 10,
+      "carreras_origen": [
+        "CE",
+        "CE",
+        "CE"
+      ],
+      "seleccionados": [
+        {
+          "codigo": "CE2103",
+          "carrera": "CE",
+          "nombre": "Algoritmos y estructuras de datos II",
+          "creditos": 4,
+          "area": "computacion",
+          "grupo": {
+            "numero": 1,
+            "codigo_opcion": "CE2103",
+            "horarios": [
+              {
+                "dia": "MAR",
+                "inicio": "07:30",
+                "fin": "09:20"
+              },
+              {
+                "dia": "JUE",
+                "inicio": "07:30",
+                "fin": "09:20"
+              }
+            ]
+          }
+        },
+        {
+          "codigo": "CS2101",
+          "carrera": "CE",
+          "nombre": "Ambiente humano",
+          "creditos": 2,
+          "area": "humanidades_complementarias",
+          "grupo": {
+            "numero": 1,
+            "codigo_opcion": "CS2101",
+            "horarios": [
+              {
+                "dia": "VIE",
+                "inicio": "09:30",
+                "fin": "12:20"
+              }
+            ]
+          }
+        },
+        {
+          "codigo": "MA2104",
+          "carrera": "CE",
+          "nombre": "Cálculo superior",
+          "creditos": 4,
+          "area": "ciencias_basicas",
+          "grupo": {
+            "numero": 4,
+            "codigo_opcion": "MA2104",
+            "horarios": [
+              {
+                "dia": "MAR",
+                "inicio": "09:30",
+                "fin": "11:20"
+              },
+              {
+                "dia": "JUE",
+                "inicio": "09:30",
+                "fin": "11:20"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "creditos_totales": 10,
+      "carreras_origen": [
+        "CE",
+        "CE",
+        "CE"
+      ],
+      "seleccionados": [
+        {
+          "codigo": "CE2103",
+          "carrera": "CE",
+          "nombre": "Algoritmos y estructuras de datos II",
+          "creditos": 4,
+          "area": "computacion",
+          "grupo": {
+            "numero": 1,
+            "codigo_opcion": "CE2103",
+            "horarios": [
+              {
+                "dia": "MAR",
+                "inicio": "07:30",
+                "fin": "09:20"
+              },
+              {
+                "dia": "JUE",
+                "inicio": "07:30",
+                "fin": "09:20"
+              }
+            ]
+          }
+        },
+        {
+          "codigo": "CS2101",
+          "carrera": "CE",
+          "nombre": "Ambiente humano",
+          "creditos": 2,
+          "area": "humanidades_complementarias",
+          "grupo": {
+            "numero": 1,
+            "codigo_opcion": "CS2101",
+            "horarios": [
+              {
+                "dia": "VIE",
+                "inicio": "09:30",
+                "fin": "12:20"
+              }
+            ]
+          }
+        },
+        {
+          "codigo": "MA2104",
+          "carrera": "CE",
+          "nombre": "Cálculo superior",
+          "creditos": 4,
+          "area": "ciencias_basicas",
+          "grupo": {
+            "numero": 5,
+            "codigo_opcion": "MA2104",
+            "horarios": [
+              {
+                "dia": "MIE",
+                "inicio": "18:00",
+                "fin": "19:50"
+              },
+              {
+                "dia": "VIE",
+                "inicio": "18:00",
+                "fin": "19:50"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "creditos_totales": 10,
+      "carreras_origen": [
+        "CE",
+        "CE",
+        "CE"
+      ],
+      "seleccionados": [
+        {
+          "codigo": "CE2103",
+          "carrera": "CE",
+          "nombre": "Algoritmos y estructuras de datos II",
+          "creditos": 4,
+          "area": "computacion",
+          "grupo": {
+            "numero": 1,
+            "codigo_opcion": "CE2103",
+            "horarios": [
+              {
+                "dia": "MAR",
+                "inicio": "07:30",
+                "fin": "09:20"
+              },
+              {
+                "dia": "JUE",
+                "inicio": "07:30",
+                "fin": "09:20"
+              }
+            ]
+          }
+        },
+        {
+          "codigo": "CS2101",
+          "carrera": "CE",
+          "nombre": "Ambiente humano",
+          "creditos": 2,
+          "area": "humanidades_complementarias",
+          "grupo": {
+            "numero": 5,
+            "codigo_opcion": "CS2101",
+            "horarios": [
+              {
+                "dia": "JUE",
+                "inicio": "09:30",
+                "fin": "12:20"
+              }
+            ]
+          }
+        },
+        {
+          "codigo": "MA2104",
+          "carrera": "CE",
+          "nombre": "Cálculo superior",
+          "creditos": 4,
+          "area": "ciencias_basicas",
+          "grupo": {
+            "numero": 5,
+            "codigo_opcion": "MA2104",
+            "horarios": [
+              {
+                "dia": "MIE",
+                "inicio": "18:00",
+                "fin": "19:50"
+              },
+              {
+                "dia": "VIE",
+                "inicio": "18:00",
+                "fin": "19:50"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "creditos_totales": 8,
+      "carreras_origen": [
+        "CE",
+        "CE"
+      ],
+      "seleccionados": [
+        {
+          "codigo": "CE2103",
+          "carrera": "CE",
+          "nombre": "Algoritmos y estructuras de datos II",
+          "creditos": 4,
+          "area": "computacion",
+          "grupo": {
+            "numero": 1,
+            "codigo_opcion": "CE2103",
+            "horarios": [
+              {
+                "dia": "MAR",
+                "inicio": "07:30",
+                "fin": "09:20"
+              },
+              {
+                "dia": "JUE",
+                "inicio": "07:30",
+                "fin": "09:20"
+              }
+            ]
+          }
+        },
+        {
+          "codigo": "MA2104",
+          "carrera": "CE",
+          "nombre": "Cálculo superior",
+          "creditos": 4,
+          "area": "ciencias_basicas",
+          "grupo": {
+            "numero": 4,
+            "codigo_opcion": "MA2104",
+            "horarios": [
+              {
+                "dia": "MAR",
+                "inicio": "09:30",
+                "fin": "11:20"
+              },
+              {
+                "dia": "JUE",
+                "inicio": "09:30",
+                "fin": "11:20"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "creditos_totales": 8,
+      "carreras_origen": [
+        "CE",
+        "CE"
+      ],
+      "seleccionados": [
+        {
+          "codigo": "CE2103",
+          "carrera": "CE",
+          "nombre": "Algoritmos y estructuras de datos II",
+          "creditos": 4,
+          "area": "computacion",
+          "grupo": {
+            "numero": 1,
+            "codigo_opcion": "CE2103",
+            "horarios": [
+              {
+                "dia": "MAR",
+                "inicio": "07:30",
+                "fin": "09:20"
+              },
+              {
+                "dia": "JUE",
+                "inicio": "07:30",
+                "fin": "09:20"
+              }
+            ]
+          }
+        },
+        {
+          "codigo": "MA2104",
+          "carrera": "CE",
+          "nombre": "Cálculo superior",
+          "creditos": 4,
+          "area": "ciencias_basicas",
+          "grupo": {
+            "numero": 5,
+            "codigo_opcion": "MA2104",
+            "horarios": [
+              {
+                "dia": "MIE",
+                "inicio": "18:00",
+                "fin": "19:50"
+              },
+              {
+                "dia": "VIE",
+                "inicio": "18:00",
+                "fin": "19:50"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

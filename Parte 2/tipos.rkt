@@ -72,6 +72,7 @@
                [correquisitos-pendientes : (Listof String)]
                [matriculable : Boolean]
                [tiene-choque : Boolean]
+               [area : String]
                [grupos : (Listof Grupo)])
   #:transparent)
 
@@ -109,7 +110,7 @@
 ;;;   - horas: Horas semanales que aporta el curso.
 ;;;   - semestre: Semestre del curso en el plan.
 ;;;   - tipo: Tipo de curso ("CURSO" o "COMODIN").
-;;;   - Area: área a la que pertenece el curso 
+;;;   - area: Área académica del curso
 ;;;   - requisitos: Lista de códigos de requisitos del curso.
 ;;;   - correquisitos: Lista de códigos de correquisitos del curso.
 ;;;   - aprobado: #t si el curso figura como aprobado.

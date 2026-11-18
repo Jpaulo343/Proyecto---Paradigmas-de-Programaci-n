@@ -46,7 +46,7 @@
 ;;;   - c: Tabla hash con las llaves 'codigo, 'carrera, 'nombre, 'creditos, 'horas,
 ;;;        'semestre, 'tipo, 'area, 'requisitos, 'correquisitos, 'aprobado,
 ;;;        'cumple_requisitos, 'correquisitos_pendientes, 'matriculable,
-;;;        'tiene_choque y 'grupos.
+;;;        'tiene_choque, 'area y 'grupos.
 ;;; Salida:
 ;;;   - Instancia del struct Curso.
 (define (json->curso c)
@@ -65,6 +65,7 @@
          (hash-ref c 'correquisitos_pendientes)
          (hash-ref c 'matriculable)
          (hash-ref c 'tiene_choque)
+         (hash-ref c 'area)
          (map json->grupo (hash-ref c 'grupos))))
 
 

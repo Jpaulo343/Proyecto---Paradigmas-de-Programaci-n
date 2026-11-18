@@ -112,13 +112,15 @@
 
 
 ;;; Función: seleccionado->json
-;;; Convierte un struct Curso-Seleccionado al par curso-grupo 
+;;; Convierte un struct Curso-Seleccionado al par curso-grupo. Se incluye el
+;;; área porque Prolog la necesita en la Etapa 3 para la regla de límite por área.
 (define (seleccionado->json sel)
   (objeto-json (list (cons "codigo" (Curso-Seleccionado-codigo-curso sel))
                       (cons "carrera" (Curso-Seleccionado-carrera sel))
                       (cons "area" (Curso-Seleccionado-area sel))
                       (cons "nombre" (Curso-Seleccionado-nombre-curso sel))
                       (cons "creditos" (Curso-Seleccionado-creditos sel))
+                      (cons "area" (Curso-Seleccionado-area sel))
                       (cons "grupo" (grupo->json (Curso-Seleccionado-grupo sel))))))
 
 
@@ -158,7 +160,7 @@
   (define g1-ce2103 (Grupo 1 "CE2103" "AED II"
                            (list (Bloque-Horario "MAR" "07:30" "09:20" 450 560)
                                  (Bloque-Horario "JUE" "07:30" "09:20" 450 560))))
-  (define sel (Curso-Seleccionado "CE2103" "CE" "AED II" 4 12 3 "CURSO" "X" '() '() #f #t '() #t #f g1-ce2103))
+  (define sel (Curso-Seleccionado "CE2103" "CE" "AED II" 4 12 3 "CURSO" "computacion" '() '() #f #t '() #t #f g1-ce2103))
   (define combo (Combinacion (list sel) 4 12 (list "CE")))
 
   (displayln "--- escribir-json (una sola combinacion de prueba) ---")

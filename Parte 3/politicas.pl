@@ -26,10 +26,12 @@ limite_cursos_area(2).
 
 max_cursos_area("X", 2).
 max_cursos_area("ciencias_basicas", 2).
-max_cursos_area("computacion", 2).
+max_cursos_area("computacion", 4).
 max_cursos_area("electronica", 2).
-max_cursos_area("industrial_gestion", 2).
+max_cursos_area("industrial_gestion", 4).
 max_cursos_area("humanidades_complementarias", 2).
+max_cursos_area("administracion", 2).
+
 
 
 % Hecho: incompatible

@@ -122,9 +122,9 @@
                                  (Bloque-Horario "JUE" "09:30" "11:20" 570 680))))
 
   ;; 2. Cursos de prueba (CE2103: 4 créditos, CS2101: 2 créditos, MA2104: 4 créditos -> Total: 10 créditos y 22 horas)
-  (define c-ce2103 (Curso "CE2103" "CE" "AED II" 4 12 3 "CURSO" "X" '() '() #f #t '() #t #f (list g1-ce2103)))
-  (define c-cs2101 (Curso "CS2101" "CE" "Ambiente humano" 2 6 3 "CURSO" "X" '() '() #f #t '() #t #f (list g1-cs2101)))
-  (define c-ma2104 (Curso "MA2104" "CE" "Calculo superior" 4 4 3 "CURSO" "X" '() '() #f #t '() #t #f (list g4-ma2104)))
+  (define c-ce2103 (Curso "CE2103" "CE" "AED II" 4 12 3 "CURSO" '() '() #f #t '() #t #f "computacion" (list g1-ce2103)))
+  (define c-cs2101 (Curso "CS2101" "CE" "Ambiente humano" 2 6 3 "CURSO" '() '() #f #t '() #t #f "humanidades_complementarias" (list g1-cs2101)))
+  (define c-ma2104 (Curso "MA2104" "CE" "Calculo superior" 4 4 3 "CURSO" '() '() #f #t '() #t #f "ciencias_basicas" (list g4-ma2104)))
 
   ;; 3. Se simula un stream con una combinación de pares (Curso . Grupo) como las que entrega generador.rkt
   (define stream-pares-prueba
